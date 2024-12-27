@@ -41,7 +41,7 @@ Then, we will study the finite volume method for conservation laws, introducing 
 The final classes will be devoted to less standard methods as physics informed neural networks and model order reduction techniques for parametrised PDEs.
 
 ## Tools
-- [git](https://git-scm.com/) ([github](https://github.com)
+- [git](https://git-scm.com/) ([github](https://github.com))
 - [python](https://www.python.org/)
 - [FEniCS](https://fenicsproject.org/) Finite Element python library
 - [PINA](https://mathlab.github.io/PINA/) Physics Informed Neural Network library based on PyTorch 
