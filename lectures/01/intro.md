@@ -51,9 +51,9 @@ _class: titlepage
 ### Materiale
 * Slides, pasticciandole qua e là
 * Libri:
+  * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016.
   * Evans, Lawrence C. Partial differential equations. Vol. 19. American Mathematical Society, 2010. [Introduzione alle PDE]
   * LeVeque, Randall J. Finite difference methods for ordinary and partial differential equations: steady-state and time-dependent problems. Society for Industrial and Applied Mathematics, 2007. [Metodi alle differenze finite]
-  * Quarteroni, Alfio, and Alberto Valli. Numerical approximation of partial differential equations. Vol. 23. Springer Science & Business Media, 2008. [Metodi agli elementi finiti]
   * LeVeque, Randall J. Finite volume methods for hyperbolic problems. Vol. 31. Cambridge university press, 2002. [Metodi ai volumi finiti]
   * Langtangen, Hans Petter, and Anders Logg. Solving PDEs in python: the FEniCS tutorial I. Springer Nature, 2017. [Manuale per usare FEniCS]
 
@@ -85,6 +85,7 @@ _class: titlepage
 
 
 --- 
+
 ## Applicazioni delle PDE
 
 
@@ -100,7 +101,9 @@ _class: titlepage
 * Combinazioni di questi
 
 ---
+
 # PDE
+
 $\Omega \in \mathbb R ^{d}$ where $d>1$
 $u:\Omega \to R^s$ where $s\in \mathbb N_0$
 Una PDE di ordine $k$ si scrive come
@@ -112,6 +115,8 @@ $$ \nabla u = \begin{pmatrix}
 \end{pmatrix}, \qquad  \nabla^{(2)} u = \begin{pmatrix}
   \partial_{xx} u & \partial_{xy} u\\ \partial_{yx} u & \partial_{yy} u
 \end{pmatrix}.$$
+
+
 
 ---
 <style scoped>section{text-align:center;}</style>
@@ -126,6 +131,27 @@ $$ \nabla u = \begin{pmatrix}
 | **Navier Stokes incomprimibile**| $\frac{\partial u}{\partial t} -\nu \Delta u + \left( u \cdot \nabla \right) u + \nabla p = f$ and $-\text{div} u = 0$|
 
 ---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+
+## Notazione derivate
+
+
+
+Come già avete potuto notare dall'ultima slide, ci sono più notazioni per indicare le derivate parziali e totali.
+
+| Notazione | Significato |
+|:----------|:------------|
+| $\partial_t u(t,x,y,\dots)$ | Derivata parziale in una variabile |
+| $\frac{\partial }{\partial t} u(t,x,y,\dots)$ | Derivata parziale in una variabile |
+| $\frac{\text{d} }{\text{d} t} u(t,x(t),y(t),\dots)$  | Derivata totale in una variabile |
+| $\nabla u = \begin{pmatrix} \partial_x u\\ \partial_y u\end{pmatrix}$  | Gradiente in 2D |
+| $\Delta u = \partial_{xx} u +\partial_{yy} u$  | Laplaciano in 2D |
+| $\text{div} \begin{pmatrix}u\\v \end{pmatrix} = \nabla \cdot \begin{pmatrix}u\\v \end{pmatrix} = \partial_{x} u +\partial_{y} v$  | Divergenza in 2D |
+
+
+---
+
 # Metodi Numerici
 Trovare soluzioni esatte di PDE non è sempre facile, in particolare se:
 * la geometria del dominio $\Omega$ è complicata (ponti, aerei, etc.),
@@ -137,7 +163,10 @@ L'analisi numerica fornisce strumenti per la risoluzione delle PDE. Vari metodi,
 3. Discretizzazione delle equazioni (il metodo numerico vero e proprio)
 4. Risoluzione delle equazioni discretizzate
 
+
+
 ---
+
 
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
