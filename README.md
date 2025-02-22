@@ -7,6 +7,10 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 * [Recordings folder](https://drive.google.com/drive/folders/1x7TufW9n9LE7U-zGf9i2qTA9u_tB1LvU?usp=sharing)
 
 
+## Next Lessons Schedule
+* 26/02/25 15:00-17:00 Wednesday
+* 28/02/25 16:00-18:00 Friday
+
 ## Notes
 
 
