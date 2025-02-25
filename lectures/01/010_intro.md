@@ -27,7 +27,7 @@ _class: titlepage
 ---
 # Informazioni sul corso
 * 48 ore
-* Materiale su GitHub (slides, note, esercizi, codici, progetti)
+* Materiale su [GitHub](https://github.com/accdavlo/calcolo-scientifico) (slides, note, esercizi, codici, progetti)
 * Lezioni: slides + note + codice
 * Laboratorio: portate il PC e sviluppiamo il codice un po' in classe un po' a casa
 * Lezioni: come siete messi il giovedì mattina?
