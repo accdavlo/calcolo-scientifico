@@ -4,12 +4,18 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 ## Useful links
 * [Course page on Sapienza Website](https://corsidilaurea.uniroma1.it/it/view-course-details/2024/31778/20220331104432/3b541170-a744-497b-8354-6947c3438fe3/f4687f41-3295-4d30-b113-0c147078c2ab/d522d305-a6c6-4020-ab5e-d760222a4ab5/bcac70c7-281d-4ab1-ba19-85d9792bc311?guid_cv=f4687f41-3295-4d30-b113-0c147078c2ab&current_erogata=3b541170-a744-497b-8354-6947c3438fe3)
 * [Recursive Zoom Link for classes](https://uniroma1.zoom.us/j/84367160394?pwd=0dqEUWrQYECMEy6h8Jk5RNnJ5KRFp8.1)
-* [Recordings folder](https://drive.google.com/drive/folders/1x7TufW9n9LE7U-zGf9i2qTA9u_tB1LvU?usp=sharing)
 
+## Logbook, Notes and Recordings
+| Date | Topics  | Notes | Recording link |
+|:-----|:------|:---------------|:------|
+|26/02/25| Introduction to the course, derivatives notation, ODE existence and uniqueness| [Notes](/notes/2025-02-26-Notes.pdf)| [Recording](https://uniroma1.zoom.us/rec/play/KbSdN3YnqoG6YQ3CxjixFJ199cEfDNeX1blne0HHgS_eGflT7YO7cxUCvBKJoNMyDH3pJSCasurgQ5hY.zSNv5eH2OZ6Homab?accessLevel=meeting&canPlayFromShare=true&from=my_recording&startTime=1740578888000&componentName=rec-play&originRequestUrl=https%3A%2F%2Funiroma1.zoom.us%2Frec%2Fshare%2Fk1oE-MtD5sZYXR2j32ZW9L9K-y2Zhy0pjr7IFR19W9Hcl36GHB7QJ-a-4GQwzNk_.K9BIxFUi3yH9N9mq%3FstartTime%3D1740578888000%2520Passcode%3A%2520yL6wR%40%23D) |
+|28/02/25| Explicit and implicit Euler for ODEs, classification of nonlinear PDEs, general solution for first order PDE| Notes| Recording |
 
 ## Next Lessons Schedule
-* 26/02/25 15:00-17:00 Wednesday
 * 28/02/25 16:00-18:00 Friday
+* 28/02/25 16:00-18:00 Friday
+
+
 
 ## Notes
 
