@@ -13,7 +13,10 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 
 ## Notes
 
-
+1. Introduction
+    1. Introduction to the course [PDF](lectures/01/010_intro.pdf) [html](lectures/01/010_intro.html) [md](lectures/01/010_intro.md)
+    1. Introduction to PDEs [PDF](lectures/01/011_PDE.pdf) [html](lectures/01/011_PDE.html) [md](lectures/01/011_PDE.md)
+    1. Introduction to functional analysis [PDF](lectures/01/012_functional_analysis.pdf) [html](lectures/01/012_functional_analysis.html) [md](lectures/01/012_functional_analysis.md)
 
 ## Literature
 * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016. [Intro alle PDE, Metodi agli elementi finiti, Metodi alle differenze finite, Riduzione del Modello]
