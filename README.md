@@ -8,7 +8,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 ## Logbook, Notes and Recordings
 | Date | Topics  | Notes | Recording link |
 |:-----|:------|:---------------|:------|
-|26/02/25| Introduction to the course, derivatives notation, ODE existence and uniqueness| [Notes](/notes/2025-02-26-Notes.pdf)| [Recording](https://uniroma1.zoom.us/rec/play/KbSdN3YnqoG6YQ3CxjixFJ199cEfDNeX1blne0HHgS_eGflT7YO7cxUCvBKJoNMyDH3pJSCasurgQ5hY.zSNv5eH2OZ6Homab?accessLevel=meeting&canPlayFromShare=true&from=my_recording&startTime=1740578888000&componentName=rec-play&originRequestUrl=https%3A%2F%2Funiroma1.zoom.us%2Frec%2Fshare%2Fk1oE-MtD5sZYXR2j32ZW9L9K-y2Zhy0pjr7IFR19W9Hcl36GHB7QJ-a-4GQwzNk_.K9BIxFUi3yH9N9mq%3FstartTime%3D1740578888000%2520Passcode%3A%2520yL6wR%40%23D) |
+|26/02/25| Introduction to the course, derivatives notation, ODE existence and uniqueness| [Notes](/notes/2025-02-26-Notes.pdf)| [Recording](https://uniroma1.zoom.us/rec/share/S6oSkizEydLBuid6I77BZo0rqpL6orAh0-da0559uM31wNzJBIB_EbUUytpY3IW_.QSjCBG2ap0n4nMH2) Passcode: yL6wR@#D |
 |28/02/25| Explicit and implicit Euler for ODEs, classification of nonlinear PDEs, general solution for first order PDE| Notes| Recording |
 
 ## Next Lessons Schedule
