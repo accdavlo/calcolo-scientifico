@@ -9,7 +9,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 | Date | Topics  | Notes | Recording link | Password |
 |:-----|:------|:---------------|:------|:------|
 |26/02/25| Introduction to the course, derivatives notation, ODE existence and uniqueness| [Notes](/notes/2025-02-26-Notes.pdf)| [Recording](https://uniroma1.zoom.us/rec/share/S6oSkizEydLBuid6I77BZo0rqpL6orAh0-da0559uM31wNzJBIB_EbUUytpY3IW_.QSjCBG2ap0n4nMH2)| yL6wR@#D |
-|28/02/25| Explicit and implicit Euler for ODEs, classification of nonlinear PDEs, general solution for first order PDE| Notes| Recording |
+|28/02/25| Explicit and implicit Euler for ODEs| See above | Recording |
 
 ## Next Lessons Schedule
 * 28/02/25 16:00-18:00 Friday
