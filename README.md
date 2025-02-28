@@ -9,11 +9,15 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 | Date | Topics  | Notes | Recording link | Password |
 |:-----|:------|:---------------|:------|:------|
 |26/02/25| Introduction to the course, derivatives notation, ODE existence and uniqueness| [Notes](/notes/2025-02-26-Notes.pdf)| [Recording](https://uniroma1.zoom.us/rec/share/S6oSkizEydLBuid6I77BZo0rqpL6orAh0-da0559uM31wNzJBIB_EbUUytpY3IW_.QSjCBG2ap0n4nMH2)| yL6wR@#D |
-|28/02/25| Explicit and implicit Euler for ODEs| See above | Recording |
+|28/02/25| Explicit and implicit Euler for ODEs| See above | [Recording](https://uniroma1.zoom.us/rec/share/206eK4pmBBLnb3qTj5a1M6VUICri2NG1RRe5fq1uuE-3DUeZeCZNmdkfCKvJS0xI._eXDTOUAP9zRaeed?startTime=1740755539000) | A$d3j@?3 |
+|05/03/25| Git(hub), classification of PDEs | Notes | Recording | Pass  |
 
 ## Next Lessons Schedule
-* 28/02/25 16:00-18:00 Friday
-* 28/02/25 16:00-18:00 Friday
+* 28/02/25 16:00-18:00 Friday Aula Levi-Civita
+* 05/03/25 15:00-17:00 Wednesday Aula Picone
+* 07/03/25 16:00-18:00 Friday Aula Levi-Civita
+* 12/03/25 15:00-17:00 Wednesday Aula Picone
+* 14/03/25 16:00-18:00 Friday Aula L
 
 
 
