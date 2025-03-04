@@ -15,9 +15,9 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 ## Next Lessons Schedule
 * 28/02/25 16:00-18:00 Friday Aula Levi-Civita
 * 05/03/25 15:00-17:00 Wednesday Aula Picone
-* 07/03/25 16:00-18:00 Friday Aula Levi-Civita
+* 07/03/25 16:00-18:00 Friday Aula L
 * 12/03/25 15:00-17:00 Wednesday Aula Picone
-* 14/03/25 16:00-18:00 Friday Aula L
+* 14/03/25 16:00-18:00 Friday Aula Levi-Civita
 
 
 
