@@ -13,16 +13,12 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |05/03/25| Git(hub), classification of PDEs | [Notes](/notes/2025-03-05-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/B8mK9GE1y7OWn07MSM1bG3LR0CdWHZp1OKMFdwhGA_FQWazDJ98nTmu8_4j_8AZR.MaeBgymjPvdYAn4p) | @yS99f5?  |
 
 ## Next Lessons Schedule
-* 28/02/25 16:00-18:00 Friday Aula Levi-Civita
-* 05/03/25 15:00-17:00 Wednesday Aula Picone
 * 07/03/25 16:00-18:00 Friday Aula L
 * 12/03/25 15:00-17:00 Wednesday Aula Picone
 * 14/03/25 16:00-18:00 Friday Aula Levi-Civita
 
-asfaohfsdogh
 
-
-## Notes
+## Slides
 
 1. Introduction
     1. Introduction to the course [PDF](lectures/01/010_intro.pdf) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/010_intro.html) [md](lectures/01/010_intro.md)
