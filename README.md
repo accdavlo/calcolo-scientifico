@@ -10,10 +10,10 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |:-----|:------|:---------------|:------|:------|
 |26/02/25| Introduction to the course, derivatives notation, ODE existence and uniqueness| [Notes](/notes/2025-02-26-Notes.pdf)| [Recording](https://uniroma1.zoom.us/rec/share/S6oSkizEydLBuid6I77BZo0rqpL6orAh0-da0559uM31wNzJBIB_EbUUytpY3IW_.QSjCBG2ap0n4nMH2)| yL6wR@#D |
 |28/02/25| Explicit and implicit Euler for ODEs| See above | [Recording](https://uniroma1.zoom.us/rec/share/206eK4pmBBLnb3qTj5a1M6VUICri2NG1RRe5fq1uuE-3DUeZeCZNmdkfCKvJS0xI._eXDTOUAP9zRaeed?startTime=1740755539000) | A$d3j@?3 |
-|05/03/25| Git(hub), classification of PDEs | [Notes](/notes/2025-03-05-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/B8mK9GE1y7OWn07MSM1bG3LR0CdWHZp1OKMFdwhGA_FQWazDJ98nTmu8_4j_8AZR.MaeBgymjPvdYAn4p) | @yS99f5?  |
+|05/03/25| Git(hub), classification of PDEs, first order linear PDEs | [Notes](/notes/2025-03-05-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/B8mK9GE1y7OWn07MSM1bG3LR0CdWHZp1OKMFdwhGA_FQWazDJ98nTmu8_4j_8AZR.MaeBgymjPvdYAn4p) | @yS99f5?  |
+|07/03/25| Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem | See above | [Recording](---) | ---  |
 
 ## Next Lessons Schedule
-* 07/03/25 16:00-18:00 Friday Aula L
 * 12/03/25 15:00-17:00 Wednesday Aula Picone
 * 14/03/25 16:00-18:00 Friday Aula L
 * 19/03/25 15:00-17:00 Wednesday Aula Picone
@@ -24,9 +24,24 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 
 1. Introduction
     1. Introduction to the course [PDF](lectures/01/010_intro.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/010_intro.html) [md](lectures/01/010_intro.md)
+    1. Introduction to `git`(hub) [PDF](lectures/00/004_git.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/00/004_git.html) [md](lectures/00/004_git.md)
     1. Introduction to PDEs [PDF](lectures/01/011_PDE.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/011_PDE.html) [md](lectures/01/011_PDE.md)
     1. Introduction to functional analysis [PDF](lectures/01/012_functional_analysis.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/012_functional_analysis.html) [md](lectures/01/012_functional_analysis.md)
-    1. Introduction to `git`(hub) [PDF](lectures/00/004_git.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/00/004_git.html) [md](lectures/00/004_git.md)
+2. Elliptic problems
+    1. Elliptic problems [PDF](lectures/02/020_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/020_elliptic.html) [md](lectures/02/020_elliptic.md)
+    1. Finite differences for elliptic problems
+    1. Finite elements for elliptic problems
+    1. Reduced order methods for elliptic problems
+3. Parabolic problems
+    1. Parabolic problems
+    1. Finite differences for parabolic problems
+    1. Finite elements for parabolic problems
+1. Advection-diffusion example
+    1. Advection-diffusion problems
+    1. Central Finite differences for advection-diffusion problems
+    1. Finite elemets for advection-diffusion problems
+    1. Upwinding Finite differences
+1. Hyperbolic problems
 
 
 ## Literature
