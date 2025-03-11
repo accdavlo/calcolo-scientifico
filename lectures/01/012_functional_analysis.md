@@ -31,7 +31,7 @@ $$V^*:=\lbrace F: V\to \mathbb R :\, F \text{ is linear and bounded}\rbrace.$$
 
 ### Norm
 The norm of a functional $L \in V^*$ is defined as 
-$|L| = \sup_{|u| \leq 1} |L(u)|=\sup_{|u| \neq } \frac{|L(u)|}{||u||_V}.$
+$|L| = \sup_{|u| \leq 1} |L(u)|=\sup_{|u| \neq 0} \frac{|L(u)|}{||u||_V}.$
 
 
 ---
@@ -46,7 +46,7 @@ The inner product is a bilinear function $(\cdot,\cdot)_H: V\times V \to \mathbb
 ### Riesz Representative
 The Riesz representation theorem states that for every bounded linear functional $L$ on a Hilbert space $H$, there exists a unique element $v_L \in H$ such that 
 $$L(u) = ( u, v_L )_H$$
-for all $u \in H$. Moreover, $||L||_{H*} = ||u_L||_H$.
+for all $u \in H$. Moreover, $||L||_{H^*} = ||u_L||_H$.
 Conversly, for every element $u\in H$ there exists  a linear and bounded functional $L_u$ such that 
 $$ 
 L_u(v) = (u,v)_H \text{ for every }v\in V.
@@ -81,7 +81,7 @@ A form
 Let $\Omega\subset \mathbb R^{d}$ be an open set and $f:\Omega \to \mathbb R$ a function.
 
 ### Support of a Function
-The support of a function $f$, denoted $\text{supp}(f)$, is the closure of the set where $f$ is non-zero.
+The support of a function $f$, denoted by $\text{supp}(f)$, is the closure of the set where $f$ is non-zero.
 $$\text{supp}(f):=\overline{\lbrace x\in\Omega : f(x) \neq 0\rbrace}.$$
 
 ### Compact Support
