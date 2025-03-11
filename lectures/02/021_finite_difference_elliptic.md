@@ -218,3 +218,26 @@ $$
 &=\frac{1}{h^2} \left( f(x+h)-f(x)  - \left(f(x)-f(x-h)\right)  \right)= \frac{f(x+h)-2f(x)+f(x-h)}{h^2}.
 \end{align*}
 $$
+
+#### Error with Taylor
+$$
+\delta^2_hf(x) \approx f''(x) +\frac{h^2}{24}(f^{(4)}(\xi)+f^{(4)}(\zeta)) \Longrightarrow \lvert \delta^2_hf(x) - f''(x)\rvert \leq \frac{h^2}{12}\max_{y\in[x-h,x+h]}|f^{(4)}(y)|
+$$
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Higher derivative with Taylor expansion
+
+Same as before, we can fix a stencil and check the higher derivatives terms and match them.
+
+$$
+\begin{align*}
+f^{(k)}(x) & \approx \frac{1}{h^k} \left( a_{-p} f(x-ph) + \dots + a_{q} f(x+qh)\right)=\\
+&=\frac{1}{h^k} \sum_{\ell=-q}^p a_{\ell} f(x+\ell h)\\
+&=\frac{1}{h^k} \sum_{\ell=-q}^p a_{\ell} \sum_{j=0}^\infty \frac{f^{(j)}(x)\ell^j h^j}{j!} \\
+&=\frac{1}{h^k}  \sum_{j=0}^\infty \left( \sum_{\ell=-q}^p a_{\ell} \frac{\ell^j h^j}{j!} \right) f^{(j)}(x) =  \sum_{j=0}^\infty \left( \sum_{\ell=-q}^p a_{\ell} \frac{\ell^j h^{j-k}}{j!} \right) f^{(j)}(x) .
+\end{align*} 
+$$
+
+### Wikipedia
