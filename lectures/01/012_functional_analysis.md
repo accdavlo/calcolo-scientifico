@@ -22,7 +22,7 @@ Given a functional space $V$, a linear functional is a map $L: V \to \mathbb{R}$
 A bilinear functional is a map $B: V \times V \to \mathbb{R}$ that is linear in each argument.
 
 ### Boundedness and Continuity
-A functional $L$ is bounded if there exists a constant $C$ such that $|L(u)| \leq C |u|$ for all $u \in V$. If $V$ is a Banach space (normed and complete), then a linear bounded functional is also continuous.
+A functional $L$ is bounded if there exists a constant $C$ such that $|L(u)| \leq C ||u||_V$ for all $u \in V$. If $V$ is a Banach space (normed and complete), then a linear bounded functional is also continuous.
 
 ### Dual Space
 The dual space $V^*=V'$ is the space of all bounded linear functionals on $V$.
@@ -31,7 +31,7 @@ $$V^*:=\lbrace F: V\to \mathbb R :\, F \text{ is linear and bounded}\rbrace.$$
 
 ### Norm
 The norm of a functional $L \in V^*$ is defined as 
-$|L| = \sup_{|u| \leq 1} |L(u)|=\sup_{|u| \neq 0} \frac{|L(u)|}{||u||_V}.$
+$||L||_{V^*} = \sup_{||u||_V \leq 1} |L(u)|=\sup_{||u||_V \neq 0} \frac{|L(u)|}{||u||_V}.$
 
 
 ---
@@ -49,9 +49,9 @@ $$L(u) = ( u, v_L )_H$$
 for all $u \in H$. Moreover, $||L||_{H^*} = ||u_L||_H$.
 Conversly, for every element $u\in H$ there exists  a linear and bounded functional $L_u$ such that 
 $$ 
-L_u(v) = (u,v)_H \text{ for every }v\in V.
+L_u(v) = (u,v)_H \text{ for every }v\in H.
 $$
-Moreover, $||L_u||_{H*} = ||u||_H$.
+Moreover, $||L_u||_{H^*} = ||u||_H$.
 
 Hence, there is a bijection between $H$ and $H^*$.
 
@@ -67,10 +67,10 @@ A form
   * $a(\lambda u + \mu w, v)  = \lambda a( u ,v) + \mu a( w, v)$ for every $\lambda, \mu \in \mathbb R$ and every $v,w,u\in V$, and
   * $a( u, \lambda v + \mu w)  = \lambda a( u ,v) + \mu a( u,w)$ for every $\lambda, \mu \in \mathbb R$ and every $v,w,u\in V$;
 * is continuous if  there exists an $M>0$ such that
-  $$ a(u,v) \leq M \lVert u \rVert_H \lVert v \rVert_H \text{ for every } v,w,u\in V;$$
+  $$ a(u,v) \leq M \lVert u \rVert_V \lVert v \rVert_V \text{ for every } v,u\in V;$$
 * is symmetric if $a(u,v)=a(v,u)$ for every $u,v\in V$;
 * is positive if $a(v,v)>0$ for all $v\in V$ with $v\neq 0$;
-* is coercive if there exists $\alpha>0$ such that $a(v,v)>\alpha \lVert v \rVert^2_H$ for all $v \in V$.
+* is coercive if there exists $\alpha>0$ such that $a(v,v)>\alpha \lVert v \rVert^2_V$ for all $v \in V$.
 
 
 ---
