@@ -13,13 +13,15 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |05/03/25| Git(hub), classification of PDEs, first order linear PDEs | [Notes](/notes/2025-03-05-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/B8mK9GE1y7OWn07MSM1bG3LR0CdWHZp1OKMFdwhGA_FQWazDJ98nTmu8_4j_8AZR.MaeBgymjPvdYAn4p) | @yS99f5?  |
 |07/03/25| Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem | See above | [Recording](https://uniroma1.zoom.us/rec/share/V1QsGNhGOs8xEEkGwM1zZOkbnCmTuY1NqT0c0BzzmfgomVoalHdSInrYf6OSa2Fe.fF29fSuGal0-0p7b) | 0dVxr?=1 |
 |12/03/25| Cauchy-Kovaleskaya, well posedness, functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions | [Notes](/notes/2025-03-12-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/KkH1iq-jbC0A84taTi8mQmlF0M3i31Gk89DuICp_s0xoKww4dX3t-2z1K3I4Zy7t.C9IO5X_oAOOljgMl) | K5qS7kN$ |
+|14/03/25| Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic | see above + [Notes](/notes/2025-03-14-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/OoNx3jtTMxpiioszG5WWvpxlmoQt0axtHmhZAHXLxFludzp3AWRYt192b4cUqjla.WNQQD4Xzwfr2Rhb6?startTime=1741964887000) | jmSn@^S3 |
 
 ## Next Lessons Schedule
-* 14/03/25 16:00-18:00 Friday Aula L
 * 19/03/25 15:00-17:00 Wednesday Aula Picone
 * 21/03/25 16:00-18:00 Friday Aula Levi-Civita
 * 26/03/25 16:30-18:00 Wednesday Aula Picone
 * 28/03/25 16:00-18:00 Friday Aula Levi-Civita
+* 02/04/25 15:00-17:00 Wednesday Aula Picone
+* 04/04/25 16:00-18:00 Friday Aula Levi-Civita
 
 
 ## Slides

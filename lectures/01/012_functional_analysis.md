@@ -157,7 +157,7 @@ Let us build the sequence of functions in $L^2(\mathbb R)$ $f_n(x) := \frac{n}2 
 <style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
 
 ## Derivation in distributional sense
-Let $T\in\mathcal{D}^*(\Omega)$, with $\Omega\subset \mathbb R^d$. We can define the derivative of $T$ using the integration by parts.
+Let $T\in\mathcal{D}^*(\Omega)$, with $\Omega\subset \mathbb R^d$ open. We can define the derivative of $T$ using the integration by parts.
 
 $$
 \partial_{x_i} T (\varphi) = \langle \partial_{x_i} T , \varphi \rangle:= -\langle T, \partial_{x_i}\varphi \rangle,\qquad \forall \varphi\in \mathcal{D}(\Omega)= C^{\infty}_c(\Omega).
