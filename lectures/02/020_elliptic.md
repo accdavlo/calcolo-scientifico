@@ -3,7 +3,7 @@ marp: true
 math: mathjax
 ---
 <!--
-title: Lecture 013 Elliptic
+title: Lecture 020 Elliptic
 paginate: true
 _class: titlepage
 -->
@@ -384,3 +384,19 @@ $$
 $$
 
 ### Exercise: Proof
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Summary: Poisson on Hilbert spaces!
+If we can write the Poisson problem in the form
+$$
+a(u,v)=F(v) \;\forall v\in V, \text{ with }a(u,v) = \int_{\Omega} \mu \nabla {u} \cdot \nabla v \,\textrm{d}x +\int_{\Omega}  \sigma \, u \,  v \,\textrm{d}x,
+$$
+and we look for a solution $u\in V$ with $V$ a Hilbert space, then we can use the Lax-Milgram Lemma to prove existence and uniqueness of the solution.
+
+* continuity $a(u,v)\leq \max(\mu,\sigma) \lVert u \rVert_1\lVert v \rVert_1$
+* coercivity $a(u,u)\geq \min(\mu,\sigma) \lVert u \rVert_1^2$ or $a(u,u)\geq \mu C(\Omega) \lVert u \rVert_1^2$ (if $\sigma=0$ and Dirichlet BC, we use Poincarè inequality)
+* $F(v)=\int_{\Omega} fv\, \textrm{d}x$ is a bounded linear functional if $f\in L^2(\Omega)$.  

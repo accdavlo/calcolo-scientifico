@@ -471,3 +471,23 @@ $$
 e_i = u(x_i) - u_i = v_i - \underbrace{\phi(x_i)}_{\geq 0} \leq v_i \leq \frac{M}{8}(b-a)^2  \leq \frac{h^2}{24}(b-a)^2 \max_{\xi \in [a,b]} \lvert u^{(4)}(\xi)\rvert.
 $$
 Do the same with $v_i = -e_i + \phi(x_i)$ to get the other inequality.
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# LET'S CODE!!! (Finally)
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Finite difference for the 2D Poisson problem
+
+$$
+-(\partial_{xx}u+\partial_{yy}u) = f(x,y) \qquad \text{on } \Omega = [a,b]\times [c,d]
+$$
+with some BCs.
+
+
