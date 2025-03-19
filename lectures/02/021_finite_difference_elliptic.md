@@ -243,6 +243,7 @@ $$
 And then you can match the coefficients to get the best approximation of the derivative. This leads to a linear systems in $a_{-p},\dots,a_q$.
 
 [Solutions in Wikipedia](https://en.wikipedia.org/wiki/Finite_difference_coefficient)
+[Tool to compute the optimal FD](https://web.media.mit.edu/~crtaylor/calculator)
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
@@ -471,6 +472,21 @@ $$
 e_i = u(x_i) - u_i = v_i - \underbrace{\phi(x_i)}_{\geq 0} \leq v_i \leq \frac{M}{8}(b-a)^2  \leq \frac{h^2}{24}(b-a)^2 \max_{\xi \in [a,b]} \lvert u^{(4)}(\xi)\rvert.
 $$
 Do the same with $v_i = -e_i + \phi(x_i)$ to get the other inequality.
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+### Existence and uniqueness of the solution?
+Let's just focus on the matrix $A$ given by the 1D Poisson problem with Dirichlet BCs (or mixed Dirichlet-Neumann). 
+We can see that the matrix (excluding the Dirichlet BC) is 
+* symmetric 
+* diagonally dominant
+* diagonal is positive
+* hence, it is positive definite ($\Longrightarrow$ coercive!)
+* This implies that the matrix is invertible and the solution exists and is unique.
+
 
 
 
