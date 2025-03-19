@@ -502,8 +502,70 @@ We can see that the matrix (excluding the Dirichlet BC) is
 ## Finite difference for the 2D Poisson problem
 
 $$
--(\partial_{xx}u+\partial_{yy}u) = f(x,y) \qquad \text{on } \Omega = [a,b]\times [c,d]
+-\Delta u = -(\partial_{xx}u+\partial_{yy}u) = f(x,y) \qquad \text{on } \Omega = [a,b]\times [c,d]
 $$
 with some BCs.
 
+We discretize on a grid 
+$$
+x_0=a<x_1<\dots<x_i<\dots<x_{N-1}=b, \qquad y_0=c<y_1<\dots<y_j<\dots<y_{M-1}=d
+$$
+with $x_{i+1}-x_i=\Delta x$ and $y_{j+1}-y_j=\Delta y$.
 
+We look for an approximation of the solution in the grid points $u_{i,j}\approx u(x_i,y_j)$.
+
+Then we use what we know from before
+$$
+\Delta u = \partial_{xx}u+\partial_{yy}u \approx \left((\delta^x_h)^2+(\delta^y_h)^2\right) u(x,y) = \frac{u_{i+1,j} - 2u_{i,j} + u_{i-1,j}}{\Delta x^2} + \frac{u_{i,j+1} - 2u_{i,j} + u_{i,j-1}}{\Delta y^2} = -f(x_i,y_j).
+$$
+If $\Delta x = \Delta y$ this simplifies to
+$$
+u_{i+1,j} + u_{i,j+1} - 4u_{i,j} + u_{i-1,j} + u_{i,j-1} = \Delta x^2 f(x_i,y_j).
+$$
+
+Truncation error = sum of the truncation errors of the two derivatives, i.e., $O(\Delta x^2)+O(\Delta y^2)$.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## How to setup a linear system???
+
+We would like to have a vector $U$ of all $u_{i,j}$ for $i=0,\dots,N-1$, $j=0,\dots,M-1$ and a matrix $A$ such that $AU=F$.
+
+We have to choose an order for the $u_{i,j}$, e.g.
+$$
+U_{\alpha} := u_{i,j} \qquad \text{for } \alpha = iM + j.
+$$
+
+Then, we will have that given an $\alpha=iM+j$ the entries of the matrix $A$ that are not zero are
+* $A_{\alpha,\alpha} = \frac{2}{\Delta x^2}+\frac{2}{\Delta y^2}$
+* $A_{\alpha,\beta} = -\frac{1}{\Delta y^2}$ with $\beta = iM+j+1$
+* $A_{\alpha,\gamma} = -\frac{1}{\Delta y^2}$ with $\gamma = iM+j-1$
+* $A_{\alpha,\delta} = -\frac{1}{\Delta x^2}$ with $\delta = (i+1)M+j$
+* $A_{\alpha,\epsilon} = -\frac{1}{\Delta x^2}$ with $\epsilon = (i-1)M+j$
+
+  $A$ is penta-diagonal!
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Accuracy
+As for the 1D case one can show that the error of the truncation error is $O(\Delta x^2)+O(\Delta y^2)$, and then that the error of the solution is also $O(\Delta x^2)+O(\Delta y^2)$.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# LET'S CODE!
+
+## Extra exercise
+Generalize the 2D code for solving linear elliptic problems of the type
+$$
+a(x,y)u_{xx} + b(x,y)u_{xy} + c(x,y)u_{yy} = f(x,y).
+$$
+To discretize $\partial_{xy}$ you can use the central difference in $x$ and $y$:
+$$
+\partial_{xy} u (x,y) \approx \frac{u(x+h,y+h) - u(x+h,y-h) - u(x-h,y+h) + u(x-h,y-h)}{4\Delta x \Delta y}.
+$$
