@@ -15,6 +15,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |12/03/25| Cauchy-Kovaleskaya, well posedness, functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions | [Notes](/notes/2025-03-12-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/KkH1iq-jbC0A84taTi8mQmlF0M3i31Gk89DuICp_s0xoKww4dX3t-2z1K3I4Zy7t.C9IO5X_oAOOljgMl) | K5qS7kN$ |
 |14/03/25| Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic | see above + [Notes](/notes/2025-03-14-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/OoNx3jtTMxpiioszG5WWvpxlmoQt0axtHmhZAHXLxFludzp3AWRYt192b4cUqjla.WNQQD4Xzwfr2Rhb6?startTime=1741964887000) | jmSn@^S3 |
 |19/03/25| Weak formulation of elliptic problems, Lax-Milgram | see above | [Recording](https://uniroma1.zoom.us/rec/share/o-KLh9lOswjPZDEBKSaWz71Cca_GyruHQWIgP3ex3LnjxowbkxAhRBO-sPS5s3H_.t0UI9wabNkHcjS4i?startTime=1742393360000) | qFa1JY#?|
+|21/03/25| Divided differences, finite differences for 1D poisson, error analysis | [Notes](/notes/2025-03-21-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/R01Hf0RGgta-VNnA98gIT9JpzzgmrNBOTa28z5gOXVzavFD_xnRbDuwsplkXhPcs.9Pz4pHEk6kIwiHC5) | 1F!2aTmu|
 ## Next Lessons Schedule
 * 21/03/25 16:00-18:00 Friday Aula Levi-Civita
 * 26/03/25 16:30-18:00 Wednesday Aula Picone
@@ -22,6 +23,10 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 * 02/04/25 15:00-17:00 Wednesday Aula Picone
 * 04/04/25 16:00-18:00 Friday Aula Levi-Civita
 
+## Notebooks
+| Date | Topic | Notebook | Solutions | 
+|:-----|:------|:---------|:-----------|
+|21/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
 
 ## Slides
 
@@ -32,7 +37,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
     1. Introduction to functional analysis [PDF](lectures/01/012_functional_analysis.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/012_functional_analysis.html) [md](lectures/01/012_functional_analysis.md)
 2. Elliptic problems
     1. Elliptic problems [PDF](lectures/02/020_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/020_elliptic.html) [md](lectures/02/020_elliptic.md)
-    1. Finite differences for elliptic problems
+    1. Finite differences for elliptic problems [PDF](lectures/02/021_finite_difference_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/021_finite_difference_elliptic.html) [md](lectures/02/021_finite_difference_elliptic.md)
     1. Finite elements for elliptic problems
     1. Reduced order methods for elliptic problems
 3. Parabolic problems
