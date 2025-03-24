@@ -250,6 +250,7 @@ Choices to have simple life and sparse $A$:
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## $X^1_h$
+![bg right:45% 100%](img/approx_function_N_3_degree_1.png)
 
 Piece-wise linear functions! 
 How many degrees of freedom do we have? For every cell $K_j$ with $j=1,\dots,N$ there are two coefficients to choose (to define a line): $2N$ possibilities, in every vertex $x_j$ for $j=1,\dots,N-1$ we have to impose continuity: $N-1$ constraints. Total $N+1$ degrees of freedom.
@@ -260,3 +261,38 @@ A line can be defined through two points values, if we choose exactly the values
 * exactly $N+1$ degrees of freedom
 * lines in each cell
 * continuity.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+![bg right:45% 95%](img/basis_functions_N_3_degree_1.png)
+
+## Lagrangian basis functions for each cell
+
+So, we take $\varphi_i\in X^1_h$ such that
+$$
+\varphi_i(x_i) = \delta_{ij}, \qquad \forall i,j =0,\dots, N.
+$$
+
+More specifically,
+$$
+\begin{align*}
+&\varphi_i(x)  = \begin{cases}
+    \frac{x-x_{i-1}}{x_i-x_{i-1}} &\text{ if } x_{i-1}\leq x<x_{i},\\
+    \frac{x_{i+1}-x}{x_{i+1}-x_{i}} &\text{ if } x_{i}\leq x<x_{i+1},\\
+    0 &\text{ else.}
+\end{cases}\\
+&\text{supp}(\varphi_i) = (x_{i-1},x_{i+1})\\
+&a_{ij} \neq 0 \Longleftrightarrow  j \in \lbrace i-1, i , i+1 \rbrace.
+\end{align*}
+$$
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+
+## Reference element
+It is useful to define every basis function onto a reference element $[0,1]$ and then transform the basis functions onto the physical element $[x_{i-1},x_i]$.
