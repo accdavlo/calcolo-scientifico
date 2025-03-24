@@ -80,7 +80,183 @@ $$
 ## $A$ is positive definite
 $A$ associated to the elliptic problem $a(u,v)=F(v)\, \forall v\in V$ where $a(\cdot,\cdot)$ is bilinear and coercive, then $A$ is positive definite.
 ### Proof
-Recall that $B$ is positive definite if $\mathbf{v}^\top B \mathbf{v} \geq 0 \forall \mathbf{v} \in \mathbb R^n$ and $\mathbf{v}^\top B \mathbf{v}=0 \Leftrightarrow \mathbf{v}=0.$
+Recall that $B$ is positive definite if $\mathbf{v}^\top B \mathbf{v} \geq 0 \quad \forall \mathbf{v} \in \mathbb R^n$ and $\mathbf{v}^\top B \mathbf{v}=0 \Leftrightarrow \mathbf{v}=0.$
+The map 
+$$\mathbf{v} = (v_i)\in \mathbb R^{N_h} \leftrightarrow v_h(x)=\sum_{j=1}^{N_h} v_j\varphi_j(x) \in V_h
+$$
+is  a bijection between $\mathbb R^{N_h}$ and $V_h$. For any vector $\mathbf v\in \mathbb R^{N_h}$ we have 
+$$
+\begin{align*}
+\mathbf{v}^\top A \mathbf{v} &= \sum_{j=1}^{N_h} \sum_{i=1}^{N_h} v_ia_{ij}v_j = \sum_{j=1}^{N_h} \sum_{i=1}^{N_h} v_ia(\varphi_j,\varphi_i)v_j \\
+& =  a\left(\sum_{j=1}^{N_h} v_j \varphi_j,\sum_{i=1}^{N_h}v_i\varphi_i\right)= a(v_h,v_h) \geq \alpha \lVert v_h \rVert_V^2 \geq 0.
+\end{align*}
+$$
+Moreover, if $\mathbf{v}^\top A \mathbf{v} =0$ then $\lVert v_h\rVert_V=0$, i.e. $v_h=0$ and $\mathbf{v}=\mathbf{0}$.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Exercise
+$A$ is symmetric if and only if $a$ is symmetric.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Analysis of Galerkin method
+
+* Existence and uniqueness of a discrete solution $u_h$;
+* Stability of the discrete solution $u_h$;
+* Convergence of $u_h$ towards the exact solution $u$ for $h\to 0$.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Existence and uniqueness
+
+Lax-Milgram lemma holds for any Hilbert space, so, also for $V_h$!!!
+
+Moreover, $a(\cdot,\cdot)$ and $F(\cdot)$ are the same of the weak formulation.
+
+## Corollary 
+There exists one unique solution $u_h\in V_h$ of the Galerkin problem $a(u_h,v_h)=F(v_h)\quad \forall v_h\in V_h.$
+
+## Alternative proof (as for FD)
+$A$ is positive definite, so invertible.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Stability
+
+Following the Corollary of Lax-Milgram, we can say for the Galerkin method that
+
+### Corollary
+Galkerin method is stable uniformly with respect to $h$ since it holds 
+$$
+\lVert u_h \rVert_V \leq \frac{1}{\alpha} \lVert F \rVert_{V^*}.
+$$
+Indeed,
+$$
+\lVert u_h \rVert^2_V = \lVert u_h \rVert^2_{V_h}\leq \frac{1}{\alpha}  a(u_h,u_h) = F(u_h) \leq \lVert F \rVert_{V^*} \, \lVert u_h \rVert_V.
 $$
 
+## Continuity on data
+Let $u_h$ be the solution for the Galerkin problem with $F$ rhs and let $w_h$ be the solution of the Galerkin problem with $G$ rhs, then
 $$
+\lVert u_h -w_h \rVert_V \leq \frac{1}{\alpha} \lVert F-G \rVert_{V^*}.
+$$
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+![bg right:29% 90%](img/orthogonality.png)
+
+## Convergence (1/n)
+Goal: check that $u_h\to u$ for $h\to 0$ in $V$.
+
+### Galerkin Orthogonality 
+$$
+a(u-u_h, v_h)=0\qquad \forall v_h \in V_h.
+$$
+#### Proof
+$$
+a(u,v_h) = F(v_h) = a(u_h,v_h), \qquad \forall v_h \in V_h\subset V
+$$
+and bilinearity.
+
+
+### Why orthogonality?
+$a(\cdot,\cdot)$ is a scalar product in $V$ if it's symmetric (since it's coercive). The associated norm is called **energy norm** and it is defined as 
+$$
+\lVert v_h\rVert_a = \sqrt{a(v_h,v_h)}.
+$$
+
+So, $u_h$ is the orthogonal projection of $u$ onto $V_h$ with the scalar product $a(\cdot, \cdot).$
+In particular, $u_h$ is the minimizer of the error in energy norm 
+$$u_h  = \arg\min_{v_h\in V_h} \lVert v_h - u \rVert_a.$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Convergence (2/n) (Céa's Lemma)
+
+Let $v_h\in V_h$, compute
+$$
+a(u-u_h,u-u_h) = a(u-u_h,u-v_h)+\underbrace{a(u-u_h,v_h-u_h)}_{=0 \text{ since }v_h-u_h\in V_h}
+$$
+Moreover, using the continuity constant $C$ of $a(\cdot, \cdot)$, we have
+$$
+\lvert a(u-u_h,u-v_h) \rvert \leq C \lVert u-u_h \rVert_V \lVert u-v_h \rVert_V.
+$$
+On the other side, using the coercivity constant $\alpha$, we have that
+$$
+\lVert u-u_h \rVert_V^2 \leq \frac{1}{\alpha} a(u-u_h,u-u_h) \leq \frac{C}{\alpha} \lVert u-u_h \rVert_V \lVert u-v_h \rVert_V
+$$
+So,
+$$
+\lVert u-u_h \rVert_V \leq \frac{C}{\alpha} \lVert u-v_h \rVert_V \leq \frac{C}{\alpha} \inf_{v_h\in V_h} \lVert u-v_h \rVert_V.
+$$
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Convergence (3/3)
+$$
+\lVert u-u_h \rVert_V \leq \frac{C}{\alpha} \inf_{v_h\in V_h} \lVert u-v_h \rVert_V.
+$$
+Céa's lemma tells us that even if $u_h$ is not the best approximation for the $V$ norm in $V_h$, its error will decrease as the best approximation error will decrease.
+So we can just enlarge the space $V_h$, i.e., let $h\to 0$ so that the discrete space saturates the space $V$. i.e.,
+$$
+\lim_{h\to 0}\inf_{v_h\in V_h} \lVert v-v_h \rVert_V = 0 ,\qquad \forall v \in V.
+$$
+Then, we will have convergence of the Galerkin method also in the $\lVert \cdot \rVert_V$ norm!
+
+### Order of convergence
+$$
+\inf_{v_h\in V_h} \lVert v-v_h \rVert_V = O(h^p)\Longrightarrow \lVert u-u_h \rVert_V= O(h^p).
+$$
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# Finite element method (1 dimension)
+Take $\Omega=(a,b)$ and we want to approximate $H^1((a,b))$ with a space depending on a scale $h$. Consider a partition of $(a,b)$ called $\mathcal T_h$ composed of $N$ intervals $K_{j}:=(x_{j-1},x_j)$ with $j=1,\dots, N$ with size $h_{j} = x_j-x_{j-1}$ for $j=1,\dots, N$ with 
+$$
+a=x_0< x_1 < \dots <x_N=b
+$$
+and we set $h=\max_{j=1,\dots,N}h_{j}$.
+
+Motivational: Since $H^1((a,b))\subset C^0([a,b])$ (slide 16 of [lesson_012](/lectures/01/012_functional_analysis.md)), we can look for a continuous functions in $V_h$ (not really necessary).
+
+$$
+X^r_h = \left\lbrace v_h \in C^0(\bar{\Omega}) : v_h|_{K_j} \in \mathbb P^r(K_j)  \text{ for every } K_j \in \mathcal{T} \right\rbrace \subset H^1((a,b)).
+$$
+
+### Let's choose a basis
+$V_h = X_h^R = \left \langle  \varphi_1, \dots, \varphi_{N_h}\right \rangle$
+Choices to have simple life and sparse $A$:
+* Lagrangian
+* As local as possible
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## $X^1_h$
+
+Piece-wise linear functions! 
+How many degrees of freedom do we have? For every cell $K_j$ with $j=1,\dots,N$ there are two coefficients to choose (to define a line): $2N$ possibilities, in every vertex $x_j$ for $j=1,\dots,N-1$ we have to impose continuity: $N-1$ constraints. Total $N+1$ degrees of freedom.
+
+### Can we find a practical way to define such degrees of freedom?
+
+A line can be defined through two points values, if we choose exactly the values of the function in the points $x_j$ for $j=0,\dots,N$ then we have 
+* exactly $N+1$ degrees of freedom
+* lines in each cell
+* continuity.
