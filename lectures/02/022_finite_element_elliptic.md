@@ -161,11 +161,10 @@ Goal: check that $u_h\to u$ for $h\to 0$ in $V$.
 $$
 a(u-u_h, v_h)=0\qquad \forall v_h \in V_h.
 $$
-#### Proof
+**Proof** Bilinearity and 
 $$
-a(u,v_h) = F(v_h) = a(u_h,v_h), \qquad \forall v_h \in V_h\subset V
+a(u,v_h) = F(v_h) = a(u_h,v_h), \qquad \forall v_h \in V_h\subset V.
 $$
-and bilinearity.
 
 
 ### Why orthogonality?
@@ -173,8 +172,7 @@ $a(\cdot,\cdot)$ is a scalar product in $V$ if it's symmetric (since it's coerci
 $$
 \lVert v_h\rVert_a = \sqrt{a(v_h,v_h)}.
 $$
-
-So, $u_h$ is the orthogonal projection of $u$ onto $V_h$ with the scalar product $a(\cdot, \cdot).$
+$u_h$ is the orthogonal projection of $u$ onto $V_h$ with the scalar product $a(\cdot, \cdot).$
 In particular, $u_h$ is the minimizer of the error in energy norm 
 $$u_h  = \arg\min_{v_h\in V_h} \lVert v_h - u \rVert_a.$$
 
@@ -345,3 +343,179 @@ One can proceed with higher orders similarly. Using a reference element will hel
 For Lagrangian basis functions: careful with the choice of nodes inside the reference element! Equispaced might lead to Gibbs' phenomena!
 
 ![width:550px](img/basis_functions_N_3_degree_3.png) ![width:550px](img/basis_reference_degree_10.png)
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Discrete problem!
+![bg right:45% 95%](img/approx_function_N_6_degree_1.png)
+
+General Poisson-reaction problem
+$$
+\begin{cases}
+-u''+\sigma u = f, & x\in (a,b)\\
+u(a)= 0,\\
+u(b)=0.
+\end{cases} 
+$$
+The weak formulation reads: find $u\in H^1_0((a,b))$ such that
+$$
+\int_{a}^b u' v' \textrm{d}x + \int_{a}^b\sigma uv \textrm{d}x = \int_{a}^b fv \textrm{d} x \qquad \forall v \in H^1_0((a,b)).
+$$
+
+Discretely, choose $V_h:=\lbrace v_h \in X^1_h: v_h(a)=v(b)=0 \rbrace\subset H^1_0((a,b))$, so the discrete problem reads: find $u_h\in V_h$ such that
+$$
+\int_{a}^b u_h' v_h' \textrm{d}x + \int_{a}^b\sigma u_hv_h \textrm{d}x = \int_{a}^b fv_h \textrm{d} x \qquad \forall v_h \in V_h.
+$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Assemble the problem!
+We check for all basis functions $\varphi_i \in V_h$ instead of all $v_h\in V_h$ and we can expand $u_h(x)= \sum_{j=1}^{N_h} u_j \varphi_j(x)$, to obtain a system
+$$
+\sum_{j=1}^{N_h} \int_{a}^b u_j \varphi'_j(x) \varphi_i'(x) \textrm{d}x + \sum_{j=1}^{N_h}\int_{a}^b\sigma u_j \varphi_j(x) \varphi_i(x) \textrm{d}x = \int_{a}^b f \varphi_i(x) \textrm{d} x \qquad \forall i=1,\dots, N_h.
+$$
+
+So we get the linear system 
+$$
+A \mathbf{u} = \mathbf{f},
+$$
+with 
+$$
+A=[a_{ij}], \quad a_{ij} = \int_{a}^b \varphi'_j(x) \varphi_i'(x) \textrm{d}x + \int_{a}^b\sigma  \varphi_j(x) \varphi_i(x) \textrm{d}x,\qquad \mathbf{f} = [f_i], \, f_i=\int_{a}^b f \varphi_i(x) \textrm{d} x
+$$
+and $\mathbf{u}=[u_j]$ the unknown of our system.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Assemble the matrix!
+We have seen that $\text{supp}(\varphi_i) \subset [x_{i-1},x_{i+1}]$, so the integrals 
+$$
+a_{ij} = \int_{a}^b \varphi'_j(x) \varphi_i'(x) \textrm{d}x + \int_{a}^b\sigma  \varphi_j(x) \varphi_i(x) \textrm{d}x = 0\qquad \text{ for }|i-j|>1.
+$$
+So, we just need to compute the terms $a_{i,i-1}, a_{i,i}, a_{i,i+1}.$
+
+#### Example
+
+$$
+\begin{align*}
+a_{i,i-1} &= \int_{a}^b \varphi_i'\varphi_{i-1}' + \sigma \varphi_i\varphi_{i-1} \, \mathrm{d}x=
+\int_{x_{i-1}}^{x_i} \varphi_i'\varphi_{i-1}' + \sigma \varphi_i\varphi_{i-1} \, \mathrm{d}x\\
+a_{i,i} &= \int_{a}^b \varphi_i'\varphi_i' + \sigma \varphi_i\varphi_i \, \mathrm{d}x=
+\int_{x_{i-1}}^{x_i} \varphi_i'\varphi_i' + \sigma \varphi_i\varphi_i \, \mathrm{d}x+\int_{x_i}^{x_{i+1}} \varphi_i'\varphi_i' + \sigma \varphi_i\varphi_i \, \mathrm{d}x
+\end{align*}
+$$
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Focus on one integral
+Change of variables into the reference domain! (Recall $\xi=T^{-1}_{i}(x)=\frac{x-x_{i-1}}{x_i-x_{i-1}}$)
+$$
+\begin{align*}
+&\int_{x_{i-1}}^{x_i} \partial_x \varphi_i(x) \partial_x \varphi_{i-1}(x) + \sigma \varphi_i(x)\varphi_{i-1}(x) \, \mathrm{d}x \\
+=& \int_{0}^{1} \frac{\partial \xi}{\partial x} \partial_\xi \hat{\varphi}_1(\xi) \frac{\partial \xi}{\partial x} \partial_\xi \hat{\varphi}_0(\xi) + \sigma \hat\varphi_1(\xi)\hat\varphi_0(\xi) \frac{d T_i(\xi)}{d \xi} \mathrm{d}\xi\\
+=&\frac{1}{h_i}\int_{0}^{1} \partial_\xi \hat{\varphi}_1(\xi)  \partial_\xi \hat{\varphi}_0(\xi) \textrm{d}\xi + h_i \int_{0}^{1}  \sigma \hat\varphi_1(\xi)\hat\varphi_0(\xi)  \mathrm{d}\xi
+\end{align*}
+$$
+with $h_i=(x_i-x_{i-1})$.
+
+If coefficients are constant, the integrals can be computed just for the reference element and then be multiplied by coefficients when assembling the bigger matrix!
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Matrix structure for high order $X_h^r$
+
+First of all, let's reorder the DoFs indexes: $K_i=[x_{i-1},x-i]$, and we put inside some points that on the reference element we denote by $0=\hat{y}_0<\hat{y}_1<\dots <\hat{y}_r=1$
+$$
+y_\alpha = y_{(i,s)} = x_{i-1}+ (x_{i}-x_{i-1}) \hat{y}_s \qquad \text{for }i=1,\dots,N,\, s=0,\dots,r,
+$$
+with the equivalence $y_{(i,0)}=y_{(i-1,r)}$.
+So, we can map with a bijection the indexes $(i,s)\leftrightarrow \alpha=(i-1)\cdot r +s$ for $\alpha = 0,\dots,rN$.
+
+### Draw a matrix example!
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Error estimation (1/2)
+Goal: move from error of Galerkin approximation to interpolation error.
+### Interpolation error
+For a function $v\in C^0((a,b))$, take the interpolant of $v$ in $X^r_h$ as
+$$
+\Pi^r_h v (x_i) = v(x_i) ,\quad \forall i=0,\dots, N_h.
+$$
+
+
+### Theorem (see Quarteroni for proof)
+Let $v\in H^{r+1}((a,b))$ for $r\geq 1$ and let $\Pi^r_hv \in X^r_h$ its interpolant. It holds that
+$$
+|v-\Pi^r_hv|_{H^k((a,b))} \leq C_{k,r} h^{r+1-k} \lvert v\rvert_{H^{r+1}((a,b))}, \qquad \text{ for }k=0,1.
+$$
+The constants $C_{k,r}$ are independent of $v$ and $h$.
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Error estimation (2/2)
+Let $u\in V$ be the exact solution of the variational problem and $u_h$ its Finite Element approximation with polynomials of degree $r$, with $u_h\in V_h=V\cap X^r_h$. Let $u\in H^{p+1}((a,b))$ for a $p\geq r$. Then, it holds
+
+$$
+\lVert u-u_h \rVert_V \leq \frac{M}{\alpha} C h^r \lvert u \rvert_{H^{r+1}((a,b))}
+$$
+with $C$ independent of $u$ and $h$.
+
+#### Proof
+It's trivial from the previous result and Céa's Lemma, i.e.,
+$$
+\lVert u-u_h \rVert_V \leq \frac{M}{\alpha} \inf_{v\in V_h} \lVert u-v_h \rVert_V .
+$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Boundary conditions
+### Dirichlet
+As for finite differences, we can simply exclude the Dirichlet boundary DoFs from the system and solve for these DoFs the equation $u_0=u(a)$ or $u_{N_h} = u(b)$ by setting
+$$
+a_{11}= 1,\qquad f_1=u(a),\qquad \text{ or } a_{N_hN_h}=1, \quad f_{N_h}=u(b).
+$$
+
+### Neumann
+Recall the weak formulation for Neumann, for example for $u'(a)=g$ and $u(b)=\beta$, for all $\varphi_i$ for $i =1,\dots,N_h-1$
+$$
+\int_a^b f\varphi_i \mathrm{d}x =\int_a^b -u''\varphi_i \mathrm{d}x =\int_a^b u'\varphi_i' \mathrm{d}x - [u'\varphi_i]_a^b  = \int_a^b u'\varphi_i' \mathrm{d}x + u'(a)\varphi_i(a)  
+$$
+The only nonzero Neumann term is the one for $\varphi_0(a)=1$. So,
+$$
+\int_a^b u'\varphi_0' \mathrm{d}x    = \int_a^b f\varphi_0 \mathrm{d}x -g
+$$
+for the equation $i=0$ we change only the right hand side adding the Neumann contribution.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# CODE IT!
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+
+## 2D Finite Elements

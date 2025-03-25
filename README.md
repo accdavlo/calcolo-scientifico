@@ -16,6 +16,24 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |14/03/25| Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic | see above + [Notes](/notes/2025-03-14-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/OoNx3jtTMxpiioszG5WWvpxlmoQt0axtHmhZAHXLxFludzp3AWRYt192b4cUqjla.WNQQD4Xzwfr2Rhb6?startTime=1741964887000) | jmSn@^S3 |
 |19/03/25| Weak formulation of elliptic problems, Lax-Milgram | see above | [Recording](https://uniroma1.zoom.us/rec/share/o-KLh9lOswjPZDEBKSaWz71Cca_GyruHQWIgP3ex3LnjxowbkxAhRBO-sPS5s3H_.t0UI9wabNkHcjS4i?startTime=1742393360000) | qFa1JY#?|
 |21/03/25| Divided differences, finite differences for 1D poisson, error analysis | [Notes](/notes/2025-03-21-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/R01Hf0RGgta-VNnA98gIT9JpzzgmrNBOTa28z5gOXVzavFD_xnRbDuwsplkXhPcs.9Pz4pHEk6kIwiHC5) | 1F!2aTmu|
+|26/03/25| Coding finite difference 1D/2D for Poisson |  |  | |
+|28/03/25| Finite Element in 1D for Poisson |  |  | |
+|02/04/25| Coding Finite Element 1D for Poisson |  |  | |
+|04/04/25| Finite element for multi-D |  |  | |
+|09/04/25| Coding finite element 2D for Poisson with FEniCS |  |  | |
+|11/04/25| Model order reduction |  |  | |
+|16/04/25| Parabolic equations   |  |  | |
+|23/04/25| FEM for Parabolic equations  |  |  | |
+|30/04/25| Coding parabolic equations |  |  | |
+|02/05/25| Advection equation |  |  | |
+|07/05/25| FD for advection equation (and failure FEM) |  |  | |
+|09/05/25| Scalar hyperbolic conservation laws |  |  | |
+|14/05/25| Scalar hyperbolic conservation laws  |  |  | |
+|16/05/25| Coding FD for advection and nonlinear laws |  |  | |
+|21/05/25| Systems of conservation laws (Euler) |  |  | |
+|22/05/25| PINN |  |  | |
+
+
 ## Next Lessons Schedule
 * 21/03/25 16:00-18:00 Friday Aula Levi-Civita
 * 26/03/25 16:30-18:00 Wednesday Aula Picone
