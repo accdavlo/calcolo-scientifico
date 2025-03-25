@@ -296,3 +296,52 @@ $$
 
 ## Reference element
 It is useful to define every basis function onto a reference element $[0,1]$ and then transform the basis functions onto the physical element $[x_{i-1},x_i]$.
+We use a linear transformations $T_{i+1}:[0,1]\to [x_{i},x_{i+1}]$ defined as 
+$$
+x= T_{i+1}(\xi) = x_{i}+\xi(x_{i+1}-x_i), \qquad \xi = T_{i+1}^{-1}(x)=\frac{x-x_i}{x_{i+1}-x_i}.
+$$
+So the two basis functions in the reference element can be defined as 
+$$
+\hat{\varphi}_0(\xi) = 1-\xi,\qquad \hat{\varphi}_1(\xi) =\xi,
+$$
+this means that
+$$
+\varphi_i(x) = \hat\varphi_0(T_{i+1}^{-1}(\xi)) = \hat\varphi_0\left(\frac{x-x_i}{x_{i+1}-x_i} \right) ,\qquad \varphi_{i+1}(x) = \hat\varphi_1(T_{i+1}^{-1}(\xi)) =\hat\varphi_1\left(\frac{x-x_i}{x_{i+1}-x_i} \right).
+$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+![bg right:45% 95%](img/basis_reference_degree_2.png)
+## $X^2_h$
+
+Let's work on the reference element.
+
+Consider 3 equispaced points $\lbrace 0,\frac12, 1 \rbrace\subset [0,1]$ and the corresponding Lagrangian basis functions
+$$
+\begin{align*}
+    &\hat\varphi_0(\xi) = 2(\xi-\frac12)(\xi-1),\qquad \\
+    &\hat{\varphi}_{1}(\xi) = 4\xi(1-\xi),\qquad \\
+    &\hat{\varphi}_2(\xi) = 2\xi(\xi-\frac12).
+\end{align*}
+$$
+Alternatively, something gerarchical 
+$$
+\begin{align*}
+    &\hat\varphi_0(\xi) = 1-\xi,\qquad \\
+    &\hat{\varphi}_{1}(\xi) = \xi,\qquad \\
+    &\hat{\varphi}_2(\xi) = \xi(1-\xi).
+\end{align*}
+$$
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## $X^r_h$
+
+One can proceed with higher orders similarly. Using a reference element will help the construction.
+
+For Lagrangian basis functions: careful with the choice of nodes inside the reference element! Equispaced might lead to Gibbs' phenomena!
+
+![width:550px](img/basis_functions_N_3_degree_3.png) ![width:550px](img/basis_reference_degree_10.png)
