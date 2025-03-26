@@ -519,3 +519,34 @@ for the equation $i=0$ we change only the right hand side adding the Neumann con
 
 
 ## 2D Finite Elements
+
+1. Discretize geometry
+1. Define a reference element
+1. Define structures on reference element
+1. Assemble global matrices
+1. Solve linear system
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+![bg right:35% 95%](img/circle_mesh.png)
+
+## Discretize the geometry 
+
+1. Approximation of the shape (the circle is not anymore a circle)
+1. $\Omega\subset \mathbb R^{d=2}$ approximated with $\Omega_h=\text{int} \left(\cup_{K\in \mathcal{T}_h} K\right)$
+1. $h=\max_{K\in \mathcal{T}_h} \text{diam}(K)$ where $\text{diam}(K)= \max_{x,y \in K} \lVert x-y \rVert$
+1. Choice on the shape of the 2D basic elements $K$
+    1. Quadrilaterals are easy to deal with, but are not as flexible as 
+    1. Triangles/tetrahedrons are simpler to build given a geometry, simple also to use as fundamental object
+    1. Exahedron ...
+    1. Polyhedron ...
+1. Regularity of the elements, $\rho_K$ is the diameter of the circle/sphere inscribed in the triangle/tetrahedron etc.
+  $\frac{h_K}{\rho_K}\leq \delta , \quad \forall K \in \mathcal{T}_h,\, \forall h>0.$
+1. There are some algorithms to create a mesh, we do not go into details, e.g. Delaunay.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Reference element = Triangle!
