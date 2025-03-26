@@ -78,6 +78,15 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
     1. FEM discretization
 1. PINN
 
+## Projects ideas
+1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
+1. Reduced basis for elastic block [Problem from this RBniCS test](https://colab.research.google.com/github/RBniCS/RBniCS/blob/open-in-colab/tutorials/02_elastic_block/tutorial_elastic_block.ipynb)
+1. SUPG for advection-diffusion time dependent problem (1D or 2D with FEniCS), with energy stability analysis
+1. Von Neumann stability analysis for a Finite Difference discretization of the wave equation
+1. Wave equations with compatible Finite Difference discretization
+1. 2D Euler equations solved on a Cartesian grid for a DMR test
+1. High order FD discretization of Burgers' equations in 1D with WENO.
+
 ## Literature
 * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016. [Intro alle PDE, Metodi agli elementi finiti, Metodi alle differenze finite, Riduzione del Modello]
 * Evans, Lawrence C. Partial differential equations. Vol. 19. American Mathematical Society, 2010. [Introduzione alle PDE]
