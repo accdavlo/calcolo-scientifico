@@ -16,22 +16,22 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |14/03/25| Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic | see above + [Notes](/notes/2025-03-14-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/OoNx3jtTMxpiioszG5WWvpxlmoQt0axtHmhZAHXLxFludzp3AWRYt192b4cUqjla.WNQQD4Xzwfr2Rhb6?startTime=1741964887000) | jmSn@^S3 |
 |19/03/25| Weak formulation of elliptic problems, Lax-Milgram | see above | [Recording](https://uniroma1.zoom.us/rec/share/o-KLh9lOswjPZDEBKSaWz71Cca_GyruHQWIgP3ex3LnjxowbkxAhRBO-sPS5s3H_.t0UI9wabNkHcjS4i?startTime=1742393360000) | qFa1JY#?|
 |21/03/25| Divided differences, finite differences for 1D poisson, error analysis | [Notes](/notes/2025-03-21-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/R01Hf0RGgta-VNnA98gIT9JpzzgmrNBOTa28z5gOXVzavFD_xnRbDuwsplkXhPcs.9Pz4pHEk6kIwiHC5) | 1F!2aTmu|
-|26/03/25| Coding finite difference 1D/2D for Poisson |  |  | |
-|28/03/25| Finite Element in 1D for Poisson |  |  | |
-|02/04/25| Coding Finite Element 1D for Poisson |  |  | |
-|04/04/25| Finite element for multi-D |  |  | |
-|09/04/25| Coding finite element 2D for Poisson with FEniCS |  |  | |
-|11/04/25| Model order reduction |  |  | |
-|16/04/25| Parabolic equations   |  |  | |
-|23/04/25| FEM for Parabolic equations  |  |  | |
-|30/04/25| Coding parabolic equations |  |  | |
-|02/05/25| Advection equation |  |  | |
-|07/05/25| FD for advection equation (and failure FEM) |  |  | |
-|09/05/25| Scalar hyperbolic conservation laws |  |  | |
-|14/05/25| Scalar hyperbolic conservation laws  |  |  | |
-|16/05/25| Coding FD for advection and nonlinear laws |  |  | |
-|21/05/25| Systems of conservation laws (Euler) |  |  | |
-|22/05/25| PINN |  |  | |
+|26/03/25| Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)  | - |[Recording](https://uniroma1.zoom.us/rec/share/0Afa5_QZtmly64ZkE9PTudBw-6Jo3VUIeK6M9bT38qnwIOBvi1fuufZxYpF68DmD.2f3XIZGPyycxY4jS?startTime=1743002792000) | Wu@DF8k3 |
+|28/03/25| Coding finite difference 2D for Poisson | Notebook, see above  |  | |
+|02/04/25| Finite Element in 1D for Poisson |  |  | |
+|04/04/25| Coding Finite Element 1D for Poisson |  |  | |
+|09/04/25| Finite element for multi-D |  |  | |
+|11/04/25| Coding finite element 2D for Poisson with FEniCS |  |  | |
+|16/04/25| Model order reduction |  |  | |
+|23/04/25| Advection equation |  |  | |
+|30/04/25| FD for advection equation (and failure FEM) |  |  | |
+|02/05/25| Scalar hyperbolic conservation laws |  |  | |
+|07/05/25| Scalar hyperbolic conservation laws  |  |  | |
+|09/05/25| Coding FD for advection and nonlinear laws |  |  | |
+|14/05/25| Systems of conservation laws (Euler) |  |  | |
+|16/05/25| PINN |  |  | |
+|21/05/25| Parabolic equations? /Saddle point problems? | | | |
+|23/05/25| Finite element for parabolic equations | | | |
 
 
 ## Next Lessons Schedule
@@ -44,7 +44,11 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 ## Notebooks
 | Date | Topic | Notebook | Solutions | 
 |:-----|:------|:---------|:-----------|
-|21/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
+|26-28/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
+|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)|
+|11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |-|
+|16/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
+
 
 ## Slides
 
@@ -58,17 +62,21 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
     1. Finite differences for elliptic problems [PDF](lectures/02/021_finite_difference_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/021_finite_difference_elliptic.html) [md](lectures/02/021_finite_difference_elliptic.md)
     1. Finite elements for elliptic problems
     1. Reduced order methods for elliptic problems
-3. Parabolic problems
+1. Advection equation
+    1. Advection problems
+    1. Finite differences for advection problems
+    1. Upwinding Finite differences
+1. Hyperbolic systems
+    1. Nonlinear conservation laws
+    1. Systems (Euler)
+3. Parabolic problems ?
     1. Parabolic problems
     1. Finite differences for parabolic problems
     1. Finite elements for parabolic problems
-1. Advection-diffusion example
-    1. Advection-diffusion problems
-    1. Central Finite differences for advection-diffusion problems
-    1. Finite elemets for advection-diffusion problems
-    1. Upwinding Finite differences
-1. Hyperbolic problems
-
+1. Saddle point problems ?
+    1. Stokes, Navier-Stokes
+    1. FEM discretization
+1. PINN
 
 ## Literature
 * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016. [Intro alle PDE, Metodi agli elementi finiti, Metodi alle differenze finite, Riduzione del Modello]
