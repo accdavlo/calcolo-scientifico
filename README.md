@@ -16,7 +16,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |14/03/25| Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic | see above + [Notes](/notes/2025-03-14-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/OoNx3jtTMxpiioszG5WWvpxlmoQt0axtHmhZAHXLxFludzp3AWRYt192b4cUqjla.WNQQD4Xzwfr2Rhb6?startTime=1741964887000) | jmSn@^S3 |
 |19/03/25| Weak formulation of elliptic problems, Lax-Milgram | see above | [Recording](https://uniroma1.zoom.us/rec/share/o-KLh9lOswjPZDEBKSaWz71Cca_GyruHQWIgP3ex3LnjxowbkxAhRBO-sPS5s3H_.t0UI9wabNkHcjS4i?startTime=1742393360000) | qFa1JY#?|
 |21/03/25| Divided differences, finite differences for 1D poisson, error analysis | [Notes](/notes/2025-03-21-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/R01Hf0RGgta-VNnA98gIT9JpzzgmrNBOTa28z5gOXVzavFD_xnRbDuwsplkXhPcs.9Pz4pHEk6kIwiHC5) | 1F!2aTmu|
-|26/03/25| Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)  | - |[Recording](https://uniroma1.zoom.us/rec/share/0Afa5_QZtmly64ZkE9PTudBw-6Jo3VUIeK6M9bT38qnwIOBvi1fuufZxYpF68DmD.2f3XIZGPyycxY4jS?startTime=1743002792000) | Wu@DF8k3 |
+|26/03/25| Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |[Recording](https://uniroma1.zoom.us/rec/share/0Afa5_QZtmly64ZkE9PTudBw-6Jo3VUIeK6M9bT38qnwIOBvi1fuufZxYpF68DmD.2f3XIZGPyycxY4jS?startTime=1743002792000) | Wu@DF8k3 |
 |28/03/25| Coding finite difference 2D for Poisson | Notebook, see above  |  | |
 |02/04/25| Finite Element in 1D for Poisson |  |  | |
 |04/04/25| Coding Finite Element 1D for Poisson |  |  | |
