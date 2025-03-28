@@ -550,3 +550,115 @@ for the equation $i=0$ we change only the right hand side adding the Neumann con
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Reference element = Triangle!
+Goal: build polynomial space on 2D reference element.
+
+Reference element: we choose the tringle with vertices $\mathbf x_1=(0,0)$, $\mathbf x_2=(1,0)$, $\mathbf x_3=(0,1)$.
+
+Polynomial space: not clear. Degree $p$
+
+1. $\mathbb{P}^p = \lbrace f(x,y)=\sum_{ij: i+j\leq p} a_{ij} x^i y^j , \, a_{ij} \in \mathbb R\rbrace$, e.g. $\mathbb P^1=\lbrace a+bx+cy : a,b,c \in \mathbb R \rbrace;$
+2. $\mathbb{Q}^p = \lbrace f(x,y)=\sum_{ij: i,j\leq p} a_{ij} x^i y^j , \, a_{ij} \in \mathbb R\rbrace$, e.g. $\mathbb Q^1=\lbrace a+bx+cy+d\,xy : a,b,c,d \in \mathbb R \rbrace.$
+
+For triangles $\mathbb P^p$ is more natural, for quadrilaterals $\mathbb Q^p$ is more natural.
+
+Indeed, if we look for Lagrangian basis functions, in a triangle it might be useful to use the three vertices as Lagrangian points, hence, 3 linear basis function ($p=1$). In a quadrilateral, the four corner will lead to 4 basis functions.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## $\mathbb P^1$
+![bg right:30% 95% ](img/P1_triangle.png)
+
+We are looking for 3 basis functions $\hat\varphi_i$ with $i=1,2,3$ such that
+* $\hat\varphi_i(\mathbf x_j)=\delta_{ij}$ for all $i=1,2,3$
+* $\hat\varphi_i(\mathbf x)  = a_i + b_ix +c_iy$ for all $i=1,2,3$
+
+Let's solve this linear system and we get
+* $\varphi_1 (\mathbf x) =1-x-y$
+* $\varphi_2 (\mathbf x) =x$
+* $\varphi_3 (\mathbf x) =y$
+
+### Draw a $\mathbb P^1$ basis function in 3D
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## $\mathbb P^2$
+![bg right:30% 95% ](img/P2_triangle.png)
+
+* How many coefficients? $1,x,y,xy,x^2,y^2$ are 6 
+* How many cofficients in general? $\frac{(p+1)(p+2)}{2}$ (check with induction noting that $\#DOF(p+1)=\#DOF(p)+p+2$)
+* Choice of points? Following the triangular pattern
+$x_4=(0.5,0)$, $x_5=(0.5,0.5)$, $x_6=(0,0.5)$.
+Basis functions must be
+* $\varphi_1(\mathbf x) = 2(1-x-y)(\frac12 -x-y)$
+* $\varphi_2(\mathbf x) = 2x(x-\frac12)$
+* $\varphi_3(\mathbf x) = 2y(y-\frac12)$
+* $\varphi_4(\mathbf x) = 4x(1-x-y)$
+* $\varphi_5(\mathbf x) = 4xy$
+* $\varphi_6(\mathbf x) = 4y(1-x-y)$
+
+#### Exercise
+Check that $\varphi_i(\mathbb x_j)=\delta_{ij}$, check that $\sum_{\varphi_i}\equiv 1$.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## $\mathbb P^p$
+![bg right:30% 95% ](img/P3_triangle.png)
+
+
+* Once can generalize and obtain all the Lagrangian basis functions for all orders 
+* Chosen the Lagrangian points, solve for the Lagrangian basis functions
+* Use them!
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Assemble integrals in the reference element
+
+As an example, in $\hat K$ the reference element, we might need to compute
+$$
+\int_{\hat K} \nabla \hat \varphi_i (\mathbf x) \cdot \nabla \hat \varphi_j (\mathbf x) \mathrm{d} \mathbf x = \int_{0}^1 \int_0^{1-x} \nabla \hat \varphi_i (\mathbf x) \cdot \nabla \hat \varphi_j (\mathbf x)\mathrm{d} y \, \mathrm{d} x
+$$
+* Polynomials integrals -> small quadrature rule is enough for exact quadrature
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Pull back on the physical elements
+If we have a triangle $K$ with vertices $x_1,x_2,x_3$, there exists a unique affine map that transform $K$ into $\hat K$ that we can define as 
+$$
+T:\hat K \to K, \qquad \mathbf x = T(\hat {\mathbf x}) =  A \hat {\mathbf x} + b, \quad A\in \mathbb{R}^{2\times 2}, \, b \in \mathbb R^2 .
+$$
+To find $A$ and $b$ there are some closed formula, or you can solve the linear system for the 6 coefficients with the 3 vertices (6 equations).
+
+So, we can define the basis functions on $K$ as the pull back of the reference basis functions: $\varphi_i(\mathbf x) = \hat \varphi_i(T^{-1}(\mathbf x))$.
+
+Then, let's compute integrals on the physical domain
+$$
+\begin{align*}
+\int_{K} \nabla_{\mathbf x} \varphi_i(\mathbf x) \cdot \nabla_{\mathbf x} \varphi_i(\mathbf x) \textrm{d} \mathbf x =& \int_{\hat K} \nabla_\mathbf{x} T^{-1}(\mathbf x) \nabla_{\hat {\mathbf x}} \hat \varphi_i(\hat{\mathbf x}) \cdot \nabla_\mathbf{x} T^{-1}(\mathbf x) \nabla_{\hat {\mathbf x}} \hat \varphi_i(\hat {\mathbf x}) \,\text{det}( \nabla_{\hat{\mathbf x}} T(\hat{\mathbf x}))\textrm{d}  \hat {\mathbf x} \\
+=& \int_{\hat K} A^{-1} \nabla_{\hat {\mathbf x}} \hat \varphi_i(\hat{\mathbf x}) \cdot A^{-1} \nabla_{\hat {\mathbf x}} \hat \varphi_i(\hat {\mathbf x})  \text{det}(A) \textrm{d}  \hat {\mathbf x} 
+\end{align*}
+$$
+or some quadrature rules for triangles that are mapped onto the physical one.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+![bg right:40% 95%](img/basis_2D.png)
+
+## Assemble the whole problem
+Many DoFs will have support on more triangles, so to gather all the information, we need to loop over the triangles, and sum all the contributions to various DoFs.
+
+* Apply BC
+
+* Solve the linear system
