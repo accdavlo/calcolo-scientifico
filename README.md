@@ -17,7 +17,8 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |19/03/25| Weak formulation of elliptic problems, Lax-Milgram | see above | [Recording](https://uniroma1.zoom.us/rec/share/o-KLh9lOswjPZDEBKSaWz71Cca_GyruHQWIgP3ex3LnjxowbkxAhRBO-sPS5s3H_.t0UI9wabNkHcjS4i?startTime=1742393360000) | qFa1JY#?|
 |21/03/25| Divided differences, finite differences for 1D poisson, error analysis | [Notes](/notes/2025-03-21-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/R01Hf0RGgta-VNnA98gIT9JpzzgmrNBOTa28z5gOXVzavFD_xnRbDuwsplkXhPcs.9Pz4pHEk6kIwiHC5) | 1F!2aTmu|
 |26/03/25| Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |[Recording](https://uniroma1.zoom.us/rec/share/0Afa5_QZtmly64ZkE9PTudBw-6Jo3VUIeK6M9bT38qnwIOBvi1fuufZxYpF68DmD.2f3XIZGPyycxY4jS?startTime=1743002792000) | Wu@DF8k3 |
-|28/03/25| Coding finite difference 2D for Poisson | Notebook, see above  |  | |
+|28/03/25| Coding finite difference 2D for Poisson | [Notes](/notes/2025-03-28-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/LjSQ7NIHha-UMEMg_G-SL1amLl5wDjTZxREsLLvxAdBeV1nrTxQ1fbxT5CF1wW5i.d1SZCQ4mZUHv4Xyt?startTime=1743174702000)
+| p@sr@$3y|
 |02/04/25| Finite Element in 1D for Poisson |  |  | |
 |04/04/25| Coding Finite Element 1D for Poisson |  |  | |
 |09/04/25| Finite element for multi-D |  |  | |
@@ -42,12 +43,12 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 * 04/04/25 16:00-18:00 Friday Aula Levi-Civita
 
 ## Notebooks
-| Date | Topic | Notebook | Solutions  | Partial Solutions | 
-|:-----|:------|:---------|:-----------|:-----------|
-|26-28/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|[Solutions to 1D](/codes/solutions/poisson_FD_only_1D_solved.ipynb)|
-|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)||
-|11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |-||
-|16/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-||
+| Date | Topic | Notebook | Solutions   | 
+|:-----|:------|:---------|:-----------|
+|26-28/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
+|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)|
+|11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |-|
+|16/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
 
 
 ## Slides

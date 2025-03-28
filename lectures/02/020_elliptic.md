@@ -297,7 +297,7 @@ $$
 Let's go back to our problem, we can use the fact that $v=0$ on $\Gamma_D$ and that $\nabla u \cdot \textbf{n} = g_N$ on $\Gamma_N$ to write the weak formulation of Poisson problem as find $u\in V_D:= \lbrace v \in H_1(\Omega) : v|_{\Gamma_D} = u_D \rbrace$
 
 $$ 
-\int_{\Omega} \nabla u \cdot \nabla v\,\textrm{d}x -\int_{\partial\Omega} v\, g_N(\gamma) \, \mathrm{d}\gamma=0 \qquad \forall v \in V= \lbrace v\in H^1(\Omega) : v|_{\Gamma_D} =0 \rbrace.
+\int_{\Omega} \nabla u \cdot \nabla v\,\textrm{d}x -\int_{\partial\Omega} v\, g_N(\gamma) \, \mathrm{d}\gamma=\int_{\Omega} v f\,\textrm{d}x  \qquad \forall v \in V= \lbrace v\in H^1(\Omega) : v|_{\Gamma_D} =0 \rbrace.
 $$
 
 To have symmetry between the space of $u$ and the space of $v$, we can use again the lifting $u_{lift}\in V_D$ such that $-\Delta u_{lift}=0$ and solve for $\tilde{u} = u - u_{lift} \in V$. 

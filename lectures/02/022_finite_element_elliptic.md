@@ -662,3 +662,25 @@ Many DoFs will have support on more triangles, so to gather all the information,
 * Apply BC
 
 * Solve the linear system
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Error estimates
+For a finite element approximation of degree $p$, and for $u\in H^{p+1}(\Omega)$ we have
+$$
+\lVert u-u_h \rVert_{H^1(\Omega)} \leq \frac{M}{\alpha} C h^p \lvert u\rvert_{H^{p+1}(\Omega)}.
+$$
+
+Moreover,
+$$
+\lVert u-u_h \rVert_{L^2(\Omega)} \leq \frac{M}{\alpha} C h^{p+1} \lvert u\rvert_{H^{p+1}(\Omega)}.
+$$
+
+### Proof (Quarteroni)
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# Code with FEniCS
