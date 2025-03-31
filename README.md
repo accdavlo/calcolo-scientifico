@@ -61,7 +61,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
     1. Elliptic problems [PDF](lectures/02/020_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/020_elliptic.html) [md](lectures/02/020_elliptic.md)
     1. Finite differences for elliptic problems [PDF](lectures/02/021_finite_difference_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/021_finite_difference_elliptic.html) [md](lectures/02/021_finite_difference_elliptic.md)
     1. Finite elements for elliptic problems [PDF](lectures/02/022_finite_element_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/022_finite_element_elliptic.html) [md](lectures/02/022_finite_element_elliptic.md)
-    1. Reduced order methods for elliptic problems
+    1. Reduced order methods for elliptic problems [Notebook](/codes/ROM_with_FEniCS.ipynb)
 1. Advection equation
     1. Advection problems
     1. Finite differences for advection problems
