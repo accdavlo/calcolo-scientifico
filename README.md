@@ -18,7 +18,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |21/03/25| Divided differences, finite differences for 1D poisson, error analysis | [Notes](/notes/2025-03-21-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/R01Hf0RGgta-VNnA98gIT9JpzzgmrNBOTa28z5gOXVzavFD_xnRbDuwsplkXhPcs.9Pz4pHEk6kIwiHC5) | 1F!2aTmu|
 |26/03/25| Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |[Recording](https://uniroma1.zoom.us/rec/share/0Afa5_QZtmly64ZkE9PTudBw-6Jo3VUIeK6M9bT38qnwIOBvi1fuufZxYpF68DmD.2f3XIZGPyycxY4jS?startTime=1743002792000) | Wu@DF8k3 |
 |28/03/25| Coding finite difference 2D for Poisson | [Notes](/notes/2025-03-28-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/LjSQ7NIHha-UMEMg_G-SL1amLl5wDjTZxREsLLvxAdBeV1nrTxQ1fbxT5CF1wW5i.d1SZCQ4mZUHv4Xyt?startTime=1743174702000)| p@sr@$3y|
-|02/04/25| Finite Element in 1D for Poisson |  |  | |
+|02/04/25| Finite Element in 1D for Poisson | [Notes](/notes/2025-04-02-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/mK-TOgoLwRg4QDgJXobcQOODAVMwcGV6UT-K47CT1weLcA5DvvrbscYzUQqdu74Y.5mCqLhBmi4Jn-lod) | $CiD0YzK |
 |04/04/25| Coding Finite Element 1D for Poisson |  |  | |
 |09/04/25| Finite element for multi-D |  |  | |
 |11/04/25| Coding finite element 2D for Poisson with FEniCS |  |  | |
@@ -35,11 +35,12 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 
 
 ## Next Lessons Schedule
-* 21/03/25 16:00-18:00 Friday Aula Levi-Civita
-* 26/03/25 16:30-18:00 Wednesday Aula Picone
-* 28/03/25 16:00-18:00 Friday Aula Levi-Civita
 * 02/04/25 15:00-17:00 Wednesday Aula Picone
 * 04/04/25 16:00-18:00 Friday Aula Levi-Civita
+* 09/04/25 15:00-17:00 Wednesday Aula Picone
+* 11/04/25 16:00-18:00 Friday Aula Levi-Civita
+* 16/04/25 15:00-17:00 Wednesday Aula Picone
+* 23/04/25 15:00-17:00 Wednesday Aula Picone
 
 ## Notebooks
 | Date | Topic | Notebook | Solutions   | 

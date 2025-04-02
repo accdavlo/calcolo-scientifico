@@ -436,7 +436,7 @@ If coefficients are constant, the integrals can be computed just for the referen
 
 ## Matrix structure for high order $X_h^r$
 
-First of all, let's reorder the DoFs indexes: $K_i=[x_{i-1},x-i]$, and we put inside some points that on the reference element we denote by $0=\hat{y}_0<\hat{y}_1<\dots <\hat{y}_r=1$
+First of all, let's reorder the DoFs indexes: $K_i=[x_{i-1},x_i]$, and we put inside some points that on the reference element we denote by $0=\hat{y}_0<\hat{y}_1<\dots <\hat{y}_r=1$
 $$
 y_\alpha = y_{(i,s)} = x_{i-1}+ (x_{i}-x_{i-1}) \hat{y}_s \qquad \text{for }i=1,\dots,N,\, s=0,\dots,r,
 $$
