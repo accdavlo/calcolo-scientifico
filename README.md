@@ -19,19 +19,19 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |26/03/25| Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |[Recording](https://uniroma1.zoom.us/rec/share/0Afa5_QZtmly64ZkE9PTudBw-6Jo3VUIeK6M9bT38qnwIOBvi1fuufZxYpF68DmD.2f3XIZGPyycxY4jS?startTime=1743002792000) | Wu@DF8k3 |
 |28/03/25| Coding finite difference 2D for Poisson | [Notes](/notes/2025-03-28-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/LjSQ7NIHha-UMEMg_G-SL1amLl5wDjTZxREsLLvxAdBeV1nrTxQ1fbxT5CF1wW5i.d1SZCQ4mZUHv4Xyt?startTime=1743174702000)| p@sr@$3y|
 |02/04/25| Finite Element in 1D for Poisson | [Notes](/notes/2025-04-02-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/mK-TOgoLwRg4QDgJXobcQOODAVMwcGV6UT-K47CT1weLcA5DvvrbscYzUQqdu74Y.5mCqLhBmi4Jn-lod) | $CiD0YzK |
-|04/04/25| Coding Finite Element 1D for Poisson |  |  | |
-|09/04/25| Finite element for multi-D |  |  | |
-|11/04/25| Coding finite element 2D for Poisson with FEniCS |  |  | |
-|16/04/25| Model order reduction |  |  | |
-|23/04/25| Advection equation |  |  | |
-|30/04/25| FD for advection equation (and failure FEM) |  |  | |
-|02/05/25| Scalar hyperbolic conservation laws |  |  | |
-|07/05/25| Scalar hyperbolic conservation laws  |  |  | |
-|09/05/25| Coding FD for advection and nonlinear laws |  |  | |
-|14/05/25| Systems of conservation laws (Euler) |  |  | |
-|16/05/25| PINN |  |  | |
-|21/05/25| Parabolic equations? /Saddle point problems? | | | |
-|23/05/25| Finite element for parabolic equations | | | |
+|04/04/25| Finite Element in 1D for Poisson | See above | [Recording]() |  |
+|09/04/25| Coding Finite Element 1D for Poisson |  |  | |
+|11/04/25| Finite element for multi-D |  |  | |
+|16/04/25| Coding finite element 2D for Poisson with FEniCS |  |  | |
+|23/04/25| Model order reduction |  |  | |
+|30/04/25| Advection equation |  |  | |
+|02/05/25| FD for advection equation (and failure FEM) |  |  | |
+|07/05/25| Scalar hyperbolic conservation laws |  |  | |
+|09/05/25| Scalar hyperbolic conservation laws  |  |  | |
+|14/05/25| Coding FD for advection and nonlinear laws |  |  | |
+|16/05/25| Systems of conservation laws (Euler) |  |  | |
+|21/05/25| PINN |  |  | |
+|23/05/25| Parabolic equations? /Saddle point problems? | | | |
 
 
 ## Next Lessons Schedule
@@ -43,10 +43,10 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 * 23/04/25 15:00-17:00 Wednesday Aula Picone
 
 ## Notebooks
-| Date | Topic | Notebook | Solutions   | 
-|:-----|:------|:---------|:-----------|
+| Date | Topic | Notebook |Solutions   |  Last save | 
+|:-----|:------|:---------|:-----------|:-----------|
 |26-28/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
-|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)|
+|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| [Last save](/codes/poisson_FEM_1.ipynb)|
 |11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |-|
 |16/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
 
@@ -80,11 +80,12 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 1. PINN
 
 ## Projects ideas
+1. Finite element with naive basis functions (e.g. trigonometric functions) (in 1D/2D)
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
 1. Reduced basis for elastic block [Problem from this RBniCS test](https://colab.research.google.com/github/RBniCS/RBniCS/blob/open-in-colab/tutorials/02_elastic_block/tutorial_elastic_block.ipynb)
 1. SUPG for advection-diffusion time dependent problem (1D or 2D with FEniCS), with energy stability analysis
 1. Von Neumann stability analysis for a Finite Difference discretization of the wave equation
-1. Wave equations with compatible Finite Difference discretization
+1. Wave equations in 2D (with compatible Finite Difference discretization)
 1. 2D Euler equations solved on a Cartesian grid for a DMR test
 1. High order FD discretization of Burgers' equations in 1D with WENO.
 
