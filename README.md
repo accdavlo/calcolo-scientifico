@@ -88,8 +88,8 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 1. SUPG for advection-diffusion time dependent problem (1D or 2D with FEniCS), with energy stability analysis (Chapter of Quarteroni)
 1. Von Neumann stability analysis for a Finite Difference discretization of the wave equation
 1. Wave equations in 2D (with compatible Finite Difference discretization)
-1. 2D Euler equations solved on a Cartesian grid for a DMR test
 1. High order FD discretization of Burgers' equations in 1D with WENO.
+1. 2D Euler equations solved on a Cartesian grid for a DMR test
 
 ## Literature
 * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016. [Intro alle PDE, Metodi agli elementi finiti, Metodi alle differenze finite, Riduzione del Modello]
