@@ -35,12 +35,12 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 
 
 ## Next Lessons Schedule
-* 02/04/25 15:00-17:00 Wednesday Aula Picone
-* 04/04/25 16:00-18:00 Friday Aula Levi-Civita
-* 09/04/25 15:00-17:00 Wednesday Aula Picone
-* 11/04/25 16:00-18:00 Friday Aula Levi-Civita
-* 16/04/25 15:00-17:00 Wednesday Aula Picone
-* 23/04/25 15:00-17:00 Wednesday Aula Picone
+* 09/04/25 15:00-17:00 Wednesday Laboratorio B
+* 11/04/25 16:00-18:00 Friday Laboratorio B
+* 16/04/25 15:00-17:00 Wednesday Laboratorio B
+* 23/04/25 15:00-17:00 Wednesday Laboratorio B
+* 30/04/25 15:00-17:00 Wednesday Laboratorio B
+* 02/05/25 15:00-17:00 Friday Laboratorio B
 
 ## Notebooks
 | Date | Topic | Notebook |Solutions   |  Last save | 
