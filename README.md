@@ -81,9 +81,11 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 
 ## Projects ideas
 1. Finite element with naive basis functions (e.g. trigonometric functions) (in 1D/2D)
+1. Spectral element method (Chapter of Quarteroni)
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
 1. Reduced basis for elastic block [Problem from this RBniCS test](https://colab.research.google.com/github/RBniCS/RBniCS/blob/open-in-colab/tutorials/02_elastic_block/tutorial_elastic_block.ipynb)
-1. SUPG for advection-diffusion time dependent problem (1D or 2D with FEniCS), with energy stability analysis
+1. Error control for reduced order models (a posteriori error estimator) (Either Quarteroni or Hesthaven)
+1. SUPG for advection-diffusion time dependent problem (1D or 2D with FEniCS), with energy stability analysis (Chapter of Quarteroni)
 1. Von Neumann stability analysis for a Finite Difference discretization of the wave equation
 1. Wave equations in 2D (with compatible Finite Difference discretization)
 1. 2D Euler equations solved on a Cartesian grid for a DMR test
@@ -95,6 +97,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 * LeVeque, Randall J. Finite difference methods for ordinary and partial differential equations: steady-state and time-dependent problems. Society for Industrial and Applied Mathematics, 2007. [Metodi alle differenze finite]
 * LeVeque, Randall J. Finite volume methods for hyperbolic problems. Vol. 31. Cambridge university press, 2002. [Metodi ai volumi finiti]
 * Langtangen, Hans Petter, and Anders Logg. Solving PDEs in python: the FEniCS tutorial I. Springer Nature, 2017. [Manuale per usare FEniCS]
+* Hesthaven, J., Rozza G. and Stamm B. Certified Reduced Basis Methods for Parametrized Partial Differential Equations. Springer, 2016. [Riduzione del Modello] [https://link.springer.com/book/10.1007/978-3-319-22470-1](https://link.springer.com/book/10.1007/978-3-319-22470-1)
 
 # Program
 The course studies partial differential equations (PDEs) and some numerical methods for approximating their solutions.
