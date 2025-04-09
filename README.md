@@ -20,7 +20,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |28/03/25| Coding finite difference 2D for Poisson | [Notes](/notes/2025-03-28-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/LjSQ7NIHha-UMEMg_G-SL1amLl5wDjTZxREsLLvxAdBeV1nrTxQ1fbxT5CF1wW5i.d1SZCQ4mZUHv4Xyt?startTime=1743174702000)| p@sr@$3y|
 |02/04/25| Finite Element in 1D for Poisson | [Notes](/notes/2025-04-02-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/mK-TOgoLwRg4QDgJXobcQOODAVMwcGV6UT-K47CT1weLcA5DvvrbscYzUQqdu74Y.5mCqLhBmi4Jn-lod) | $CiD0YzK |
 |04/04/25| Finite Element in 1D for Poisson | See above | [Recording](https://uniroma1.zoom.us/rec/share/WoY4DVSSY3V9_to78TMZbDjLPRL-xQRfUFCRC6C2UoooarHnnOgLUV878kBO2ik.IqZDsHmDBcLOJ84l) | CAEWK+.3  |
-|09/04/25| Coding Finite Element 1D for Poisson |  |  | |
+|09/04/25| Coding Finite Element 1D for Poisson | [Notes](/notes/2025-04-09-Note.pdf) | [0.5 Recording](https://uniroma1.zoom.us/rec/share/z8oGCFYVeeR-S4qEYmIvp3NUqzDyxDpNls4wlyjTBBAAIY-7R9Fy5uShwp_lSlxK.DLERNvIdGP-Wk5HS?) |wr4^96y# |
 |11/04/25| Finite element for multi-D |  |  | |
 |16/04/25| Coding finite element 2D for Poisson with FEniCS |  |  | |
 |23/04/25| Model order reduction |  |  | |
