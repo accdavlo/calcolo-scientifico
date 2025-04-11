@@ -512,6 +512,8 @@ for the equation $i=0$ we change only the right hand side adding the Neumann con
 
 # CODE IT!
 
+#### Things I forgot to say
+* Try to verify the convergence results for $H^1$ and $L^2$ norms with different polynomial degrees.
 
 
 ---
@@ -552,7 +554,7 @@ for the equation $i=0$ we change only the right hand side adding the Neumann con
 ## Reference element = Triangle!
 Goal: build polynomial space on 2D reference element.
 
-Reference element: we choose the tringle with vertices $\mathbf x_1=(0,0)$, $\mathbf x_2=(1,0)$, $\mathbf x_3=(0,1)$.
+Reference element: we choose the triangle with vertices $\mathbf x_1=(0,0)$, $\mathbf x_2=(1,0)$, $\mathbf x_3=(0,1)$.
 
 Polynomial space: not clear. Degree $p$
 
@@ -589,8 +591,8 @@ Let's solve this linear system and we get
 ## $\mathbb P^2$
 ![bg right:30% 95% ](img/P2_triangle.png)
 
-* How many coefficients? $1,x,y,xy,x^2,y^2$ are 6 
-* How many cofficients in general? $\frac{(p+1)(p+2)}{2}$ (check with induction noting that $\#DOF(p+1)=\#DOF(p)+p+2$)
+* How many basis functions? $1,x,y,xy,x^2,y^2$ are 6 
+* How many basis functions in general? $\frac{(p+1)(p+2)}{2}$ (check with induction noting that $\#DOF(p+1)=\#DOF(p)+p+2$
 * Choice of points? Following the triangular pattern
 $x_4=(0.5,0)$, $x_5=(0.5,0.5)$, $x_6=(0,0.5)$.
 Basis functions must be
@@ -602,7 +604,7 @@ Basis functions must be
 * $\varphi_6(\mathbf x) = 4y(1-x-y)$
 
 #### Exercise
-Check that $\varphi_i(\mathbb x_j)=\delta_{ij}$, check that $\sum_{\varphi_i}\equiv 1$.
+Check that $\varphi_i(\mathbf x_j)=\delta_{ij}$, check that $\sum_i{\varphi_i}(\mathbf x)\equiv 1$.
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
@@ -648,7 +650,8 @@ $$
 =& \int_{\hat K} A^{-1} \nabla_{\hat {\mathbf x}} \hat \varphi_i(\hat{\mathbf x}) \cdot A^{-1} \nabla_{\hat {\mathbf x}} \hat \varphi_i(\hat {\mathbf x})  \text{det}(A) \textrm{d}  \hat {\mathbf x} 
 \end{align*}
 $$
-or some quadrature rules for triangles that are mapped onto the physical one.
+One has to be careful with indexes, but pre-computing 4 integrals on the reference element is enough to compute all the integrals on the physical element. 
+Otherwise, we can use some quadrature rules for triangles that are mapped onto the physical one.
 
 
 ---
