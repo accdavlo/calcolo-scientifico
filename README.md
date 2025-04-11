@@ -47,7 +47,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |:-----|:------|:---------|:-----------|:-----------|
 |26-28/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
 |04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| -|
-|11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |-|
+|11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
 |16/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
 
 
