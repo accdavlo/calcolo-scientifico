@@ -41,6 +41,12 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 * 23/04/25 15:00-17:00 Wednesday Laboratorio B
 * 30/04/25 15:00-17:00 Wednesday Laboratorio B
 * 02/05/25 16:00-18:00 Friday Laboratorio B
+* 07/05/25 15:00-17:00 Wednesday Laboratorio B
+* 09/05/25 16:00-18:00 Friday Laboratorio B
+* 14/05/25 15:00-17:00 Wednesday Laboratorio B
+* 16/05/25 16:00-18:00 Friday Laboratorio B
+* 21/05/25 15:00-17:00 Wednesday Laboratorio B
+* 23/05/25 16:00-18:00 Friday Laboratorio B
 
 ## Notebooks
 | Date | Topic | Notebook |Solutions   |  Last save | 
@@ -79,7 +85,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
     1. FEM discretization
 1. PINN
 
-## Projects ideas
+## Projects ideas (contact me for more details)
 1. Finite element with naive basis functions (e.g. trigonometric functions) (in 1D/2D)
 1. Spectral element method (Chapter of Quarteroni)
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
@@ -90,6 +96,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 1. Wave equations in 2D (with compatible Finite Difference discretization)
 1. High order FD discretization of Burgers' equations in 1D with WENO.
 1. 2D Euler equations solved on a Cartesian grid for a DMR test
+1. Comparison of PINN with classical solvers (for various problems)
 
 ## Literature
 * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016. [Intro alle PDE, Metodi agli elementi finiti, Metodi alle differenze finite, Riduzione del Modello]

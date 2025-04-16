@@ -78,7 +78,7 @@ So we focus on the trigonometric functions of the type $e^{ixk}$.
 ## Exact solutions for periodic boundary conditions (Fourier) (2/n)
 
 ### Fourier series
-For simplicity let's consider $\Omega = [-\pi,\pi]$ with periodic boundary conditions. We can decompose the initial condtion in Fourier series. 
+For simplicity let's consider $\Omega = [-\pi,\pi]$ with periodic boundary conditions. We can decompose the initial condtion in Fourier series if $u_0\in L^2(\Omega)$.
 $$
 u_0(x) = \sum_{k\in \mathbb Z} c_k e^{i k x}, \qquad c_k = \frac{1}{2\pi} \int_{-\pi}^{\pi} u_0(x) e^{-i k x} \textrm{d}x.
 $$
@@ -88,12 +88,32 @@ $$
 \lVert \mathbf{c} \rVert_2^2=\sum_{k\in \mathbb Z} |c_k|^2 = \frac{1}{2\pi} \int_{-\pi}^{\pi} |u_0(x)|^2 \textrm{d}x = \frac{1}{2\pi} \lVert u_0 \rVert_2^2.
 $$
 
+
 [Wikipedia page on Fourier series](https://en.wikipedia.org/wiki/Fourier_series)
 [Youtube playlist of 3Blue1Brown on Fourier series](https://www.youtube.com/watch?v=spUNpyF58BY&list=PL4VT47y1w7A1-T_VIcufa7mCM3XrSA5DD)
 [Youtube video on solving heat equations with Fourier](https://www.youtube.com/watch?v=ToIXSwZ1pJU&list=PL4VT47y1w7A1-T_VIcufa7mCM3XrSA5DD&index=3)
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Exact solutions for periodic boundary conditions (Fourier) (3/n)
+
+### Exploiting linearity for heat equation
+Let's us use the ansatz $u(t,x) = \sum_{k\in \mathbb Z} c_k(t) e^{i k x}$, where $c_k(t)$ are the Fourier coefficients of the solution at time $t$.
+$$
+\begin{align*}
+    &\partial_t u(t,x) - a \partial_{xx} u(t,x)=0\\
+    &\sum_{k\in \mathbb Z}   \partial_t c_k(t) e^{i k x} - a \sum_{k\in \mathbb Z} c_k(t) \partial_{xx} e^{i k x}=0\\
+    &\sum_{k\in \mathbb Z}   \partial_t c_k(t) e^{i k x} + a \sum_{k\in \mathbb Z} k^2 c_k(t)  e^{i k x}=0\\
+    &  \partial_t c_k(t) + a k^2 c_k(t) = 0, \quad \forall k\in \mathbb Z,\\
+    &c_k(t) = c_k(0) e^{-a k^2 t}, \quad \forall k\in \mathbb Z.
+\end{align*}
+$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
 
 
 ## Physical derivation 
