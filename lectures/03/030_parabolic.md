@@ -114,6 +114,38 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
+## Discretization of $\partial_t u - \partial_{xx} u=0$
+* Domain in space $\Omega=[a,b]$ and time $[0,T]$
+* Grid in space $a=x_0<x_1<\dots <x_i<\dots<x_{N_x}=b$
+* Grid in time $0=t^0<t^1<\dots<t^n<\dots<t^{N_t}=T$
+
+### Explicit Euler
+
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^n-2u_i^n+u_{i-1}^n}{\Delta x^2}=0 
+$$
+
+### Implicit Euler
+
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{\Delta x^2}=0 
+$$
+
+### Crank-Nicolson
+
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{2\Delta x^2}- \frac{u_{i+1}^{n}-2u_i^{n}+u_{i-1}^{n}}{2\Delta x^2}=0 
+$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
 
 
 ## Physical derivation 
