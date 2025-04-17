@@ -179,9 +179,42 @@ LHS = I-\frac{1}{2}\frac{\Delta t}{\Delta x^2} D^2 = \begin{pmatrix}
 0&\dots & \dots &-\frac{\Delta t}{2\Delta x^2} &1+\frac{\Delta t}{\Delta x^2}     
 \end{pmatrix}
 $$
+$$
+RHS = u^n +\frac12 \frac{\Delta t}{\Delta x^2} D^2 u^n
+$$
+
 
 
 ---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# Example
+$$
+\begin{align*}
+    &\begin{cases}
+        \partial_t u - \partial_{xx}u =0
+        u_0(x) = \sin(x)\qquad x\in [0,2\pi],\\
+        u(t,0) = 0. \qquad t \in \mathbb{R}^+,\\
+        u(t,2\pi) = 0. \qquad t \in \mathbb{R}^+,
+    \end{cases}\qquad
+    &u(t,x)=e^{-t}\sin(x)\qquad x\in [0,2\pi],\qquad t \in \mathbb{R}^+.
+\end{align*}
+$$
+
+![width:390](img/heat_EE_dx_0.6981_dt_0.0100.png)![width:390](img/heat_IE_dx_0.6981_dt_0.0100.png)![width:390](img/heat_CN_dx_0.6981_dt_0.0100.png)
+![width:390](img/heat_EE_dx_0.0635_dt_0.0100.png)![width:390](img/heat_IE_dx_0.0635_dt_0.0100.png)![width:390](img/heat_CN_dx_0.0635_dt_0.0100.png)
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Explicit Euler
+![width:390](img/heat_EE_dx_0.6981_dt_0.0100.png)![width:390](img/heat_EE_dx_0.1282_dt_0.0100.png)![width:390](img/heat_EE_dx_0.1282_dt_0.0500.png)
+![width:390](img/heat_EE_dx_0.0635_dt_0.0100.png)![width:390](img/heat_EE_dx_0.0635_dt_0.0010.png)
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
 
 ## Physical derivation 
 
