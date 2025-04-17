@@ -141,12 +141,47 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
+## Numerical solutions
+### Explicit Euler
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^n-2u_i^n+u_{i-1}^n}{\Delta x^2}=0 
+$$
+* Explicit -> no systems
+### Implicit Euler
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{\Delta x^2}=0 
+$$
+* Linear system 
+$$
+LHS =I-\frac{\Delta t}{\Delta x^2} D^2 = \begin{pmatrix}
+1+2\frac{\Delta t}{\Delta x^2} &-\frac{\Delta t}{\Delta x^2} & 0&\dots & \dots\\
+-\frac{\Delta t}{\Delta x^2} &1+2\frac{\Delta t}{\Delta x^2} &-\frac{\Delta t}{\Delta x^2} &\dots & \dots\\
+\vdots & \ddots & \ddots & \ddots &\vdots\\
+0&\dots & \dots &-\frac{\Delta t}{\Delta x^2} &1+2\frac{\Delta t}{\Delta x^2}     
+\end{pmatrix} \qquad RHS = u^n
+$$
 
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 
+### Crank-Nicolson
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{2\Delta x^2}- \frac{u_{i+1}^{n}-2u_i^{n}+u_{i-1}^{n}}{2\Delta x^2}=0 
+$$
+* Linear system 
+$$
+LHS = I-\frac{1}{2}\frac{\Delta t}{\Delta x^2} D^2 = \begin{pmatrix}
+1+\frac{\Delta t}{\Delta x^2} &-\frac{\Delta t}{2\Delta x^2} & 0&\dots & \dots\\
+-\frac{\Delta t}{2\Delta x^2} &1+\frac{\Delta t}{\Delta x^2} &-\frac{\Delta t}{2\Delta x^2} &\dots & \dots\\
+\vdots & \ddots & \ddots & \ddots &\vdots\\
+0&\dots & \dots &-\frac{\Delta t}{2\Delta x^2} &1+\frac{\Delta t}{\Delta x^2}     
+\end{pmatrix}
+$$
+
+
+---
 
 ## Physical derivation 
 
