@@ -188,6 +188,41 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
+## Consistency
+### Explicit Euler
+
+$$
+\begin{align*}
+&\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^n-2u_i^n+u_{i-1}^n}{\Delta x^2}=0 \\
+e_{\Delta t, \Delta x}^{EE} =&\frac{u(t^{n+1},x_i)-u(t^n,x_i)}{\Delta t} - \frac{u(t^n,x_{i+1})-2u(t^n,x_i)+u(t^n,x_{i-1})}{\Delta x^2} \\
+=&\partial_t u(t^n,x_i) +\frac{\Delta t}2 \partial_{tt}u(t^n,x_i) - \partial_{xx} u(t^n,x_i) -\frac{\Delta x^2}{12} \partial_{xxxx}u(t^n,x_i)+O(\Delta t^2) + O(\Delta x^3) \\
+=&   \frac{\Delta t}2 \partial_{tt}u(t^n,x_i) -\frac{\Delta x^2}{12} \partial_{xxxx}u(t^n,x_i)+O(\Delta t^2) + O(\Delta x^3) = O(\Delta t) + O(\Delta x^2)
+\end{align*}
+$$
+
+Second order in space and first order in time
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+
+## Consistency
+### Crank-Nicolson
+
+$$
+\begin{align*}
+&\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^n-2u_i^n+u_{i-1}^n}{2\Delta x^2}- \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{2\Delta x^2}=0 \\
+e_{\Delta t, \Delta x}^{EE} =&\frac{u(t^{n+1},x_i)-u(t^n,x_i)}{\Delta t} - \frac{u(t^n,x_{i+1})-2u(t^n,x_i)+u(t^n,x_{i-1})}{\Delta x^2} \\
+=&\partial_t u(t^n,x_i) +\frac{\Delta t}2 \partial_{tt}u(t^n,x_i) - \partial_{xx} u(t^n,x_i) -\frac{\Delta x^2}{12} \partial_{xxxx}u(t^n,x_i)\\
+&- \frac{\Delta t}{2} \underbrace{\partial_{txx} u(t^n,x_i)}_{=\partial_{tt}u} -\frac{\Delta t}{2}\frac{\Delta x^2}{12} \partial_{xxxxt}u(t^n,x_i)+O(\Delta t^2) + O(\Delta x^4) \\
+=&  \frac{\Delta t}2 \partial_{tt}u(t^n,x_i)-\frac{\Delta t}2 \partial_{tt}u(t^n,x_i) +O(\Delta t^2) + O(\Delta x^2) = O(\Delta t^2) + O(\Delta x^2)
+\end{align*}
+$$
+Second order in space and time
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
 # Example
 $$
 \begin{align*}
@@ -215,10 +250,36 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
+# Semidiscretization / Method of lines
+
+We have seen how to discretize the spatial derivatives, we can write a system of ODEs for that discretization.
+
+$$
+u_i'(t) = \frac{u_{i+1}(t)-2u_i(t)+u_{i-1}}{\Delta x^2}\qquad \forall i=1,\dots,N_x.
+$$
+Then, we apply a time discretization method (e.g. explicit Euler, implicit Euler, Runge-Kutta, etc.)
+
+$$
+U'(t) = A U(t) + g(t) =f(U,t)
+$$
+where $g$ contains boundary conditions and 
+$$
+A:=\frac{1}{\Delta x^2}\begin{bmatrix}
+-2 & 1 & 0 & \dots & 0\\
+1 & -2 & 1 & \dots & 0\\
+0 & 1 & -2 & \dots & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+0 & 0 & 0 & \dots & -2
+\end{bmatrix}
+$$
 
 
 ---
-<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+<style scoped>section{font-size:23px;padding:50px; text-align: center; padding-top:0px}</style>
 
+# Method of lines interpretation
 
+![width:800](img/mol.png)
 
+---
+<style scoped>section{font-size:23px;padding:50px; text-align: center; padding-top:0px}</style>
