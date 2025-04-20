@@ -277,9 +277,90 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px; text-align: center; padding-top:0px}</style>
 
-# Method of lines interpretation
+# Method of lines (MOL) interpretation
 
 ![width:800](img/mol.png)
 
 ---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+## Advantage of MOL
+
+We can study the stability of the numerical problem, splitting the spatial and temporal discretization. 
+
+### Stability region of a RK method
+A Runge-Kutta method for a linear problem $u'(t) = \lambda u(t)$ can be written as 
+$$
+y^{n+1} = R(z) y^n,\qquad \text{ with }z =\lambda \Delta t,
+$$
+and we define the stability region as $\mathcal{S}:= \lbrace z \in \mathbb{C}: |R(z)|\leq 1 \rbrace.$
+
+
+### Connection with semidiscretized PDE
+
+In our case, we have that the linear system
+$$
+U'(t) = A U(t),
+$$
+can be diagonalized with an orthogonal transformation $Z$ (i.e. $ZZ^T=I$) such that $Z^T A Z =D$  with $D$ diagonal matrix with the values of the **eigenvalues** of $A$. So, if we define $Y(t)= Z^TU(t)$ we can study many decoupled equations, instead of one system
+$$
+Y'(t)= Z^T U'(t) = Z^T A U(t) = Z^T A Z Z^T U(t) = D Z^T U(t) = D Y(t).
+$$ 
+
+If $\lambda_i \in \mathcal{S}$ for all $\lambda_i$ eigenvalues of $A$, then the method is stable.
+
+
+
+
+
+---
 <style scoped>section{font-size:23px;padding:50px; text-align: center; padding-top:0px}</style>
+
+## Stability regions of RK methods
+Explicit Euler $\qquad\qquad\qquad\qquad$ Implicit Euler $\qquad\qquad\qquad\qquad$ Crank-Nicolson
+![width:360](img/stability_region_explicit_euler.png)![width:360](img/stability_region_implicit_euler.png)![width:360](img/stability_region_Crank-Nicolson.png)
+
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+## Eigenvalues of the spatial semidiscretization
+
+$$
+A:=\frac{1}{\Delta x^2}\underbrace{\begin{bmatrix}
+-2 & 1 & 0 & \dots & 0\\
+1 & -2 & 1 & \dots & 0\\
+0 & 1 & -2 & \dots & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+0 & 0 & 0 & \dots & -2
+\end{bmatrix}}_{=:\tilde{A}}
+$$
+
+* $A$ is negative definite and symmetric
+* $A$ has real non-positive **real** eigenvalues
+* The eigenvalues of $A$ scale as $\frac{1}{\Delta x^2}$
+* For explicit Euler we need $\Delta t < 2 \frac{\Delta x^2}{\max_i \tilde{\lambda}_i}$ where $\tilde{\lambda}_i$ are te eigenvalues of $\tilde{A}$ independent of $\Delta x$ and $\Delta t$. **Very expensive!**
+* For implicit Euler and Crank-Nicolson, we are unconditionally (for every $\Delta t$) stable!
+
+
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Von Neumann stability analysis
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Lax-Richtmyer stability
+
+# Lax equivalence theorem
+
+
+
