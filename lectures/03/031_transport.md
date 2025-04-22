@@ -8,12 +8,52 @@ paginate: true
 _class: titlepage
 -->
 
-# Linear Transport Equation
+# Linear Hyperbolic: Advection Equation
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
-# Linear transport equation
+# Conservation law (1/n)
+
+We can see the linear transport equation coming from the gas dynamics problem, where we describe the motion of a gas inside a tube (1D-like), where in the transversal direction the density and the velocity of the gas is constant.
+
+We define the density of a gas $\rho(t,x)$ such that the mass of the gas in a given section $[x_1,x_2]$ gives the mass in that section at time $t$ by integrating the density 
+$$
+\int_{x_1}^{x_2} \rho(t,x) \mathrm{d} x.
+$$ 
+
+The walls of the tube are impermeable, no exchange of mass happens across these walls, so the change of mass is happening only across the points $x_1$ and $x_2$. The rate of flow at these points is given by the velocity $v$ times the density, i.e.,
+$$
+\text{mass flux at }(t,x) = \rho(t,x) v(t,x).
+$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+
+# Conservation law (2/n)
+
+The rate of change of the mass in $[x_1,x_2]$ is then the difference of the flow at the two endpoints, i.e.,
+$$
+\frac{\mathrm{d}}{\mathrm{d}t} \int_{x_1}^{x_2} \rho(t,x) \,\mathrm{d}x = \rho(t,x_1)v(t,x_1)-\rho(t,x_2)v(t,x_2).
+$$
+This is the **integral form** of the **conservation law** (of mass).
+Supposing that all the quantities are differentiable, we can differentiate in $x_2$ and  obtain
+$$
+\frac{\mathrm{d}}{\mathrm{d}t} \rho(t,x) + \partial_x (\rho(t,x)v(t,x))=0.
+$$
+This is the differential form of the **conservation law**.
+
+For the moment we suppose that the velocity is known a priori. More in general, we can write the conservation law as 
+$$
+\partial_t \rho(t,x) +\partial_x f(\rho(t,x) )=0.
+$$
+For a complete gas dynamics description we will need also an equation for the velocity (momentum conservation) and one for the pressure (total energy conservation).
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
 
 Given a domain $\Omega \in \mathbb R$ we look for a solution $u:\Omega \times \mathbb R^+ \to \mathbb R$ solution of 
 
