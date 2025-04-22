@@ -21,7 +21,7 @@ $$\partial_t u(t,x) -a \partial_{xx} u(t,x) = f(t,x),$$
 with $a>0$.
 
 ### Physical applications
-* Heat conduction ($u$ temperature),
+* Heat conduction ($u$ temperature, $a$ thermal conductivity, $u_0$ initial temperature, Dirichlet = Thermal bath, Neumann = temperature change rate ),
 * Elastic membrane subject to a body force $f$ ($u$ is the displacement),
 * Electric potential distribution ($u$) due to a charge $f$.
 
@@ -114,7 +114,7 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-## Discretization of $\partial_t u - \partial_{xx} u=0$
+# Finite Difference Discretization of $\partial_t u - \partial_{xx} u=0$
 * Domain in space $\Omega=[a,b]$ and time $[0,T]$
 * Grid in space $a=x_0<x_1<\dots <x_i<\dots<x_{N_x}=b$
 * Grid in time $0=t^0<t^1<\dots<t^n<\dots<t^{N_t}=T$
@@ -361,6 +361,122 @@ $$
 # Lax-Richtmyer stability
 
 # Lax equivalence theorem
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Weak formulation of $\partial_t u -a\Delta u=0$
+### Strong form 
+$$
+\begin{cases}
+\partial_t u(t,x) -a\Delta u(t,x)=f(t,x)\qquad& \text{ in }\mathbb R^+ \times \Omega\\
+u(0,x) = u_0(x)\qquad& \text{ for  } x \in \Omega\\
+u(t,x) = g_D(t,x)\qquad& \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+,\\
+a \nabla_x u(t,x)\cdot n = g_N(t,x)\qquad& \text{ for  } x \in \Gamma_N, \, t \in \mathbb R^+.
+\end{cases}
+$$
+### Weak form
+For every $t\in\mathbb R^+$, we look for $u(t)\in H^1(\Omega)$ such that for all $v\in H^1_{\Gamma_D}(\Omega)$ we have that
+$$
+\begin{cases}
+\int_\Omega \partial_t u(t,x) v(x) + \nabla u(t,x)\cdot \nabla v(x) \mathrm{d}x = \int_\Omega f(t,x) v(x)  \mathrm{d}x + \int_{\Gamma_N} g_N(t,x) v(x) \mathrm{d}s\\
+u(t,x) = g(t,x)\qquad  \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+.
+\end{cases}
+$$
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+## Weak form with linear/bilinear forms
+
+For every $t\in\mathbb R^+$, we look for $u(t)\in H^1(\Omega)$ such that for all $v\in H^1_{\Gamma_D}(\Omega)=:V$ we have that
+$$
+\begin{cases}
+\int_\Omega \partial_t u(t,x) v(x) \mathrm{d}x  +  a( u(t), v)  = F(v) \\
+u(t,x) = g_D(t,x)\qquad  \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+,
+\end{cases}
+$$
+where 
+* $a(\cdot,\cdot):V\times V \to \mathbb R$ is a bilinear, bounded, weakly coercive form
+    * Weakly coercive: $\exists \lambda \geq 0, \, \exists \alpha >0:\quad a(v,v) + \lambda \lVert v \rVert^2_{L^2} \geq \alpha \lVert v \rVert^2_V$ for all $v\in V$,
+* $F$ linear operator defined by $\int_\Omega f v \mathrm{d}x + \int_{\Gamma_N} g_N v \mathrm{d}s$
+* $u_0 \in L^2(\Omega)$ and $f\in L^2(\mathbb R^+ \times \Omega)$
+* Existence and uniqueness of the solution $u$.
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+
+## Energy estimation (for $f=0$ and coercive $a$)
+Take $v=u$, so we have that the weak formulation reads
+
+$$
+\int_{\Omega} u\partial_t u \mathrm{d}x + a( u(t), u(t)) = 0 \qquad \forall t \in \mathbb R^+.
+$$
+We see that
+$$
+\int_{\Omega} u\partial_t u \mathrm{d}x =\int_{\Omega} \partial_t \frac{u^2}{2} \mathrm{d}x = \frac{\lVert u \rVert_{L^2}^2}{2} 
+$$
+and for coercivity of $a$ we know that $a(u,u)\geq \alpha \lVert u \rVert^2_V$, so we have that
+$$
+\begin{align*}
+&\partial_t \frac{\lVert u(t) \rVert_{L^2}^2}{2}  =-a(u,u) \leq - \alpha \lVert u(t) \rVert^2_V <0,\\
+&\partial_t \frac{\lVert u(t) \rVert_{L^2}^2}{2}  =-\int_{\Omega} \lVert \nabla u \rVert^2 \mathrm{d}x = - \lvert u(t) \rvert^2_{H^1} <0,\\
+\Longrightarrow & \lVert u(t) \rVert_{L^2} \leq \lVert u(0) \rVert_{L^2}.
+\end{align*}
+$$
+
+Similar for $f\neq 0$ with Gronwall lemma (right hand side is not only negative, there's also the contribution of the RHS).
+
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Finite Element formulation
+
+Take $V_h = \left\langle \varphi_i \right\rangle_{i=1}^{N_h}$, we can write the finite element formulation as:
+
+
+For every $t\in\mathbb R^+$, we look for $u_h(t)\in V_h$ such that for all $v_h\in V_h$ we have that
+$$
+\begin{cases}
+\int_\Omega \partial_t u_h(t,x) v_h(x) \mathrm{d}x  +  a( u_h(t), v_h)  = F(v_h) \\
+u_h(t,x) = g_h(t,x)\qquad  \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+,
+\end{cases}
+$$
+which leads to the matrix formulation (using e.g. implicit Euler)
+$$
+(\frac{1}{\Delta t} M + A) \mathbf{u}^{n+1} = \frac{1}{\Delta t} M  \mathbf{u}^{n+1} + \mathbf{v}. 
+$$
+where 
+$$M_{ij} = \int_{\Omega} \varphi_i \varphi_j \mathrm{d}x, \qquad A_{ij} = \int_{\Omega} \nabla \varphi_i \cdot  \nabla \varphi_j \mathrm{d}x ,\qquad \mathbf{f}_i = \int_{\Omega}\varphi_i f \mathrm{d}x + \int_{\Gamma_{N}} g_N \varphi_i \mathrm{d}s. $$
+
+* If $\Delta t$ is constant the matrix $(\frac{1}{\Delta t} M + A)$ can be factorized (e.g. LU) once for all timesteps.
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+
+# Energy stability
+## Implicit Euler
+$$
+\begin{align*}
+&(u_h^{n+1}-u_h^n,u_h^{n+1} ) + \Delta t \nu (\nabla u_h^{n+1},\nabla u_h^{n+1}) =0\\
+&\lVert u_h^{n+1}\rVert^2_2  + \Delta t  \nu  \lvert  u_h^{n+1}\rvert_1^2 \leq \frac{\lVert u_h^n\rVert^2_2}{2}+\frac{\lVert u_h^{n+1}\rVert^2_2}{2}\\
+\frac{\lVert u_h^{n+1}\rVert^2_2 }{2}\leq &  \frac{\lVert u_h^{n+1}\rVert^2_2 }{2} + \Delta t  \nu  \lvert  u_h^{n+1}\rvert_1^2 \leq \frac{\lVert u_h^n\rVert^2_2}{2}
+\end{align*}
+$$
+
+* Explicit Euler: $\lVert u_h^{n+1} \rVert_{L^2}\leq \lVert u_h^{n} \rVert_{L^2}$ if  $\Delta t < \frac{2}{\max_i \lambda^i_h}$ with $\lambda^i_h$ are the eigenvalues of $AM^{-1}$.
+* Crank-Nicolson: $\lVert u_h^{n+1} \rVert_{L^2}\leq \lVert u_h^{n} \rVert_{L^2}$ independent of $\Delta t$.
 
 
 
