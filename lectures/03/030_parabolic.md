@@ -346,12 +346,23 @@ $$
 
 
 
-
-
 ---
 <style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
 
-# Von Neumann stability analysis
+# Convergence
+* Question: how do we proceed now that we have $\Delta t$ and $\Delta x$? What is the limit process we are interested in?
+* Answer: typically we link the two quantities, e.g. $\Delta t = C \Delta x$ or  $\Delta t = C \Delta x^2$ or only proportionality, so that when $h=\Delta x \to 0$ also $\Delta t \to 0$.
+
+Method we have considered can be written as
+$$
+U^{n+1}=B(\Delta t) U^n + b^n(\Delta t), \qquad U^{n+1},U^n,b^n(\Delta t) \in \mathbb R^{N_x}, \, B(\Delta t)\in\mathbb R^{N_x \times N_x},
+$$
+with $N_x \approx \frac{1}{\Delta x}$. In general all these quantities depend on both $\Delta x$ and $\Delta t$ which are linked.
+
+### Examples
+* Explicit Euler: $B(\Delta t) = I + \Delta t A$
+* Implicit Euler: $B(\Delta t) = (I - \Delta t A)^{-1}$
+* Crank-Nicolson: $B(\Delta t) = (I - \frac12 \Delta t A)^{-1}(I +\frac12 \Delta t A)$
 
 
 
@@ -359,9 +370,132 @@ $$
 <style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
 
 # Lax-Richtmyer stability
+A **linear** method of the form
+$$
+U^{n+1}=B(\Delta t) U^n + b^n(\Delta t), \qquad U^{n+1},U^n,b^n(\Delta t) \in \mathbb R^{N_x}, \, B(\Delta t)\in\mathbb R^{N_x \times N_x},
+$$
+is **Lax-Richtmyer stable** if for each final time $T$ there exists a constant $C_T$ such that 
+$$
+\lVert B(\Delta t)^n \rVert \leq C_T
+$$ 
+for all $\Delta t$ and integers $n$ such that $n\Delta t\leq T$.
+
+
+
+
 
 # Lax equivalence theorem
 
+A **consistent** **linear** method of the previous form is **convergent** if and only if it is Lax-Richtmyer stable. 
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+## Lax-Richtmyer condition examples $\lVert B(\Delta t)^n \rVert \leq C_T$ 
+Recall that $A$ has non-positive eigenvalues that scale as $\frac{1}{\Delta x^2}$
+
+### Implicit Euler
+$\lVert B(\Delta t) \rVert_2 = \max \text{eig} ( (I-\Delta t A)^{-1})\leq 1$ .
+
+
+### Crank-Nicolson
+$\lVert B(\Delta t) \rVert_2 = \max \text{eig} ( (I-\frac12 \Delta t A)^{-1}(I+\frac12 \Delta t A))\leq \max_i \frac{1+\frac12 \Delta t \lambda_i}{1-\frac12 \Delta t\lambda_i}\leq 1$. 
+
+### Explicit Euler
+$$\lVert B(\Delta t) \rVert \leq 1 + \alpha \Delta t \Longrightarrow \lVert B(\Delta t)^n \rVert \leq (1+\alpha \Delta t)^n \leq e^{\alpha T}$$
+but non-trivial, as $B(\Delta t)$ dimension depends on $\Delta t, \Delta x$ and the eigenvalues as well.
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Von Neumann stability analysis (1/n)
+
+* Based on the Fourier analysis (so for periodic BC problems)
+* Limited to constant coefficients linear problems
+* Typically other types of BC can bring in extra stabilization, but von Neumann analysis is not the right tool to study it
+
+Basic idea:
+* Fourier basis functions are independent and are such that $\partial_x e^{i k x} = i k e^{i k x}$
+* At the discrete level, we consider $W^{ k}_j = e^{i (j\Delta x)  k}$ a discrete eigenfunction of a discrete differential operator
+
+### Example
+Take $(D V)_j := \frac{V_{j+1}-V_{j-1}}{2\Delta x}$, we have that
+$$
+\begin{align*}
+(D W^{ k})_j &= \frac{1}{2\Delta x} \left( e^{i(j+1)\Delta x  k}-e^{i(j-1)\Delta x  k}  \right)= \frac{1}{2\Delta x} \left( e^{i\Delta x  k}-e^{-i\Delta x  k}  \right) e^{i j\Delta x  k}\\
+ &= \frac{i}{\Delta x}  \sin(\Delta x  k )  e^{i j\Delta x  k}= \frac{i}{\Delta x}  \sin(\Delta x  k )  W_j.
+\end{align*}
+$$
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Von Neumann stability analysis (2/n)
+We want to check that 
+$$
+\lVert U^{n+1}\rVert_2 \leq (1+\alpha \Delta t ) \lVert U ^n \rVert_2.
+$$
+
+For Parseval, we can look at the Fourier coefficients ($c_k$) norm instead and, since all the Fourier modes are independent, we can check each of them and how it behaves!
+$$
+\lVert c^{n+1}_k \rVert_2 \leq (1+\alpha \Delta t ) \lVert c^{n}_k \rVert_2.
+$$
+
+We can observe that each mode develops with a linear coefficient
+$$
+c_k^{n+1} = g(k) c_k^n, \text{ where }g(k)\in \mathbb C \text{ is called amplification factor.}
+$$
+If $|g(k)|\leq 1 +\alpha \Delta t$ for all $k$, then the method is Lax-Richtmyer stable.
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Von Neumann amplification factors $c_k^{n+1} = g(k) c_k^n$
+### Example Explicit Euler
+$$
+\begin{align*}
+c_k^{n+1} e^{ij\Delta x k} &= c_k^n e^{ij\Delta x k} + \frac{\Delta t}{\Delta x ^2} (c_k^n e^{i(j+1)\Delta x k}-2c_k^n e^{ij\Delta x k}+c_k^n e^{i(j-1)\Delta x k})\\
+g(k) &= 1+\frac{\Delta t}{\Delta x ^2} ( e^{i\Delta x k}-2+ e^{-i\Delta x k}) = 1-2\frac{\Delta t}{\Delta x ^2}(1-\cos(\Delta x k) )
+\end{align*}
+$$
+since $-1\leq\cos(\Delta x k)\leq 1$ we have that $1-4\frac{\Delta t}{\Delta x^2} \leq g(\xi) \leq 1$. It is Lax-Richtmyer stable if $|g(k)|\leq 1$, so we choose,
+$$1-4\frac{\Delta t}{\Delta x^2}\geq -1 \Longleftrightarrow \frac{\Delta t}{\Delta x^2} \leq \frac12 .$$
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Von Neumann amplification factors $c_k^{n+1} = g(k) c_k^n$
+
+### Example implicit euler
+$$
+\begin{align*}
+&c_k^{n+1} e^{ij\Delta x k} = c_k^n e^{ij\Delta x k} + \frac{\Delta t}{\Delta x ^2} (c_k^{n+1} e^{i(j+1)\Delta x k}-2c_k^{n+1} e^{ij\Delta x k}+c_k^{n+1} e^{i(j-1)\Delta x k})\\
+&(1-\frac{\Delta t}{\Delta x ^2}(2\cos(\Delta x k) -2) ) c_k^{n+1} = c_k^n\\
+&g(k) = \frac{1}{1-\frac{\Delta t}{\Delta x ^2}(2\cos(\Delta x k) -2) }\\
+&|g(k)| = \left\lvert 1-\frac{\Delta t}{\Delta x ^2}(2\cos(\Delta x k) -2) \right\rvert^{-1}=\left\lvert 1+2\frac{\Delta t}{\Delta x ^2}\underbrace{(1-\cos(\Delta x k))}_{\geq 0} \right\rvert^{-1} \leq 1
+\end{align*}
+$$
+for all $k\in \mathbb Z$ and for $\Delta t, \Delta x$. 
+
+### Exercise: Crank-Nicolson
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Comparison with stability region of the ODE solver
+One can study only the spatial discretization, look at the eigenvalues and compare them with the stability region of the time discretization method.
+
+Recall: given a time discretization method for the ODE $y'=\lambda y$, it is stable if $|R(\lambda \Delta t)|\leq 1$.
+In our case, we can look at the semidiscretization of the Fourier coefficients and we have
+$$c_k'(t) = -\frac{1}{\Delta x^2} 2(1-\cos(k\Delta x)) c_k(t)  = \lambda_k c_k(t).$$
+
+* Explicit Euler: $R(z)=1+z$ so $|R(\lambda_k \Delta t)|\leq 1$ is $|1-\frac{\Delta t}{\Delta x^2} 2(1-\cos(k\Delta x))|\leq 1$ (as before)
+
+### Exercise: try with other RK methods (Implicit Euler, Crank-Nicolson, RK4, LobattoIIIA methods)
 
 
 ---
