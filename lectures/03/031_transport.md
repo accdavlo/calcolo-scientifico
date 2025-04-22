@@ -3,17 +3,17 @@ marp: true
 math: mathjax
 ---
 <!--
-title: Lecture 030 Parabolic
+title: Lecture 031 Transport
 paginate: true
 _class: titlepage
 -->
 
-# Parabolic Linear Differential Equations
+# Linear Transport Equation
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
-## Heat equation
+# Linear transport equation
 
 Given a domain $\Omega \in \mathbb R$ we look for a solution $u:\Omega \times \mathbb R^+ \to \mathbb R$ solution of 
 
@@ -595,7 +595,6 @@ $$M_{ij} = \int_{\Omega} \varphi_i \varphi_j \mathrm{d}x, \qquad A_{ij} = \int_{
 
 * If $\Delta t$ is constant the matrix $(\frac{1}{\Delta t} M + A)$ can be factorized (e.g. LU) once for all timesteps.
 
-
 ---
 <style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
 
@@ -615,16 +614,3 @@ $$
 
 
 
-
----
-<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
-
-# Convergence
-
-With implicit schemes there are some error estimations similar to elliptic problems.
-
-Main ideas: 
-* Compute the error
-* exploit coercivity
-* consistency error
-* best error approximation
