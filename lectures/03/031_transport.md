@@ -51,105 +51,161 @@ $$
 $$
 For a complete gas dynamics description we will need also an equation for the velocity (momentum conservation) and one for the pressure (total energy conservation).
 
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:10px}</style>
+
+
+# Conservation laws (3/3)
+To complete the system to describe the gas dynamics, we need to add the momentum equation:
+$$
+\partial_t (\rho v ) + \partial_x \left(\rho v^2 + p \right)
+$$
+that depends on the pressure $p$. In simple approximations, we can assume that the pressure is a function of the density, i.e., $p=p(\rho)$. Otherwise, we can give a full description of the pressure, using also the total energy conservation equation. Define with $E$ the specific total energy, i.e., the energy per unit mass, we can write the total energy conservation equation as
+$$
+\partial_t (\rho E) + \partial_x \left( \rho v E + p v \right) = 0.
+$$
+Now, we need a relation between energy and pressure to close the three equations, this is for example given by the equation of states for ideal gases 
+$$
+p = (\gamma -1) \rho (E-v^2/2) \Longleftrightarrow E = \frac{p}{\rho(\gamma -1)}+v^2/2
+$$
+with $\gamma$ the adiabatic coefficient (for biatomic gasses $\gamma=1.4$). Overall,
+$$
+\partial_t \begin{pmatrix}
+    \rho\\
+    \rho v\\
+    \rho E 
+\end{pmatrix} + \partial_x \begin{pmatrix}
+    \rho v\\
+    \rho v^2 + p\\
+    \rho v E + p v
+\end{pmatrix} = 0.
+$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:10px}</style>
+
+
+# Navier-Stokes
+
+Finally, one can model turbulent effects through some viscosity terms, leading to the Navier-Stokes equations in multi-dimensions
+$$
+\partial_t \begin{pmatrix}
+    \rho\\
+    \rho \mathbf{v}\\
+    \rho E 
+\end{pmatrix} + \nabla \cdot \begin{pmatrix}
+    \rho \mathbf{v}\\
+    \rho \mathbf{v}\otimes \mathbf{v} + (p+ \frac23 \mu \nabla \cdot \mathbf{v}) I -\mu (\nabla \mathbf{v}+\nabla \mathbf{v}^T)\\
+    \rho v (E I + (p+ \frac23 \mu \nabla \cdot \mathbf{v}) I -\mu (\nabla \mathbf{v}+\nabla \mathbf{v}^T)) - \kappa \nabla T
+\end{pmatrix} = 0,
+$$
+where $\kappa$ is the heat conduction coefficient and $T$ represents the temperature of the gas. The dynamic viscosity $\mu$  is linked with the heat conduction through the Prandtl number Pr with the law
+$$
+\kappa = \frac{\mu \gamma c_v}{\text{Pr}}
+$$
+where $c_v$ is the specific heat at constant volume. 
+Finally the temperature is linked to the density and pressure through the ideal gas law
+$$
+\frac{p}{\rho} = R T, \qquad \frac{e}{\rho} = c_v T,
+$$
+with $R$ the ideal gas constant.
+
+
+
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
-
-Given a domain $\Omega \in \mathbb R$ we look for a solution $u:\Omega \times \mathbb R^+ \to \mathbb R$ solution of 
-
-$$\partial_t u(t,x) -a \partial_{xx} u(t,x) = f(t,x),$$
-with $a>0$.
-
-### Physical applications
-* Heat conduction ($u$ temperature, $a$ thermal conductivity, $u_0$ initial temperature, Dirichlet = Thermal bath, Neumann = temperature change rate ),
-* Elastic membrane subject to a body force $f$ ($u$ is the displacement),
-* Electric potential distribution ($u$) due to a charge $f$.
-
-## Difference with Elliptic
-* Variation in time
-
----
-<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
-
-## Cauchy problem
-We couple the PDE with initial conditions (IC) at time $t=0$ AND boundary conditions (either Nuemann or Dirichlet) for all times $t\in\mathbb R^{+}$. 
+# Linear advection equation
+Linear advection equation = Linear transport equation is defined on a domain $\Omega \in \mathbb R$: we look for a solution $u:\Omega \times \mathbb R^+ \to \mathbb R$ solution of 
+$$\partial_t u(t,x) +a \partial_{x} u(t,x) =0,$$
+with $a \in \mathbb R$. If $a>0$, the solution is moving to the right, else is moving to the left. 
+The exact solution of the Cauchy problem with IC $u_0(x)$ is given by 
 $$
-\begin{cases}
-    \partial_t u(t,x) -a \partial_{xx} u(t,x) = f(t,x), & t>0, x\in\Omega\\
-    u(0,x)=u_0(x), & x\in\Omega,\\  
-    u(t,x) = u_D(t,x), & \forall t \in \mathbb R^+, x\in\Gamma_D \subset \partial \Omega,\\
-    \partial_x u(t,x) \cdot \mathbf{n} = u_N(t,x), & \forall t \in \mathbb R^+, x\in\Gamma_N \subset \partial \Omega.
-\end{cases}
+u(t,x)=u_0(x-at).
 $$
 
-### Periodic boundary conditions
-Alternatively, for boundary conditions one can impose periodic conditions, i.e., if $\Omega = [a,b]$, then 
-$$u(t,a)=u(t,b)$$
- for all $t\in \mathbb R^+$.
-
----
-<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
-
-## Exact solutions for periodic boundary conditions (Fourier) (1/n)
-
-### Eigenfunctions of the differential operator
-First of all, let's notice that the trigonometric functions are special functions for the differential operator
+Recall that the lines in the $(x,t)$ plane where the solution is constant are called characteristics. They can be found looking for a curve $x(t)$ such that the solution is constant along the curve
 $$
 \begin{align*}
-&\partial_ x e^{i x k} = i k e^{i x k}, \qquad &\partial_{xx} e^{i x k} = -k^2 e^{i x k},\\
-&\partial_x \sin(kx) = k \cos(kx), \qquad &\partial_{xx} \sin(kx) = -k^2 \sin(kx),\\
-&\partial_x \cos(kx) = -k \sin(kx), \qquad &\partial_{xx} \cos(kx) = -k^2 \cos(kx).
+&0=\frac{\mathrm{d} u(t,x(t))}{\mathrm{d}t} = \partial_t u(t,x) + \partial_x u(t,x) \partial_t x(t) \\
+&\partial_t x(t) =- \frac{ \partial_t u(t,x)}{\partial_x u(t,x)} = a\\
+&x(t)=x_0 + a t.
 \end{align*}
 $$
 
-Recall:
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+# Variable velocity advection equation (1/2)
 $$
-\begin{align*}
-&\sin(x) = \frac{e^{ix}-e^{-ix}}{2i}, \qquad \cos(x) = \frac{e^{ix}+e^{-ix}}{2}.
-\end{align*}
+u_t + a(x) u_x = 0
+$$
+has as characteristics curves the solution of the following ODEs 
+$$
+\partial_t x(t) = a(x(t)), \qquad x(0)=x_0.
 $$
 
-So we focus on the trigonometric functions of the type $e^{ixk}$.
+This is not properly a conservation law, as the velocity is not constant, so if we write
+$$
+\int_{x_1}^{x_2} \partial_t u(t,x) \mathrm{d}x =- \int_{x_1}^{x_2} a(x) \partial_x u(t,x) \mathrm{d}x,
+$$
+we can no longer apply the integration on the right side.
+On the other side, 
+$$
+u_t + (a(x)u)_x =0
+$$
+is a conservation law, as 
+$$
+\int_{x_1}^{x_2} \partial_t u(t,x) \mathrm{d}x =- \int_{x_1}^{x_2} \partial_x  (a(x) u(t,x)) \mathrm{d}x = -a(x_2) u(t,x_2) + a(x_1) u(t,x_1).
+$$
+For which the characteristics are less trivial
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+# Variable velocity advection equation (2/2)
+$$
+u_t + (a(x)u)_x =0
+$$
+the characteristics are less obvious to find, we can write 
+$$
+u_t + a_xu + a u_x = 0 \Longleftrightarrow  u_t +a u_x = -a_x u
+$$
+and obtain again characteristics curves
+$$
+\partial_t x(t) = a(x(t)), \qquad x(0)=x_0,
+$$
+
+on which the solution $u$ is not anymore constant, but it satisfies the following ODE
+$$
+\frac{\mathrm{d} u(t,x(t))}{\mathrm{d}t} = -a_x(x(t)) u(x(t)).
+$$
+
+So, 2 ODEs give us the solution for the PDE.
 
 
 ---
-<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
-## Exact solutions for periodic boundary conditions (Fourier) (2/n)
+## Nonsmooth data and weak solutions
 
-### Fourier series
-For simplicity let's consider $\Omega = [-\pi,\pi]$ with periodic boundary conditions. We can decompose the initial condtion in Fourier series if $u_0\in L^2(\Omega)$.
-$$
-u_0(x) = \sum_{k\in \mathbb Z} c_k e^{i k x}, \qquad c_k = \frac{1}{2\pi} \int_{-\pi}^{\pi} u_0(x) e^{-i k x} \textrm{d}x.
-$$
-
-### Parseval theorem
-$$
-\lVert \mathbf{c} \rVert_2^2=\sum_{k\in \mathbb Z} |c_k|^2 = \frac{1}{2\pi} \int_{-\pi}^{\pi} |u_0(x)|^2 \textrm{d}x = \frac{1}{2\pi} \lVert u_0 \rVert_2^2.
-$$
-
-
-[Wikipedia page on Fourier series](https://en.wikipedia.org/wiki/Fourier_series)
-[Youtube playlist of 3Blue1Brown on Fourier series](https://www.youtube.com/watch?v=spUNpyF58BY&list=PL4VT47y1w7A1-T_VIcufa7mCM3XrSA5DD)
-[Youtube video on solving heat equations with Fourier](https://www.youtube.com/watch?v=ToIXSwZ1pJU&list=PL4VT47y1w7A1-T_VIcufa7mCM3XrSA5DD&index=3)
-
----
-<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
-
-## Exact solutions for periodic boundary conditions (Fourier) (3/n)
-
-### Exploiting linearity for heat equation
-Let's us use the ansatz $u(t,x) = \sum_{k\in \mathbb Z} c_k(t) e^{i k x}$, where $c_k(t)$ are the Fourier coefficients of the solution at time $t$.
+If the initial datum $u_0$ is not differentiable, then the strong PDE loses its meaning.
+Nevertheless, the analytical solution we found is still valid, but we need to interpret the PDE in the **weak sense** on a domain $\Omega=[x_L,x_R]$ as find $u\in L^2(\mathbb R^{+} \times \Omega)$ such that forall $\varphi\in C^\infty(\mathbb R^{+} \times \Omega)$ we have
 $$
 \begin{align*}
-    &\partial_t u(t,x) - a \partial_{xx} u(t,x)=0\\
-    &\sum_{k\in \mathbb Z}   \partial_t c_k(t) e^{i k x} - a \sum_{k\in \mathbb Z} c_k(t) \partial_{xx} e^{i k x}=0\\
-    &\sum_{k\in \mathbb Z}   \partial_t c_k(t) e^{i k x} + a \sum_{k\in \mathbb Z} k^2 c_k(t)  e^{i k x}=0\\
-    &  \partial_t c_k(t) + a k^2 c_k(t) = 0, \quad \forall k\in \mathbb Z,\\
-    &c_k(t) = c_k(0) e^{-a k^2 t}, \quad \forall k\in \mathbb Z.
+&\int_0^T\int_{\Omega} \varphi(t,t,x) \partial_t u(t,x) \mathrm{d}x\,\mathrm{d}t + \int_0^T \int_{\Omega} \varphi(t,x) \partial_x (a(x) u(t,x)) \mathrm{d}x\,\mathrm{d}t =0,\\
+&\int_{\Omega}\varphi(T,x)u(T,x) \mathrm{d}x-\int_{\Omega}\varphi(0,x)u(0,x) \mathrm{d}x-\int_0^T\int_{\Omega} \partial_t \varphi(t,x) u(t,x) \mathrm{d}x \mathrm{d}t \\
+&- \int_0^T\int_{\Omega} \partial_x \varphi(t,x) \, a(x) u(t,x) \mathrm{d}x + \int_0^T \left(\varphi(t,x_R)a(x_R)u(t,x_R)-\varphi(t,x_L)a(x_L)u(t,x_L)\right) \mathrm{d}t=0.
 \end{align*}
 $$
-
+Or in the integral form (where $\varphi\equiv 1$), i.e.
+$$
+\begin{align*}
+&\int_{\Omega}u(T,x) \mathrm{d}x-\int_{\Omega}u(0,x) \mathrm{d}x+ \int_0^T \left(a(x_R)u(t,x_R)-a(x_L)u(t,x_L)\right) \mathrm{d}t=0.
+\end{align*}
+$$
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
