@@ -307,8 +307,23 @@ Very dissipative (and expensive w.r.t. an explicit method)!
 A simple change in the method can adjust it:
 The Lax-Friedrichs method considers this
 $$
-u^{n+1}_i= \frac{u^n_{i+1}+u^n_{i-1}}{2} + \frac{\Delta t}{2\Delta x} (u_{i+1}^n-u_{i-1}^n)=0 
+u^{n+1}_i= \frac{u^n_{i+1}+u^n_{i-1}}{2} - a\frac{\Delta t}{2\Delta x} (u_{i+1}^n-u_{i-1}^n)
 $$
+or
+$$
+u^{n+1}_i= u^n_i +\frac{u^n_{i+1}-2u^n_i +u^n_{i-1}}{2} - a\frac{\Delta t}{2\Delta x} (u_{i+1}^n-u_{i-1}^n)
+$$
+
+### Von Neumann
+$$
+g(k) = 1+ \frac{e^{ik\Delta x}-2+e^{-ik\Delta x}}{2} - a\frac{\Delta t}{2\Delta x} (e^{ik\Delta x}-e^{-ik\Delta x}) = 1+(\cos(k\Delta x) -1) - a\frac{\Delta t}{\Delta x}i \sin(k\Delta x). 
+$$
+Let us denote $\theta = k \Delta x \in [0,2\pi]$, we have
+$$
+|g(k)| = \sqrt{\cos(\theta)^2 + \left(a\frac{\Delta t}{\Delta x}\right)^2\sin(\theta)^2} \leq 1 \Longleftarrow \left\lvert a\frac{\Delta t}{\Delta x}\right\rvert \leq 1.
+$$ 
+This is much better! We can choose $\Delta t \approx \Delta x$!
+
 
 
 
