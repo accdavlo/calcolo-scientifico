@@ -296,7 +296,57 @@ and it is not symmetric, not (unconditionally) positive definite, so we cannot e
 ## Numerical simulations for implicit euler and central difference (periodic BC)
 
 ![width:450](img_advection/imp_eul_central_diff_dx_0.1282_dt_0.10000.png)![width:450](img_advection/imp_eul_central_diff_T_10_dx_0.0503_dt_0.10000.png)
-Very dissipative!
+Very dissipative (and expensive w.r.t. an explicit method)!
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Can we do better with the spatial discretization?
+A simple change in the method can adjust it:
+The Lax-Friedrichs method considers this
+$$
+u^{n+1}_i= \frac{u^n_{i+1}+u^n_{i-1}}{2} + \frac{\Delta t}{2\Delta x} (u_{i+1}^n-u_{i-1}^n)=0 
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
