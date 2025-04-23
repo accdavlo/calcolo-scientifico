@@ -226,7 +226,7 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-## Von Neumann analysis of central difference with Explicit Euler
+## Von Neumann analysis of central difference with Explicit Euler (periodic BC)
 $$
 \frac{u^{n+1}_i-u^n_i}{\Delta t} + \frac{u_{i+1}^n-u_{i-1}^n}{2\Delta x}=0 
 $$
@@ -293,9 +293,10 @@ and it is not symmetric, not (unconditionally) positive definite, so we cannot e
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-## Numerical simulations for implicit euler and central difference
+## Numerical simulations for implicit euler and central difference (periodic BC)
 
 ![width:450](img_advection/imp_eul_central_diff_dx_0.1282_dt_0.10000.png)![width:450](img_advection/imp_eul_central_diff_T_10_dx_0.0503_dt_0.10000.png)
+Very dissipative!
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
