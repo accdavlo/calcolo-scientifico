@@ -24,20 +24,16 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |11/04/25| Finite element for multi-D | [Notes](/notes/2025-04-11-Note.pdf) |[Recording](https://uniroma1.zoom.us/rec/share/rrcZeXhZk1VhLatoca9YwM7ZCMZuRWvHvcLjRzKXMHI_biNmO5pESxz_cp2RUlZz.y468XEpOxKa6erYt)  |zi*0q.e9 |
 |16/04/25| Coding finite element 2D for Poisson with FEniCS | [Notes](/notes/2025-04-16-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/uYlJKwIIExElh4dLmRJJKJOn2cHE2G05CbkxMIK2Rw7L3HGuhHJrb0dN_arfbGiy.N4laP5ETgqEbG-Sq?startTime=1744808892000) [Notebook](/codes/FEM_with_FEniCS.ipynb) | 0gYY0SH= |
 |23/04/25| Model order reduction |  |  | |
-|30/04/25| Advection equation |  |  | |
-|02/05/25| FD for advection equation (and failure FEM) |  |  | |
-|07/05/25| Scalar hyperbolic conservation laws |  |  | |
-|09/05/25| Scalar hyperbolic conservation laws  |  |  | |
-|14/05/25| Coding FD for advection and nonlinear laws |  |  | |
-|16/05/25| Systems of conservation laws (Euler) |  |  | |
-|21/05/25| PINN |  |  | |
-|23/05/25| Parabolic equations? /Saddle point problems? | | | |
-
+|30/04/25| Parabolic equations  | | | |
+|02/05/25| FD and FEM for parabolic equations | | | |
+|07/05/25| Advection equation |  |  | |
+|09/05/25| FD for advection equation (and failure FEM) |  |  | |
+|14/05/25| Scalar hyperbolic conservation laws |  |  | |
+|16/05/25| Coding FD for advection and nonlinear laws |  |  | |
+|21/05/25| Systems of conservation laws (Euler) |  |  | |
+|23/05/25| PINN |  |  | |
 
 ## Next Lessons Schedule
-* 09/04/25 15:00-17:00 Wednesday Laboratorio B
-* 11/04/25 16:00-18:00 Friday Laboratorio B
-* 16/04/25 15:00-17:00 Wednesday Laboratorio B
 * 23/04/25 15:00-17:00 Wednesday Laboratorio B
 * 30/04/25 15:00-17:00 Wednesday Laboratorio B
 * 02/05/25 16:00-18:00 Friday Laboratorio B
@@ -51,10 +47,11 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 ## Notebooks
 | Date | Topic | Notebook |Solutions   |  Last save | 
 |:-----|:------|:---------|:-----------|:-----------|
-|26-28/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
-|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| -|
+|26/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
+|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| |
 |11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
-|16/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
+|23/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
+|02/05/25| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
 
 
 ## Slides
@@ -69,6 +66,8 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
     1. Finite differences for elliptic problems [PDF](lectures/02/021_finite_difference_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/021_finite_difference_elliptic.html) [md](lectures/02/021_finite_difference_elliptic.md)
     1. Finite elements for elliptic problems [PDF](lectures/02/022_finite_element_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/022_finite_element_elliptic.html) [md](lectures/02/022_finite_element_elliptic.md)
     1. Reduced order methods for elliptic problems [Notebook](/codes/ROM_with_FEniCS.ipynb)
+1. Parabolic problems
+    1. Parabolic problems and their discretization [PDF](lectures/03/030_parabolic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/030_parabolic.html) [md](lectures/03/030_parabolic.md)
 1. Advection equation
     1. Advection problems
     1. Finite differences for advection problems
@@ -76,10 +75,6 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 1. Hyperbolic systems
     1. Nonlinear conservation laws
     1. Systems (Euler)
-3. Parabolic problems ?
-    1. Parabolic problems
-    1. Finite differences for parabolic problems
-    1. Finite elements for parabolic problems
 1. Saddle point problems ?
     1. Stokes, Navier-Stokes
     1. FEM discretization
@@ -93,6 +88,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 1. Error control for reduced order models (a posteriori error estimator) (Either Quarteroni or Hesthaven)
 1. SUPG for advection-diffusion time dependent problem (1D or 2D with FEniCS), with energy stability analysis (Chapter of Quarteroni)
 1. Von Neumann stability analysis for a Finite Difference discretization of the wave equation
+1. Von Neumann stability analysis for FEM $\mathbb P^p$ for parabolic equations
 1. Wave equations in 2D (with compatible Finite Difference discretization)
 1. High order FD discretization of Burgers' equations in 1D with WENO.
 1. 2D Euler equations solved on a Cartesian grid for a DMR test
