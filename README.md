@@ -23,7 +23,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |09/04/25| Coding Finite Element 1D for Poisson | [Notes](/notes/2025-04-09-Note.pdf) [Notebook](/codes/poisson_FEM.ipynb) | [0.5 Recording](https://uniroma1.zoom.us/rec/share/z8oGCFYVeeR-S4qEYmIvp3NUqzDyxDpNls4wlyjTBBAAIY-7R9Fy5uShwp_lSlxK.DLERNvIdGP-Wk5HS?) |wr4^96y# |
 |11/04/25| Finite element for multi-D | [Notes](/notes/2025-04-11-Note.pdf) |[Recording](https://uniroma1.zoom.us/rec/share/rrcZeXhZk1VhLatoca9YwM7ZCMZuRWvHvcLjRzKXMHI_biNmO5pESxz_cp2RUlZz.y468XEpOxKa6erYt)  |zi*0q.e9 |
 |16/04/25| Coding finite element 2D for Poisson with FEniCS | [Notes](/notes/2025-04-16-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/uYlJKwIIExElh4dLmRJJKJOn2cHE2G05CbkxMIK2Rw7L3HGuhHJrb0dN_arfbGiy.N4laP5ETgqEbG-Sq?startTime=1744808892000) [Notebook](/codes/FEM_with_FEniCS.ipynb) | 0gYY0SH= |
-|23/04/25| Model order reduction |  |  | |
+|23/04/25| Model order reduction | [Notes](/notes/2025-04-23-Note.pdf) [Notebook](/codes/ROM_with_FEniCS.ipynb) | [Recording](https://uniroma1.zoom.us/rec/share/qcvLQeYMIxY32sPZREWo-aR_DaxNgPlSzhX_iIxukJKlMHDQnQOaLxOlo6HEGdNG.XOUXkkOjPxaCzRK8)  | M?Z4XH.3 |
 |30/04/25| Parabolic equations  | | | |
 |02/05/25| FD and FEM for parabolic equations | | | |
 |07/05/25| Advection equation |  |  | |
