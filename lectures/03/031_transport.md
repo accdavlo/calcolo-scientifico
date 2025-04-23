@@ -210,29 +210,92 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-# Finite Difference Discretization of $\partial_t u - \partial_{xx} u=0$
+# Finite Difference Discretization of $\partial_t u + \partial_{x} u=0$
 * Domain in space $\Omega=[a,b]$ and time $[0,T]$
 * Grid in space $a=x_0<x_1<\dots <x_i<\dots<x_{N_x}=b$
 * Grid in time $0=t^0<t^1<\dots<t^n<\dots<t^{N_t}=T$
+* Method of lines (MOL): spatial discretization + time discretization
 
 ### Explicit Euler
-
+We have hope to have something stable for $\Delta t \approx \Delta x$ (in heat equations we had $\Delta t \approx \Delta x^2$ because of the second derivative term).
+#### Central difference in space
 $$
-\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^n-2u_i^n+u_{i-1}^n}{\Delta x^2}=0 
-$$
-
-### Implicit Euler
-
-$$
-\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{\Delta x^2}=0 
+\frac{u^{n+1}_i-u^n_i}{\Delta t} + \frac{u_{i+1}^n-u_{i-1}^n}{2\Delta x}=0 
 $$
 
-### Crank-Nicolson
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Von Neumann analysis of central difference with Explicit Euler
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} + \frac{u_{i+1}^n-u_{i-1}^n}{2\Delta x}=0 
+$$
 
 $$
-\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{2\Delta x^2}- \frac{u_{i+1}^{n}-2u_i^{n}+u_{i-1}^{n}}{2\Delta x^2}=0 
+\begin{align*}
+&c_k^{n+1} e^{ik j\Delta x} = c_k^{n} e^{ik j\Delta x} - \frac{\Delta t}{2\Delta x} \left( c_k^{n} e^{ik (j+1)\Delta x} - c_k^{n} e^{ik (j-1)\Delta x} \right)\\
+&g(k) = 1- \frac{\Delta t}{2\Delta x} (e^{ik \Delta x} - e^{-ik \Delta x}) = 1- \frac{\Delta t}{\Delta x} i \sin(k \Delta x)\\
+&|g(k)|^2 = 1+\left( \frac{\Delta t}{\Delta x} \sin(k \Delta x)\right)^2 > 1.
+\end{align*}
+$$
+To be Lax-Richtmyer stable we needed $|g(k)|\leq 1 +\alpha \Delta t$, so choosing $\Delta t = C \Delta x$ will not work!
+If we choose $\Delta t = C \Delta x^2$, we have that 
+$$|g(k)|\leq \sqrt{1 +C \Delta t ^2} \leq 1+ \alpha \Delta t. $$
+
+This is not what we hoped for!
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+### Simulations with explicit Euler
+
+![width:390](img_advection/adv_central_diff_exp_eul_dx_0.0010_dt_0.00100.png)![width:390](img_advection/adv_central_diff_exp_eul_dx_0.0010_dt_0.00010.png)![width:390](img_advection/adv_central_diff_exp_eul_dx_0.0010_dt_0.00001.png)
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+
+### Implicit Euler and central difference (1/n)
+
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} + \frac{u_{i+1}^{n+1}-u_{i-1}^{n+1}}{2\Delta x}=0 
 $$
 
+Von Neumann analysis
+$$
+\begin{align*}
+&1+\frac{\Delta t}{2\Delta x} \left( e^{ik \Delta x} - e^{-ik \Delta x} \right) = 1+\frac{\Delta t}{\Delta x} i \sin(k \Delta x)\\
+&|g(k)| = \left\lvert 1+\frac{\Delta t}{\Delta x} i \sin(k \Delta x)\right\rvert^{-1} <1, \qquad \forall k\in \mathbb R.
+\end{align*}
+$$
+Which is even too much. Ok unconditional stability, but having an amplification factor always smaller than 1 is weird for a solution that keeps its energy.
+$\lVert u(t) \rVert_{L^2} = \lVert u(0) \rVert_{L^2}$, here we will have that $\lVert u^n \rVert_{L^2} = |g(k)|^n \lVert u(0) \rVert_{L^2} \ll  \lVert u(0) \rVert_{L^2}$ for many timesteps. 
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+
+### Implicit Euler and central difference (2/n)
+The mass matrix of the linear system is
+$$
+\begin{pmatrix}
+1 &\frac{\Delta t}{2\Delta x} & 0&\dots & \dots\\
+-\frac{\Delta t}{2\Delta x} &1 &\frac{\Delta t}{2\Delta x} &\dots & \dots\\
+\vdots & \ddots & \ddots & \ddots &\vdots\\
+\vdots & \cdots & \ddots & \ddots &\vdots\\
+0&\dots & \dots &-\frac{\Delta t}{2\Delta x} &1     
+\end{pmatrix}
+$$
+and it is not symmetric, not (unconditionally) positive definite, so we cannot expect the good properties of the heat equation. It might be not that simple to solve the linear system.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Numerical simulations for implicit euler and central difference
+
+![width:450](img_advection/imp_eul_central_diff_dx_0.1282_dt_0.10000.png)![width:450](img_advection/imp_eul_central_diff_T_10_dx_0.0503_dt_0.10000.png)
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
@@ -710,3 +773,10 @@ $$
 
 
 
+
+
+
+
+#### IDEAS:
+* Linear systems (acoustics)
+* Nonlinear scalar (Burgers) -> weak, entropy, shocks, rarefaction
