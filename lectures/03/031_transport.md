@@ -440,25 +440,65 @@ $$-a\frac{\Delta t}{\Delta x} (u^n_i-u^n_{i-1}) \Longrightarrow -\text{CFL}(1-e^
 
 Stability for $\text{CFL}\leq 1$.
 
+
+
+
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-# Rusanov (or local Lax-Friedrichs)
+## Consistency of upwind/Lax-Friedrichs
 
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} + a \frac{u^n_{i+1}-u^n_{i-1}}{2\Delta x} - \varepsilon \frac{u^{n}_{i+1}-2u^n_i+u^n_{i-1}}{2\Delta x^2}=0
+$$
+Where $\varepsilon = \frac{\Delta x^2}{\Delta t}$ and  $\varepsilon = a \Delta x$ for upwind. So supposing $\Delta t \sim \Delta x$, we have that $\varepsilon = C \Delta x$ in both cases.
 
+Substituing the exact solution, we have
+$$
+\partial_t u(t,x) + \frac{\Delta t}{2}  \partial_{tt} u(t,x) + a \partial_x u + a \frac{\Delta x^2}{6} \partial_{xxx}u  - \frac{C}{2} \Delta x \partial_{xx} u=O(\Delta x^3)
+$$
+In general, this is a **first order scheme**!
+
+But it can become a second order scheme if we match the first order terms (recall that $\partial_{tt} u = a^2 \partial_{xx} u$): 
+$$
+\frac{\Delta t}{2}  \partial_{tt} u(t,x) - \frac{C}{2} \Delta x \partial_{xx} u = \frac{\Delta t}{2 a^2}  \partial_{xx} u - \frac{C \Delta x}{2}  \partial_{xx} u 
+$$
+so choosing  $C=\frac{\Delta t a^2}{\Delta x }$ we will have a second order scheme!
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 # High order: Lax-Wendroff
 
+$$
+\frac{u^{n+1}_i-u^n_i}{\Delta t} + a \frac{u^n_{i+1}-u^n_{i-1}}{2\Delta x} - \frac{\Delta t}{2} a^2 \frac{u^{n}_{i+1}-2u^n_i+u^n_{i-1}}{\Delta x^2}=0
+$$
+is the just obtained second order scheme.
+
+Another way of getting it is doing a Taylor expansion and the equation $\partial_t u=-a\partial_x u$ and $\partial_{tt}u=a\partial_{xx} u$:
+$$
+\begin{align*}
+&u^{n+1}_i \approx u^n_i +\Delta t \partial_t u^n_i+ \frac{\Delta t^2}{2} \partial_{tt} u^n_i\\
+&u^{n+1}_i \approx u^n_i -a\Delta t \partial_x u^n_i+ \frac{\Delta t^2}{2} a^2\partial_{xx} u^n_i\\
+&u^{n+1}_i \approx u^n_i -a\Delta t \frac{u^n_{i+1}-u^n_{i-1}}{2\Delta x}+ \frac{\Delta t^2}{2} a^2\frac{u^{n}_{i+1}-2u_i^n+u^n_{i-1}}{\Delta x^2}
+\end{align*}
+$$
+
+### Von Neumann
+$$
+-\text{CFL} \,i\sin(\theta) +\text{CFL}^2 (\cos(\theta)-1)
+$$
+Ellipsis with center in $(-1,0)$ with imaginary semi axis = $\text{CFL}$ and real semiaxis = $\text{CFL}^2$. So, for $\text{CFL}\leq 1 $ is stable!
 
 
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# Lax-Wendroff von Neumann plots
 
 
-
-
+![width:390](img_advection/von_neumann_stab_advection_Lax_Wendroff_CFL_1.1.png)![width:390](img_advection/von_neumann_stab_advection_Lax_Wendroff_CFL_1.0.png)![width:390](img_advection/von_neumann_stab_advection_Lax_Wendroff_CFL_0.8.png)
 
 
 
