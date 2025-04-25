@@ -207,6 +207,26 @@ $$
 \end{align*}
 $$
 
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# Vanishing viscosity solution
+
+Another approach to discontinuous data is to consider a regularization of the advection equation, with an advection-diffusion equation
+$$
+\partial_t u + a \partial_x u = \varepsilon u_{xx}
+$$
+with $\varepsilon$ very small (going to zero). If we denote $u^{\varepsilon}$ the solution of the previous equation, we will have that $u^{\varepsilon} \in C^{\infty}((a,b)\times\mathbb R^+)$ even when $u_0$ is not smooth! This is thanks to the parabolic nature.
+
+Then, we can consider the solution of the advection equation $u$ as the limit of the advection-diffusion equation for **vanishing viscosity** (diffusion), i.e.
+
+$$
+\lim_{\varepsilon\to 0}u^\varepsilon(t,x)  = u(t,x).
+$$
+The so obtained solution is called the **vanishing viscosity** solution.
+
+
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
@@ -303,7 +323,7 @@ Very dissipative (and expensive w.r.t. an explicit method)!
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-## Can we do better with the spatial discretization?
+## Can we do better with the spatial discretization? Lax-Friedrichs
 A simple change in the method can adjust it:
 The Lax-Friedrichs method considers this
 $$
@@ -327,17 +347,110 @@ This is much better! We can choose $\Delta t \approx \Delta x$!
 
 
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# CFL condition (Courant-Friedrichs-Lax)
+The condition
+$$\Delta t \leq \frac{\Delta x}{|a|}$$
+is called CFL condition and guarantees the stability for many explicit methods for hyperbolic problems.
+
+Typically, one chooses a coefficient (the CFL coefficient) and sets the timestep, so that the CFL condition is verified. So, given a geometry, one can choose 
+
+$$
+\Delta t = \text{CFL}\frac{\Delta x}{|a|}
+$$ 
+with $\text{CFL}$ equals to any number below or equal to 1 and have a stable scheme.
+Typically is better to choose $\text{CFL}<1$ just to be on the safe side, like 0.9.
+Indeed 
+
+$$\Delta t \leq \frac{\Delta x}{|a|} \Longleftrightarrow \text{CFL} =\frac{\Delta t}{\Delta x}|a| \leq 1. $$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+
+### Von Neumann for Lax-Friedrichs and explicit Euler
+![width:390](img_advection/von_neumann_stab_advection_Lax_Friedrichs_CFL_1.1.png)![width:390](img_advection/von_neumann_stab_advection_Lax_Friedrichs_CFL_1.0.png)![width:390](img_advection/von_neumann_stab_advection_Lax_Friedrichs_CFL_0.8.png)
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## What has changed? Lax-Friedrichs
+$$
+u^{n+1}_i= u^n_i +\underbrace{\frac{u^n_{i+1}-2u^n_i +u^n_{i-1}}{2}}_{\approx \frac12 \Delta x^2 u_{xx}} - a\frac{\Delta t}{2\Delta x} (u_{i+1}^n-u_{i-1}^n)
+$$
+We have added some **artificial viscosity** (diffusion), such that the method remains consistent, i.e.
+$$
+\begin{align*}
+&u(t+\Delta t,x)= u(t,x)  +\frac12 \Delta x^2 u_{xx}- a \Delta t \partial_x u(t,x)\\
+&\partial_t u(t,x)+ a \partial_x u(t,x)-\Delta x \frac{\Delta x}{2\Delta t} u_{xx} =0
+\end{align*}
+$$
+So, the last term goes to zero when $\Delta x\to 0$ if $\Delta t \sim \Delta x$.
+
+* The diffusion term has a stabilization effect, as we have seen in parabolic and elliptic equations, diffusion smoothens the oscillations and brings regularity.
+* We are actually solving an advection-diffusion equation with **vanishing viscosity** (as $\Delta x \to 0$) and we know that the vanishing viscosity solution converges to the advection solution.
 
 
 
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# Another spatial discretization idea: upwind (1/2)
+
+Another point of view for advection equation $\partial_t u + a \partial_x u=0$
+
+### Why is central difference wrong?
+
+In advection problems the information travels along the characteristics, so if $a$ is positive it travels from left to right, while if $a$ is negative, it travels from right to left. 
+
+Using a centra discretization makes the information travel both from left and right to a certain point. We are going against the characteristics!
+
+Instead one could us an **upwinded** flux (that follows the wind/the velocity $a$).
+$$
+u^{n+1}_i =u^n_i - a \Delta t \begin{cases}
+\frac{u_i^n-u_{i-1}^n}{\Delta x} \qquad &\text{if }a>0,\\
+\frac{u_{i+1}^n-u_{i}^n}{\Delta x} \qquad &\text{if }a<0.
+\end{cases}
+$$
+
+If $a>0$ this sums up to
+$$
+u^{n+1}_i =u^n_i-a\frac{\Delta t}{\Delta x}(u^n_i-u^n_{i-1}) = u^n_i-a\frac{\Delta t}{2\Delta x}(u^n_{i+1}-u^n_{i-1})  +\underbrace{a\frac{\Delta t}{2\Delta x}(u^n_{i+1}-2u_i^n+u^n_{i-1})}_{a\frac{\Delta t \Delta x }{2} \partial_{xx}u}
+$$
 
 
 
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# Another spatial discretization idea: upwind (2/2)
+Again we are using some **numerical viscosity** proportional to $|a|\frac{\Delta x}{2}$
+
+If we compute the von Neumann stability analysis we get for $a>0$
+$$-a\frac{\Delta t}{\Delta x} (u^n_i-u^n_{i-1}) \Longrightarrow -\text{CFL}(1-e^{-i k \Delta x}) $$ 
+
+![width:390](img_advection/von_neumann_stab_advection_upwind_CFL_1.1.png)![width:390](img_advection/von_neumann_stab_advection_upwind_CFL_1.0.png)![width:390](img_advection/von_neumann_stab_advection_upwind_CFL_0.8.png)
+
+Stability for $\text{CFL}\leq 1$.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# Rusanov (or local Lax-Friedrichs)
 
 
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# High order: Lax-Wendroff
 
 
 
