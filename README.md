@@ -41,7 +41,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 * 09/05/25 16:00-18:00 Friday Laboratorio B
 * 14/05/25 15:00-17:00 Wednesday Laboratorio B
 * 16/05/25 16:00-18:00 Friday Laboratorio B
-* 21/05/25 15:00-17:00 Wednesday Laboratorio B
+* 21/05/25 **14:00-16:00** Wednesday Laboratorio B
 * 23/05/25 16:00-18:00 Friday Laboratorio B
 
 ## Notebooks
