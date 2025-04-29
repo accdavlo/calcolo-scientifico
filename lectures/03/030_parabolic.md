@@ -32,7 +32,7 @@ with $a>0$.
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Cauchy problem
-We couple the PDE with initial conditions (IC) at time $t=0$ AND boundary conditions (either Nuemann or Dirichlet) for all times $t\in\mathbb R^{+}$. 
+We couple the PDE with initial conditions (IC) at time $t=0$ AND boundary conditions (either Neumann or Dirichlet) for all times $t\in\mathbb R^{+}$. 
 $$
 \begin{cases}
     \partial_t u(t,x) -a \partial_{xx} u(t,x) = f(t,x), & t>0, x\in\Omega\\
@@ -212,7 +212,8 @@ Second order in space and first order in time
 $$
 \begin{align*}
 &\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^n-2u_i^n+u_{i-1}^n}{2\Delta x^2}- \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{2\Delta x^2}=0 \\
-e_{\Delta t, \Delta x}^{EE} =&\frac{u(t^{n+1},x_i)-u(t^n,x_i)}{\Delta t} - \frac{u(t^n,x_{i+1})-2u(t^n,x_i)+u(t^n,x_{i-1})}{\Delta x^2} \\
+e_{\Delta t, \Delta x}^{CN} =&\frac{u(t^{n+1},x_i)-u(t^n,x_i)}{\Delta t} - \frac{u(t^n,x_{i+1})-2u(t^n,x_i)+u(t^n,x_{i-1})}{2\Delta x^2}      \\
+&- \frac{u(t^{n+1},x_{i+1})-2u(t^{n+1},x_i)+u(t^{n+1},x_{i-1})}{2\Delta x^2} \\
 =&\partial_t u(t^n,x_i) +\frac{\Delta t}2 \partial_{tt}u(t^n,x_i) - \partial_{xx} u(t^n,x_i) -\frac{\Delta x^2}{12} \partial_{xxxx}u(t^n,x_i)\\
 &- \frac{\Delta t}{2} \underbrace{\partial_{txx} u(t^n,x_i)}_{=\partial_{tt}u} -\frac{\Delta t}{2}\frac{\Delta x^2}{12} \partial_{xxxxt}u(t^n,x_i)+O(\Delta t^2) + O(\Delta x^4) \\
 =&  \frac{\Delta t}2 \partial_{tt}u(t^n,x_i)-\frac{\Delta t}2 \partial_{tt}u(t^n,x_i) +O(\Delta t^2) + O(\Delta x^2) = O(\Delta t^2) + O(\Delta x^2)
@@ -227,10 +228,9 @@ Second order in space and time
 $$
 \begin{align*}
     &\begin{cases}
-        \partial_t u - \partial_{xx}u =0
+        \partial_t u - \partial_{xx}u =0,\\
         u_0(x) = \sin(x)\qquad x\in [0,2\pi],\\
-        u(t,0) = 0. \qquad t \in \mathbb{R}^+,\\
-        u(t,2\pi) = 0. \qquad t \in \mathbb{R}^+,
+        u(t,0) =u(t,2\pi)= 0. \qquad t \in \mathbb{R}^+,
     \end{cases}\qquad
     &u(t,x)=e^{-t}\sin(x)\qquad x\in [0,2\pi],\qquad t \in \mathbb{R}^+.
 \end{align*}
@@ -339,7 +339,7 @@ A:=\frac{1}{\Delta x^2}\underbrace{\begin{bmatrix}
 $$
 
 * $A$ is negative definite and symmetric
-* $A$ has real non-positive **real** eigenvalues
+* $A$ has non-positive **real** eigenvalues
 * The eigenvalues of $A$ scale as $\frac{1}{\Delta x^2}$
 * For explicit Euler we need $\Delta t < 2 \frac{\Delta x^2}{\max_i \tilde{\lambda}_i}$ where $\tilde{\lambda}_i$ are te eigenvalues of $\tilde{A}$ independent of $\Delta x$ and $\Delta t$. **Very expensive!**
 * For implicit Euler and Crank-Nicolson, we are unconditionally (for every $\Delta t$) stable!
@@ -588,7 +588,7 @@ u_h(t,x) = g_h(t,x)\qquad  \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+,
 $$
 which leads to the matrix formulation (using e.g. implicit Euler)
 $$
-(\frac{1}{\Delta t} M + A) \mathbf{u}^{n+1} = \frac{1}{\Delta t} M  \mathbf{u}^{n+1} + \mathbf{v}. 
+(\frac{1}{\Delta t} M + A) \mathbf{u}^{n+1} = \frac{1}{\Delta t} M  \mathbf{u}^{n} + \mathbf{f}. 
 $$
 where 
 $$M_{ij} = \int_{\Omega} \varphi_i \varphi_j \mathrm{d}x, \qquad A_{ij} = \int_{\Omega} \nabla \varphi_i \cdot  \nabla \varphi_j \mathrm{d}x ,\qquad \mathbf{f}_i = \int_{\Omega}\varphi_i f \mathrm{d}x + \int_{\Gamma_{N}} g_N \varphi_i \mathrm{d}s. $$
