@@ -24,7 +24,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |11/04/25| Finite element for multi-D | [Notes](/notes/2025-04-11-Note.pdf) |[Recording](https://uniroma1.zoom.us/rec/share/rrcZeXhZk1VhLatoca9YwM7ZCMZuRWvHvcLjRzKXMHI_biNmO5pESxz_cp2RUlZz.y468XEpOxKa6erYt)  |zi*0q.e9 |
 |16/04/25| Coding finite element 2D for Poisson with FEniCS | [Notes](/notes/2025-04-16-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/uYlJKwIIExElh4dLmRJJKJOn2cHE2G05CbkxMIK2Rw7L3HGuhHJrb0dN_arfbGiy.N4laP5ETgqEbG-Sq?startTime=1744808892000) [Notebook](/codes/FEM_with_FEniCS.ipynb) | 0gYY0SH= |
 |23/04/25| Model order reduction | [Notes](/notes/2025-04-23-Note.pdf) [Notebook](/codes/ROM_with_FEniCS.ipynb) | [Recording](https://uniroma1.zoom.us/rec/share/qcvLQeYMIxY32sPZREWo-aR_DaxNgPlSzhX_iIxukJKlMHDQnQOaLxOlo6HEGdNG.XOUXkkOjPxaCzRK8)  | M?Z4XH.3 |
-|30/04/25| Parabolic equations  | | | |
+|30/04/25| Parabolic equations  | [Notes](/notes/2025-04-30-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/JL8v4GqPZxekRFlLkkke0-G4Rkm-Qr2SKS4Gy9kbWzqTNSYCEaxeey0J19mMss07.UptNrOJ1ElN_xYfv)| ^M0QsaAs |
 |02/05/25| FD and FEM for parabolic equations | | | |
 |07/05/25| Advection equation |  |  | |
 |09/05/25| FD for advection equation (and failure FEM) |  |  | |
@@ -34,8 +34,6 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |23/05/25| PINN |  |  | |
 
 ## Next Lessons Schedule
-* 23/04/25 15:00-17:00 Wednesday Laboratorio B
-* 30/04/25 15:00-17:00 Wednesday Laboratorio B
 * 02/05/25 16:00-18:00 Friday Laboratorio B
 * 07/05/25 15:00-17:00 Wednesday Laboratorio B
 * 09/05/25 16:00-18:00 Friday Laboratorio B
