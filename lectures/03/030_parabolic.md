@@ -462,7 +462,7 @@ c_k^{n+1} e^{ij\Delta x k} &= c_k^n e^{ij\Delta x k} + \frac{\Delta t}{\Delta x 
 g(k) &= 1+\frac{\Delta t}{\Delta x ^2} ( e^{i\Delta x k}-2+ e^{-i\Delta x k}) = 1-2\frac{\Delta t}{\Delta x ^2}(1-\cos(\Delta x k) )
 \end{align*}
 $$
-since $-1\leq\cos(\Delta x k)\leq 1$ we have that $1-4\frac{\Delta t}{\Delta x^2} \leq g(\xi) \leq 1$. It is Lax-Richtmyer stable if $|g(k)|\leq 1$, so we choose,
+since $-1\leq\cos(\Delta x k)\leq 1$ we have that $1-4\frac{\Delta t}{\Delta x^2} \leq g(k) \leq 1$. It is Lax-Richtmyer stable if $|g(k)|\leq 1$, so we choose,
 $$1-4\frac{\Delta t}{\Delta x^2}\geq -1 \Longleftrightarrow \frac{\Delta t}{\Delta x^2} \leq \frac12 .$$
 
 ---
@@ -516,7 +516,7 @@ For every $t\in\mathbb R^+$, we look for $u(t)\in H^1(\Omega)$ such that for all
 $$
 \begin{cases}
 \int_\Omega \partial_t u(t,x) v(x) + \nabla u(t,x)\cdot \nabla v(x) \mathrm{d}x = \int_\Omega f(t,x) v(x)  \mathrm{d}x + \int_{\Gamma_N} g_N(t,x) v(x) \mathrm{d}s\\
-u(t,x) = g(t,x)\qquad  \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+.
+u(t,x) = g_D(t,x)\qquad  \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+.
 \end{cases}
 $$
 
@@ -555,7 +555,7 @@ $$
 $$
 We see that
 $$
-\int_{\Omega} u\partial_t u \mathrm{d}x =\int_{\Omega} \partial_t \frac{u^2}{2} \mathrm{d}x = \frac{\lVert u \rVert_{L^2}^2}{2} 
+\int_{\Omega} u\partial_t u \mathrm{d}x =\int_{\Omega} \partial_t \frac{u^2}{2} \mathrm{d}x = \partial_t \frac{\lVert u \rVert_{L^2}^2}{2} 
 $$
 and for coercivity of $a$ we know that $a(u,u)\geq \alpha \lVert u \rVert^2_V$, so we have that
 $$
