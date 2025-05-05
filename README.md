@@ -25,7 +25,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |16/04/25| Coding finite element 2D for Poisson with FEniCS | [Notes](/notes/2025-04-16-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/uYlJKwIIExElh4dLmRJJKJOn2cHE2G05CbkxMIK2Rw7L3HGuhHJrb0dN_arfbGiy.N4laP5ETgqEbG-Sq?startTime=1744808892000) [Notebook](/codes/FEM_with_FEniCS.ipynb) | 0gYY0SH= |
 |23/04/25| Model order reduction | [Notes](/notes/2025-04-23-Note.pdf) [Notebook](/codes/ROM_with_FEniCS.ipynb) | [Recording](https://uniroma1.zoom.us/rec/share/qcvLQeYMIxY32sPZREWo-aR_DaxNgPlSzhX_iIxukJKlMHDQnQOaLxOlo6HEGdNG.XOUXkkOjPxaCzRK8)  | M?Z4XH.3 |
 |30/04/25| Parabolic equations  | [Notes](/notes/2025-04-30-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/JL8v4GqPZxekRFlLkkke0-G4Rkm-Qr2SKS4Gy9kbWzqTNSYCEaxeey0J19mMss07.UptNrOJ1ElN_xYfv)| ^M0QsaAs |
-|02/05/25| FD and FEM for parabolic equations | | | |
+|02/05/25| FD and FEM for parabolic equations | [Notes](/notes/2025-05-02-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/OX9BVPv1jxxaMBqWNoOxd_VYHOIv2oOvLU_6qm2PnrHyLmsi78aFCODR9AzPmlgK.SfeKwCD4vgX2qln0) | 6ZC@D#?+ |
 |07/05/25| Advection equation |  |  | |
 |09/05/25| FD for advection equation (and failure FEM) |  |  | |
 |14/05/25| Scalar hyperbolic conservation laws |  |  | |
