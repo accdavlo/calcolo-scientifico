@@ -59,7 +59,7 @@ For a complete gas dynamics description we will need also an equation for the ve
 # Conservation laws (3/3)
 To complete the system to describe the gas dynamics, we need to add the momentum equation:
 $$
-\partial_t (\rho v ) + \partial_x \left(\rho v^2 + p \right)
+\partial_t (\rho v ) + \partial_x \left(\rho v^2 + p \right)=0
 $$
 that depends on the pressure $p$. In simple approximations, we can assume that the pressure is a function of the density, i.e., $p=p(\rho)$. Otherwise, we can give a full description of the pressure, using also the total energy conservation equation. Define with $E$ the specific total energy, i.e., the energy per unit mass, we can write the total energy conservation equation as
 $$
@@ -101,7 +101,7 @@ $$
     \rho v (E I + (p+ \frac23 \mu \nabla \cdot \mathbf{v}) I -\mu (\nabla \mathbf{v}+\nabla \mathbf{v}^T)) - \kappa \nabla T
 \end{pmatrix} = 0,
 $$
-where $\kappa$ is the heat conduction coefficient and $T$ represents the temperature of the gas. The dynamic viscosity $\mu$  is linked with the heat conduction through the Prandtl number Pr with the law
+where $I$ is the identity, $\kappa$ is the heat conduction coefficient and $T$ represents the temperature of the gas. The dynamic viscosity $\mu$  is linked with the heat conduction through the Prandtl number Pr with the law
 $$
 \kappa = \frac{\mu \gamma c_v}{\text{Pr}}
 $$
@@ -192,10 +192,10 @@ So, 2 ODEs give us the solution for the PDE.
 ## Nonsmooth data and weak solutions
 
 If the initial datum $u_0$ is not differentiable, then the strong PDE loses its meaning.
-Nevertheless, the analytical solution we found is still valid, but we need to interpret the PDE in the **weak sense** on a domain $\Omega=[x_L,x_R]$ as find $u\in L^2(\mathbb R^{+} \times \Omega)$ such that forall $\varphi\in C^\infty(\mathbb R^{+} \times \Omega)$ we have
+Nevertheless, the analytical solution we found is still valid, but we need to interpret the PDE in the **weak sense** on a domain $[0,T]\times\Omega=[0,T]\times[x_L,x_R]$ as find $u\in L^2(\mathbb R^{+} \times \Omega)$ such that forall $\varphi\in C^\infty(\mathbb R^{+} \times \Omega)$ we have
 $$
 \begin{align*}
-&\int_0^T\int_{\Omega} \varphi(t,t,x) \partial_t u(t,x) \mathrm{d}x\,\mathrm{d}t + \int_0^T \int_{\Omega} \varphi(t,x) \partial_x (a(x) u(t,x)) \mathrm{d}x\,\mathrm{d}t =0,\\
+&\int_0^T\int_{\Omega} \varphi(t,x) \partial_t u(t,x) \mathrm{d}x\,\mathrm{d}t + \int_0^T \int_{\Omega} \varphi(t,x) \partial_x (a(x) u(t,x)) \mathrm{d}x\,\mathrm{d}t =0,\\
 &\int_{\Omega}\varphi(T,x)u(T,x) \mathrm{d}x-\int_{\Omega}\varphi(0,x)u(0,x) \mathrm{d}x-\int_0^T\int_{\Omega} \partial_t \varphi(t,x) u(t,x) \mathrm{d}x \mathrm{d}t \\
 &- \int_0^T\int_{\Omega} \partial_x \varphi(t,x) \, a(x) u(t,x) \mathrm{d}x + \int_0^T \left(\varphi(t,x_R)a(x_R)u(t,x_R)-\varphi(t,x_L)a(x_L)u(t,x_L)\right) \mathrm{d}t=0.
 \end{align*}
@@ -217,7 +217,7 @@ Another approach to discontinuous data is to consider a regularization of the ad
 $$
 \partial_t u + a \partial_x u = \varepsilon u_{xx}
 $$
-with $\varepsilon$ very small (going to zero). If we denote $u^{\varepsilon}$ the solution of the previous equation, we will have that $u^{\varepsilon} \in C^{\infty}((a,b)\times\mathbb R^+)$ even when $u_0$ is not smooth! This is thanks to the parabolic nature.
+with $\varepsilon$ very small (going to zero). If we denote $u^{\varepsilon}$ the solution of the previous equation, we will have that $u^{\varepsilon} \in C^{\infty}( (0,T)\times (a,b))$ even when $u_0$ is not smooth (with decent BC)! This is thanks to the parabolic nature.
 
 Then, we can consider the solution of the advection equation $u$ as the limit of the advection-diffusion equation for **vanishing viscosity** (diffusion), i.e.
 
@@ -308,7 +308,7 @@ $$
 0&\dots & \dots &-\frac{\Delta t}{2\Delta x} &1     
 \end{pmatrix}
 $$
-and it is not symmetric, not (unconditionally) positive definite, so we cannot expect the good properties of the heat equation. It might be not that simple to solve the linear system.
+and it is not symmetric, not (unconditionally) positive definite, so we cannot expect the good properties of the heat equation. It might be not that simple to solve the linear system for large $\Delta t$.
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
@@ -325,7 +325,7 @@ Very dissipative (and expensive w.r.t. an explicit method)!
 
 ## Can we do better with the spatial discretization? Lax-Friedrichs
 A simple change in the method can adjust it:
-The Lax-Friedrichs method considers this
+The **Lax-Friedrichs** method considers this
 $$
 u^{n+1}_i= \frac{u^n_{i+1}+u^n_{i-1}}{2} - a\frac{\Delta t}{2\Delta x} (u_{i+1}^n-u_{i-1}^n)
 $$
@@ -409,9 +409,9 @@ Another point of view for advection equation $\partial_t u + a \partial_x u=0$
 
 In advection problems the information travels along the characteristics, so if $a$ is positive it travels from left to right, while if $a$ is negative, it travels from right to left. 
 
-Using a centra discretization makes the information travel both from left and right to a certain point. We are going against the characteristics!
+Using a central discretization makes the information travel both from left and right to a certain point. We are going against the characteristics!
 
-Instead one could us an **upwinded** flux (that follows the wind/the velocity $a$).
+Instead one could use an **upwinded** flux (that follows the wind/the velocity $a$).
 $$
 u^{n+1}_i =u^n_i - a \Delta t \begin{cases}
 \frac{u_i^n-u_{i-1}^n}{\Delta x} \qquad &\text{if }a>0,\\
@@ -440,6 +440,12 @@ $$-a\frac{\Delta t}{\Delta x} (u^n_i-u^n_{i-1}) \Longrightarrow -\text{CFL}(1-e^
 
 Stability for $\text{CFL}\leq 1$.
 
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Another interpretation of CFL condition
+![](img_advection/CFL_interpretation.png)
 
 
 
@@ -502,13 +508,32 @@ Ellipsis with center in $(-\text{CFL}^2,0)$ with imaginary semi axis = $\text{CF
 
 
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+# High order upwind: Beam-Warming
+
+We can also use the upwind idea to construct a high order scheme, extending the stencil on one side.
+
+We can say, the information travels from left to right (for example) and choose a stencil that discretizes the first derivative only from one side. For example, a second order approximation of the first derivatives in the points $x_i, x_{i-1}, x_{i-2}$, i.e., using the method of lines, for $a>0$, is given by
+$$
+\partial_t u_i = -a \frac{u_{i-2}-4u_{i-1}+3u_i}{2\Delta x}.
+$$
+This is only second order in space, if one applies the explicit Euler. If one proceeds similarly to the Lax-Wendroff method with a second order Taylor expansion in time, it gets the so-called **Beam-Warming** scheme
+$$
+u_i^{n+1} = u^n_i  -a\Delta t \frac{u^n_{i-2}-4u^n_{i-1}+3u^n_i}{2\Delta x} +a^2\Delta t^2 \frac{u^n_{i-2}-2u^n_{i-1}+u^n_i}{2\Delta x^2}
+$$
+[Finite difference stencil generator](https://web.media.mit.edu/~crtaylor/calculator.html)
 
 
 
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-
-
+# Beam-Warming von Neumann plots
+Stable up to CFL 2
+![width:290](img_advection/von_neumann_stab_advection_Beam_Warming_CFL_0.8.png)![width:290](img_advection/von_neumann_stab_advection_Beam_Warming_CFL_1.1.png)![width:290](img_advection/von_neumann_stab_advection_Beam_Warming_CFL_1.3.png)![width:290](img_advection/von_neumann_stab_advection_Beam_Warming_CFL_1.5.png)![width:290](img_advection/von_neumann_stab_advection_Beam_Warming_CFL_1.8.png)![width:290](img_advection/von_neumann_stab_advection_Beam_Warming_CFL_1.9.png)![width:290](img_advection/von_neumann_stab_advection_Beam_Warming_CFL_2.0.png)![width:290](img_advection/von_neumann_stab_advection_Beam_Warming_CFL_2.1.png)
 
 
 
@@ -517,48 +542,9 @@ Ellipsis with center in $(-\text{CFL}^2,0)$ with imaginary semi axis = $\text{CF
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-## Numerical solutions
-### Explicit Euler
-$$
-\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^n-2u_i^n+u_{i-1}^n}{\Delta x^2}=0 
-$$
-* Explicit -> no systems
-### Implicit Euler
-$$
-\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{\Delta x^2}=0 
-$$
-* Linear system 
-$$
-LHS =I-\frac{\Delta t}{\Delta x^2} D^2 = \begin{pmatrix}
-1+2\frac{\Delta t}{\Delta x^2} &-\frac{\Delta t}{\Delta x^2} & 0&\dots & \dots\\
--\frac{\Delta t}{\Delta x^2} &1+2\frac{\Delta t}{\Delta x^2} &-\frac{\Delta t}{\Delta x^2} &\dots & \dots\\
-\vdots & \ddots & \ddots & \ddots &\vdots\\
-0&\dots & \dots &-\frac{\Delta t}{\Delta x^2} &1+2\frac{\Delta t}{\Delta x^2}     
-\end{pmatrix} \qquad RHS = u^n
-$$
+## Some simulations with convergence tests
 
-
----
-<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
-
-
-### Crank-Nicolson
-$$
-\frac{u^{n+1}_i-u^n_i}{\Delta t} - \frac{u_{i+1}^{n+1}-2u_i^{n+1}+u_{i-1}^{n+1}}{2\Delta x^2}- \frac{u_{i+1}^{n}-2u_i^{n}+u_{i-1}^{n}}{2\Delta x^2}=0 
-$$
-* Linear system 
-$$
-LHS = I-\frac{1}{2}\frac{\Delta t}{\Delta x^2} D^2 = \begin{pmatrix}
-1+\frac{\Delta t}{\Delta x^2} &-\frac{\Delta t}{2\Delta x^2} & 0&\dots & \dots\\
--\frac{\Delta t}{2\Delta x^2} &1+\frac{\Delta t}{\Delta x^2} &-\frac{\Delta t}{2\Delta x^2} &\dots & \dots\\
-\vdots & \ddots & \ddots & \ddots &\vdots\\
-0&\dots & \dots &-\frac{\Delta t}{2\Delta x^2} &1+\frac{\Delta t}{\Delta x^2}     
-\end{pmatrix}
-$$
-$$
-RHS = u^n +\frac12 \frac{\Delta t}{\Delta x^2} D^2 u^n
-$$
-
+![width:590](img_advection/advection_final_time.png)![width:590](img_advection/convergence.png)
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
