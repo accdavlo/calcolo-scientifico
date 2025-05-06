@@ -50,6 +50,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
 |23/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
 |02/05/25| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
+|09/05/25| Finite difference for transport equation | [Notebook](/codes/transport_FD.ipynb) | [Solutions](/codes/solutions/transport_FD.ipynb)|
 
 
 ## Slides
@@ -66,16 +67,10 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
     1. Reduced order methods for elliptic problems [Notebook](/codes/ROM_with_FEniCS.ipynb)
 1. Parabolic problems
     1. Parabolic problems and their discretization [PDF](lectures/03/030_parabolic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/030_parabolic.html) [md](lectures/03/030_parabolic.md)
-1. Advection equation
-    1. Advection problems
-    1. Finite differences for advection problems
-    1. Upwinding Finite differences
-1. Hyperbolic systems
+1. Hyperbolic equations
+    1. Linear Transport equation problems and finite difference [PDF](lectures/03/031_transport.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/031_transport.html) [md](lectures/03/031_transport.md)
     1. Nonlinear conservation laws
     1. Systems (Euler)
-1. Saddle point problems ?
-    1. Stokes, Navier-Stokes
-    1. FEM discretization
 1. PINN
 
 ## Projects ideas (contact me for more details)

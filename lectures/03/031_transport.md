@@ -478,6 +478,21 @@ Stability for $\text{CFL}\leq 1$.
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
+## On the boundary conditions
+* Periodic: no problem
+* Dirichlet: one has to be careful what to do. Since the information travels in one direction, it does not "make much sense" to impose a condition on the right if the information travels from left to right. Though, one might still want to impose it. This might create boundary layers and similar effects.
+* Outflow boundary conditions: this is the equivalent of homogeneous Neumann boundary conditions. Suppose $a>0$, so we know on the right no info should come from the boundary, so we do **nothing** there. 
+
+### Ghosts nodes
+To impose these type of boundary conditions, sometimes ghosts values are used to compute the operators. For example, 
+* for Dirichlet one can assume that if $u_0$ is the left value, we can use $u_{-1}=u_L$ to compute the solution;
+* for outflow, a Ghost value equal to what we have inside the domain is repeated in the ghosts value, if $u_{N}$ is the last value we have, $u_{N+1}=u_N$ will do the job. This is essentially a homogeneous Neumann boundary condition, since the derivative $\partial_x u(x_R)=0$ numerically.
+* also periodic BC can be imposed in similar way, setting $u_{-1} = u_{N-1}$ and $u_{N+1} = u_{1}$ etc. 
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
 ## Consistency of upwind/Lax-Friedrichs
 
 $$
