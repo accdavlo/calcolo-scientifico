@@ -3,12 +3,12 @@ marp: true
 math: mathjax
 ---
 <!--
-title: Lecture 031 Transport
+title: Lecture 032 Nonlinear Hyperbolic PDEs
 paginate: true
 _class: titlepage
 -->
 
-# Linear Hyperbolic: Advection Equation
+# Nonlinear Hyperbolic PDEs
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
@@ -572,3 +572,14 @@ Stable up to CFL 2
 
 ![width:590](img_advection/advection_final_time.png)![width:590](img_advection/convergence.png)
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+
+
+
+
+
+#### IDEAS:
+* Linear systems (acoustics)
+* Nonlinear scalar (Burgers) -> weak, entropy, shocks, rarefaction
