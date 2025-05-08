@@ -13,18 +13,70 @@ _class: titlepage
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
-# Conservation law (1/n)
+# A nonlinear Conservation law
 
-We can see the linear transport equation coming from the gas dynamics problem, where we describe the motion of a gas inside a tube (1D-like), where in the transversal direction the density and the velocity of the gas is constant.
-
-We define the density of a gas $\rho(t,x)$ such that the mass of the gas in a given section $[x_1,x_2]$ gives the mass in that section at time $t$ by integrating the density 
+We have seen the general form for a scalar conservation law
 $$
-\int_{x_1}^{x_2} \rho(t,x) \mathrm{d} x.
-$$ 
-
-The walls of the tube are impermeable, no exchange of mass happens across these walls, so the change of mass is happening only across the points $x_1$ and $x_2$. The rate of flow at these points is given by the velocity $v$ times the density, i.e.,
+\partial_t u + \partial_x f(u)=0.
 $$
-\text{mass flux at }(t,x) = \rho(t,x) v(t,x).
+Some hypothesis on the flux function $f$ are needed to have a well posed problem. For example, we will assume that $f$ is a convex function, i.e., $f''(u)\geq 0$ for all $u$.
+We can think about the first generalization of the advection equation, i.e., **Burgers'** equation
+$$
+\partial_t u + \partial_x \left( \frac{u^2}{2} \right)=0.
+$$
+Here, we have chosen $f(u)=\frac{u^2}{2}$, which is a nonlinear function of $u$. **Burgers'** equation approximates the Navier-Stokes equations for incompressible fluids in a very simplified version.
+In this context, we can write the conservation law in its linearized form
+$$
+\partial_t u + u\partial_x u=0
+$$
+where we see that this is equivalent to a transport problem where the velocity is $u$ itself.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+# Viscous Burgers' equation
+$$
+\partial_t u + u\partial_x u = 0
+$$
+is also called **inviscid Burgers' equation**. We can add a diffusion term to the equation, leading to the **viscous Burgers' equation**
+$$
+\partial_t u + u\partial_x u = \nu \partial_{xx} u.
+$$
+Again, this is the simplest model to describe nonlinear and viscous effects in fluids.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+## Exact solution of inviscid Burgers' equation
+
+The **inviscid Burgers' equation**, when smooth, is a nonlinear PDE that has a solution that uses again the characteristics.
+The characteristics satisfy
+$$
+\partial_t x(t) = u(t,x(t)), \qquad x(0)=x_0,
+$$
+so,  $u$ is constant along the characteristics, since
+$$
+\frac{d}{dt} u(t,x(t)) = \partial_t u + \partial_x u \,\partial_t x(t) = \partial_t u + u \partial_x u = 0.
+$$
+So, the characteristics are straight lines, since $u$ is constant along them. So the characteristics are straight lines determined by the initial data $u_0(x)$, i.e., $u(t,x(t))=u_0(x_0)$.
+
+![bg right width:600](img_advection/charcteristics.png)
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+## Shock formation in Burgers' equation
+
+The solution of the inviscid Burgers' equation is not unique. As soon as the characteristics cross, we have a problem. Indeed, if we have two characteristics that cross, we have two different values of $u$ at the same point $(t,x)$, so the solution is not unique.
+When for the first time two characteristics cross, the function has an infinite slope and the wave *breaks* and forms a **shock**. Beyond this point there is no classical solution anymore as the solution is discontinuous.
+
+## Exercise
+Show that if we solve $\partial_t u + u\partial_x u = 0$ with smooth initial data $u_0(x)$, we have that the solution is smooth until the time $t^*$ when the characteristics cross. The time $t^*$ is given by
+$$
+t^* = \frac{-1}{\min_{x} u'_0(x)}.
 $$
 
 

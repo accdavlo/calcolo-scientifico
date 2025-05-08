@@ -88,7 +88,8 @@ KBTRQCDX
 1. Von Neumann stability analysis for a Finite Difference discretization of the wave equation
 1. Von Neumann stability analysis for FEM $\mathbb P^p$ for parabolic equations
 1. Wave equations in 2D (with compatible Finite Difference discretization)
-1. High order FD discretization of Burgers' equations in 1D with WENO.
+1. High order FD discretization of Burgers' equations in 1D with WENO
+1. Hyperbolic system of conservation laws (Euler equations) in 1D with finite difference methods
 1. 2D Euler equations solved on a Cartesian grid for a DMR test
 1. Comparison of PINN with classical solvers (for various problems)
 
