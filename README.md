@@ -58,30 +58,32 @@ KBTRQCDX
 
 ## Slides
 
-1. Introduction
-    1. Introduction to the course [PDF](lectures/01/010_intro.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/010_intro.html) [md](lectures/01/010_intro.md)
-    1. Introduction to `git`(hub) [PDF](lectures/00/004_git.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/00/004_git.html) [md](lectures/00/004_git.md)
-    1. Introduction to PDEs [PDF](lectures/01/011_PDE.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/011_PDE.html) [md](lectures/01/011_PDE.md)
-    1. Introduction to functional analysis [PDF](lectures/01/012_functional_analysis.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/012_functional_analysis.html) [md](lectures/01/012_functional_analysis.md)
-2. Elliptic problems
-    1. Elliptic problems [PDF](lectures/02/020_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/020_elliptic.html) [md](lectures/02/020_elliptic.md)
-    1. Finite differences for elliptic problems [PDF](lectures/02/021_finite_difference_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/021_finite_difference_elliptic.html) [md](lectures/02/021_finite_difference_elliptic.md)
-    1. Finite elements for elliptic problems [PDF](lectures/02/022_finite_element_elliptic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/022_finite_element_elliptic.html) [md](lectures/02/022_finite_element_elliptic.md)
-    1. Reduced order methods for elliptic problems [Notebook](/codes/ROM_with_FEniCS.ipynb)
-1. Parabolic problems
-    1. Parabolic problems and their discretization [PDF](lectures/03/030_parabolic.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/030_parabolic.html) [md](lectures/03/030_parabolic.md)
-1. Hyperbolic equations
-    1. Linear Transport equation problems and finite difference [PDF](lectures/03/031_transport.pdf?raw=true) [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/031_transport.html) [md](lectures/03/031_transport.md)
-    1. Nonlinear conservation laws
-    1. Systems (Euler)
-1. PINN
+|Number |Topic| PDF slides | HTML slides | Markdown slides |
+|:-----|:------|:---------|:-----------|:-----------|
+| 1| Introduction | | | |
+| 1.0| Introduction to the course| [PDF](lectures/01/010_intro.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/010_intro.html) | [md](lectures/01/010_intro.md) |
+| 1.1 | Introduction to `git`(hub)| [PDF](lectures/00/004_git.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/00/004_git.html) | [md](lectures/00/004_git.md) |
+| 1.2 | Introduction to PDEs| [PDF](lectures/01/011_PDE.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/011_PDE.html) | [md](lectures/01/011_PDE.md) |
+| 1.3 | Introduction to functional analysis| [PDF](lectures/01/012_functional_analysis.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/01/012_functional_analysis.html) | [md](lectures/01/012_functional_analysis.md) |
+| 2 | Elliptic problems ||||
+| 2.1 | Elliptic problems| [PDF](lectures/02/020_elliptic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/020_elliptic.html) | [md](lectures/02/020_elliptic.md) |
+| 2.2 | Finite differences for elliptic problems| [PDF](lectures/02/021_finite_difference_elliptic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/021_finite_difference_elliptic.html) | [md](lectures/02/021_finite_difference_elliptic.md) |
+| 2.3 | Finite elements for elliptic problems| [PDF](lectures/02/022_finite_element_elliptic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/022_finite_element_elliptic.html) | [md](lectures/02/022_finite_element_elliptic.md) |
+| 2.4 | Reduced order methods for elliptic problems |[Notebook](/codes/ROM_with_FEniCS.ipynb) | | | |
+| 3 | Parabolic problems ||||
+| 3.1 | Parabolic problems and their discretization| [PDF](lectures/03/030_parabolic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/030_parabolic.html) | [md](lectures/03/030_parabolic.md) |
+| 4 | Hyperbolic equations||||
+| 4.1 | Linear Transport equation problems and finite difference| [PDF](lectures/03/031_transport.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/031_transport.html) | [md](lectures/03/031_transport.md) |
+| 4.2 | Nonlinear conservation laws
+| 4.3 | Systems (Euler)
+| 5 | PINN
 
 ## Projects ideas (contact me for more details)
 1. Finite element with naive basis functions (e.g. trigonometric functions) (in 1D/2D)
 1. Spectral element method (Chapter of Quarteroni)
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
 1. Reduced basis for elastic block [Problem from this RBniCS test](https://colab.research.google.com/github/RBniCS/RBniCS/blob/open-in-colab/tutorials/02_elastic_block/tutorial_elastic_block.ipynb)
-1. Error control for reduced order models (a posteriori error estimator) (Either Quarteroni or Hesthaven)
+1. Error control for reduced order models (a posteriori error estimator) (Hesthaven book)
 1. SUPG for advection-diffusion time dependent problem (1D or 2D with FEniCS), with energy stability analysis (Chapter of Quarteroni)
 1. Von Neumann stability analysis for a Finite Difference discretization of the wave equation
 1. Von Neumann stability analysis for FEM $\mathbb P^p$ for parabolic equations
