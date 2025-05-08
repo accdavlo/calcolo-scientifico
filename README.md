@@ -37,23 +37,12 @@ KBTRQCDX
 |23/05/25| PINN |  |  | |
 
 ## Next Lessons Schedule
-* 02/05/25 16:00-18:00 Friday Laboratorio B
-* 07/05/25 15:00-17:00 Wednesday Laboratorio B
 * 09/05/25 16:00-18:00 Friday Laboratorio B
 * 14/05/25 15:00-17:00 Wednesday Laboratorio B
 * 16/05/25 16:00-18:00 Friday Laboratorio B
 * 21/05/25 **14:00-16:00** Wednesday Laboratorio B
 * 23/05/25 16:00-18:00 Friday Laboratorio B
 
-## Notebooks
-| Date | Topic | Notebook |Solutions   |  Last save | 
-|:-----|:------|:---------|:-----------|:-----------|
-|26/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
-|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| |
-|11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
-|23/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
-|02/05/25| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
-|09/05/25| Finite difference for transport equation | [Notebook](/codes/transport_FD.ipynb) | [Solutions](/codes/solutions/transport_FD.ipynb)|
 
 
 ## Slides
@@ -77,6 +66,17 @@ KBTRQCDX
 | 4.2 | Nonlinear conservation laws
 | 4.3 | Systems (Euler)
 | 5 | PINN
+
+## Notebooks
+| Date | Topic | Notebook |Solutions   |  Last save | 
+|:-----|:------|:---------|:-----------|:-----------|
+|26/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
+|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| |
+|11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
+|23/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
+|02/05/25| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
+|09/05/25| Finite difference for transport equation | [Notebook](/codes/transport_FD.ipynb) | [Solutions](/codes/solutions/transport_FD.ipynb)|
+
 
 ## Projects ideas (contact me for more details)
 1. Finite element with naive basis functions (e.g. trigonometric functions) (in 1D/2D)
