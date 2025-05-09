@@ -218,7 +218,7 @@ Now we consider the case when $u_L<u_R$. In this case, we have that the characte
 
 
 
-
+### SELF-SIMILAR
 
 
 
@@ -334,9 +334,21 @@ $$
 with $s=\frac{u_L+u_R}{2}$, because it must verify the Rankine-Hugoniot condition. This is clearly a weak solution (exercise).
 
 Let's check if it satisfies the entropy condition in the integral form on a small domain $[0,\Delta t] \times [-\Delta x, \Delta x]$ with $\Delta t \leq |s|^{-1}\Delta x$ with the entropy pair $(\eta, g)$ with $\eta(u)=u^2$ and $g(u)=\frac23 u^3$. 
+Next page computations.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
 
 $$
 \begin{align*}
-&\int_{-\Delta x}^{\Delta x} \int_0^{\Delta t} \partial_t \eta(u(t,x)) + \partial_x  g(u(t,x)) \mathrm{d}x\,\mathrm{d}t\\
+&\int_{-\Delta x}^{\Delta x} \int_0^{\Delta t} \partial_t \eta(u(t,x)) + \partial_x  g(u(t,x)) \mathrm{d}x\,\mathrm{d}t \\
+=& \int_{-\Delta x}^{\Delta x} u^2(\Delta t,x)-u^2(0,x) \mathrm{d}x + \int_0^{\Delta t} \frac23 u^3(t,\Delta x)- \frac23 u^3(t,-\Delta x) \,\mathrm{d}t \\
+=&s\Delta t (u_L^2 - u_R^2) +\frac23 \Delta t ( u_R^3-u_L^3)= \Delta t \left[ \frac{u_L+u_R}{2} (u_L^2-u_R^2)-\frac23 \frac{u_L^3-u_R^3}{u_L^2-u_R^2}(u_L^2-u_R^2)\right]
+\\
+=& \Delta t \left[ \frac{u_L+u_R}{2} -\frac23 \frac{u_L^2+u_Lu_R+ u_R^2}{u_L+u_R}\right](u_L^2-u_R^2)\\
+= &\Delta t \left[ \frac{3u_L^2+6u_Lu_R + 3u_R^2-4u_L^2-4u_Lu_R-4 u_R^2}{6(u_L+u_R)}\right](u_L^2-u_R^2)\\
+=&\Delta t \left[ \frac{-u_L^2+2u_Lu_R -u_R^2}{6(u_L+u_R)}\right](u_L^2-u_R^2)=-\frac{\Delta t}{6}  \left[ \frac{(u_L-u_R)^2}{(u_L+u_R)}\right](u_L^2-u_R^2)\\
+=&-\frac{\Delta t}{6}  (u_L-u_R)^2(u_L-u_R) > 0 \qquad \text{for }u_L<u_R.
 \end{align*}
 $$

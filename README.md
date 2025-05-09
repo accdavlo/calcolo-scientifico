@@ -30,14 +30,13 @@ KBTRQCDX
 |30/04/25| Parabolic equations  | [Notes](/notes/2025-04-30-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/JL8v4GqPZxekRFlLkkke0-G4Rkm-Qr2SKS4Gy9kbWzqTNSYCEaxeey0J19mMss07.UptNrOJ1ElN_xYfv)| ^M0QsaAs |
 |02/05/25| FD and FEM for parabolic equations | [Notes](/notes/2025-05-02-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/OX9BVPv1jxxaMBqWNoOxd_VYHOIv2oOvLU_6qm2PnrHyLmsi78aFCODR9AzPmlgK.SfeKwCD4vgX2qln0) | 6ZC@D#?+ |
 |07/05/25| Advection equation | [Notes](/notes/2025-05-07-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/7fpQMtu2jieb7_U54ToAZHrbWo_HVZ_9R59W51lixuvJ6K0Ag5z7oFI43RukTAia.Ytltf4qrC-bvpz41)  | !lqe8##+ |
-|09/05/25| FD for advection equation (and failure FEM) |  |  | |
-|14/05/25| Scalar hyperbolic conservation laws |  |  | |
-|16/05/25| Coding FD for advection and nonlinear laws |  |  | |
-|21/05/25| Systems of conservation laws (Euler) |  |  | |
+|09/05/25| FD for advection equation  | [Notes](/notes/2025-05-09-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/u_wcd0TGA2s-i-dDbtBkEJWONOFZUlrisyiz5CxkYADtqtlIkE3hAq_l4NAyVNL7.zm2HeSX5-_-hglGV) | z84#9w4q |
+|14/05/25| Coding FD for advection and nonlinear laws |  |  | |
+|16/05/25| Scalar hyperbolic conservation laws (nonlinear) |  |  | |
+|21/05/25| Coding hyperbolic conservation laws |  |  | |
 |23/05/25| PINN |  |  | |
 
 ## Next Lessons Schedule
-* 09/05/25 16:00-18:00 Friday Laboratorio B
 * 14/05/25 15:00-17:00 Wednesday Laboratorio B
 * 16/05/25 16:00-18:00 Friday Laboratorio B
 * 21/05/25 **14:00-16:00** Wednesday Laboratorio B
