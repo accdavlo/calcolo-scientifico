@@ -302,3 +302,41 @@ BV(\mathbb R) = \left\lbrace g :\mathbb R \to \mathbb R : \lVert g \rVert_{H^1(\
 $$
 
 Proof in `E. Godlewski and P.A. Raviart, Hyperbolic systems of conservation laws, Ellipses, 1991.`
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+## Example of entropy for Burgers' equation
+
+The entropy function $\eta(u) = u^2$ is convex and it is an entropy with the entropy flux g(u) = \frac23 u^3$. Indeed, we have that
+$$
+g'(u)=2u^2 = \eta'(u)f'(u) = 2u u = 2u^2.
+$$
+One can also check that for smooth solutions, multiplying the Burgers' equation by $2u$, obtaining
+$$
+2u\partial_t u + 2u \frac12 \partial_x u^2 = \partial_t u^2 + \partial_x \left( \frac{2}3 u^3 \right) =0. 
+$$
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+
+
+## Example of weak solution that is not an entropy solution
+The Riemann problem for the inviscid Burgers' equation with $u_L< u_R$ cannot have as a solution a shock wave. By contradiction, suppose that 
+$$
+u(t,x)= \begin{cases}
+u_L & x<st\\
+u_R & x>st
+\end{cases}
+$$
+with $s=\frac{u_L+u_R}{2}$, because it must verify the Rankine-Hugoniot condition. This is clearly a weak solution (exercise).
+
+Let's check if it satisfies the entropy condition in the integral form on a small domain $[0,\Delta t] \times [-\Delta x, \Delta x]$ with $\Delta t \leq |s|^{-1}\Delta x$ with the entropy pair $(\eta, g)$ with $\eta(u)=u^2$ and $g(u)=\frac23 u^3$. 
+
+$$
+\begin{align*}
+&\int_{-\Delta x}^{\Delta x} \int_0^{\Delta t} \partial_t \eta(u(t,x)) + \partial_x  g(u(t,x)) \mathrm{d}x\,\mathrm{d}t\\
+\end{align*}
+$$
