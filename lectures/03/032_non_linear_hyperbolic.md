@@ -208,27 +208,74 @@ This shows that changing the conserved variable changes the structure of the sol
 <style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
 
 # Riemann problem: rarefaction wave (1/n)
-Now we consider the case when $u_L<u_R$. In this case, we have that the characteristics are all going to the right and they are all converging to the right. So, we have a **rarefaction wave**.
+Now we consider the case when $u_L<u_R$. In this case, is not clear what we would like to put in between the characteristics. There are some points for $t>0$ where no characteristics comes from the initial condition.
+
+![width:270](img_advection/burgers_initial_condition_rarefaction.png)![width:720](img_advection/burgers_rarefaction_wave.png)
+
+In principle, one could fill that area with various (weak) solutions, using multiple discontinuities, filling with one of the value, choosing something in between, etc.
+**Exercise**: check that the solution $u=u_L$ at the left of the line $x=st$ with $s$ the speed given by the Rankine-Hugoniot and $u=u_R$ at the right of this line is a weak solution.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+# Riemann problem: rarefaction wave (2/n)
+To choose a meaningful solution, we will use another principle. We note that in the original equation
+$$
+\partial_t u(t,x) + \partial_x f(u(t,x)) = 0
+$$
+if we replace $x,t$ with $\lambda x, \lambda t$ with $\lambda>0$, the equation still holds.
+So, we can assume that the solution is self-similar, i.e., $u(t,x)=z(\frac{x}{t})$ for $t>0$. 
+
+Define the similarity variable $\xi=\frac{x}{t}$ and we substitute it in the conservation law. We get
+$$
+\begin{align*}
+  0=&\partial_t z(\xi) + \partial_x f(z(\xi)) =\partial_t z(\xi) +  f'(z(\xi)) \partial_x z(\xi) \\
+=&z'(\xi) \xi_t + f'(z(\xi)) z'(\xi) \xi_x = -\frac{x}{t^2} z'(\xi) + f'(z(\xi)) \frac{1}{t} z'(\xi) \\
+&z'(\xi) \left( -\xi + f'(z(\xi)) \right)=0.
+\end{align*}
+$$
+Except the trivial solution $z'(\xi)=0$, we have that, since  $f$ is concave and $f'$ is increasing, so, it's an invertible function, we have that
+$$
+z\left(\xi\right) = (f'(z(\xi)))^{-1} (\xi).
+$$
 
 
 
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+# Riemann problem: rarefaction wave (3/n)
+
+So, the solution of the Riemann problem for the case $u_L<u_R$ is the following **rarefaction wave**
+$$
+u(t,x) = \begin{cases}
+u_L & \text{if } x<f'(u_L)t\\
+(f')^{-1}(x/t) & \text{if } f'(u_L)t<x<f'(u_R)t\\
+u_R & \text{if } x>f'(u_R)t.
+\end{cases}
+$$
+
+As an example for Burgers' equation $f(u)=\frac{u^2}{2}$ and $f'(u)=u$, so the solution for a rarefaction wave  reads
+$$
+u(t,x) = \begin{cases}
+u_L & \text{if } x<u_Lt\\
+(x/t) & \text{if } u_L t<x<u_Rt\\
+u_R & \text{if } x>u_Rt.
+\end{cases}
+$$
+This is a strong solution on $\Omega\times(0,t)$, so, clearly, also a weak solution of our problem.
+
+There is **no uniqueness** of the **weak solution**.
 
 
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
 
+# Riemann problem: rarefaction wave (4/4)
 
-### SELF-SIMILAR
-
-
-
-
-
-
-
-
-
-
+![width:300](img_advection/burgers_initial_condition_rarefaction.png)![width:800](img_advection/burgers_rarefaction_wave_exact.png)
 
 
 
@@ -239,12 +286,12 @@ Now we consider the case when $u_L<u_R$. In this case, we have that the characte
 
 # From vanishing viscosity to entropy solution (1/2)
 
-Consider the vanishing viscosity solution $u=\lim_{\nu\to 0} u^{\nu}$ solutions of
+Consider the **unique** vanishing viscosity solution $u=\lim_{\nu\to 0} u^{\nu}$ solutions of
 $$
 \partial_t u^{\nu} + \partial_x f(u^{\nu}) = \nu \partial_{xx} u^{\nu}.
 $$
 
-Consider any convex function, the entropy, $\eta(u)$, i.e., $\eta''(u)\geq 0$ and an entropy flux $g(u)$ such that $g'(u)=\eta'(u)f'(u)$. $(\eta,g)$ is called **entropy pair**. We can multiply the equation by $\eta'(u^{\nu})$ the equation and get
+Consider any convex function, the entropy, $\eta(u)$, i.e., $\eta''(u)\geq 0$ and an entropy flux $g(u)$ such that $g'(u)=\eta'(u)f'(u)$. $(\eta,g)$ is called **entropy pair**. We can multiply the equation by $\eta'(u^{\nu})$ and get
 $$
 \begin{align*}
 &\eta'(u^{\nu})\partial_t u^{\nu} + \eta'(u^{\nu})\partial_x f(u^{\nu}) = \nu \partial_{xx} u^{\nu}\\
@@ -266,7 +313,7 @@ $$
 &\int^x\int^t \partial_t \varphi  \eta(u^{\nu}) + \partial_x \varphi g(u^{\nu}) + \nu \partial_{xx} \varphi \eta(u^{\nu}) \mathrm d x\,\mathrm d t \geq 0
 \end{align*}
 $$
-Now, we take the limit $\nu\to 0$ and we get
+**Now**, we take the limit $\nu\to 0$ and we get
 $$
 \begin{align*}
 &\int^x\int^t \partial_t \varphi  \eta(u) + \partial_x \varphi g(u)  \mathrm d x\,\mathrm d t \geq 0
@@ -284,7 +331,7 @@ The solutions of the weak formulation of the conservation law that verify also t
 <style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
 
 # Existence and uniqueness of the solution
-Let $u_0\in L^\infty(\mathbb R) \cup BV(\mathbb R)$, then the Cauchy problem
+Let $u_0\in L^\infty(\mathbb R) \cup BV(\mathbb R)$, then if the Cauchy problem
 $$
 \begin{cases}
 \partial_t u + \partial_x f(u) =0 &\forall x \in \mathbb R, t\in \mathbb R^+,\\
@@ -309,7 +356,7 @@ Proof in `E. Godlewski and P.A. Raviart, Hyperbolic systems of conservation laws
 
 ## Example of entropy for Burgers' equation
 
-The entropy function $\eta(u) = u^2$ is convex and it is an entropy with the entropy flux g(u) = \frac23 u^3$. Indeed, we have that
+The entropy function $\eta(u) = u^2$ is convex and it is an entropy with the entropy flux $g(u) = \frac23 u^3$. Indeed, we have that
 $$
 g'(u)=2u^2 = \eta'(u)f'(u) = 2u u = 2u^2.
 $$
@@ -352,3 +399,62 @@ $$
 =&-\frac{\Delta t}{6}  (u_L-u_R)^2(u_L-u_R) > 0 \qquad \text{for }u_L<u_R.
 \end{align*}
 $$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+# Numerics for conservation laws (finite difference)
+
+Most of what we said for linear advection problems holds also here.
+1. The **Riemann problem** that we discussed in this lesson is the essential bit of the discretization. If we think to two neighboring points at every interface between two points we are solving a Riemann problem. So, if we know what they lead to, we can use this solution to get a numerical solution.
+2. **Conservation**: we know that for a conservation law what is produced or destroyed goes thorugh the boundaries. So, the contribution for the point $u_i$ should arrive from the left $f_{i-1/2}$ and from the right $f_{i+1/2}$. So, we can write a discrete approximation of conseravation law as 
+  $$
+  u_i^{n+1} = u_i^n - \frac{\Delta t}{\Delta x} \left( f_{i+1/2} - f_{i-1/2} \right).
+  $$
+3. $f_{i+1/2}$ has to be defined (we know only $u_i$ values) and it is the flux at the interface between $u_i$ and $u_{i+1}$. We can use the Riemann problem to define it.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+
+# Godunov method
+
+Main idea: what changes in one cell is given by the flux crossing the interface between two cells in time.
+$$
+u_i^{n+1}-u^n_{i}\approx\int_{t_0}^{t_1}\int_{x_{i-1/2}}^{x_{i+1/2}} \partial_t u(t,x) \mathrm{d}x\,\mathrm{d}t = \int_{t_0}^{t_1}f(u_{i+1/2}(t)) - f(u_{i-1/2}(t)) \,\mathrm{d}t,
+$$
+where $u_{i+1/2}$ is the exact solution of the Riemann problem given by $u_L=u_{i}$ and $u_R=u_{i+1}$.
+
+It is not always easy to compute the exact solution of the Riemann problem, so we can use a numerical approximation of the flux. 
+In particular, we define a function called **numerical flux** $\hat{f}$ which approximates the value of the flux at the interface.
+$$
+\hat{f}(u_i,u_{i+1}) \approx f(u_{i+1/2}). 
+$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+
+# Numerical fluxes
+
+#### Lax-Friedrichs flux
+Central is not good (see linear), so let's use some numerical dissipation
+$$
+\hat{f}(u_L,u_R) = \frac{f(u_L)+f(u_R)}{2} - \frac{\Delta x}{2\Delta t}(u_R-u_L).
+$$
+#### Rusanov flux
+Reduce the numerical dissipation, making it more local
+$$
+\hat{f}(u_L,u_R) = \frac{f(u_L)+f(u_R)}{2} - \frac{\max(|f'(u_L)|,|f'(u_R)|)}{2}(u_R-u_L).
+$$
+
+#### Linearized Roe
+$$
+\hat{f}(u_L,u_R) =  \begin{cases}
+  f(u_L) & \text{if } a_{LR}>0\\
+  f(u_R) & \text{if } a_{LR}<0
+\end{cases} 
+$$
+with $a_{LR}=\frac{f(u_R)-f(u_L)}{u_R-u_L}$ the approximate speed of the wave if $u_R\neq u_L$, $a_{LR}=f'(u_L)$ if $u_R=u_L$. 

@@ -376,7 +376,7 @@ This is much better! We can choose $\Delta t \approx \Delta x$!
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-# CFL condition (Courant-Friedrichs-Lax)
+# CFL condition (Courant-Friedrichs-Lewy)
 The condition
 $$\Delta t \leq \frac{\Delta x}{|a|}$$
 is called CFL condition and guarantees the stability for many explicit methods for hyperbolic problems.
