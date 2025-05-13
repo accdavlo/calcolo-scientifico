@@ -62,7 +62,7 @@ KBTRQCDX
 | 3.1 | Parabolic problems and their discretization| [PDF](lectures/03/030_parabolic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/030_parabolic.html) | [md](lectures/03/030_parabolic.md) |
 | 4 | Hyperbolic equations||||
 | 4.1 | Linear Transport equation problems and finite difference| [PDF](lectures/03/031_transport.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/031_transport.html) | [md](lectures/03/031_transport.md) |
-| 4.2 | Nonlinear conservation laws  [PDF](lectures/03/032_non_linear_hyperbolic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/032_non_linear_hyperbolic.html) | [md](lectures/03/032_non_linear_hyperbolic.md) |
+| 4.2 | Nonlinear conservation laws | [PDF](lectures/03/032_non_linear_hyperbolic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/032_non_linear_hyperbolic.html) | [md](lectures/03/032_non_linear_hyperbolic.md) |
 | 5 | PINN
 
 ## Notebooks
