@@ -404,7 +404,7 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
 
-# Numerics for conservation laws (finite difference)
+# Numerics for conservation laws (finite difference/finite volume)
 
 Most of what we said for linear advection problems holds also here.
 1. The **Riemann problem** that we discussed in this lesson is the essential bit of the discretization. If we think to two neighboring points at every interface between two points we are solving a Riemann problem. So, if we know what they lead to, we can use this solution to get a numerical solution.
@@ -458,3 +458,42 @@ $$
 \end{cases} 
 $$
 with $a_{LR}=\frac{f(u_R)-f(u_L)}{u_R-u_L}$ the approximate speed of the wave if $u_R\neq u_L$, $a_{LR}=f'(u_L)$ if $u_R=u_L$. 
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+## Simulation of Burgers' equation (shock wave)
+Initial conditions:
+$$
+u_0=\begin{cases}
+1 & x<0.5\\
+0 & x>0.5
+\end{cases}
+$$
+![bg right width:700](img_advection/shock_simulations.png)
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+## Simulation of Burgers' equation (sine wave + shock)
+Initial conditions:
+$$
+u_0=\sin(2\pi x)+0.2
+$$
+![bg right width:700](img_advection/sin_simulations.png)
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+## Simulation of Burgers' equation (rarefaction wave)
+Initial conditions:
+$$
+u_0=\begin{cases}
+-1 & x<0.5\\
+1 & x>0.5
+\end{cases}
+$$
+![bg right width:700](img_advection/rarefaction_simulations.png)
