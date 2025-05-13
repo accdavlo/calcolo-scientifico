@@ -62,8 +62,7 @@ KBTRQCDX
 | 3.1 | Parabolic problems and their discretization| [PDF](lectures/03/030_parabolic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/030_parabolic.html) | [md](lectures/03/030_parabolic.md) |
 | 4 | Hyperbolic equations||||
 | 4.1 | Linear Transport equation problems and finite difference| [PDF](lectures/03/031_transport.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/031_transport.html) | [md](lectures/03/031_transport.md) |
-| 4.2 | Nonlinear conservation laws
-| 4.3 | Systems (Euler)
+| 4.2 | Nonlinear conservation laws  [PDF](lectures/03/032_non_linear_hyperbolic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/032_non_linear_hyperbolic.html) | [md](lectures/03/032_non_linear_hyperbolic.md) |
 | 5 | PINN
 
 ## Notebooks
@@ -74,7 +73,8 @@ KBTRQCDX
 |11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
 |23/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
 |02/05/25| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
-|09/05/25| Finite difference for transport equation | [Notebook](/codes/transport_FD.ipynb) | [Solutions](/codes/solutions/transport_FD.ipynb)|
+|14/05/25| Finite difference for transport equation | [Notebook](/codes/transport_FD.ipynb) | [Solutions](/codes/solutions/transport_FD.ipynb)|
+|21/05/25| Finite volume for conservation laws | [Notebook](/codes/hyperbolic_FD.ipynb) | [Solutions](/codes/solutions/hyperbolic_FD.ipynb)|
 
 
 ## Projects ideas (contact me for more details)
