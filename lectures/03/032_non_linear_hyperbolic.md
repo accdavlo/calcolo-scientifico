@@ -59,7 +59,7 @@ so,  $u$ is constant along the characteristics, since
 $$
 \frac{d}{dt} u(t,x(t)) = \partial_t u + \partial_x u \,\partial_t x(t) = \partial_t u + u \partial_x u = 0.
 $$
-So, the characteristics are straight lines, since $u$ is constant along them. So the characteristics are straight lines determined by the initial data $u_0(x),$ i.e., $u(t,x(t))=u_0(x_0)$.
+So, the characteristics are straight lines, since $u$ is constant along them, and they are determined by the initial data $u_0(x),$ i.e., $u(t,x(t))=u_0(x_0)$.
 
 ![bg right width:600](img_advection/charcteristics.png)
 
@@ -105,7 +105,7 @@ $$
 \end{align*}
 $$
 
-Here, we have ignored all boundary terms taking support on $\mathbb R \times \mathbb R$, except the initial condition. One can keep them into the formulation, integrating on compact domains.
+Here, taking compact support and integrals on $\mathbb R \times \mathbb R$ we have ignored all boundary terms, except the initial condition. One can keep them into the formulation, integrating on compact domains.
 
 The **vanishing viscosity solution** we defined above is a weak solution.
 But **weak solutions** are not unique, and we might need to filter out the physically relevant solution, for example, adding entropy constraints, leading to **entropy solutions** (which are also the **vanishing viscosity solution**).
@@ -234,7 +234,7 @@ $$
 &z'(\xi) \left( -\xi + f'(z(\xi)) \right)=0.
 \end{align*}
 $$
-Except the trivial solution $z'(\xi)=0$, we have that, since  $f$ is concave and $f'$ is increasing, so, it's an invertible function, we have that
+Except the trivial solution $z'(\xi)=0$, we have that, since  $f$ is convex and $f'$ is increasing, so, it's an invertible function, we have that
 $$
 z\left(\xi\right) = (f'(z(\xi)))^{-1} (\xi).
 $$
@@ -294,7 +294,7 @@ $$
 Consider any convex function, the entropy, $\eta(u)$, i.e., $\eta''(u)\geq 0$ and an entropy flux $g(u)$ such that $g'(u)=\eta'(u)f'(u)$. $(\eta,g)$ is called **entropy pair**. We can multiply the equation by $\eta'(u^{\nu})$ and get
 $$
 \begin{align*}
-&\eta'(u^{\nu})\partial_t u^{\nu} + \eta'(u^{\nu})\partial_x f(u^{\nu}) = \nu \partial_{xx} u^{\nu}\\
+&\eta'(u^{\nu})\partial_t u^{\nu} + \eta'(u^{\nu})\partial_x f(u^{\nu}) = \nu \eta'(u^{\nu})\partial_{xx} u^{\nu}\\
 &\partial_t \eta(u^{\nu}) + \partial_x g(u^{\nu}) = \nu \partial_{xx} \eta(u^{\nu}) - \nu \underbrace{\eta''(u^{\nu})}_{\geq 0} (\partial_x u^{\nu})^2 \\
 &\partial_t \eta(u^{\nu}) + \partial_x g(u^{\nu}) - \nu \partial_{xx} \eta(u^{\nu}) \leq 0.
 \end{align*}
@@ -345,7 +345,7 @@ $$
 
 P.S. $BV(\mathbb R)$ space of functions with bounded variation, i.e., 
 $$
-BV(\mathbb R) = \left\lbrace g :\mathbb R \to \mathbb R : \lVert g \rVert_{H^1(\mathbb R)} < \infty \, \right\rbrace.
+BV(\mathbb R) =  \left\lbrace g : \sup_{x_1,\dots,x_N} \sum_{i=1}^{N-1} |g(x_{i+1})-g(x_i)|<\infty , \,\forall N \, \right\rbrace \supsetneq H^1(\mathbb R) .
 $$
 
 Proof in `E. Godlewski and P.A. Raviart, Hyperbolic systems of conservation laws, Ellipses, 1991.`
@@ -356,13 +356,13 @@ Proof in `E. Godlewski and P.A. Raviart, Hyperbolic systems of conservation laws
 
 ## Example of entropy for Burgers' equation
 
-The entropy function $\eta(u) = u^2$ is convex and it is an entropy with the entropy flux $g(u) = \frac23 u^3$. Indeed, we have that
+The entropy function $\eta(u) = \frac{u^2}2$ is convex and it is an entropy with the entropy flux $g(u) = \frac13 u^3$. Indeed, we have that
 $$
-g'(u)=2u^2 = \eta'(u)f'(u) = 2u u = 2u^2.
+g'(u)=u^2 = \eta'(u)f'(u) = u u = u^2.
 $$
-One can also check that for smooth solutions, multiplying the Burgers' equation by $2u$, obtaining
+One can also check that for smooth solutions, multiplying the Burgers' equation by $u$, obtaining
 $$
-2u\partial_t u + 2u \frac12 \partial_x u^2 = \partial_t u^2 + \partial_x \left( \frac{2}3 u^3 \right) =0. 
+u\partial_t u + u \frac12 \partial_x u^2 = \partial_t \frac{u^2}2 + \partial_x \left( \frac{1}3 u^3 \right) =0. 
 $$
 
 ---
@@ -380,7 +380,7 @@ u_R & x>st
 $$
 with $s=\frac{u_L+u_R}{2}$, because it must verify the Rankine-Hugoniot condition. This is clearly a weak solution (exercise).
 
-Let's check if it satisfies the entropy condition in the integral form on a small domain $[0,\Delta t] \times [-\Delta x, \Delta x]$ with $\Delta t \leq |s|^{-1}\Delta x$ with the entropy pair $(\eta, g)$ with $\eta(u)=u^2$ and $g(u)=\frac23 u^3$. 
+Let's check if it satisfies the entropy condition in the integral form on a small domain $[0,\Delta t] \times [-\Delta x, \Delta x]$ with $\Delta t \leq |s|^{-1}\Delta x$ with the entropy pair $(\eta, g)$ with $\eta(u)=\frac{u^2}{2}$ and $g(u)=\frac13 u^3$. 
 Next page computations.
 
 ---
@@ -390,13 +390,13 @@ Next page computations.
 $$
 \begin{align*}
 &\int_{-\Delta x}^{\Delta x} \int_0^{\Delta t} \partial_t \eta(u(t,x)) + \partial_x  g(u(t,x)) \mathrm{d}x\,\mathrm{d}t \\
-=& \int_{-\Delta x}^{\Delta x} u^2(\Delta t,x)-u^2(0,x) \mathrm{d}x + \int_0^{\Delta t} \frac23 u^3(t,\Delta x)- \frac23 u^3(t,-\Delta x) \,\mathrm{d}t \\
-=&s\Delta t (u_L^2 - u_R^2) +\frac23 \Delta t ( u_R^3-u_L^3)= \Delta t \left[ \frac{u_L+u_R}{2} (u_L^2-u_R^2)-\frac23 \frac{u_L^3-u_R^3}{u_L^2-u_R^2}(u_L^2-u_R^2)\right]
+=& \int_{-\Delta x}^{\Delta x} \frac{u^2(\Delta t,x)-u^2(0,x)}2 \mathrm{d}x + \int_0^{\Delta t} \frac13 u^3(t,\Delta x)- \frac13 u^3(t,-\Delta x) \,\mathrm{d}t \\
+=&s\Delta t \frac{u_L^2 - u_R^2}{2} +\frac13 \Delta t ( u_R^3-u_L^3)= \Delta t \left[ \frac{u_L+u_R}{2} \frac{u_L^2-u_R^2}2-\frac13 \frac{u_L^3-u_R^3}{u_L^2-u_R^2}(u_L^2-u_R^2)\right]
 \\
-=& \Delta t \left[ \frac{u_L+u_R}{2} -\frac23 \frac{u_L^2+u_Lu_R+ u_R^2}{u_L+u_R}\right](u_L^2-u_R^2)\\
-= &\Delta t \left[ \frac{3u_L^2+6u_Lu_R + 3u_R^2-4u_L^2-4u_Lu_R-4 u_R^2}{6(u_L+u_R)}\right](u_L^2-u_R^2)\\
-=&\Delta t \left[ \frac{-u_L^2+2u_Lu_R -u_R^2}{6(u_L+u_R)}\right](u_L^2-u_R^2)=-\frac{\Delta t}{6}  \left[ \frac{(u_L-u_R)^2}{(u_L+u_R)}\right](u_L^2-u_R^2)\\
-=&-\frac{\Delta t}{6}  (u_L-u_R)^2(u_L-u_R) > 0 \qquad \text{for }u_L<u_R.
+=& \Delta t \left[ \frac{u_L+u_R}{2} -\frac23 \frac{u_L^2+u_Lu_R+ u_R^2}{u_L+u_R}\right]\frac{u_L^2-u_R^2}{2}\\
+= &\Delta t \left[ \frac{3u_L^2+6u_Lu_R + 3u_R^2-4u_L^2-4u_Lu_R-4 u_R^2}{6(u_L+u_R)}\right]\frac{u_L^2-u_R^2}{2}\\
+=&\Delta t \left[ \frac{-u_L^2+2u_Lu_R -u_R^2}{6(u_L+u_R)}\right]\frac{u_L^2-u_R^2}{2}=-\frac{\Delta t}{6}  \left[ \frac{(u_L-u_R)^2}{(u_L+u_R)}\right]\frac{u_L^2-u_R^2}{2}\\
+=&-\frac{\Delta t}{12}  (u_L-u_R)^2(u_L-u_R) > 0 \qquad \text{for }u_L<u_R.
 \end{align*}
 $$
 
@@ -497,3 +497,14 @@ u_0=\begin{cases}
 \end{cases}
 $$
 ![bg right width:700](img_advection/rarefaction_simulations.png)
+
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:30px;}</style>
+
+# Extensions
+
+1. Systems of equations (see Euler equations of gasdynamics, shallow water equations, acoustics etc. -> Projects) 
+1. Multi dimensional problems: Cartesian grids with dimension by dimensions Riemann problems $\partial_t u + \partial_x f(u) + \partial_y g(u) = 0$ or unstructured grids with Riemann problems on the edges of the cells.
