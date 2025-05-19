@@ -73,6 +73,7 @@ KBTRQCDX
 |02/05/25| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
 |14/05/25| Finite difference for transport equation | [Notebook](/codes/transport_FD.ipynb) | [Solutions](/codes/solutions/transport_FD.ipynb)|
 |21/05/25| Finite volume for conservation laws | [Notebook](/codes/hyperbolic_FD.ipynb) | [Solutions](/codes/solutions/hyperbolic_FD.ipynb)|
+|23/05/25| PINN | [Notebook](/codes/PINN.ipynb) | [Solutions](/codes/solutions/PINN.ipynb)|
 
 
 ## Projects ideas (contact me for more details)
