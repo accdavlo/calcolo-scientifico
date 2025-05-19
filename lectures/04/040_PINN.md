@@ -117,9 +117,23 @@ In practice, it has been proven that a stochastic gradient descent algorithm pro
 ### Dimension of optimization problem
 The space where we look for $\theta$ is very very high dimensional and it is really hard to visualize or understand how to look for minima. Moreover, one could expect overfitting, since we have often more parameters than data, but stochastic gradient descent + this huge space makes things work.
 
-
+### Activation functions
+Activation functions $\sigma$ are typically very simple functions, of which the derivatives are easily computable, e.g., ReLU(x) =`x*(x>0)`, $\tanh(x)$, Softplus(x) = $\log(1+e^x)$, Sigmoid(x) = $\frac{1}{1+e^{-x}}$.
 
 ---
-<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+<style scoped>section{font-size:23px;padding:50px;padding-top:20px}</style>
 
 # PINN
+Raissi, Maziar; Perdikaris, Paris; Karniadakis, George Em (2017-11-28). "Physics Informed Deep Learning (Part I): Data-driven Solutions of Nonlinear Partial Differential Equations". [arXiv:1711.10561](https://arxiv.org/abs/1711.10561)
+Physics informed neural networks are NN $u^{\theta}:\Omega \to \mathbb R^{s}$ that approximates the solution $u$ of a PDE $\mathcal{P}(u)$. In particular they minimize the residual of the equation and the boundary conditions error:
+$$
+\mathcal{L}(\theta) = \frac{1}{N_Q}\sum_{q=1}^{N_Q} \mathcal{P}(u^\theta)(\mathbf{x}_q)^2 +\frac{1}{N_B}\sum_{b=1}^{N_B} \lVert u^{\theta}(\mathbf x_{b}^{\partial \Omega}) - g_D (\mathbf x_{b}^{\partial \Omega}) \rVert^2
+$$
+where $\mathbf{x}_q$ are $N_Q$ points inside $\Omega$ and $\mathbf x_{b}^{\partial \Omega}$ are $N_B$ points on the boundary $\partial \Omega$ (also IC if time-dependent).
+
+#### Advantages
+* Very easy computing the derivatives in the residual of the PDE $\mathcal P(u^\theta)$
+* No need of discretization of the geometry, differential operators etc. only some quadrature points are needed
+#### Disadvantage
+* Training time can be long
+* No error bounds
