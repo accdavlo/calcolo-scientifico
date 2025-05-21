@@ -4,6 +4,9 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 ### OPIS code
 KBTRQCDX
 
+## [Summer school on Numerical methods for high-dimensional data](https://sites.google.com/uniroma1.it/numerics-high-dimensional-data/home)
+From the 15th of September until the 19th of September 2025 the department will host a summer school on Numerical analysis and Scientific Machine Learning topics with teachers Bruno Depres, George Karniadakis and Michael Herty. The school is free, but registration is mandatory at [school website](https://sites.google.com/uniroma1.it/numerics-high-dimensional-data/home). All the students of this course are invited to attend the school!
+
 ## Useful links
 * [Course page on Sapienza Website](https://corsidilaurea.uniroma1.it/it/view-course-details/2024/31778/20220331104432/3b541170-a744-497b-8354-6947c3438fe3/f4687f41-3295-4d30-b113-0c147078c2ab/d522d305-a6c6-4020-ab5e-d760222a4ab5/bcac70c7-281d-4ab1-ba19-85d9792bc311?guid_cv=f4687f41-3295-4d30-b113-0c147078c2ab&current_erogata=3b541170-a744-497b-8354-6947c3438fe3)
 * [Recursive Zoom Link for classes](https://uniroma1.zoom.us/j/84367160394?pwd=0dqEUWrQYECMEy6h8Jk5RNnJ5KRFp8.1)
