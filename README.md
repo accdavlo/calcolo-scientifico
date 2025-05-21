@@ -36,11 +36,10 @@ From the 15th of September until the 19th of September 2025 the department will 
 |09/05/25| FD for advection equation  | [Notes](/notes/2025-05-09-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/u_wcd0TGA2s-i-dDbtBkEJWONOFZUlrisyiz5CxkYADtqtlIkE3hAq_l4NAyVNL7.zm2HeSX5-_-hglGV) | z84#9w4q |
 |14/05/25| Coding FD for advection and nonlinear laws | [Notebook](/codes/transport_FD.ipynb)  | [Recording](https://uniroma1.zoom.us/rec/share/3HT2oGNmPHDy7-PNgswOAnmDMMROyHQtsWiOJKeNlgkz91kogXzIqhKAc_Smjlc.RDLUDLxcoNW7dI7k) | @aQf+V9h |
 |16/05/25| Scalar hyperbolic conservation laws (nonlinear) | [Notes](/notes/2025-05-16-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/dbQ5HzU_Sbyeipg_KHTxM1OHgv52aVziLfnSdjhf6vXsJO6sLijSrAN7TIKLDMgk.jsNkV1ILd7c_kX0L) | qUY^0S!3 |
-|21/05/25| Coding hyperbolic conservation laws |  |  | |
+|21/05/25| Coding hyperbolic conservation laws | [Notes](/notes/2025-05-21-Note.pdf)  | [Recording](https://uniroma1.zoom.us/rec/share/awq_5ajuUCz-y77Pv0iq09aivgmzmH0xakqXn6WroWV0QlkbHqhcbAKIB4or1J5Z._fcm439hBY7TN5BR)  | mZ#*pZ0d |
 |23/05/25| PINN |  |  | |
 
 ## Next Lessons Schedule
-* 21/05/25 **14:00-16:00** Wednesday Laboratorio B
 * 23/05/25 16:00-18:00 Friday Laboratorio B
 
 
