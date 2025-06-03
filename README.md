@@ -80,7 +80,7 @@ From the 15th of September until the 19th of September 2025 the department will 
 1. Spectral element method (Chapter of Quarteroni)
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
 1. Reduced basis for elastic block [Problem from this RBniCS test](https://colab.research.google.com/github/RBniCS/RBniCS/blob/open-in-colab/tutorials/02_elastic_block/tutorial_elastic_block.ipynb)
-1. Error control for reduced order models (a posteriori error estimator) (Hesthaven book)
+1. ~~Error control for reduced order models (a posteriori error estimator) (Hesthaven book)~~
 1. SUPG for advection-diffusion time dependent problem (1D or 2D with FEniCS), with energy stability analysis (Chapter of Quarteroni)
 1. Von Neumann stability analysis for a Finite Difference discretization of the wave equation
 1. Von Neumann stability analysis for FEM $\mathbb P^p$ for parabolic equations
