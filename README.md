@@ -82,6 +82,7 @@ From the 15th of September until the 19th of September 2025 the department will 
 
 
 ## Projects ideas (contact me for more details)
+1. You personalised project that you came up with studying the course
 1. Finite element with naive basis functions (e.g. trigonometric functions) (in 1D/2D)
 1. Spectral element method (Chapter of Quarteroni)
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
