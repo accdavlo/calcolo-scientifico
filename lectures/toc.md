@@ -1,5 +1,5 @@
 1. Intro to PDE
-    0. Intro
+    1. Intro
     1. PDE
         * Classification: stationary, unsteady, linear, nonlinear, quasi-linear, semi-linear, examples
         * First order linear, characteristics, general coefficients
@@ -9,7 +9,7 @@
         * Cauchy problem
         * Well-posedness
         * Theorem of existence and uniqueness (Cauchy Kovalesvskaya)
-    2. Functional analysis
+    1. Functional analysis
         * Linear, bilinear forms, dual space, Hilbert spaces, Riesz representative
         * Distributions
         * Convergence in D(\Omega)
@@ -20,8 +20,8 @@
         * Norms, seminorms in Sobolev spaces
         * Boundaries
         * Poincarè inequality
-2. Elliptic
-    0. Elliptic PDE
+1. Elliptic
+    1. Elliptic PDE
         * Poisson, physical derivation
         * BOundary conditions
         * Regularity of the solution
@@ -39,7 +39,7 @@
         * Discrete maximum principle for 2nd order
         * A priori error estimation
         * existence and uniqueness (Sketch)
-    2. FEM for elliptic
+    1. FEM for elliptic
         * Variational discrete form
         * Basis functions
         * Poisson A in FEM is positive definite
@@ -55,8 +55,8 @@
         * Basis on triangle
         * Assembly
         * Error estimates
-3. Other PDEs
-    0. Parabolic
+1. Other PDEs
+    1. Parabolic
         * Heat equation
         * Exact solution
         * Fourier series
@@ -86,7 +86,7 @@
             * Lax-Wendroff + von Neumann
             * Beam-Warming
             * BC (ghosts)
-    2. Non linear hyperbolic
+    1. Non linear hyperbolic
         * Nonlinear conservation laws
         * Burgers (inviscid and viscous)
         * Exact solution for viscous
@@ -103,4 +103,4 @@
         * Finite volume
             * Godunov method
             * Numerical fluxes (Rusanov, Lax-Friedrichs, linearized Roe)
-4. PINN 
+1. PINN 
