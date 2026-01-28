@@ -1,11 +1,44 @@
 # Calcolo Scientifico
-Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Intelligenza Artificiale A.A. 2025/2026
+Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Intelligenza Artificiale
 
 ### OPIS code
+KBTRQCDX
+
+## [Summer school on Numerical methods for high-dimensional data](https://sites.google.com/uniroma1.it/numerics-high-dimensional-data/home)
+From the 15th of September until the 19th of September 2025 the department will host a summer school on Numerical analysis and Scientific Machine Learning topics with teachers Bruno Depres, George Karniadakis and Michael Herty. The school is free, but registration is mandatory at [school website](https://sites.google.com/uniroma1.it/numerics-high-dimensional-data/home). All the students of this course are invited to attend the school!
 
 ## Useful links
-* [Course page on Sapienza Website](https://corsidilaurea.uniroma1.it/it/course/33593/attendance/lesson/16284f4d-a24b-4f1a-8b68-001a26d1a86c/3/2/1cd69019-556f-4ef5-b2c3-a314afaad0ab/bcac70c7-281d-4ab1-ba19-85d9792bc311)
-* [Moodle page for communications](https://elearning.uniroma1.it/course/view.php?id=20942)
+* [Course page on Sapienza Website](https://corsidilaurea.uniroma1.it/it/view-course-details/2024/31778/20220331104432/3b541170-a744-497b-8354-6947c3438fe3/f4687f41-3295-4d30-b113-0c147078c2ab/d522d305-a6c6-4020-ab5e-d760222a4ab5/bcac70c7-281d-4ab1-ba19-85d9792bc311?guid_cv=f4687f41-3295-4d30-b113-0c147078c2ab&current_erogata=3b541170-a744-497b-8354-6947c3438fe3)
+* [Recursive Zoom Link for classes](https://uniroma1.zoom.us/j/84367160394?pwd=0dqEUWrQYECMEy6h8Jk5RNnJ5KRFp8.1)
+
+## Logbook, Notes and Recordings
+| Date | Topics  | Notes | Recording link | Password |
+|:-----|:------|:---------------|:------|:------|
+|26/02/25| Introduction to the course, derivatives notation, ODE existence and uniqueness| [Notes](/notes/2025-02-26-Notes.pdf)| [Recording](https://uniroma1.zoom.us/rec/share/S6oSkizEydLBuid6I77BZo0rqpL6orAh0-da0559uM31wNzJBIB_EbUUytpY3IW_.QSjCBG2ap0n4nMH2)| yL6wR@#D |
+|28/02/25| Explicit and implicit Euler for ODEs| See above | [Recording](https://uniroma1.zoom.us/rec/share/206eK4pmBBLnb3qTj5a1M6VUICri2NG1RRe5fq1uuE-3DUeZeCZNmdkfCKvJS0xI._eXDTOUAP9zRaeed?startTime=1740755539000) | A$d3j@?3 |
+|05/03/25| Git(hub), classification of PDEs, first order linear PDEs | [Notes](/notes/2025-03-05-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/B8mK9GE1y7OWn07MSM1bG3LR0CdWHZp1OKMFdwhGA_FQWazDJ98nTmu8_4j_8AZR.MaeBgymjPvdYAn4p) | @yS99f5?  |
+|07/03/25| Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem | See above | [Recording](https://uniroma1.zoom.us/rec/share/V1QsGNhGOs8xEEkGwM1zZOkbnCmTuY1NqT0c0BzzmfgomVoalHdSInrYf6OSa2Fe.fF29fSuGal0-0p7b) | 0dVxr?=1 |
+|12/03/25| Cauchy-Kovaleskaya, well posedness, functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions | [Notes](/notes/2025-03-12-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/KkH1iq-jbC0A84taTi8mQmlF0M3i31Gk89DuICp_s0xoKww4dX3t-2z1K3I4Zy7t.C9IO5X_oAOOljgMl) | K5qS7kN$ |
+|14/03/25| Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic | see above + [Notes](/notes/2025-03-14-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/OoNx3jtTMxpiioszG5WWvpxlmoQt0axtHmhZAHXLxFludzp3AWRYt192b4cUqjla.WNQQD4Xzwfr2Rhb6?startTime=1741964887000) | jmSn@^S3 |
+|19/03/25| Weak formulation of elliptic problems, Lax-Milgram | see above | [Recording](https://uniroma1.zoom.us/rec/share/o-KLh9lOswjPZDEBKSaWz71Cca_GyruHQWIgP3ex3LnjxowbkxAhRBO-sPS5s3H_.t0UI9wabNkHcjS4i?startTime=1742393360000) | qFa1JY#?|
+|21/03/25| Divided differences, finite differences for 1D poisson, error analysis | [Notes](/notes/2025-03-21-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/R01Hf0RGgta-VNnA98gIT9JpzzgmrNBOTa28z5gOXVzavFD_xnRbDuwsplkXhPcs.9Pz4pHEk6kIwiHC5) | 1F!2aTmu|
+|26/03/25| Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |[Recording](https://uniroma1.zoom.us/rec/share/0Afa5_QZtmly64ZkE9PTudBw-6Jo3VUIeK6M9bT38qnwIOBvi1fuufZxYpF68DmD.2f3XIZGPyycxY4jS?startTime=1743002792000) | Wu@DF8k3 |
+|28/03/25| Coding finite difference 2D for Poisson | [Notes](/notes/2025-03-28-Note.pdf) [Notebook](/codes/poisson_FD.ipynb)| [Recording](https://uniroma1.zoom.us/rec/share/LjSQ7NIHha-UMEMg_G-SL1amLl5wDjTZxREsLLvxAdBeV1nrTxQ1fbxT5CF1wW5i.d1SZCQ4mZUHv4Xyt?startTime=1743174702000)| p@sr@$3y|
+|02/04/25| Finite Element in 1D for Poisson | [Notes](/notes/2025-04-02-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/mK-TOgoLwRg4QDgJXobcQOODAVMwcGV6UT-K47CT1weLcA5DvvrbscYzUQqdu74Y.5mCqLhBmi4Jn-lod) | $CiD0YzK |
+|04/04/25| Finite Element in 1D for Poisson | See above | [Recording](https://uniroma1.zoom.us/rec/share/WoY4DVSSY3V9_to78TMZbDjLPRL-xQRfUFCRC6C2UoooarHnnOgLUV878kBO2ik.IqZDsHmDBcLOJ84l) | CAEWK+.3  |
+|09/04/25| Coding Finite Element 1D for Poisson | [Notes](/notes/2025-04-09-Note.pdf) [Notebook](/codes/poisson_FEM.ipynb) | [0.5 Recording](https://uniroma1.zoom.us/rec/share/z8oGCFYVeeR-S4qEYmIvp3NUqzDyxDpNls4wlyjTBBAAIY-7R9Fy5uShwp_lSlxK.DLERNvIdGP-Wk5HS?) |wr4^96y# |
+|11/04/25| Finite element for multi-D | [Notes](/notes/2025-04-11-Note.pdf) |[Recording](https://uniroma1.zoom.us/rec/share/rrcZeXhZk1VhLatoca9YwM7ZCMZuRWvHvcLjRzKXMHI_biNmO5pESxz_cp2RUlZz.y468XEpOxKa6erYt)  |zi*0q.e9 |
+|16/04/25| Coding finite element 2D for Poisson with FEniCS | [Notes](/notes/2025-04-16-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/uYlJKwIIExElh4dLmRJJKJOn2cHE2G05CbkxMIK2Rw7L3HGuhHJrb0dN_arfbGiy.N4laP5ETgqEbG-Sq?startTime=1744808892000) [Notebook](/codes/FEM_with_FEniCS.ipynb) | 0gYY0SH= |
+|23/04/25| Model order reduction | [Notes](/notes/2025-04-23-Note.pdf) [Notebook](/codes/ROM_with_FEniCS.ipynb) | [Recording](https://uniroma1.zoom.us/rec/share/qcvLQeYMIxY32sPZREWo-aR_DaxNgPlSzhX_iIxukJKlMHDQnQOaLxOlo6HEGdNG.XOUXkkOjPxaCzRK8)  | M?Z4XH.3 |
+|30/04/25| Parabolic equations  | [Notes](/notes/2025-04-30-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/JL8v4GqPZxekRFlLkkke0-G4Rkm-Qr2SKS4Gy9kbWzqTNSYCEaxeey0J19mMss07.UptNrOJ1ElN_xYfv)| ^M0QsaAs |
+|02/05/25| FD and FEM for parabolic equations | [Notes](/notes/2025-05-02-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/OX9BVPv1jxxaMBqWNoOxd_VYHOIv2oOvLU_6qm2PnrHyLmsi78aFCODR9AzPmlgK.SfeKwCD4vgX2qln0) | 6ZC@D#?+ |
+|07/05/25| Advection equation | [Notes](/notes/2025-05-07-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/7fpQMtu2jieb7_U54ToAZHrbWo_HVZ_9R59W51lixuvJ6K0Ag5z7oFI43RukTAia.Ytltf4qrC-bvpz41)  | !lqe8##+ |
+|09/05/25| FD for advection equation  | [Notes](/notes/2025-05-09-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/u_wcd0TGA2s-i-dDbtBkEJWONOFZUlrisyiz5CxkYADtqtlIkE3hAq_l4NAyVNL7.zm2HeSX5-_-hglGV) | z84#9w4q |
+|14/05/25| Coding FD for advection and nonlinear laws | [Notebook](/codes/transport_FD.ipynb)  | [Recording](https://uniroma1.zoom.us/rec/share/3HT2oGNmPHDy7-PNgswOAnmDMMROyHQtsWiOJKeNlgkz91kogXzIqhKAc_Smjlc.RDLUDLxcoNW7dI7k) | @aQf+V9h |
+|16/05/25| Scalar hyperbolic conservation laws (nonlinear) | [Notes](/notes/2025-05-16-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/dbQ5HzU_Sbyeipg_KHTxM1OHgv52aVziLfnSdjhf6vXsJO6sLijSrAN7TIKLDMgk.jsNkV1ILd7c_kX0L) | qUY^0S!3 |
+|21/05/25| Coding hyperbolic conservation laws | [Notes](/notes/2025-05-21-Note.pdf)  | [Recording](https://uniroma1.zoom.us/rec/share/awq_5ajuUCz-y77Pv0iq09aivgmzmH0xakqXn6WroWV0QlkbHqhcbAKIB4or1J5Z._fcm439hBY7TN5BR)  | mZ#*pZ0d |
+|23/05/25| PINN | [Notes](/notes/2025-05-23-Note.pdf) | [Recording](https://uniroma1.zoom.us/rec/share/fRHEN6vE2bgEXzU17dB4crcbuiRHna-esvgt4HK1W4JlwPBHpm7ihWfqLwVQTvUV.mipRSnwsDvE-qxYg) |R^gj6q@x |
+
 
 
 ## Slides
@@ -29,36 +62,6 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 | 4.2 | Nonlinear conservation laws | [PDF](lectures/03/032_non_linear_hyperbolic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/032_non_linear_hyperbolic.html) | [md](lectures/03/032_non_linear_hyperbolic.md) |
 | 5 | PINN| [PDF](lectures/04/040_PINN.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/04/040_PINN.html) | [md](lectures/04/040_PINN.md) |
 
-
-## Logbook, Notes and Recordings
-| Date | Topics  | Notes | Recording link | Password |
-|:-----|:------|:---------------|:------|:------|
-|03/03/26| Introduction to the course, derivatives notation| | | |
-|04/03/26| Classification of PDEs, first order linear PDEs |  |  | |
-|10/03/26| Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem | See above | |
-|11/03/26| Cauchy-Kovaleskaya, well posedness, functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions |  | |
-|17/03/26| Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic |   | | |
-|18/03/26| Weak formulation of elliptic problems, Lax-Milgram |  |  |  |
-|24/03/26| Divided differences, finite differences for 1D poisson, error analysis |  | |
-|25/03/26| Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |  |   |
-|31/03/26| Coding finite difference 2D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)| |  |
-|01/04/26| Finite Element in 1D for Poisson |  | | |
-|14/04/26| Finite Element in 1D for Poisson | See above | |
-|15/04/26| Coding Finite Element 1D for Poisson |  [Notebook](/codes/poisson_FEM.ipynb) |  | |
-|21/04/26| Finite element for multi-D |  | | |
-|22/04/26| Coding finite element 2D for Poisson with FEniCS |   [Notebook](/codes/FEM_with_FEniCS.ipynb) |  |
-|28/04/26| Model order reduction |  [Notebook](/codes/ROM_with_FEniCS.ipynb) |  |
-|29/04/26| Parabolic equations  |  |  | |
-|12/05/26| FD and FEM for parabolic equations |  | | |
-|13/05/26| Advection equation |  |  | |
-|19/05/26| FD for advection equation  |  | | |
-|20/05/26| Coding FD for advection and nonlinear laws | [Notebook](/codes/transport_FD.ipynb)  |  | |
-|26/05/26| Scalar hyperbolic conservation laws (nonlinear) |  | | |
-|27/05/26| Coding hyperbolic conservation laws |   |  | |
-|03/06/26| Physics Informed Neural Networks |  |  | |
-|10/06/26| Projects presentation
-
-
 ## Notebooks
 | Date | Topic | Notebook |Solutions   |  Last save | 
 |:-----|:------|:---------|:-----------|:-----------|
@@ -73,7 +76,6 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 
 
 ## Projects ideas (contact me for more details)
-1. You personalised project that you came up with studying the course
 1. Finite element with naive basis functions (e.g. trigonometric functions) (in 1D/2D)
 1. Spectral element method (Chapter of Quarteroni)
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
