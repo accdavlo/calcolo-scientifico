@@ -8,7 +8,7 @@ paginate: true
 _class: titlepage
 -->
 
-# Calcolo Scientifico 2024/2025
+# Calcolo Scientifico 2025/2026
 
 ## Davide Torlo
 
@@ -30,18 +30,29 @@ _class: titlepage
 * Materiale su [GitHub](https://github.com/accdavlo/calcolo-scientifico) (slides, note, esercizi, codici, progetti)
 * Lezioni: slides + note + codice
 * Laboratorio: portate il PC e sviluppiamo il codice un po' in classe un po' a casa
-* Lezioni: come siete messi il giovedì mattina?
+* Orari: 
+  - martedì 8-10 (va bene 8.30-10 senza pausa?)
+  - mercoledì 13.15-15.00
+
+---
 ### Esame: 
   * Progetto (gruppi da 2/3 persone)
-  * Orale dove si presenta il progetto (preferibilmente tutto il gruppo assieme) e qualche domandina
-  * Date flessibili (meglio se tutto il gruppo insieme)
+  * Orale a partire dal tema del progetto
+  * Date:
+    * Project day! Tutte le presentazioni dei progetti insieme (9/10 giugno)
+    * Orale subito dopo o su appuntamento.
+    * Se non funziona il project day (troppi progetti etc): orale dove si presenta il progetto (preferibilmente tutto il gruppo assieme) e qualche domanda
+    * Date flessibili: scrivetemi in anticipo!! (meglio se tutto il gruppo insieme)
+    * Date disponibili: 1-19 giugno + (13-17, 27-31) luglio + (1-4, 21-30) settembre 
 
 ---
 # Informazioni sul corso
 ### Progetto: 
-  * Durante il corso vi faccio alcune proposte, ma sono ben accette anche vostre proposte
+  * I progetti dell'anno scorso erano un po' troppo difficili (molto ChatGPT)
+  * Fate vostre proposte, meno chatGPT più fantasia!!
+  * Altrimenti vi propongo qualcosa io (un capitolo di un libro, etc.)
   * Progetti di sviluppo di un metodo per alcune equazioni/problemi specifici con qualche difficoltà aggiunta rispetto a quello che facciamo in classe
-  * Repository su git -> Conoscete git?
+  * Desiderata: Collaborazione su Repository git -> Conoscete git?
 
 ---
 
@@ -51,13 +62,14 @@ _class: titlepage
 
 # Informazioni sul corso
 ### Materiale
-* Slides, pasticciandole qua e là
+* Slides
+* Note a mano durante le lezioni (scrivo abbastanza male)
 * Libri:
-  * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016.
-  * Cangiani, Andrea. Note del corso [Numerical Solution of Partial Differential Equations in SISSA, 2024](https://github.com/andreacangiani/NSPDE-ANA2024).
-  * Evans, Lawrence C. Partial differential equations. Vol. 19. American Mathematical Society, 2010. [Introduzione alle PDE]
-  * LeVeque, Randall J. Finite difference methods for ordinary and partial differential equations: steady-state and time-dependent problems. Society for Industrial and Applied Mathematics, 2007. [Metodi alle differenze finite]
-  * LeVeque, Randall J. Finite volume methods for hyperbolic problems. Vol. 31. Cambridge university press, 2002. [Metodi ai volumi finiti]
+  * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016. [Capitoli 1,2,3,4,5,8,19]
+  * Cangiani, Andrea. Note del corso [Numerical Solution of Partial Differential Equations in SISSA, 2025](https://github.com/andreacangiani/NMPDE2025/blob/main/lecture%20notes/NSPDE.pdf) [Sezioni 1-5].
+  * Evans, Lawrence C. Partial differential equations. Vol. 19. American Mathematical Society, 2010. [Introduzione alle PDE, per chi vuole approfondire la teoria]
+  * LeVeque, Randall J. Finite difference methods for ordinary and partial differential equations: steady-state and time-dependent problems. Society for Industrial and Applied Mathematics, 2007. [Metodi alle differenze finite per iperbolica, capitolo 10]
+  * LeVeque, Randall J. Finite volume methods for hyperbolic problems. Vol. 31. Cambridge university press, 2002. [Metodi ai volumi finiti, capitoli 2-4]
   * Langtangen, Hans Petter, and Anders Logg. Solving PDEs in python: the FEniCS tutorial I. Springer Nature, 2017. [Manuale per usare FEniCS]
 
 ---
@@ -65,7 +77,9 @@ _class: titlepage
 ### Prerequisiti
   * Analisi II
   * Metodi numerici per (equazioni alle derivate ordinarie) ODE
-  * Python 3
+  * Python
+  
+### Non richiesto, ma suggerito 
   * Git? [Notes](https://github.com/pcafrica/hpc_for_data_science_2023-2024/blob/main/notes/01/01-2-git.md) [Slides](https://github.com/pcafrica/hpc_for_data_science_2023-2024/blob/main/slides/01/01-intro.md) by Pasquale Africa
 ---
 # Informazioni sul corso
@@ -107,17 +121,21 @@ _class: titlepage
 
 # PDE
 
-$\Omega \in \mathbb R ^{d}$ where $d>1$
-$u:\Omega \to R^s$ where $s\in \mathbb N_0$
+$\Omega \subset \mathbb R ^{d}$ con $d>1$
+$u:\Omega \to R^s$ con $s\in \mathbb N_0$
 Una PDE di ordine $k$ si scrive come
 $$F(\nabla^{(k)}u,\nabla^{(k-1)}u, \dots, \nabla u, u)=0$$
 
 Dove indico con $\nabla^{(j)} u$ il tensore con tutte le possibili derivate di ordine $j$-esimo. Per esempio in 2D $(x,y)\in \Omega$, 
 $$ \nabla u = \begin{pmatrix}
   \partial_x u\\ \partial_y u
-\end{pmatrix}, \qquad  \nabla^{(2)} u = \begin{pmatrix}
+\end{pmatrix}, \quad  \nabla^{(2)} u = \begin{pmatrix}
   \partial_{xx} u & \partial_{xy} u\\ \partial_{yx} u & \partial_{yy} u
-\end{pmatrix}.$$
+\end{pmatrix}, \quad \nabla^{(3)}u = \left(\begin{pmatrix}
+  \partial_{xxx} u & \partial_{xxy} u\\ \partial_{xyx} u & \partial_{xyy} u
+\end{pmatrix},\begin{pmatrix}
+  \partial_{yxx} u & \partial_{yxy} u\\ \partial_{yyx} u & \partial_{yyy} u
+\end{pmatrix} \right).$$
 
 
 
@@ -128,13 +146,13 @@ $$ \nabla u = \begin{pmatrix}
 |Nome          | Equazione            |
 |-----|-------|
 |**Equazione del trasporto in 1D** | $\partial_t u + c \partial_x u =0$ |
-| **Equazione del calore in 1D**|$\partial_t u + c \partial_{xx} u =0$|
+| **Equazione del calore in 1D**|$\partial_t u - c \partial_{xx} u =0$|
 | **Equazione di Burgers in 1D** |$\partial_t u + u \partial_x u =0$|
-| **Equazione di Laplace in 2D**| $\partial_{xx}u + \partial_{yy}u =0$|
-| **Navier Stokes incomprimibile**| $\frac{\partial u}{\partial t} -\nu \Delta u + \left( u \cdot \nabla \right) u + \nabla p = f$ and $-\text{div} u = 0$|
+| **Equazione di Laplace in 2D**| $-(\partial_{xx}u + \partial_{yy}u) =0$|
+| **Navier Stokes incomprimibile**| $\begin{cases}\frac{\partial u}{\partial t} -\nu \Delta u + \left( u \cdot \nabla \right) u + \nabla p = f\\-\text{div} u = 0\end{cases}$|
 
 ---
-<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+<style scoped>section{font-size:23px;padding:50px;padding-top:20px}</style>
 
 
 ## Notazione derivate
@@ -145,15 +163,25 @@ Come già avete potuto notare dall'ultima slide, ci sono più notazioni per indi
 
 | Notazione | Significato |
 |:----------|:------------|
-| $\partial_t u(t,x,y,\dots)$ | Derivata parziale in una variabile |
-| $\frac{\partial }{\partial t} u(t,x,y,\dots)$ | Derivata parziale in una variabile |
-| $u_t(t,x,y,\dots)$ | Derivata parziale in una variabile |
+| $\partial_t u(t,x,y,\dots)=\frac{\partial }{\partial t} u(t,x,y,\dots)=u_t(t,x,y,\dots)$ | Derivata parziale in una variabile |
 | $\frac{\text{d} }{\text{d} t} u(t,x(t),y(t),\dots)$  | Derivata totale in una variabile |
 | $\nabla u = \begin{pmatrix} \partial_x u\\ \partial_y u\end{pmatrix}$  | Gradiente in 2D |
-| $\Delta u = \partial_{xx} u +\partial_{yy} u$  | Laplaciano in 2D |
+| $\Delta u = \partial_{xx} u +\partial_{yy} u = \partial_x^2 u + \partial_y^2 u$  | Laplaciano in 2D |
 | $\text{div} \begin{pmatrix}u\\v \end{pmatrix} = \nabla \cdot \begin{pmatrix}u\\v \end{pmatrix} = \partial_{x} u +\partial_{y} v$  | Divergenza in 2D |
+| $\nabla \times \begin{pmatrix}u\\v \end{pmatrix} = \partial_{x} v -\partial_{y} u$  | Rotore in 2D |
+| $\nabla \times \begin{pmatrix}u\\v\\w \end{pmatrix} = \begin{pmatrix} \partial_{y} w -\partial_{z} v \\ \partial_{z} u -\partial_{x} w \\ \partial_{x} v -\partial_{y} u \end{pmatrix} = \text{det} \begin{pmatrix} \textbf{i} & \partial_x & u \\ \textbf{j} & \partial_y & v \\ \textbf{k} & \partial_z & w \\ \end{pmatrix}$  | Rotore in 3D |
 
 
+---
+### Esercizi per casa
+* Calcola l'ordine delle seguenti PDE:
+  1. $\partial_t u + c \partial_x u =0$
+  2. $\partial_t u - c \partial_{xx} u =0$
+  3. $\partial_t u + u \partial_x u =0$
+  4. $-(\partial_{xx}u + \partial_{yy}u) =0$
+  5. $\begin{cases}\frac{\partial u}{\partial t} -\nu \Delta u + \left( u \cdot \nabla \right) u + \nabla p = f\\-\text{div} u = 0\end{cases}$
+  6. $\partial_x(\Delta u) + u \partial_{yy} u\partial_{xx} u = \sin(x)$
+  7. Equazioni dispersive KdV: $\partial_t u + \partial_x^3 u + u \partial_x u =0$
 ---
 
 # Metodi Numerici
@@ -193,20 +221,18 @@ Nel tempo numerosi metodi numerici sono stati sviluppati (alcuni più specifici 
 * Topic: metodi numerici per l'approssimazione di equazioni alle derivate parziali (PDE: partial differential equations) 
 ### Argomenti (circa): 
   - ripasso di ODE [2h] (se necessario);
-  - introduzione alle PDE [6h];
-  - finite difference methods [8h = 4h classes + 4h lab];
-  - finite element methods [18h = 10h classes + 8h lab];
-  - finite volume methods [10h = 7h classes + 3h lab];
+  - introduzione alle PDE [12h];
+  - finite difference methods [14h = 8h classes + 6h lab];
+  - finite element methods [10h = 6h classes + 4h lab];
+  - finite volume methods [6h = 4h classes + 2h lab];
   - physics informed neural networks [2h = 1h class + 1h lab];
   - model order reduction [2h = 1h class + 1h lab].
 
 --- 
 # Ripasso di ODE?
 
-Sì
+Sì, No? (Lo facciamo più avanti in ogni caso)
+### Referenze
   * [Teoria delle ODE](../00/Chapter1_Theory_of_ODE.ipynb) 
   * [Eulero Implicito ed esplicito](../00/Chapter%202%20Classical%20Euler%20Methods.ipynb) 
   * [Runge Kutta e Multistep](../00/Chapter%203%20Classical%20High%20Order%20Methods.ipynb)
-
-No
-

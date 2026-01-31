@@ -74,6 +74,8 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 
 ## Projects ideas (contact me for more details)
 1. You personalised project that you came up with studying the course
+
+If you have not many ideas I can suggest you something, probably more complicated:
 1. Finite element with naive basis functions (e.g. trigonometric functions) (in 1D/2D)
 1. Spectral element method (Chapter of Quarteroni)
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
