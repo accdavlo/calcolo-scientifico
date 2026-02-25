@@ -62,14 +62,14 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 ## Notebooks
 | Date | Topic | Notebook |Solutions   |  Last save | 
 |:-----|:------|:---------|:-----------|:-----------|
-|26/03/25| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
-|04/04/25| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| |
-|11/04/25| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
-|23/04/25| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
-|02/05/25| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
-|14/05/25| Finite difference for transport equation | [Notebook](/codes/transport_FD.ipynb) | [Solutions](/codes/solutions/transport_FD.ipynb)|
-|21/05/25| Finite volume for conservation laws | [Notebook](/codes/hyperbolic_FD.ipynb) | [Solutions](/codes/solutions/hyperbolic_FD.ipynb)|
-|23/05/25| PINN | [Notebook](/codes/PINN.ipynb) | [Solutions](/codes/solutions/PINN.ipynb)|
+|????| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
+|????| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| |
+|????| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
+|????| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
+|????| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
+|????| Finite difference for transport equation | [Notebook](/codes/transport_FD.ipynb) | [Solutions](/codes/solutions/transport_FD.ipynb)|
+|????| Finite volume for conservation laws | [Notebook](/codes/hyperbolic_FD.ipynb) | [Solutions](/codes/solutions/hyperbolic_FD.ipynb)|
+|????| PINN | [Notebook](/codes/PINN.ipynb) | [Solutions](/codes/solutions/PINN.ipynb)|
 
 
 ## Projects ideas (contact me for more details)
@@ -80,8 +80,9 @@ If you have not many ideas I can suggest you something, probably more complicate
 1. Spectral element method (Chapter of Quarteroni)
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
 1. Reduced basis for elastic block [Problem from this RBniCS test](https://colab.research.google.com/github/RBniCS/RBniCS/blob/open-in-colab/tutorials/02_elastic_block/tutorial_elastic_block.ipynb)
-1. ~~Error control for reduced order models (a posteriori error estimator) (Hesthaven book)~~
+1. Error control for reduced order models (a posteriori error estimator) (Hesthaven book)
 1. SUPG for advection-diffusion time dependent problem (1D or 2D with FEniCS), with energy stability analysis (Chapter of Quarteroni)
+1. Saddle point problems: Stokes problem for incompressible fluids (Chapter of Quarteroni)
 1. Von Neumann stability analysis for a Finite Difference discretization of the wave equation
 1. Von Neumann stability analysis for FEM $\mathbb P^p$ for parabolic equations
 1. Wave equations in 2D (with compatible Finite Difference discretization)
@@ -100,15 +101,13 @@ If you have not many ideas I can suggest you something, probably more complicate
 
 # Program
 The course studies partial differential equations (PDEs) and some numerical methods for approximating their solutions.
-
-The course is divided into:
-- review of ODEs [2h];
-- introduction to PDEs [6h];
-- finite difference methods [8h = 4h classes + 4h lab];
-- finite element methods [18h = 12h classes + 6h lab];
-- finite volume methods [10h = 7h classes + 3h lab];
-- physics informed neural networks [2h = 1h class + 1h lab];
-- model order reduction [2h = 1h class + 1h lab].
+- Introduction to PDEs and functional analysis [12h];
+- Methods for elliptic equations (finite difference and finite element) [16h = 8 class + 8 lab];
+- ODE review [2h] (if necessary);
+- Methods for parabolic equations (finite difference and finite element) [4h = 2h classes + 2h lab];
+- Methods for hyperbolic equations (finite difference and finite volume) [10h = 6h classes + 4h lab];
+- Physics informed neural networks [2h = 1h class + 1h lab];
+- Model order reduction [2h = 1h class + 1h lab].
 
 At first, we will introduce PDEs with some examples from various physical problems, the concept of weak derivatives and Sobolev spaces. For some classes of PDEs, we will verify the existence, uniqueness and/or regularity of PDEs' solution (transport equation, Poisson equation, heat equation, Stokes problem for incompressible fluids, conservation laws, Burgers equations, Euler for fluid dynamics).
 

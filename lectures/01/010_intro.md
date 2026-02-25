@@ -57,13 +57,12 @@ _class: titlepage
 ---
 
 
-<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+<style scoped>section{font-size:23px;padding:50px;padding-top:10px}</style>
 
 
 # Informazioni sul corso
 ### Materiale
-* Slides
-* Note a mano durante le lezioni (scrivo abbastanza male)
+* Slides (in inglese) e note a mano durante le lezioni (scrivo abbastanza male)
 * Libri:
   * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016. [Capitoli 1,2,3,4,5,8,19]
   * Cangiani, Andrea. Note del corso [Numerical Solution of Partial Differential Equations in SISSA, 2025](https://github.com/andreacangiani/NMPDE2025/blob/main/lecture%20notes/NSPDE.pdf) [Sezioni 1-5].
@@ -82,11 +81,18 @@ _class: titlepage
 ### Non richiesto, ma suggerito 
   * Git? [Notes](https://github.com/pcafrica/hpc_for_data_science_2023-2024/blob/main/notes/01/01-2-git.md) [Slides](https://github.com/pcafrica/hpc_for_data_science_2023-2024/blob/main/slides/01/01-intro.md) by Pasquale Africa
 ---
+
 # Informazioni sul corso
 ### Computer setting
   * Python 3, ipykernel for Jupyter Notebooks (also Google Colab)
   * IDE (Integrated Develpment Environment) tipo [VisualStudio Code](https://code.visualstudio.com/download)
   * Mac/Linux/Windows tutto ok, io uso Linux
+---
+# Domande a voi
+* Quanti da SMIA?
+* Chi da non SMIA da cosa?
+* Python fatto tutti?
+
 ---
 # Introduzione al corso
 
@@ -173,6 +179,8 @@ Come già avete potuto notare dall'ultima slide, ci sono più notazioni per indi
 
 
 ---
+<style scoped>section{font-size:23px;padding:50px;padding-top:20px}</style>
+
 ### Esercizi per casa
 * Calcola l'ordine delle seguenti PDE:
   1. $\partial_t u + c \partial_x u =0$
@@ -182,6 +190,8 @@ Come già avete potuto notare dall'ultima slide, ci sono più notazioni per indi
   5. $\begin{cases}\frac{\partial u}{\partial t} -\nu \Delta u + \left( u \cdot \nabla \right) u + \nabla p = f\\-\text{div} u = 0\end{cases}$
   6. $\partial_x(\Delta u) + u \partial_{yy} u\partial_{xx} u = \sin(x)$
   7. Equazioni dispersive KdV: $\partial_t u + \partial_x^3 u + u \partial_x u =0$
+  8. $\partial_{tt} u - c^2 \Delta u =0$ (equazione delle onde)
+  9. Maxwell equations in 3D: $E,B: \mathbb R^{3} \to \mathbb R^{3}$ $\begin{cases}\nabla \cdot E = \frac{\rho}{\epsilon_0} \\ \nabla \cdot B = 0 \\ \nabla \times E = -\frac{\partial B}{\partial t} \\ \nabla \times B = \mu_0 J + \mu_0 \epsilon_0 \frac{\partial E}{\partial t}\end{cases}$
 ---
 
 # Metodi Numerici
@@ -220,11 +230,11 @@ Nel tempo numerosi metodi numerici sono stati sviluppati (alcuni più specifici 
 # Syllabus del corso
 * Topic: metodi numerici per l'approssimazione di equazioni alle derivate parziali (PDE: partial differential equations) 
 ### Argomenti (circa): 
+  - introduzione alle PDE + analisi funzionale [12h];
+  - metodi per equazioni ellittiche (finite difference e finite element) [16h = 8 class + 8 lab];
   - ripasso di ODE [2h] (se necessario);
-  - introduzione alle PDE [12h];
-  - finite difference methods [14h = 8h classes + 6h lab];
-  - finite element methods [10h = 6h classes + 4h lab];
-  - finite volume methods [6h = 4h classes + 2h lab];
+  - metodi per equazioni paraboliche (finite difference and finite element) [4h = 2h classes + 2h lab];
+  - metodi per equazioni iperboliche (finite difference and finite volume) [10h = 6h classes + 4h lab];
   - physics informed neural networks [2h = 1h class + 1h lab];
   - model order reduction [2h = 1h class + 1h lab].
 
