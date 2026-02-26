@@ -8,7 +8,29 @@ paginate: true
 _class: titlepage
 -->
 
-# Review of Functional analysis concepts
+# ~~Review of~~ Functional analysis concepts
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+#### Disclaimer
+These are concepts necessary to understand many aspects of the theory of PDEs as well of the numerical methods of the PDEs. 
+They are a bit technical, I don't expect you to remember everything, but to understand why we need to introduce some concepts, in particular, when we will use them in the future lectures.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+## Functional spaces
+We are used to think about vector spaces as $\mathbb R^n$ or $\mathbb C^n$. However, we can also think about spaces of functions as vector spaces. For example, the space of continuous functions on an interval $[a,b]$ is a vector space, since the sum of two continuous functions is continuous and the scalar multiplication of a continuous function is also continuous.
+We will call them **functional spaces** as their elements are functions. 
+
+### Examples of (normed) functional spaces
+* $C(\Omega)$: the space of continuous functions on $\Omega$, with the supremum norm $||f||_\infty = \sup_{x\in \Omega} |f(x)|$.
+* $C^k(\Omega)$: the space of functions on $\Omega$ that are $k$-times continuously differentiable, with the norm $||f||_{C^k} = \sum_{p_1+\dots+p_d \leq k} ||\partial_{x_1^{p_1}\dots x_d^{p_d}}f||_\infty$.
+* $C^\infty(\Omega)$: the space of functions on $\Omega$ that are infinitely differentiable.
+* $L^2(\Omega):=\lbrace f:\Omega \to \mathbb R : \int_\Omega |f(x)|^2 dx <\infty\rbrace$: the space of square-integrable functions on $\Omega$, with the norm $||f||_{L^2} = \sqrt{\int_\Omega |f(x)|^2 dx}$.
+
+**Keep these examples in mind, we will see them again and again!**
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
@@ -17,12 +39,34 @@ _class: titlepage
 
 
 
-Given a functional space $V$, a linear functional is a map $L: V \to \mathbb{R}$ that satisfies linearity: $L(\alpha u + \beta v) = \alpha L(u) + \beta L(v)$ for all $u, v \in V$ and scalars $\alpha, \beta \in \mathbb{R}$.
+Given a functional space $V$, a **linear functional** is a map $L: V \to \mathbb{R}$ that satisfies linearity: $L(\alpha u + \beta v) = \alpha L(u) + \beta L(v)$ for all $u, v \in V$ and scalars $\alpha, \beta \in \mathbb{R}$.
 
-A bilinear functional is a map $B: V \times V \to \mathbb{R}$ that is linear in each argument.
+A **bilinear functional** is a map $B: V \times V \to \mathbb{R}$ that is linear in each argument.
+
+### Examples
+* The evaluation functional $L_{x_0}: C(\Omega) \to \mathbb{R}$ defined by $L_{x_0}(u) := u(x_0)$ for a fixed $x_0 \in \Omega$ is a linear functional;
+* The integral functional $L: L^2(\Omega) \to \mathbb{R}$ defined by $L(u) := \int_\Omega u(x) dx$ is a linear functional;
+* The bilinear form $B: L^2(\Omega) \times L^2(\Omega) \to \mathbb{R}$ defined by $B(u,v) := \int_\Omega u(x)v(x) dx$ is a bilinear functional.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+## Linear and bilinear functionals properties
+
 
 ### Boundedness and Continuity
 A functional $L$ is bounded if there exists a constant $C$ such that $|L(u)| \leq C ||u||_V$ for all $u \in V$. If $V$ is a Banach space (normed and complete), then a linear bounded functional is also continuous.
+
+#### Example of unbounded functional
+The "evaluation in 0 of the derivative" functional $L: C^\infty([0,1]) \to \mathbb{R}$ defined by $L(u) := u'(0)$ is not bounded with respect to the supremum norm, since for any $C > 0$, we can find a function $u$ such that $||u||_\infty = 1$ but $|L(u)| = |u'(0)| \to \infty$, e.g. 
+$$
+u_n(x) = \sin(n\, x) \implies ||u_n||_\infty = 1, \quad L(u_n) = u_n'(0) = n \to \infty.
+$$
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
 
 ### Dual Space
 The dual space $V^*=V'$ is the space of all bounded linear functionals on $V$.
@@ -43,8 +87,14 @@ A Hilbert space $H$ is a real or complex inner product space that is also a comp
 The inner product is a bilinear function $(\cdot,\cdot)_H: V\times V \to \mathbb R$ that is symmetric and positive definite. The induced norm  is $|| u||_H:= \sqrt{(u,u)_H}$.
 
 
+#### Example 
+$L^2(\Omega)$ is a Hilbert space with the inner product defined as $(f,g)_{L^2} = \int_\Omega f(x)g(x) dx$.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
 ### Riesz Representative
-The Riesz representation theorem states that for every bounded linear functional $L$ on a Hilbert space $H$, there exists a unique element $v_L \in H$ such that 
+The **Riesz representation theorem** states that for every bounded linear functional $L$ on a Hilbert space $H$, there exists a unique element $v_L \in H$ such that 
 $$L(u) = ( u, v_L )_H$$
 for all $u \in H$. Moreover, $||L||_{H^*} = ||u_L||_H$.
 Conversly, for every element $u\in H$ there exists  a linear and bounded functional $L_u$ such that 
@@ -58,19 +108,19 @@ Hence, there is a bijection between $H$ and $H^*$.
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
-## Bilinear form
+## Bilinear form definitions
 Given $V$ a normed functional space, a bilinear form $a$ is a function that maps every two elements of $V$ to a scalar
 $$a:V\times V \to \mathbb R.$$
 
 A form
-* is bilinear if 
+* is **bilinear** if 
   * $a(\lambda u + \mu w, v)  = \lambda a( u ,v) + \mu a( w, v)$ for every $\lambda, \mu \in \mathbb R$ and every $v,w,u\in V$, and
   * $a( u, \lambda v + \mu w)  = \lambda a( u ,v) + \mu a( u,w)$ for every $\lambda, \mu \in \mathbb R$ and every $v,w,u\in V$;
-* is continuous if  there exists an $M>0$ such that
+* is **continuous** if  there exists an $M>0$ such that
   $$ a(u,v) \leq M \lVert u \rVert_V \lVert v \rVert_V \text{ for every } v,u\in V;$$
-* is symmetric if $a(u,v)=a(v,u)$ for every $u,v\in V$;
-* is positive if $a(v,v)>0$ for all $v\in V$ with $v\neq 0$;
-* is coercive if there exists $\alpha>0$ such that $a(v,v)>\alpha \lVert v \rVert^2_V$ for all $v \in V$.
+* is **symmetric** if $a(u,v)=a(v,u)$ for every $u,v\in V$;
+* is **positive** if $a(v,v)>0$ for all $v\in V$ with $v\neq 0$;
+* is **coercive** if there exists $\alpha>0$ such that $a(v,v)>\alpha \lVert v \rVert^2_V$ for all $v \in V$.
 
 
 ---
@@ -85,7 +135,7 @@ The support of a function $f$, denoted by $\text{supp}(f)$, is the closure of th
 $$\text{supp}(f):=\overline{\lbrace x\in\Omega : f(x) \neq 0\rbrace}.$$
 
 ### Compact Support
-A function has compact support if its support is a compact set.
+A function has compact support if its support is a compact set (compact = closed and bounded for us).
 
 ### $C^\infty$ Compact Support Functions
 A function is in $\mathcal{D}(\Omega):=C^\infty_c(\Omega)$ if it is infinitely differentiable and has compact support in $\Omega$.
@@ -113,6 +163,7 @@ Notation for distribution $T\in\mathcal{D}^*(\Omega)$ applied to a function $f\i
 
 ### Example Dirac Delta
 The Dirac delta distribution $\delta_a$ with $a\in \Omega$ a point, is defined by $\delta_a(\phi) = \phi(a)$ for all $\phi \in \mathcal{D}(\Omega)$. It is a distribution that "picks out" the value of a function at a point.
+The Dirac delta is not a functional on the $L^2(\mathbb R)$ space, since it is not bounded with respect to the $L^2$ norm. However, it is a distribution in $\mathcal{D}^*(\Omega)$.
 
 
 ### Convergence in $\mathcal{D}^*(\Omega)$
@@ -152,11 +203,12 @@ Let us build the sequence of functions in $L^2(\mathbb R)$ $f_n(x) := \frac{n}2 
 3. Let $h_n=1/n$, $T_{f_n}(\varphi)=\frac{\Phi(h)-\Phi(-h)}{2h}$
 4. $\lim_{n\to \infty} T_{f_n}(\varphi)= \lim_{n\to \infty}\frac{\Phi(h)-\Phi(-h)}{2h} = \frac{d}{dx} \Phi(0) = \varphi(0)$.
 5. $T_{f_n}(\varphi) \to \varphi(0) = \delta_0(\varphi)$.
+6. $\delta_0$ is a distribution in $\mathcal{D}^*(\mathbb R)$ but not a function in $L^2(\mathbb R)$.
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
 
-## Derivation in distributional sense
+## Definition: Derivation in distributional sense
 Let $T\in\mathcal{D}^*(\Omega)$, with $\Omega\subset \mathbb R^d$ open. We can define the derivative of $T$ using the integration by parts.
 
 $$
@@ -167,6 +219,7 @@ If $T$ is a $T_f$ with $f\in\mathcal{C}^1(\Omega)$, it is clearly the classical 
 $$
 \partial_{x} T_f (\varphi) = \langle \partial_{x} T_f , \varphi \rangle = \int_a^b  \partial_{x} f(x) \varphi(x) \textrm{d}x = \underbrace{\left[  f(x) \varphi(x)\right]_a^b}_{=0} - \int_a^b   f(x) \partial_{x}\varphi(x) \textrm{d}x , \qquad \forall \varphi\in \mathcal{D}(\Omega).
 $$
+But the definition holds for every distribution, even for discontinuous functions, for the Dirac delta, etc. !!!
 
 **Higher derivatives**
 $$
@@ -180,19 +233,19 @@ $$
 ![bg right 75%](img/heaviside.png)
 
 $$
-H(x) = \begin{cases}
+R(x) = \begin{cases}
     1 &\text{ if }x>0,\\
     0 &\text{ if }x\leq 0,\\
 \end{cases}
 $$
-* $H\in L^2((-1,1))$
-* $H\notin C((-1,1))$
-* $T_H\in \mathcal{D}^*((-1,1))$
+* $R\in L^2((-1,1))$
+* $R\notin C((-1,1))$
+* $T_R\in \mathcal{D}^*((-1,1))$
 
-$$\langle \partial_x T_H,\varphi \rangle = -\int_{-1}^1 H(x) \partial_x \varphi(x) \textrm{d} x$$
+$$\langle \partial_x T_R,\varphi \rangle = -\int_{-1}^1 R(x) \partial_x \varphi(x) \textrm{d} x$$
 $$=-\int_{0}^1  \partial_x \varphi(x) \textrm{d} x = - \left[ \varphi\right]_0^1=\varphi(0)$$
 $$
-\Longrightarrow \partial_x H = \delta_0.
+\Longrightarrow \partial_x R = \delta_0.
 $$
 
 
@@ -203,7 +256,7 @@ $$
 
 As we have seen $L^2(\Omega)\subset \mathcal{D}^*(\Omega)$. This does not imply that their distributional derivatives are still in $L^2$. The Heaviside function is in $L^2$ but its derivative it's not.
 
-We need to introduce other spaces!
+We need to introduce other spaces to distinguish functions!
 
 ### Sobolev spaces
 Let $\Omega\subset \mathbb R^d$ and $k \in \mathbb N_0$. We define the Sobolev space of order $k$ on $\Omega$ the space of the functions in $L^2(\Omega)$ with distributional derivatives up to order $k$ in $L^2(\Omega)$.
@@ -213,7 +266,7 @@ $$
 
 * $H^{k+1}(\Omega)\subset H^k(\Omega)$
 * $L^2(\Omega)=H^0(\Omega)$
-* Heaviside $H\in H^0((-1,1))$, but $H\notin H^1((-1,1))$
+* Heaviside $R\in H^0((-1,1))$, but $R\notin H^1((-1,1))$
 
 
 ---
@@ -293,7 +346,7 @@ $$
 $$
 
 ### Proof
-Since $\Omega\subset \mathbb R ^d$ is bounded there exists a ball $S_R=\lbrace x: |x-x_0|<R\rbrace$ that contains $\Omega$. Since, $\mathcal{D}(\Omega)$ is dense in $H^1_0(\Omega)$, we can prove the inequality for $u\in  \mathcal{D}(\Omega)$ and pass to the limit to get it for $H^1_0$. Notice that $\text{div}(x-x_0) = d$. So,
+Since $\Omega\subset \mathbb R ^d$ is bounded there exists a ball $S_R=\lbrace x: |x-x_0|<R\rbrace$ that contains $\Omega$. Since, $\mathcal{D}(\Omega)$ is dense in $H^1_0(\Omega)$, we can prove the inequality for $u\in  \mathcal{D}(\Omega)$ and pass to the limit to get it for $H^1_0$. Notice that $\text{div}(x-x_0) = d$. So, using Cauchy-Schwarz,
 $$
 \begin{align*}
 &\lVert u\rVert_{L^2(\Omega)}^2 = d^{-1} \int_{\Omega} d \, |u(x)|^2 \textrm{d}x = d^{-1} \int_{\Omega} \text{div}(x-x_0)|u(x)|^2 \textrm{d}x= -d^{-1} \int_{\Omega} (x-x_0) \nabla(|u(x)|^2) \textrm{d}x=\\
