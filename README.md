@@ -33,29 +33,29 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 ## Logbook, Notes and Recordings
 | Date   | Time  |  Topics  | Notes | Recording link | Password |
 |:-----  |:------|:------|:---------------|:------|:------|
-|03/03/26| 8:30 | Introduction to the course, derivatives notation| [Notes](notes/2026-03-03-Note-08-07.pdf) | [AI summary](notes/2026-03-03.md) | Forgot recording  |
+|03/03/26| 08:30 | Introduction to the course, derivatives notation| [Notes](notes/2026-03-03-Note-08-07.pdf) | [AI summary](notes/2026-03-03.md) | Forgot recording  |
 |04/03/26| 13:15 | Classification of PDEs, first order linear PDEs |  |  | |
-|10/03/26| 8:30 | Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem |  | |
+|10/03/26| 08:30 | Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem |  | |
 |11/03/26| 13:15 | Cauchy-Kovaleskaya, well posedness, functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions |  | |
-|17/03/26| 8:30 | Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic |   | | |
+|17/03/26| 08:30 | Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic |   | | |
 |18/03/26| 13:15 | Weak formulation of elliptic problems, Lax-Milgram |  |  |  |
-|24/03/26| 8:30 | Divided differences, finite differences for 1D poisson, error analysis |  | |
+|24/03/26| 08:30 | Divided differences, finite differences for 1D poisson, error analysis |  | |
 |25/03/26| 13:15 | Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |  |   |
-|31/03/26| 8:30 | Coding finite difference 2D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)| |  |
+|31/03/26| 08:30 | Coding finite difference 2D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)| |  |
 |01/04/26| 13:15| Finite Element in 1D for Poisson |  | | |
-|14/04/26| 8:30 | Finite Element in 1D for Poisson | See above | |
+|14/04/26| 08:30 | Finite Element in 1D for Poisson | See above | |
 |15/04/26| 13:15 | Coding Finite Element 1D for Poisson |  [Notebook](/codes/poisson_FEM.ipynb) |  | |
-|21/04/26| 8:30 | Finite element for multi-D |  | | |
+|21/04/26| 08:30 | Finite element for multi-D |  | | |
 |22/04/26| 13:15 | Coding finite element 2D for Poisson with FEniCS |   [Notebook](/codes/FEM_with_FEniCS.ipynb) |  |
-|28/04/26| 8:30 | Model order reduction |  [Notebook](/codes/ROM_with_FEniCS.ipynb) |  |
+|28/04/26| 08:30 | Model order reduction |  [Notebook](/codes/ROM_with_FEniCS.ipynb) |  |
 |29/04/26| 13:15 | Parabolic equations  |  |  | |
-|12/05/26| 8:30 | FD and FEM for parabolic equations |  | | |
+|12/05/26| 08:30 | FD and FEM for parabolic equations |  | | |
 |13/05/26| 13:15 | Advection equation |  |  | |
-|19/05/26| 8:30 | FD for advection equation  |  | | |
+|19/05/26| 08:30 | FD for advection equation  |  | | |
 |20/05/26| 13:15 | Coding FD for advection and nonlinear laws | [Notebook](/codes/transport_FD.ipynb)  |  | |
-|26/05/26| 8:30 | Scalar hyperbolic conservation laws (nonlinear) |  | | |
+|26/05/26| 08:30 | Scalar hyperbolic conservation laws (nonlinear) |  | | |
 |27/05/26| 13:15 | Coding hyperbolic conservation laws |   |  | |
-|03/06/26| 8:30 | Physics Informed Neural Networks |  |  | |
+|03/06/26| 08:30 | Physics Informed Neural Networks |  |  | |
 |10/06/26| 13:15 | Projects presentation |  |  | |
 
 
