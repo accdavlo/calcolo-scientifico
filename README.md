@@ -35,7 +35,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |:-----|:------|:---------------|:------|:------|
 |03/03/26| Introduction to the course, derivatives notation| [Notes](notes/2026-03-03-Note-08-07.pdf) | [AI summary](notes/2026-03-03.md) | Forgot recording  |
 |04/03/26| Classification of PDEs, first order linear PDEs |  |  | |
-|10/03/26| Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem | See above | |
+|10/03/26| Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem |  | |
 |11/03/26| Cauchy-Kovaleskaya, well posedness, functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions |  | |
 |17/03/26| Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic |   | | |
 |18/03/26| Weak formulation of elliptic problems, Lax-Milgram |  |  |  |
