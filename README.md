@@ -7,6 +7,9 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 * [Course page on Sapienza Website](https://corsidilaurea.uniroma1.it/it/course/33593/attendance/lesson/16284f4d-a24b-4f1a-8b68-001a26d1a86c/3/2/1cd69019-556f-4ef5-b2c3-a314afaad0ab/bcac70c7-281d-4ab1-ba19-85d9792bc311)
 * [Moodle page for communications](https://elearning.uniroma1.it/course/view.php?id=20942)
 
+## Zoom link
+[Zoom link for lectures](https://uniroma1.zoom.us/j/84174943823?pwd=pyRojafL4MWVmxrqleWsCYl60b5oyq.1)
+
 
 ## Slides
 
@@ -34,7 +37,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 | Date   | Time  |  Topics  | Notes | Recording link | Password |
 |:-----  |:------|:------|:---------------|:------|:------|
 |03/03/26| 08:30 | Introduction to the course, derivatives notation| [Notes](notes/2026-03-03-Note-08-07.pdf) | [AI summary](notes/2026-03-03.md) | Forgot recording  |
-|04/03/26| 13:15 | Classification of PDEs, first order linear PDEs |  |  | |
+|04/03/26| 13:15 | Classification of PDEs, first order linear PDEs, canonical form, second order linear PDEs  | [Notes](notes/2026-03-04-Note-13-09.pdf)  | [Zoom link](https://uniroma1.zoom.us/rec/share/lHj7-RCvYzAKSbGXFlNhbfl_Ve1-sNmHqJ-yvPpocTkzdNXMe00CxKphnJQ52TYS.6JZwBfcmqVO4wCir) | 31MB@a2L |
 |10/03/26| 08:30 | Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem |  | |
 |11/03/26| 13:15 | Cauchy-Kovaleskaya, well posedness, functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions |  | |
 |17/03/26| 08:30 | Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic |   | | |
@@ -94,6 +97,7 @@ If you have not many ideas I can suggest you something, probably more complicate
 ## Literature
 * Quarteroni, Alfio. Modellistica Numerica per Problemi Differenziali. Springer Science & Business Media, 2016. [Intro alle PDE, Metodi agli elementi finiti, Metodi alle differenze finite, Riduzione del Modello]
 * Evans, Lawrence C. Partial differential equations. Vol. 19. American Mathematical Society, 2010. [Introduzione alle PDE]
+* Cangiani, Andrea. Note del corso [Numerical Solution of Partial Differential Equations in SISSA, 2025](https://github.com/andreacangiani/NMPDE2025/blob/main/lecture%20notes/NSPDE.pdf) [Sezioni 1-5].
 * LeVeque, Randall J. Finite difference methods for ordinary and partial differential equations: steady-state and time-dependent problems. Society for Industrial and Applied Mathematics, 2007. [Metodi alle differenze finite]
 * LeVeque, Randall J. Finite volume methods for hyperbolic problems. Vol. 31. Cambridge university press, 2002. [Metodi ai volumi finiti]
 * Langtangen, Hans Petter, and Anders Logg. Solving PDEs in python: the FEniCS tutorial I. Springer Nature, 2017. [Manuale per usare FEniCS]
