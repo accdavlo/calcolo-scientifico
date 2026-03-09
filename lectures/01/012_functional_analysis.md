@@ -29,7 +29,7 @@ They are a bit technical, I don't expect you to remember everything, but to unde
 Recall: **fundamental theorem of calculus** in 1D: if $f \in C^1([a,b])$, then
 $$\int_a^b f'(x) \textrm{d} x = f(b) - f(a).$$
 
-# Stokes theorem (Generalization to higher dimensions of fundamental theorem of calculus) 
+# Generalization to higher dimensions of fundamental theorem of calculus
 Let $\Omega \subset \mathbb{R}^d$ be a compact subset with a piecewise smooth boundary $\partial \Omega$, and let $u : \Omega \to \mathbb{R}$ be a continuously differentiable function on an open neighborhood $O$ of $\bar{\Omega}\subset O$, i.e. $u\in C^1(O)$. Then, for each $i=1,\dots,d$,
 $$
 \int_{\Omega} \partial_{x_i} u(x) \textrm{d} x = \int_{\partial \Omega} u(x) n_i(x) \textrm{d} S,
