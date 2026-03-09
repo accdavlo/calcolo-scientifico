@@ -17,6 +17,42 @@ _class: titlepage
 These are concepts necessary to understand many aspects of the theory of PDEs as well of the numerical methods of the PDEs. 
 They are a bit technical, I don't expect you to remember everything, but to understand why we need to introduce some concepts, in particular, when we will use them in the future lectures.
 
+
+#### Source: Quarteroni
+
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
+
+# Divergence theorem [Wiki](https://en.wikipedia.org/wiki/Divergence_theorem)
+Recall: **fundamental theorem of calculus** in 1D: if $f \in C^1([a,b])$, then
+$$\int_a^b f'(x) \textrm{d} x = f(b) - f(a).$$
+
+# Stokes theorem (Generalization to higher dimensions of fundamental theorem of calculus) 
+Let $\Omega \subset \mathbb{R}^d$ be a compact subset with a piecewise smooth boundary $\partial \Omega$, and let $u : \Omega \to \mathbb{R}$ be a continuously differentiable function on an open neighborhood $O$ of $\bar{\Omega}\subset O$, i.e. $u\in C^1(O)$. Then, for each $i=1,\dots,d$,
+$$
+\int_{\Omega} \partial_{x_i} u(x) \textrm{d} x = \int_{\partial \Omega} u(x) n_i(x) \textrm{d} S,
+$$
+where $n(x) = (n_1(x), \dots, n_d(x))$ is the outward unit normal vector to $\partial \Omega$ at $x$, and $\textrm{d} S$ is the surface measure on $\partial \Omega$.
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
+
+# Divergence theorem (special case of above)
+Let $\Omega \subset \mathbb{R}^d$ be a compact subset with a piecewise smooth boundary $\partial \Omega$, and let $\mathbf{u} : \Omega \to \mathbb{R}^d$ be a continuously differentiable vector field function on an open neighborhood $O$ of $\bar{\Omega}\subset O$, i.e. $u_i\in C^1(O)$ for all $i=1,\dots,d$. Then, for each $i=1,\dots,d$,
+$$
+\int_{\Omega} \textrm{div}(\mathbf{u}) \textrm{d} x = \int_{\Omega} \sum_{i=1}^d \partial_{x_i} u_i(x) \textrm{d} x = \int_{\partial \Omega} \sum_{i=1}^d u_i(x) n_i(x) \textrm{d} S = \int_{\partial \Omega} \mathbf{u}(x) \cdot \mathbf{n}(x) \textrm{d} S,
+$$
+where $n(x) = (n_1(x), \dots, n_d(x))$ is the outward unit normal vector to $\partial \Omega$ at $x$, and $\textrm{d} S$ is the surface measure on $\partial \Omega$.
+
+#### Integration by parts in high dimension
+Let $f\in C^1(\Omega)$ and $\mathbf{u}\in (C^1(\Omega))^d$, then
+$$
+\int_{\partial \Omega } f \mathbf{u} \cdot \mathbf{n} \textrm{d} S = \int_{\Omega}\textrm{div}(f \mathbf{u}) =  \int_{\Omega} f \textrm{div}(\mathbf{u}) \textrm{d} x + \int_{\Omega} \nabla f \cdot \mathbf{u} \textrm{d} x.
+$$
+
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
@@ -35,13 +71,29 @@ We will call them **functional spaces** as their elements are functions.
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
-## Linear and bilinear functionals
+## Exercise/Homework
+
+Show that $||f||_{L^2} = \sqrt{\int_\Omega |f(x)|^2 dx}$ is a norm in $L^2(\Omega):=\lbrace f:\Omega \to \mathbb R : \int_\Omega |f(x)|^2 dx <\infty\rbrace$: the space of square-integrable functions on $\Omega$.
+
+Recall: a norm is a function $||\cdot||: V \to \mathbb R$ that satisfies the following properties for all $u,v,w \in V$ and $\alpha \in \mathbb R$:
+1. $||u|| \geq 0$ and $||u||=0$ if and only if $u=0$ (positive definiteness);
+2. $||\alpha u|| = |\alpha| ||u||$ (homogeneity);
+3. $||u+v|| \leq ||u|| + ||v||$ (triangle inequality).
+
+Spoiler: there are infinitely many functions in $L^2$ that have $|| \cdot ||_{L^2} =0$. How to fix this?
+We change the definition of $L^2$ as the space of equivalence classes of functions that are equal almost everywhere, i.e., 
+$$L^2(\Omega):=\frac{\lbrace f:\Omega \to \mathbb R : \int_\Omega |f(x)|^2 dx <\infty\rbrace}{\sim}$$
+where $f\sim g$ if $f(x)=g(x)$ for almost every $x\in \Omega$.
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+## Linear functionals
 
 
 
 Given a functional space $V$, a **linear functional** is a map $L: V \to \mathbb{R}$ that satisfies linearity: $L(\alpha u + \beta v) = \alpha L(u) + \beta L(v)$ for all $u, v \in V$ and scalars $\alpha, \beta \in \mathbb{R}$.
 
-A **bilinear functional** is a map $B: V \times V \to \mathbb{R}$ that is linear in each argument.
 
 ### Examples
 * The evaluation functional $L_{x_0}: C(\Omega) \to \mathbb{R}$ defined by $L_{x_0}(u) := u(x_0)$ for a fixed $x_0 \in \Omega$ is a linear functional;
@@ -51,7 +103,7 @@ A **bilinear functional** is a map $B: V \times V \to \mathbb{R}$ that is linear
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
-## Linear and bilinear functionals properties
+## Linear functionals properties
 
 
 ### Boundedness and Continuity
@@ -77,27 +129,35 @@ $$V^*:=\lbrace F: V\to \mathbb R :\, F \text{ is linear and bounded}\rbrace.$$
 The norm of a functional $L \in V^*$ is defined as 
 $||L||_{V^*} = \sup_{||u||_V \leq 1} |L(u)|=\sup_{||u||_V \neq 0} \frac{|L(u)|}{||u||_V}.$
 
+### Homework
+Show that the two formulae above are equivalent $\sup_{||u||_V \leq 1} |L(u)|=\sup_{||u||_V \neq 0} \frac{|L(u)|}{||u||_V}.$
+
 
 ---
-<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+<style scoped>section{font-size:23px;padding:50px;padding-top:20px}</style>
 
 ### Hilbert Space
-A Hilbert space $H$ is a real or complex inner product space that is also a complete metric space with respect to the distance function induced by the inner product.
+A Hilbert space $H$ is a real or complex inner product space that is also a *complete* metric space with respect to the distance function induced by the inner product.
 
 The inner product is a bilinear function $(\cdot,\cdot)_H: V\times V \to \mathbb R$ that is symmetric and positive definite. The induced norm  is $|| u||_H:= \sqrt{(u,u)_H}$.
 
+#### Definition (Complete space)
+A complete space is a space where every Cauchy sequence converges to a limit within the same space, i.e., for every $\lbrace u_n\rbrace_{n\in \mathbb N} \subset V$ such that 
+$$\lim_{m,n \to \infty} ||u_m - u_n||_V = 0,$$
+there exists $u \in V$ such that $\lim_{n \to \infty} ||u_n - u||_V = 0$.
 
-#### Example 
-$L^2(\Omega)$ is a Hilbert space with the inner product defined as $(f,g)_{L^2} = \int_\Omega f(x)g(x) dx$.
+#### Examples
+* $L^2(\Omega)$ is a Hilbert space with the inner product defined as $(f,g)_{L^2} = \int_\Omega f(x)g(x) dx$.
+* $C^0(\Omega)$ with the supremum norm is not a Hilbert space, since it is not complete with respect to the supremum norm. For example, the sequence of functions $f_n(x) = x^n$ converges pointwise to the function $f(x) = 0$ for $x \in [0,1)$ and $f(1) = 1$, which is not continuous, so it does not belong to $C^0(\Omega)$.
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
 ### Riesz Representative
-The **Riesz representation theorem** states that for every bounded linear functional $L$ on a Hilbert space $H$, there exists a unique element $v_L \in H$ such that 
+The **Riesz representation theorem** states that for every bounded linear functional $L$ on a **Hilbert space** $H$, there exists a unique element $v_L \in H$ such that 
 $$L(u) = ( u, v_L )_H$$
-for all $u \in H$. Moreover, $||L||_{H^*} = ||u_L||_H$.
-Conversly, for every element $u\in H$ there exists  a linear and bounded functional $L_u$ such that 
+for all $u \in H$. Moreover, $||L||_{H^*} = ||v_L||_H$.
+Conversely, for every element $u\in H$ there exists  a linear and bounded functional $L_u$ such that 
 $$ 
 L_u(v) = (u,v)_H \text{ for every }v\in H.
 $$
@@ -123,6 +183,16 @@ A form
 * is **coercive** if there exists $\alpha>0$ such that $a(v,v)>\alpha \lVert v \rVert^2_V$ for all $v \in V$.
 
 
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
+
+### Homework
+* $a(u,v):= \int_{\mathbb R} \sin(x)^2 \, u(x)v(x)\, \textrm{d} x$ is bilinear, continuous, symmetric, positive but not coercive on $L^2(\mathbb R)$
+* $a(u,v):= \int_{\mathbb R} u(x)v(x) \,\textrm{d} x$ is bilinear, continuous, symmetric, positive and coercive on $L^2(\mathbb R)$
+* $a(u,v):= \int_{\mathbb R} \sin(x)\, u(x)v(x) \, \textrm{d} x$ is bilinear, continuous, symmetric, not positive nor coercive on $L^2(\mathbb R)$
+* $a(u,v):= \int_{\mathbb R} \sin(u(x)) \, v(x) \, \textrm{d} x$ is continuous, is not bilinear, not symmetric, not positive nor coercive on $L^2(\mathbb R)$.
+
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
 
@@ -135,7 +205,7 @@ The support of a function $f$, denoted by $\text{supp}(f)$, is the closure of th
 $$\text{supp}(f):=\overline{\lbrace x\in\Omega : f(x) \neq 0\rbrace}.$$
 
 ### Compact Support
-A function has compact support if its support is a compact set (compact = closed and bounded for us).
+A function has compact support if its support is a compact set (compact = closed and bounded).
 
 ### $C^\infty$ Compact Support Functions
 A function is in $\mathcal{D}(\Omega):=C^\infty_c(\Omega)$ if it is infinitely differentiable and has compact support in $\Omega$.
@@ -147,7 +217,7 @@ A function is in $\mathcal{D}(\Omega):=C^\infty_c(\Omega)$ if it is infinitely d
 ### Convergence in $\mathcal{D}(\Omega)$
 A sequence of functions $\{f_n\}$ in $\mathcal{D}(\Omega)$ converges to $f$ in $C^\infty_c(\Omega)$ if 
 * exists a fixed compact set $K$ that contains all supports of $f_n$ 
-* all derivatives of $f_n$ converge uniformly to the corresponding derivatives of $f$, i.e. $\partial_{x_1^{p_1}\dots x_d^{p_d}}f_n \to \partial_{x_1^{p_1}\dots x_d^{p_d}}f$ for all $p_1, \dots, p_d$.
+* all derivatives of $f_n$ converge *uniformly* to the corresponding derivatives of $f$, i.e. $\partial_{x_1^{p_1}\dots x_d^{p_d}}f_n \to \partial_{x_1^{p_1}\dots x_d^{p_d}}f$ for all $p_1, \dots, p_d$.
  
 
 ---
@@ -175,7 +245,8 @@ $$ \lim_{n\to \infty} T_n(\varphi) = T(\varphi), \qquad \forall \varphi \in \mat
 <style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
 
 ## $L^2(\Omega)$ squared summable functions
-$$L^2(\Omega):= \lbrace f:\Omega \to \mathbb R \text{ such that } \int_{\Omega} f(x)^2 \textrm{d} x < \infty \rbrace.$$
+$$L^2(\Omega):= \frac{\left\lbrace f:\Omega \to \mathbb R \text{ such that } \int_{\Omega} f(x)^2 \textrm{d} x < \infty \right\rbrace }{\sim},$$
+$f\sim g$ if $f(x)=g(x)$ for almost every $x\in \Omega$.
 1. $L^2(\Omega)$ is a Hilbert space with scalar product $(f,g):=\int_{\Omega} f(x)g(x)\textrm{d} x$.
 2. The $L^2(\Omega)$ norm is define through the inner product as $\lVert f \rVert_{L^2(\Omega)} :=\sqrt{\int_{\Omega} f(x)^2\textrm{d} x}.$
 3. To every function $f\in L^2(\Omega)$ is associated a distribution $T_f\in \mathcal{D}^*(\Omega)$ defined by 
@@ -200,8 +271,8 @@ $$
 Let us build the sequence of functions in $L^2(\mathbb R)$ $f_n(x) := \frac{n}2 \chi_{[-1/n,1/n]}(x).$ Clearly, we have that
 1. $\int_{\mathbb R} f_n(x) \mathrm{d}x = 1$
 2. $T_{f_n}(\varphi)= \int_{\mathbb R} f_n(x) \varphi(x) \mathrm{d}x = \frac{n}{2}\int_{-1/n}^{1/n} \varphi(x) \textrm{d}x = \frac{n}{2} (\Phi(1/n)-\Phi(-1/n))$ where $\frac{d}{dx}\Phi(x) = \varphi(x)$.
-3. Let $h_n=1/n$, $T_{f_n}(\varphi)=\frac{\Phi(h)-\Phi(-h)}{2h}$
-4. $\lim_{n\to \infty} T_{f_n}(\varphi)= \lim_{n\to \infty}\frac{\Phi(h)-\Phi(-h)}{2h} = \frac{d}{dx} \Phi(0) = \varphi(0)$.
+3. Let $h_n=1/n$, $T_{f_n}(\varphi)=\frac{\Phi(h_n)-\Phi(-h_n)}{2h_n}$
+4. $\lim_{n\to \infty} T_{f_n}(\varphi)= \lim_{n\to \infty}\frac{\Phi(h_n)-\Phi(-h_n)}{2h_n} = \frac{d}{dx} \Phi(0) = \varphi(0)$.
 5. $T_{f_n}(\varphi) \to \varphi(0) = \delta_0(\varphi)$.
 6. $\delta_0$ is a distribution in $\mathcal{D}^*(\mathbb R)$ but not a function in $L^2(\mathbb R)$.
 
@@ -248,13 +319,24 @@ $$
 \Longrightarrow \partial_x R = \delta_0.
 $$
 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
+
+### Homework
+* Compute the second derivative $\partial_{xx} T_R$ of the Heaviside function in the distributional sense
+$R(x) = \begin{cases}
+    1 &\text{ if }x>0,\\
+    0 &\text{ if }x\leq 0,\\
+\end{cases}$
+* Compute the derivative of the function $f(x) = |x|$ in the distributional sense and checks that it coincides with the classical derivative where it is differentiable.
+* Define the multiplication between a function $f\in \mathcal{C}^\infty$ and a distribution $T$ as $f\cdot T(\varphi) := T(f\cdot \varphi)$. Prove that for $f(x) = x$, we have that $f\cdot \delta'_0 = - \delta_0$ in distributional sense.
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
 
 ## Sobolev Spaces
 
-As we have seen $L^2(\Omega)\subset \mathcal{D}^*(\Omega)$. This does not imply that their distributional derivatives are still in $L^2$. The Heaviside function is in $L^2$ but its derivative it's not.
+As we have seen $(L^2(\Omega))^*=L^2(\Omega)\subset \mathcal{D}^*(\Omega)$. This does not imply that their distributional derivatives are still in $L^2$. The Heaviside function is in $L^2$ but its derivative it's not.
 
 We need to introduce other spaces to distinguish functions!
 
@@ -332,6 +414,15 @@ $$  f(x) = \begin{cases}
   $$
 there exists a continuous representative of this function $f(x)=x^2$ which is the same function in $L^2(\Omega)$.
 
+### Examples
+$$
+\begin{align*}
+&d=1,\qquad m<k-\frac12,\qquad H^1((-1,1)) \subset C^0([-1,1]).\\
+&d=2,\qquad m<k-\frac12,\qquad H^1((-1,1)) \not\subset C^0([-1,1]), \qquad H^2((-1,1))\subset C^0([-1,1]).\\
+\end{align*}
+$$
+
+
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
 
@@ -339,7 +430,7 @@ there exists a continuous representative of this function $f(x)=x^2$ which is th
 ## $H^1_0(\Omega)$
 Let $\Omega$ be a bounded domain. We denote with $H^1_0(\Omega)$ the closure of $\mathcal{D}(\Omega)$ in $H^1(\Omega)$. (*morally zero on the boundary*)
 
-## Poincarè inequality
+## Theorem: Poincarè inequality
 Let $\Omega \subset \mathbb{R}^d$ be a bounded domain with a Lipschitz boundary. There exists a constant $C = C(\Omega) > 0$ such that for all $u \in H^1_0(\Omega)$,
 $$
 \|u\|_{L^2(\Omega)} \leq C \|\nabla u\|_{L^2(\Omega)} = C|u|_1.
