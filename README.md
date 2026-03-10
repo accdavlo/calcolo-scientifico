@@ -38,7 +38,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |:-----  |:------|:------|:---------------|:------|:------|
 |03/03/26| 08:30 | Introduction to the course, derivatives notation| [Notes](notes/2026-03-03-Note-08-07.pdf) | [AI summary](notes/2026-03-03.md) | Forgot recording  |
 |04/03/26| 13:15 | Classification of PDEs, first order linear PDEs, canonical form, second order linear PDEs  | [Notes](notes/2026-03-04-Note-13-09.pdf)  | [Zoom link](https://uniroma1.zoom.us/rec/share/lHj7-RCvYzAKSbGXFlNhbfl_Ve1-sNmHqJ-yvPpocTkzdNXMe00CxKphnJQ52TYS.6JZwBfcmqVO4wCir) | 31MB@a2L |
-|10/03/26| 08:30 | Canonical form of first order linear PDE, classification of second order linear PDEs, Cauchy Problem |  | |
+|10/03/26| 08:30 | Canonical form of second order linear PDE | [Notes](notes/2026-03-10-Note-10-02.pdf)  | [Zoom link](https://uniroma1.zoom.us/rec/share/gToFSKm1OXyxj0JzFHMjOVIdKfMy7fjlPjbG4aILL6lMZdU8T2qcnbtgTdAEx8Ya.P_H03s0R0rvMJ8_l) | SKn8.v=n |
 |11/03/26| 13:15 | Cauchy-Kovaleskaya, well posedness, functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions |  | |
 |17/03/26| 08:30 | Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic |   | | |
 |18/03/26| 13:15 | Weak formulation of elliptic problems, Lax-Milgram |  |  |  |
