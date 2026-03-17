@@ -377,14 +377,7 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
 
-## Examples
-* Example of $H^\infty(\Omega)$ but not $C(\Omega)$ 
-  $$
-  f(x) = \begin{cases}
-    x^2 & \text { if }x\neq 0,\\
-    3 & \text { if }x = 0.
-  \end{cases} 
-  $$
+## Example
 * Example of $H^1(\Omega)$ but not $H^2(\Omega)$ 
   $$
   f(x) = \begin{cases}
@@ -429,19 +422,11 @@ $$\lvert f \rvert_1= \sqrt{\int_{\Omega}(f'(x))^2\, \textrm{d}x} =  \lVert f' \r
 ### Property 
 If $\Omega\subset \mathbb R^d$ is open with a *smooth enough* boundary, then $H^k(\Omega)\subset C^m(\bar{\Omega})$ if $m<k-\frac{d}{2}$.
 
-Careful, in this case we mean that there is a representative of the function in $H^k$ such that it also belongs to $C^m$. In the previous example where 
-$$  f(x) = \begin{cases}
-    x^2 & \text { if }x\neq 0,\\
-    3 & \text { if }x = 0.
-  \end{cases} 
-  $$
-there exists a continuous representative of this function $f(x)=x^2$ which is the same function in $L^2(\Omega)$.
-
 ### Examples
 $$
 \begin{align*}
-&d=1,\qquad m<k-\frac12,\qquad H^1((-1,1)) \subset C^0([-1,1]).\\
-&d=2,\qquad m<k-\frac12,\qquad H^1((-1,1)) \not\subset C^0([-1,1]), \qquad H^2((-1,1))\subset C^0([-1,1]).\\
+&d=1,\qquad m<k-\frac12,\qquad & & H^1((-1,1)) \subset C^0([-1,1]).\\
+&d=2,\qquad m<k-1,\qquad & &H^1((-1,1)^2) \not\subset C^0([-1,1]^2), \qquad H^2((-1,1)^2)\subset C^0([-1,1]^2).\\
 \end{align*}
 $$
 
