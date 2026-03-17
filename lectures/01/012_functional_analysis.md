@@ -40,6 +40,29 @@ where $n(x) = (n_1(x), \dots, n_d(x))$ is the outward unit normal vector to $\pa
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
 
+# Proof of generalization to higher dimensions of fundamental theorem of calculus (for simple domain)
+
+Let $\Omega:= \lbrace (x,y): x\in [a,b], \, g_1(x)\leq y \leq g_2(x) \rbrace$, case $x_i=y$.
+$$
+\int_{\Omega} \partial_{y} u(x,y)  \mathrm{d} x \mathrm{d} y = \int_{a}^b \int_{g_1(x)}^{g_2(x)}  \partial_{y} u(x,y) \mathrm{d} y \mathrm{d} x =  \int_{a}^b u(x,g_2(x)) - u(x,g_1(x)) \mathrm{d}x.
+$$
+
+$\partial \Omega  = \partial \Omega_1 \cup \partial \Omega_2$ where $\partial \Omega_i :=\lbrace (x,y): x\in[a,b], y=g_i(x) \rbrace$ for $i=1,2$.
+Recall that since $n$ is normal to $S$, we have that $(n_x,n_y) dS = (\mathrm{d}y,-\mathrm{d}x)$, so
+$$
+\begin{align*}
+&\int_{\partial \Omega_1} u(x,y) n_{y} dS = -\int_{a}^b u(x,g_1(x)) \mathrm{d} x, \\
+&\int_{\partial \Omega_2} u(x,y) n_{y} dS = -\int_{b}^a u(x,g_2(x)) \mathrm{d} x =  \int_{a}^b u(x,g_2(x)) \mathrm{d} x.
+\end{align*}
+$$
+Hence,
+$$
+\int_{\Omega} \partial_{y} u(x,y)  \mathrm{d} x \mathrm{d} y = \int_{\partial \Omega} u(x,y) n_{y} dS.
+$$
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
+
 # Divergence theorem (special case of above)
 Let $\Omega \subset \mathbb{R}^d$ be a compact subset with a piecewise smooth boundary $\partial \Omega$, and let $\mathbf{u} : \Omega \to \mathbb{R}^d$ be a continuously differentiable vector field function on an open neighborhood $O$ of $\bar{\Omega}\subset O$, i.e. $u_i\in C^1(O)$ for all $i=1,\dots,d$. Then, for each $i=1,\dots,d$,
 $$
@@ -83,7 +106,7 @@ Recall: a norm is a function $||\cdot||: V \to \mathbb R$ that satisfies the fol
 Spoiler: there are infinitely many functions in $L^2$ that have $|| \cdot ||_{L^2} =0$. How to fix this?
 We change the definition of $L^2$ as the space of equivalence classes of functions that are equal almost everywhere, i.e., 
 $$L^2(\Omega):=\frac{\lbrace f:\Omega \to \mathbb R : \int_\Omega |f(x)|^2 dx <\infty\rbrace}{\sim}$$
-where $f\sim g$ if $f(x)=g(x)$ for almost every $x\in \Omega$.
+where $f\sim g$ if $f(x)=g(x)$ for almost every $x\in \Omega$, i.e., if $\int_{\Omega} |f-g|^2 \mathrm{d}x=0$.
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:50px}</style>
@@ -425,7 +448,6 @@ $$
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:25px}</style>
-
 
 ## $H^1_0(\Omega)$
 Let $\Omega$ be a bounded domain. We denote with $H^1_0(\Omega)$ the closure of $\mathcal{D}(\Omega)$ in $H^1(\Omega)$. (*morally zero on the boundary*)
