@@ -37,7 +37,7 @@ $u$ is a concentration, at equilibrium there will be zero net flux $\mathbf{F}$ 
 $$
 \int_{\partial S} \mathbf{F}\cdot \mathbf{n} \textrm{d}\Gamma = 0,
 $$
-using the Gauss-Green theorem, we have that
+using the divergence theorem, we have that
 $$
 \int_S \text{div} \mathbf{F} \textrm{d} x =\int_{\partial S} \mathbf{F}\cdot \mathbf{n} \textrm{d}\Gamma = 0, 
 $$
@@ -155,6 +155,8 @@ $$
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## Weak form
 $$ 
 \int_0^1 u'(x)v'(x)  \,\textrm{d}x  =\int_0^1 f(x)v(x) \,\textrm{d}x .
 $$
@@ -172,14 +174,14 @@ Let's enlarge the space, to get a complete functional space.
 
 Take $u,v \in V:=H^1_0((0,1))$, now all the integrals are meaningful if we take $f\in L^2((0,1))$, and the space normed with $\lvert \cdot \rvert_1$ is complete.
 
+<!--
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
-
-## Variational equivalent problem
+ ## Variational equivalent problem
 **Weak problem** is find $u\in H^1_0((0,1))$ such that for every $v\in H^1_0((0,1))$
 $$ 
 \int_0^1 u'(x)v'(x)  \,\textrm{d}x  =\int_0^1 f(x)v(x) \,\textrm{d}x .
-$$
+$$ 
 
 Equivalent **variational problem** is find $u\in V=H^1_0((0,1))$ such that
 $$
@@ -197,7 +199,7 @@ This is a quadratic function in $\delta$, it's a parabola, and the minimum is at
 $$
 \delta = -\frac{\int_0^1u'w'-\int_0^1fw}{\int_0^1 (w')^2}=0.
 $$
-Hence, for every $w$ and every $\delta$, $\psi(0)=J(u)\leq J(u+\delta w)=\psi(\delta).$
+Hence, for every $w$ and every $\delta$, $\psi(0)=J(u)\leq J(u+\delta w)=\psi(\delta).$ -->
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
@@ -354,7 +356,7 @@ The previous problem is now: find $\tilde{u} \in V$ such that for all $v\in V$ $
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-# Existance and uniqueness
+# Existence and uniqueness
 ## Lax-Milgram Lemma
 Let $V$ a Hilbert space, $a(\cdot,\cdot):V\times V \to \mathbb R$ a bilinear **continuous** and **coercive** form, $F: V \to \mathbb R$ a bounded linear functional. Then, there exists and it is unique the solution of the problem: find $u\in V$ such that for every $v\in V$
 $$
@@ -371,7 +373,7 @@ $$
 $$
 
 
----
+<!-- ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Equivalent variational problem
@@ -383,7 +385,7 @@ $$
 \end{cases}
 $$
 
-### Exercise: Proof
+### Exercise: Proof -->
 
 
 
