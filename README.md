@@ -41,8 +41,8 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |10/03/26| 08:30 | Canonical form of second order linear PDE | [Notes](notes/2026-03-10-Note-10-02.pdf)  | [Zoom link](https://uniroma1.zoom.us/rec/share/gToFSKm1OXyxj0JzFHMjOVIdKfMy7fjlPjbG4aILL6lMZdU8T2qcnbtgTdAEx8Ya.P_H03s0R0rvMJ8_l) | SKn8.v=n |
 |11/03/26| 13:15 | Solution of elliptic equation (with Fourier), Cauchy-Kovaleskaya, well posedness | [Notes](notes/2026-03-11-Note-13-08.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/IoVewPvblDUvk2uxDqAGYSwz9UpjdMbxSqEx-wOnA-o9PephOkVwoCH_RRwXaeTD.adPyFbhG1KoIGb8T) | jzS0V.zn |
 |17/03/26| 08:30 | Functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions | [Notes](notes/2026-03-17-Note-08-28.pdf)  | [Zoom link](https://uniroma1.zoom.us/rec/share/LJNkzguAR6WrjxtJY70bZanPLtBzNCG0aLuLANdwHQgnTShyRzRt7eP8Mwyq2rNG.Ce0eOIPmytgqBgg3) | XX.A!0*8 |
-|18/03/26| 13:15 | Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic, Weak formulation of elliptic problems, Lax-Milgram |  |  |  |
-|24/03/26| 08:30 | Divided differences, finite differences for 1D poisson, error analysis |  | |
+|18/03/26| 13:15 | Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic| [Notes](notes/2026-03-18-Note-14-11.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/NG7b4UgHGKIIMvyxHDWwGRQXfnteXbqSPLCJhH1INvZ_sFAOfAmxOcv_5MFb9fZL.3SxMLniBcTI4uYKq?startTime=1773836125000) | !x$t1R9q |
+|24/03/26| 08:30 |  Weak formulation of elliptic problems, Lax-Milgram, Divided differences, finite differences for 1D poisson, error analysis |  | |
 |25/03/26| 13:15 | Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |  |   |
 |31/03/26| 08:30 | Coding finite difference 2D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)| |  |
 |01/04/26| 13:15 | Finite Element in 1D for Poisson |  | | |
