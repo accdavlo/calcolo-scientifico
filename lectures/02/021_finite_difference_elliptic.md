@@ -411,7 +411,7 @@ Can we pass this information to the error $|u(x_i)-u_i|$?
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Discrete maximum principle
-Consider the finite difference discretization of the Poisson problem with homogeneous Dirichlet BCs. Let $A\in \mathbb R^{(N+1)\times (N+1)}$ be the LHS matrix and let $v\in \mathbb R^{N+1}$. If $(Av)_i \leq 0$ for all $i$ then
+Consider the finite difference discretization of the Poisson problem with **homogeneous** Dirichlet BCs. Let $A\in \mathbb R^{(N+1)\times (N+1)}$ be the LHS matrix and let $v\in \mathbb R^{N+1}$. If $(Av)_i \leq 0$ for all $i$ then
 $$
 \max_{i=1,\dots,N-1} v_i \leq \max\{v_0,v_{N}\}.
 $$

@@ -47,7 +47,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |25/03/26| 13:15 | Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |  |   |
 |31/03/26| 08:30 | Coding finite difference 2D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)| |  |
 |01/04/26| 13:15 | Finite Element in 1D for Poisson |  | | |
-|14/04/26| 08:30 | Finite Element in 1D for Poisson | See above | |
+|14/04/26| 08:30 | Finite Element in 1D for Poisson |  | |
 |15/04/26| 13:15 | Coding Finite Element 1D for Poisson |  [Notebook](/codes/poisson_FEM.ipynb) |  | |
 |21/04/26| 08:30 | Finite element for multi-D |  | | |
 |22/04/26| 13:15 | Coding finite element 2D for Poisson with FEniCS |   [Notebook](/codes/FEM_with_FEniCS.ipynb) |  |
@@ -83,6 +83,7 @@ If you have not many ideas I can suggest you something, probably more complicate
 1. Finite element with naive basis functions (e.g. trigonometric functions) (in 1D/2D)
 1. Spectral element method (Chapter of Quarteroni)
 1. Nonlinear parabolic problems (e.g. Allen-Cahn) with finite elements (and FEniCS?)
+1. WENO reconstruction for finite difference for transport equation in 1D
 1. Dirac delta source terms for Poisson in dimension 1 problems with their Riesz representative, do the simulations work as expected?
 1. Navier-Stokes with FEniCS on a complex geometry (Chapter of Quarteroni)
 1. Reduced basis for elastic block [Problem from this RBniCS test](https://colab.research.google.com/github/RBniCS/RBniCS/blob/open-in-colab/tutorials/02_elastic_block/tutorial_elastic_block.ipynb)
