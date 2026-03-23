@@ -125,6 +125,7 @@ u(x) = \begin{cases}
     \frac12 x - \frac12, & x<\frac12.\\ 
 \end{cases}
 $$
+![bg right:26% height:170](img/poisson_delta_force.png)
 
 
 ---
@@ -172,7 +173,9 @@ The problem is that the space $V$ with the norm $\lvert \cdot \rvert_1$ is not c
 
 Let's enlarge the space, to get a complete functional space.
 
-Take $u,v \in V:=H^1_0((0,1))$, now all the integrals are meaningful if we take $f\in L^2((0,1))$, and the space normed with $\lvert \cdot \rvert_1$ is complete.
+Take $u,v \in V:=H^1_0((0,1))$, now all the integrals are meaningful if we take $f\in L^2((0,1))$, and the space normed with $\lvert \cdot \rvert_1$ is complete. We could even take a RHS which is an operator $\mathcal{L} \in (H^1_0)^*$ and write $\int_0^1u'v' \mathrm d x= \mathcal{L}(v)$ for all $v\in H^1_0$.
+
+The case of $f=\delta_{x_0}$ in 1D works, but a bit of headache [notes](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/0201_dirac_H1.html) (Exercise very difficult/project).
 
 <!--
 ---
@@ -212,11 +215,11 @@ $$
     u(0)=u_L, \quad u(1)=u_R,
 \end{cases}
 $$
-we can consider the *lifting* $u_{lift}:= [(1-x)u_L + x u_R]$ that solves $u_{lift}''=0$, $u_{lift}(0)=u_L$ and $u_{lift}(1)=u_R$. Defining 
+we can consider the **lifting** $u_{lift}(x):= [(1-x)u_L + x u_R]$ that solves $u_{lift}''=0$, $u_{lift}(0)=u_L$ and $u_{lift}(1)=u_R$. Defining 
 $\tilde{u}:=u - u_{lift}$, we have that $\tilde{u}$ solves the homogeneous problem
 $$
 \begin{cases}
-    -\tilde{u}'' = -\tilde{u}'' = f\\
+    -\tilde{u}'' = -{u}'' = f\\
     \tilde{u}(0) = u(0) - u_{lift}(0) = 0,\qquad  \tilde{u}(1) = u(1) - u_{lift}(1) = 0,
 \end{cases}
 $$ 
@@ -252,28 +255,32 @@ $$
 $$
 As for Dirichlet problem, I need the test function to be 0 on the left boundary, while, since we have no information on the right boundary, I have to let them free on the right.
 $$
-V = \lbrace v \in H^1((0,1)): v(0) =0 \rbrace
+V = \lbrace v \in H^1((0,1)): v(0) =0 \rbrace.
 $$
+Here I'm implicitly using the fact that in 1D $H^1 \subset C^0$, so it makes sense evaluating $v(0)$.
 
 Let's write the weak formulation for every $v\in V$, again using integration by parts, we have
 $$
 0=\int_0^1 -u''v -fv \, \textrm{d}x = \int_0^1 u'v' -fv \, \textrm{d}x  - \underbrace{u'(1)}_{=g_1}v(1) +u'(0)\underbrace{v(0)}_{=0} = \int_0^1 u'v' -fv \, \textrm{d}x - g_1v(1).
 $$
 
+### Exercise
+* Check that every term of the previous weak formulation is well defined and bounded.
+* Write the weak formulation of the quartic PDE $u''''=f$ with $u''(1)=1$, $u'''(1)=0$ for $u\in V= \lbrace v \in H^2((0,1)): v(0) =0  \text{ and }v'(0) =0 \rbrace$.
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-## Weak formulation for 2D problems
+## Weak formulation for 2D problems (homogeneous Dirichlet BC)
 Let $\Omega \subset \mathbb R^2$ a bounded domain with boundary $\partial \Omega = \Gamma_D \cup \Gamma_N$. The Poisson problem with Dirichlet and Neumann BC reads
 $$
 \begin{cases}
     -\Delta u=f, & \text{ in } \Omega,\\
-    u(x)=u_D(x), & \text{ in }\Gamma_D,\\
+    u(x)=0, & \text{ in }\Gamma_D,\\
     \nabla u(x) \cdot \mathbf{n} = g_N(x), & \text{ in }\Gamma_N.
 \end{cases}
 $$
-* Test function $v\in V = \lbrace v\in H^1(\Omega) : v|_{\Gamma_D} =0 \rbrace$
+* Test function $v\in V = \lbrace v\in H^1(\Omega) : v|_{\Gamma_D} =0 \rbrace$ (this is less correct as in 2D $H^1 \not\subset C^0$)
   $$
   \int_{\Omega} -\Delta u v  -fv \textrm{d} x = 0  + BCs.
   $$
@@ -295,7 +302,7 @@ $$
 -\int_{\Omega}v\Delta u \,\textrm{d}x  = \int_{\Omega} \nabla u \cdot \nabla v\,\textrm{d}x - \int_\Omega \text{div} (v\nabla u) \textrm{d}x =  \int_{\Omega} \nabla u \cdot \nabla v\,\textrm{d}x -\int_{\partial\Omega} v\nabla u\cdot \mathbf{n} \, \mathrm{d}\gamma.
 $$
 
-### Weak formulation of 2D problem
+### Weak formulation of 2D problem 
 Let's go back to our problem, we can use the fact that $v=0$ on $\Gamma_D$ and that $\nabla u \cdot \textbf{n} = g_N$ on $\Gamma_N$ to write the weak formulation of Poisson problem as find $u\in V_D:= \lbrace v \in H_1(\Omega) : v|_{\Gamma_D} = u_D \rbrace$
 
 $$ 
@@ -358,7 +365,7 @@ The previous problem is now: find $\tilde{u} \in V$ such that for all $v\in V$ $
 
 # Existence and uniqueness
 ## Lax-Milgram Lemma
-Let $V$ a Hilbert space, $a(\cdot,\cdot):V\times V \to \mathbb R$ a bilinear **continuous** and **coercive** form, $F: V \to \mathbb R$ a bounded linear functional. Then, there exists and it is unique the solution of the problem: find $u\in V$ such that for every $v\in V$
+Let $V$ a **Hilbert** space, $a(\cdot,\cdot):V\times V \to \mathbb R$ a bilinear **continuous** and **coercive** form, $F: V \to \mathbb R$ a **bounded** linear functional. Then, there exists and it is unique the solution of the problem: find $u\in V$ such that for every $v\in V$
 $$
 a(u,v)=F(v).
 $$
