@@ -43,8 +43,8 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |11/03/26| 13:15 | Solution of elliptic equation (with Fourier), Cauchy-Kovaleskaya, well posedness | [Notes](notes/2026-03-11-Note-13-08.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/IoVewPvblDUvk2uxDqAGYSwz9UpjdMbxSqEx-wOnA-o9PephOkVwoCH_RRwXaeTD.adPyFbhG1KoIGb8T) | jzS0V.zn |
 |17/03/26| 08:30 | Functional spaces, linear functional, bilinear functionals, Hilbert spaces, distributions | [Notes](notes/2026-03-17-Note-08-28.pdf)  | [Zoom link](https://uniroma1.zoom.us/rec/share/LJNkzguAR6WrjxtJY70bZanPLtBzNCG0aLuLANdwHQgnTShyRzRt7eP8Mwyq2rNG.Ce0eOIPmytgqBgg3) | XX.A!0*8 |
 |18/03/26| 13:15 | Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic| [Notes](notes/2026-03-18-Note-14-11.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/NG7b4UgHGKIIMvyxHDWwGRQXfnteXbqSPLCJhH1INvZ_sFAOfAmxOcv_5MFb9fZL.3SxMLniBcTI4uYKq?startTime=1773836125000) | !x$t1R9q |
-|24/03/26| 08:30 |  Weak formulation of elliptic problems, Lax-Milgram, Divided differences, finite differences for 1D poisson, error analysis |  | |
-|25/03/26| 13:15 | Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |  |   |
+|24/03/26| 08:30 |  Weak formulation of elliptic problems, Lax-Milgram | [Notes](notes/2026-03-24-Note-09-59.pdf) |[Zoom link](https://uniroma1.zoom.us/rec/share/xzpqZ966nVqxIpw8K_8ZhrJruSoCWc06UR8WarSwj1ydDzrdV4djmKGQXWTht9O8.6eVAT2dPOec-qFM2) | bR1..x*5 |
+|25/03/26| 13:15 |  Divided differences, finite differences for 1D poisson, error analysis, Coding finite difference 1D for Poisson | [Notebook](/codes/poisson_FD.ipynb)   |  |   |
 |31/03/26| 08:30 | Coding finite difference 2D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)| |  |
 |01/04/26| 13:15 | Finite Element in 1D for Poisson |  | | |
 |14/04/26| 08:30 | Finite Element in 1D for Poisson |  | |
