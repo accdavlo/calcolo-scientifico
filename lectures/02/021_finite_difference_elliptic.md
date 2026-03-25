@@ -147,7 +147,7 @@ $$
 \begin{align*}
 f'(x)&\approx a_0 f(x) + a_1 f(x-h) + a_2 f(x-2h) =\\
     &= a_0 f(x) + a_1 \left[ f(x) -h f'(x) + \frac{h^2}{2} f''(x) - \frac{h^3}{6}f'''(x) \right]+ a_2 \left[ f(x) -2h f'(x) + 2h^2 f''(x) - \frac{4h^3}{3}f'''(x) \right]+O(h^4)\\
-    &=(a_0+a_1+a_2)f(x) + h(-a_1-2a_2)f'(x) +h^2\left(\frac{a_1}2+2a_2\right)f''(x)+h^3 \left(-\frac{a_1}{6}-\frac{4a_2}{3} \right)+O(h^4). 
+    &=(a_0+a_1+a_2)f(x) + h(-a_1-2a_2)f'(x) +h^2\left(\frac{a_1}2+2a_2\right)f''(x)+h^3 \left(-\frac{a_1}{6}-\frac{4a_2}{3} \right) f'''(x)+O(h^4). 
 \end{align*}
 $$
 3 unknowns $a_0, a_1, a_2$, let's use the first three equations:
