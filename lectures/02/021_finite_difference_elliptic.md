@@ -309,7 +309,7 @@ u_2\\
 u_3\\
 \vdots\\
 u_{N-1}
-\end{bmatrix}}{=:U}
+\end{bmatrix}}_{=:U}
 =
 \underbrace{\begin{bmatrix}
 f(x_1)\\
@@ -334,14 +334,14 @@ But how can we incorporate this into the system without interfering with the oth
 Add an artificial equation for $u_0$ and $u_N$: $u_0 = \alpha \qquad \text{and} \qquad u_N = \beta.$
 Then, we can add the equations for $u_0$ and $u_N$ to the system and solve the system as before.
 $$
-\underbrace{-\frac{1}{h^2}\begin{bmatrix}
--h^2 & 0 & 0 &0 & \dots & 0& 0\\
-1 & -2 & 1 & 0 & \dots & 0& 0\\
-0 & 1 & -2 & 1 & \dots & 0& 0\\
-0 & 0 & 1 & -2 & \dots & 0& 0\\
+\underbrace{\begin{bmatrix}
+1 & 0 & 0 &0 & \dots & 0& 0\\
+-1/h^2 & 2/h^2 & -1/h^2 & 0 & \dots & 0& 0\\
+0 & -1/h^2 & 2/h^2 & -1/h^2 & \dots & 0& 0\\
+0 & 0 & -1/h^2 & 2/h^2 & \dots & 0& 0\\
 \vdots &\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-0 & 0 & 0 & 0 & \dots & -2 & 1\\
-0 & 0 & 0 & 0 & \dots & 0&-h^2
+0 & 0 & 0 & 0 & \dots & 2/h^2 & -1/h^2\\
+0 & 0 & 0 & 0 & \dots & 0& 1
 \end{bmatrix}}_{=:A}
 \underbrace{\begin{bmatrix}
 u_0\\
@@ -351,7 +351,7 @@ u_3\\
 \vdots\\
 u_{N-1}\\
 u_N
-\end{bmatrix}}{=:U}
+\end{bmatrix}}_{=:U}
 =
 \underbrace{\begin{bmatrix}
 \alpha\\
