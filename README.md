@@ -1,6 +1,8 @@
 # Calcolo Scientifico
 Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Intelligenza Artificiale A.A. 2025/2026
 
+# Check MOODLE for updates on class schedule on April!!
+
 ### Rooms
 * On Tuesdays 8:30-10:00 in Laboratorio 1, Castelnuovo
 * On Wednesdays 13:15-15:00 in Aula Picone, Castelnuovo
@@ -53,7 +55,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |18/03/26| 13:15 | Derivatives of distributions, Sobolev spaces, Poincare, intro to elliptic| [Notes](notes/2026-03-18-Note-14-11.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/NG7b4UgHGKIIMvyxHDWwGRQXfnteXbqSPLCJhH1INvZ_sFAOfAmxOcv_5MFb9fZL.3SxMLniBcTI4uYKq?startTime=1773836125000) | !x$t1R9q |
 |24/03/26| 08:30 | Weak formulation of elliptic problems, Lax-Milgram | [Notes](notes/2026-03-24-Note-09-59.pdf) |[Zoom link](https://uniroma1.zoom.us/rec/share/xzpqZ966nVqxIpw8K_8ZhrJruSoCWc06UR8WarSwj1ydDzrdV4djmKGQXWTht9O8.6eVAT2dPOec-qFM2) | bR1..x*5 |
 |25/03/26| 13:15 | Divided differences, finite differences for 1D poisson, error analysis | [Notes](notes/2026-03-25-Note-13-12.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/CERK20UlZ_8QFEUMdfCGvspeC6RYLIHGgVUpk3KMmy8PAOO5Gf_UYDEG9qWxjkBd.fVfTatQ_OxNSu0Id) | yQJ85&d.  |
-|31/03/26| 08:30 | Coding finite difference 1D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)|  |  |
+|31/03/26| 08:30 | Coding finite difference 1D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)| [Audio](https://drive.google.com/file/d/1nmz1eX7cnSdnoxLn9szlhE_mYhezx6bq/view?usp=sharing), [Zoom no audio](https://uniroma1.zoom.us/rec/share/MgADjMost1d08oMabA_q1CY2J2QRoh6Mt4mbtjckLc4rzVyEoIHhDjDP56P99wVE.yL7JNFgmfYTPHBA7)| i$@hzM4a |
 |01/04/26| 13:15 | Coding finite difference 2D for Poisson  |  | | |
 |14/04/26| 08:30 | Finite Element in 1D for Poisson |  | |
 |15/04/26| 13:15 | Coding Finite Element 1D for Poisson |  [Notebook](/codes/poisson_FEM.ipynb) |  | |
