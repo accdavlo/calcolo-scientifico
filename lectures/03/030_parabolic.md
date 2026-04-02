@@ -353,6 +353,12 @@ $$
 * Question: how do we proceed now that we have $\Delta t$ and $\Delta x$? What is the limit process we are interested in?
 * Answer: typically we link the two quantities, e.g. $\Delta t = C \Delta x$ or  $\Delta t = C \Delta x^2$ or only proportionality, so that when $h=\Delta x \to 0$ also $\Delta t \to 0$.
 
+
+---
+<style scoped>section{font-size:23px;padding:50px; padding-top:0px}</style>
+
+# Stability?
+
 Method we have considered can be written as
 $$
 U^{n+1}=B(\Delta t) U^n + b^n(\Delta t), \qquad U^{n+1},U^n,b^n(\Delta t) \in \mathbb R^{N_x}, \, B(\Delta t)\in\mathbb R^{N_x \times N_x},
@@ -605,7 +611,7 @@ $$M_{ij} = \int_{\Omega} \varphi_i \varphi_j \mathrm{d}x, \qquad A_{ij} = \int_{
 $$
 \begin{align*}
 &(u_h^{n+1}-u_h^n,u_h^{n+1} ) + \Delta t \nu (\nabla u_h^{n+1},\nabla u_h^{n+1}) =0\\
-&\lVert u_h^{n+1}\rVert^2_2  + \Delta t  \nu  \lvert  u_h^{n+1}\rvert_1^2 \leq \frac{\lVert u_h^n\rVert^2_2}{2}+\frac{\lVert u_h^{n+1}\rVert^2_2}{2}\\
+&\lVert u_h^{n+1}\rVert^2_2  + \Delta t  \nu  \lvert  u_h^{n+1}\rvert_1^2 =(u^{n}_h,u^{n+1}_h) \leq \frac{\lVert u_h^n\rVert^2_2}{2}+\frac{\lVert u_h^{n+1}\rVert^2_2}{2}\\
 \frac{\lVert u_h^{n+1}\rVert^2_2 }{2}\leq &  \frac{\lVert u_h^{n+1}\rVert^2_2 }{2} + \Delta t  \nu  \lvert  u_h^{n+1}\rvert_1^2 \leq \frac{\lVert u_h^n\rVert^2_2}{2}
 \end{align*}
 $$
