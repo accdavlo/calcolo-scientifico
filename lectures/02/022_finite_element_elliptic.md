@@ -81,7 +81,7 @@ $$
 $A$ associated to the elliptic problem $a(u,v)=F(v)\, \forall v\in V$ where $a(\cdot,\cdot)$ is bilinear and coercive, then $A$ is positive definite.
 ### Proof
 Recall that $B$ is positive definite if $\mathbf{v}^\top B \mathbf{v} \geq 0 \quad \forall \mathbf{v} \in \mathbb R^n$ and $\mathbf{v}^\top B \mathbf{v}=0 \Leftrightarrow \mathbf{v}=0.$
-The map 
+Notice that the map 
 $$\mathbf{v} = (v_i)\in \mathbb R^{N_h} \leftrightarrow v_h(x)=\sum_{j=1}^{N_h} v_j\varphi_j(x) \in V_h
 $$
 is  a bijection between $\mathbb R^{N_h}$ and $V_h$. For any vector $\mathbf v\in \mathbb R^{N_h}$ we have 
@@ -91,7 +91,7 @@ $$
 & =  a\left(\sum_{j=1}^{N_h} v_j \varphi_j,\sum_{i=1}^{N_h}v_i\varphi_i\right)= a(v_h,v_h) \geq \alpha \lVert v_h \rVert_V^2 \geq 0.
 \end{align*}
 $$
-Moreover, if $\mathbf{v}^\top A \mathbf{v} =0$ then $\lVert v_h\rVert_V=0$, i.e. $v_h=0$ and $\mathbf{v}=\mathbf{0}$.
+Moreover, if $\mathbf{v}^\top A \mathbf{v} =0$ then $\lVert v_h\rVert_V=0$, i.e. $v_h=0$ and $\mathbf{v}=\mathbf{0}$ (because of the bijection).
 
 
 ---
@@ -114,12 +114,12 @@ $A$ is symmetric if and only if $a$ is symmetric.
 
 ## Existence and uniqueness
 
-Lax-Milgram lemma holds for any Hilbert space, so, also for $V_h$!!!
+**Lax-Milgram** lemma holds for any **Hilbert** space, so, also for $V_h$!!!
 
 Moreover, $a(\cdot,\cdot)$ and $F(\cdot)$ are the same of the weak formulation.
 
 ## Corollary 
-There exists one unique solution $u_h\in V_h$ of the Galerkin problem $a(u_h,v_h)=F(v_h)\quad \forall v_h\in V_h.$
+There exists one unique solution $u_h\in V_h$ of the Galerkin problem: find $u_h\in V_h$ such that $a(u_h,v_h)=F(v_h)\quad \forall v_h\in V_h.$
 
 ## Alternative proof (as for FD)
 $A$ is positive definite, so invertible.
@@ -130,10 +130,10 @@ $A$ is positive definite, so invertible.
 
 ## Stability
 
-Following the Corollary of Lax-Milgram, we can say for the Galerkin method that
+Following the Corollary of Lax-Milgram, we can say for the Galerkin problem that
 
 ### Corollary
-Galkerin method is stable uniformly with respect to $h$ since it holds 
+The Galkerin problem is **stable** uniformly with respect to $h$ since it holds 
 $$
 \lVert u_h \rVert_V \leq \frac{1}{\alpha} \lVert F \rVert_{V^*}.
 $$
@@ -152,12 +152,13 @@ $$
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
-![bg right:29% 90%](img/orthogonality.png)
+![bg right:23% 100%](img/orthogonality.png)
 
 ## Convergence (1/n)
 Goal: check that $u_h\to u$ for $h\to 0$ in $V$.
 
 ### Galerkin Orthogonality 
+Let $u$ solve $a(u,v)=F(v)\, \forall v\in V$ and $u_h$ solve the Galerkin problem $a(u_h,v_h)=F(v_h)\, \forall v_h\in V_h$, with $V_h\subset V$, then
 $$
 a(u-u_h, v_h)=0\qquad \forall v_h \in V_h.
 $$
@@ -167,11 +168,8 @@ a(u,v_h) = F(v_h) = a(u_h,v_h), \qquad \forall v_h \in V_h\subset V.
 $$
 
 
-### Why orthogonality?
-$a(\cdot,\cdot)$ is a scalar product in $V$ if it's symmetric (since it's coercive). The associated norm is called **energy norm** and it is defined as 
-$$
-\lVert v_h\rVert_a = \sqrt{a(v_h,v_h)}.
-$$
+### Why it's called orthogonality?
+$a(\cdot,\cdot)$ is a scalar product in $V$ if it's symmetric (since it's coercive). The associated norm is called **energy norm** and it is defined as $\lVert v_h\rVert_a = \sqrt{a(v_h,v_h)}.$
 $u_h$ is the orthogonal projection of $u$ onto $V_h$ with the scalar product $a(\cdot, \cdot).$
 In particular, $u_h$ is the minimizer of the error in energy norm 
 $$u_h  = \arg\min_{v_h\in V_h} \lVert v_h - u \rVert_a.$$
@@ -181,8 +179,8 @@ $$u_h  = \arg\min_{v_h\in V_h} \lVert v_h - u \rVert_a.$$
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Convergence (2/n) (Céa's Lemma)
-
-Let $v_h\in V_h$, compute
+Let $u$ solve $a(u,v)=F(v)\, \forall v\in V$ and $u_h$ solve the Galerkin problem $a(u_h,v_h)=F(v_h)\, \forall v_h\in V_h$, with $V_h\subset V$.
+Now, for any $v_h\in V_h$, compute
 $$
 a(u-u_h,u-u_h) = a(u-u_h,u-v_h)+\underbrace{a(u-u_h,v_h-u_h)}_{=0 \text{ since }v_h-u_h\in V_h}
 $$
@@ -206,22 +204,24 @@ $$
 $$
 \lVert u-u_h \rVert_V \leq \frac{C}{\alpha} \inf_{v_h\in V_h} \lVert u-v_h \rVert_V.
 $$
-Céa's lemma tells us that even if $u_h$ is not the best approximation for the $V$ norm in $V_h$, its error will decrease as the best approximation error will decrease.
-So we can just enlarge the space $V_h$, i.e., let $h\to 0$ so that the discrete space saturates the space $V$. i.e.,
+Céa's lemma tells us that even if $u_h$ is not the **best approximation** for the $V$ norm in $V_h$, its error will decrease as the **best approximation** error will decrease.
+So we can just enlarge the space $V_h$, i.e., let $h\to 0$ so that the discrete space saturates the space $V$, i.e.,
 $$
 \lim_{h\to 0}\inf_{v_h\in V_h} \lVert v-v_h \rVert_V = 0 ,\qquad \forall v \in V.
 $$
 Then, we will have convergence of the Galerkin method also in the $\lVert \cdot \rVert_V$ norm!
 
 ### Order of convergence
+We choose the discrete space $V_h$ such that the best approximation error is of order $h^p$, i.e.,
 $$
 \inf_{v_h\in V_h} \lVert v-v_h \rVert_V = O(h^p)\Longrightarrow \lVert u-u_h \rVert_V= O(h^p).
 $$
+Hence, we have that the Galerkin problem is of order of convergence $p$.
 
 
 
 ---
-<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+<style scoped>section{font-size:22px;padding:50px;padding-top:0px}</style>
 
 # Finite element method (1 dimension)
 Take $\Omega=(a,b)$ and we want to approximate $H^1((a,b))$ with a space depending on a scale $h$. Consider a partition of $(a,b)$ called $\mathcal T_h$ composed of $N$ intervals $K_{j}:=(x_{j-1},x_j)$ with $j=1,\dots, N$ with size $h_{j} = x_j-x_{j-1}$ for $j=1,\dots, N$ with 
@@ -230,10 +230,11 @@ a=x_0< x_1 < \dots <x_N=b
 $$
 and we set $h=\max_{j=1,\dots,N}h_{j}$.
 
-Motivational: Since $H^1((a,b))\subset C^0([a,b])$ (slide 16 of [lesson_012](/lectures/01/012_functional_analysis.md)), we can look for a continuous functions in $V_h$ (not really necessary).
+Motivational: Since $H^1((a,b))\subset C^0([a,b])$ (slide 16 of [lesson_012](/lectures/01/012_functional_analysis.md)), we can look for a continuous functions in $V_h$ (this motivation is not really necessary, one could approximate also discontinuous functions with continuous ones).
+Define the **continuous finite element** space of order $r$ as 
 
 $$
-X^r_h = \left\lbrace v_h \in C^0(\bar{\Omega}) : v_h|_{K_j} \in \mathbb P^r(K_j)  \text{ for every } K_j \in \mathcal{T} \right\rbrace \subset H^1((a,b)).
+X^r_h := \left\lbrace v_h \in C^0(\bar{\Omega}) : v_h|_{K_j} \in \mathbb P^r(K_j)  \text{ for every } K_j \in \mathcal{T} \right\rbrace \subset H^1((a,b)).
 $$
 
 ### Let's choose a basis
@@ -336,13 +337,19 @@ $$
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
+## $X^2_h$ Reference element vs whole domain
+![width:580px](img/basis_reference_degree_2.png)![width:590px](img/X2_4elem.png)
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
 ## $X^r_h$
 
 One can proceed with higher orders similarly. Using a reference element will help the construction.
 
 For Lagrangian basis functions: careful with the choice of nodes inside the reference element! Equispaced might lead to Gibbs' phenomena!
-
-![width:550px](img/basis_functions_N_3_degree_3.png) ![width:550px](img/basis_reference_degree_10.png)
+...............................$X^3_h$ with $h=1/3$............................... ...............................$X^{10}_h$ with $h=1$...............................
+![width:560px](img/basis_functions_N_3_degree_3.png) ![width:560px](img/basis_reference_degree_10.png)
 
 
 ---
@@ -376,7 +383,7 @@ $$
 ## Assemble the problem!
 We check for all basis functions $\varphi_i \in V_h$ instead of all $v_h\in V_h$ and we can expand $u_h(x)= \sum_{j=1}^{N_h} u_j \varphi_j(x)$, to obtain a system
 $$
-\sum_{j=1}^{N_h} \int_{a}^b u_j \varphi'_j(x) \varphi_i'(x) \textrm{d}x + \sum_{j=1}^{N_h}\int_{a}^b\sigma u_j \varphi_j(x) \varphi_i(x) \textrm{d}x = \int_{a}^b f \varphi_i(x) \textrm{d} x \qquad \forall i=1,\dots, N_h.
+\sum_{j=1}^{N_h} \int_{a}^b u_j \varphi'_j(x) \varphi_i'(x) \textrm{d}x + \sum_{j=1}^{N_h}\int_{a}^b\sigma u_j \varphi_j(x) \varphi_i(x) \textrm{d}x = \int_{a}^b f(x) \varphi_i(x) \textrm{d} x \qquad \forall i=1,\dots, N_h.
 $$
 
 So we get the linear system 
@@ -385,7 +392,7 @@ A \mathbf{u} = \mathbf{f},
 $$
 with 
 $$
-A=[a_{ij}], \quad a_{ij} = \int_{a}^b \varphi'_j(x) \varphi_i'(x) \textrm{d}x + \int_{a}^b\sigma  \varphi_j(x) \varphi_i(x) \textrm{d}x,\qquad \mathbf{f} = [f_i], \, f_i=\int_{a}^b f \varphi_i(x) \textrm{d} x
+A=[a_{ij}], \quad a_{ij} = \int_{a}^b \varphi'_j(x) \varphi_i'(x) \textrm{d}x + \int_{a}^b\sigma  \varphi_j(x) \varphi_i(x) \textrm{d}x,\qquad \mathbf{f} = [f_i], \, f_i=\int_{a}^b f(x) \varphi_i(x) \textrm{d} x
 $$
 and $\mathbf{u}=[u_j]$ the unknown of our system.
 
@@ -394,6 +401,7 @@ and $\mathbf{u}=[u_j]$ the unknown of our system.
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Assemble the matrix!
+#### Example: $X^1_h$ case
 We have seen that $\text{supp}(\varphi_i) \subset [x_{i-1},x_{i+1}]$, so the integrals 
 $$
 a_{ij} = \int_{a}^b \varphi'_j(x) \varphi_i'(x) \textrm{d}x + \int_{a}^b\sigma  \varphi_j(x) \varphi_i(x) \textrm{d}x = 0\qquad \text{ for }|i-j|>1.
@@ -440,10 +448,10 @@ First of all, let's reorder the DoFs indexes: $K_i=[x_{i-1},x_i]$, and we put in
 $$
 y_\alpha = y_{(i,s)} = x_{i-1}+ (x_{i}-x_{i-1}) \hat{y}_s \qquad \text{for }i=1,\dots,N,\, s=0,\dots,r,
 $$
-with the equivalence $y_{(i,0)}=y_{(i-1,r)}$.
+with the equivalence relation $y_{(i,0)}\sim y_{(i-1,r)}$.
 So, we can map with a bijection the indexes $(i,s)\leftrightarrow \alpha=(i-1)\cdot r +s$ for $\alpha = 0,\dots,rN$.
 
-### Draw a matrix example!
+![width:560px, height:400px](img/basis_functions_N_6_degree_3.png)![width:560px, height:400px](img/mass_matrix_N_6_degree_3.png)$X^3_h$ with $N=6$.
 
 
 ---
@@ -452,7 +460,7 @@ So, we can map with a bijection the indexes $(i,s)\leftrightarrow \alpha=(i-1)\c
 ## Error estimation (1/2)
 Goal: move from error of Galerkin approximation to interpolation error.
 ### Interpolation error
-For a function $v\in C^0((a,b))$, take the interpolant of $v$ in $X^r_h$ as
+For a function $v\in C^0((a,b))$, take the interpolant operator of $v$ in $X^r_h$ defined by  $\Pi^r_h:C^0 \to X^r_h$ through
 $$
 \Pi^r_h v (x_i) = v(x_i) ,\quad \forall i=0,\dots, N_h.
 $$
@@ -461,9 +469,14 @@ $$
 ### Theorem (see Quarteroni for proof)
 Let $v\in H^{r+1}((a,b))$ for $r\geq 1$ and let $\Pi^r_hv \in X^r_h$ its interpolant. It holds that
 $$
-|v-\Pi^r_hv|_{H^k((a,b))} \leq C_{k,r} h^{r+1-k} \lvert v\rvert_{H^{r+1}((a,b))}, \qquad \text{ for }k=0,1.
+|v-\Pi^r_hv|_{H^0((a,b))} \leq C_{0,r} h^{r+1} \lvert v\rvert_{H^{r+1}((a,b))},
 $$
-The constants $C_{k,r}$ are independent of $v$ and $h$.
+and
+$$
+|v-\Pi^r_hv|_{H^1((a,b))} \leq C_{1,r} h^{r} \lvert v\rvert_{H^{r+1}((a,b))}.
+$$
+
+The constants $C_{k,r}$ for $k=0,1$ are independent of $v$ and $h$.
 
 
 
@@ -471,7 +484,7 @@ The constants $C_{k,r}$ are independent of $v$ and $h$.
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Error estimation (2/2)
-Let $u\in V$ be the exact solution of the variational problem and $u_h$ its Finite Element approximation with polynomials of degree $r$, with $u_h\in V_h=V\cap X^r_h$. Let $u\in H^{p+1}((a,b))$ for a $p\geq r$. Then, it holds
+Let $u\in V\subset H^1((a,b))$ be the exact solution of the variational problem and $u_h$ its Finite Element approximation with polynomials of degree $r$, with $u_h\in V_h=V\cap X^r_h$. Let $u\in H^{p+1}((a,b))$ for a $p\geq r$. Then, it holds
 
 $$
 \lVert u-u_h \rVert_V \leq \frac{M}{\alpha} C h^r \lvert u \rvert_{H^{r+1}((a,b))}
@@ -511,9 +524,12 @@ for the equation $i=0$ we change only the right hand side adding the Neumann con
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 # CODE IT!
+And check the following things:
 
-#### Things I forgot to say
-* Try to verify the convergence results for $H^1$ and $L^2$ norms with different polynomial degrees.
+* Plot the approximation of a solution in the space $X^r_h$ for different values of $r$ and $h$.
+* Plot the basis functions for different values of $r$ and $h$.
+* Plot the solution of the Galerkin problem with a reference solution and check that qualitatively everything is ok (BC, etc.)
+* Try to verify the convergence results for $H^1$ and $L^2$ norms with different polynomial degrees (test the order of accuracy for different error norms.)
 
 
 ---
@@ -529,15 +545,15 @@ for the equation $i=0$ we change only the right hand side adding the Neumann con
 1. Solve linear system
 
 ---
-<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+<style scoped>section{font-size:21px;padding:50px;padding-top:0px}</style>
 
 ![bg right:35% 95%](img/circle_mesh.png)
 
 ## Discretize the geometry 
 
 1. Approximation of the shape (the circle is not anymore a circle)
-1. $\Omega\subset \mathbb R^{d=2}$ approximated with $\Omega_h=\text{int} \left(\cup_{K\in \mathcal{T}_h} K\right)$
-1. $h=\max_{K\in \mathcal{T}_h} \text{diam}(K)$ where $\text{diam}(K)= \max_{x,y \in K} \lVert x-y \rVert$
+1. $\Omega\subset \mathbb R^{d=2}$ approximated with $\Omega_h=\text{int} \left(\cup_{K\in \mathcal{T}_h} \bar{K}\right)$ with $K_1 \cap K_2 = \emptyset$ for $K_1\neq K_2$ open and disjoint elements.
+1. $h=\max_{K\in \mathcal{T}_h} h_K$ where $h_K= \max_{x,y \in K} \lVert x-y \rVert$ is K's diameter
 1. Choice on the shape of the 2D basic elements $K$
     1. Quadrilaterals are easy to deal with, but are not as flexible as 
     1. Triangles/tetrahedrons are simpler to build given a geometry, simple also to use as fundamental object
@@ -563,7 +579,7 @@ Polynomial space: not clear. Degree $p$
 
 For triangles $\mathbb P^p$ is more natural, for quadrilaterals $\mathbb Q^p$ is more natural.
 
-Indeed, if we look for Lagrangian basis functions, in a triangle it might be useful to use the three vertices as Lagrangian points, hence, 3 linear basis function ($p=1$). In a quadrilateral, the four corner will lead to 4 basis functions.
+Indeed, if we look for Lagrangian basis functions, in a triangle it might be useful to use the three vertices as Lagrangian points, hence, 3 linear basis function ($\mathbb P^1$). In a quadrilateral, the four corner will lead to 4 basis functions ($\mathbb Q^1$).
 
 
 ---
@@ -581,8 +597,15 @@ Let's solve this linear system and we get
 * $\varphi_2 (\mathbf x) =x$
 * $\varphi_3 (\mathbf x) =y$
 
-### Draw a $\mathbb P^1$ basis function in 3D
+### Picture of $\mathbb P^1$ basis function in 3D in next slide
 
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
+## $\mathbb P^1$ basis functions on the reference triangle
+
+![width:1200px](img/p1_basis_functions.gif)
 
 
 ---
@@ -609,11 +632,18 @@ Check that $\varphi_i(\mathbf x_j)=\delta_{ij}$, check that $\sum_i{\varphi_i}(\
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
+
+![width:1200px](img/p2_basis_functions.gif)
+
+
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+
 ## $\mathbb P^p$
 ![bg right:30% 95% ](img/P3_triangle.png)
 
 
-* Once can generalize and obtain all the Lagrangian basis functions for all orders 
+* We can generalize and obtain all the Lagrangian basis functions for all orders 
 * Chosen the Lagrangian points, solve for the Lagrangian basis functions
 * Use them!
 
