@@ -71,7 +71,8 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |13/05/26| 13:15 | Coding FD for advection and nonlinear laws | [Notebook](/codes/transport_FD.ipynb)  |  | |
 |19/05/26| 08:30 | Scalar hyperbolic conservation laws (nonlinear) |  | | |
 |20/05/26| 13:15 | Coding hyperbolic conservation laws |   |  | |
-|26/06/26| 08:30 | Physics Informed Neural Networks |  |  | |
+|26/05/26| 08:30 | Physics Informed Neural Networks |  |  | |
+|27/05/26| 13:15 | Se sforo vado qua |  |  | |
 |10/06/26| 13:15 | Projects presentation |  |  | |
 
 
