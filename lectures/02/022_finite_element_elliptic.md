@@ -425,18 +425,22 @@ $$
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Focus on one integral
-Change of variables into the reference domain! (Recall $\xi=T^{-1}_{i}(x)=\frac{x-x_{i-1}}{x_i-x_{i-1}}$)
+Change of variables into the reference domain! Recall $\xi=T^{-1}_{i}(x)=\frac{x-x_{i-1}}{x_i-x_{i-1}}$ and $\frac{d\xi}{dx}=\frac{1}{h_i}$ with $h_i=x_i-x_{i-1}$ and $\frac{d T_i(\xi)}{d\xi} = h_i$.
 $$
 \begin{align*}
 &\int_{x_{i-1}}^{x_i} \partial_x \varphi_i(x) \partial_x \varphi_{i-1}(x) + \sigma \varphi_i(x)\varphi_{i-1}(x) \, \mathrm{d}x \\
 =& \int_{0}^{1} \frac{\partial \xi}{\partial x} \partial_\xi \hat{\varphi}_1(\xi) \frac{\partial \xi}{\partial x} \partial_\xi \hat{\varphi}_0(\xi) + \sigma \hat\varphi_1(\xi)\hat\varphi_0(\xi) \frac{d T_i(\xi)}{d \xi} \mathrm{d}\xi\\
-=&\frac{1}{h_i}\int_{0}^{1} \partial_\xi \hat{\varphi}_1(\xi)  \partial_\xi \hat{\varphi}_0(\xi) \textrm{d}\xi + h_i \int_{0}^{1}  \sigma \hat\varphi_1(\xi)\hat\varphi_0(\xi)  \mathrm{d}\xi
+=&\frac{1}{h_i}\int_{0}^{1} \partial_\xi \hat{\varphi}_1(\xi)  \partial_\xi \hat{\varphi}_0(\xi) \textrm{d}\xi + h_i \int_{0}^{1}  \sigma \hat\varphi_1(\xi)\hat\varphi_0(\xi)  \mathrm{d}\xi .
 \end{align*}
 $$
-with $h_i=(x_i-x_{i-1})$.
+
 
 If coefficients are constant, the integrals can be computed just for the reference element and then be multiplied by coefficients when assembling the bigger matrix!
 
+* The integrals can be computed with **quadrature rules** (e.g. Gaussian quadrature) so that they are exact for polynomials of degree $2r$. Given quadrature nodes and weights $\lbrace (\tilde{\xi}_q, w_q) \rbrace_{q=1}^Q$ we compute the integral as 
+$$
+\int_{0}^{1} f(\xi) \, \mathrm{d}\xi \approx \sum_{q=1}^Q w_q f(\tilde{\xi}_q).
+$$
 
 
 ---
@@ -662,7 +666,7 @@ $$
 
 
 ---
-<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
+<style scoped>section{font-size:21px;padding:50px;padding-top:0px}</style>
 
 ## Pull back on the physical elements
 If we have a triangle $K$ with vertices $x_1,x_2,x_3$, there exists a unique affine map that transform $K$ into $\hat K$ that we can define as 
@@ -680,8 +684,9 @@ $$
 =& \int_{\hat K} A^{-1} \nabla_{\hat {\mathbf x}} \hat \varphi_i(\hat{\mathbf x}) \cdot A^{-1} \nabla_{\hat {\mathbf x}} \hat \varphi_i(\hat {\mathbf x})  \text{det}(A) \textrm{d}  \hat {\mathbf x} 
 \end{align*}
 $$
-One has to be careful with indexes, but pre-computing 4 integrals on the reference element is enough to compute all the integrals on the physical element. 
-Otherwise, we can use some quadrature rules for triangles that are mapped onto the physical one.
+* $A$ is independent of $\hat{\mathbf x}$ since the map is affine, so it goes out of the integral.
+* One has to be careful with indexes, but pre-computing 4 integrals on the reference element is enough to compute all the integrals on the physical element. 
+* Otherwise, we can use some quadrature rules for triangles that are mapped onto the physical one.
 
 
 ---
