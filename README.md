@@ -59,20 +59,20 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |25/03/26| 13:15 | Divided differences, finite differences for 1D poisson, error analysis | [Notes](notes/2026-03-25-Note-13-12.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/CERK20UlZ_8QFEUMdfCGvspeC6RYLIHGgVUpk3KMmy8PAOO5Gf_UYDEG9qWxjkBd.fVfTatQ_OxNSu0Id) | yQJ85&d.  |
 |31/03/26| 08:30 | Coding finite difference 1D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)| [Audio](https://drive.google.com/file/d/1nmz1eX7cnSdnoxLn9szlhE_mYhezx6bq/view?usp=sharing), [Zoom no audio](https://uniroma1.zoom.us/rec/share/MgADjMost1d08oMabA_q1CY2J2QRoh6Mt4mbtjckLc4rzVyEoIHhDjDP56P99wVE.yL7JNFgmfYTPHBA7)| i$@hzM4a |
 |01/04/26| 13:15 | Coding finite difference 2D for Poisson  | [Notes](notes/2026-04-01-Note-13-08.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/oKDKdj5gQ4xkdaFr2O8Uq9MjKS9tkWN0uR1GLfn083i2uzf7qAOWsJajZYDsQn-F.3QGazp1TRaTUCv3O) |  !6r*@RwB |
-|14/04/26| 08:30 | Finite Element in 1D for Poisson |  | |
-|15/04/26| 13:15 | Coding Finite Element 1D for Poisson |  [Notebook](/codes/poisson_FEM.ipynb) |  | |
-|16/04/26| 10:15 | Finite element for multi-D |  | | |
-|21/04/26| 08:30 | Coding finite element 2D for Poisson with FEniCS |   [Notebook](/codes/FEM_with_FEniCS.ipynb) |  |
-|22/04/26| 13:15 | Model order reduction |  [Notebook](/codes/ROM_with_FEniCS.ipynb) |  |
-|23/04/26| 10:15 | Parabolic equations  |  |  | |
-|28/04/26| 08:30 | FD and FEM for parabolic equations |  | | |
-|29/04/26| 13:15 | Advection equation |  |  | |
-|12/05/26| 08:30 | FD for advection equation  |  | | |
-|13/05/26| 13:15 | Coding FD for advection and nonlinear laws | [Notebook](/codes/transport_FD.ipynb)  |  | |
-|19/05/26| 08:30 | Scalar hyperbolic conservation laws (nonlinear) |  | | |
-|20/05/26| 13:15 | Coding hyperbolic conservation laws |   |  | |
-|26/05/26| 08:30 | Physics Informed Neural Networks |  |  | |
-|27/05/26| 13:15 | Se sforo vado qua |  |  | |
+|14/04/26| 08:30 | Finite Element in 1D for Poisson | [Notes](/notes/2026-04-14-Note-10-03.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/GdjBsvoJeTlrpOWowMY6o8iRbAWxF-VX-F7C0bDY5IQS8goTVnpET9lpsiCQPqfC.NWcGAg_pn7V5PilE)| L1i*8^Yx |
+|15/04/26| 13:15 | Finite Element in 1D for Poisson | | | |
+|16/04/26| 10:15 | Coding Finite Element 1D for Poisson |  [Notebook](/codes/poisson_FEM.ipynb) |  | |
+|21/04/26| 08:30 | Finite element for multi-D |  | | |
+|22/04/26| 13:15 | Coding finite element 2D for Poisson with FEniCS |   [Notebook](/codes/FEM_with_FEniCS.ipynb) |  |
+|23/04/26| 10:15 | Model order reduction |  [Notebook](/codes/ROM_with_FEniCS.ipynb) |  |
+|28/04/26| 08:30 | Parabolic equations  |  |  | |
+|29/04/26| 13:15 | FD and FEM for parabolic equations |  | | |
+|12/05/26| 08:30 | Advection equation |  |  | |
+|13/05/26| 13:15 | FD for advection equation  |  | | |
+|19/05/26| 08:30 | Coding FD for advection and nonlinear laws | [Notebook](/codes/transport_FD.ipynb)  |  | |
+|20/05/26| 13:15 | Scalar hyperbolic conservation laws (nonlinear) |  | | |
+|26/05/26| 08:30 | Coding hyperbolic conservation laws |   |  | |
+|27/05/26| 13:15 | Physics Informed Neural Networks |  |  | |
 |10/06/26| 13:15 | Projects presentation |  |  | |
 
 
