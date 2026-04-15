@@ -60,7 +60,7 @@ Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Inte
 |31/03/26| 08:30 | Coding finite difference 1D for Poisson |  [Notebook](/codes/poisson_FD.ipynb)| [Audio](https://drive.google.com/file/d/1nmz1eX7cnSdnoxLn9szlhE_mYhezx6bq/view?usp=sharing), [Zoom no audio](https://uniroma1.zoom.us/rec/share/MgADjMost1d08oMabA_q1CY2J2QRoh6Mt4mbtjckLc4rzVyEoIHhDjDP56P99wVE.yL7JNFgmfYTPHBA7)| i$@hzM4a |
 |01/04/26| 13:15 | Coding finite difference 2D for Poisson  | [Notes](notes/2026-04-01-Note-13-08.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/oKDKdj5gQ4xkdaFr2O8Uq9MjKS9tkWN0uR1GLfn083i2uzf7qAOWsJajZYDsQn-F.3QGazp1TRaTUCv3O) |  !6r*@RwB |
 |14/04/26| 08:30 | Finite Element in 1D for Poisson | [Notes](/notes/2026-04-14-Note-10-03.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/GdjBsvoJeTlrpOWowMY6o8iRbAWxF-VX-F7C0bDY5IQS8goTVnpET9lpsiCQPqfC.NWcGAg_pn7V5PilE)| L1i*8^Yx |
-|15/04/26| 13:15 | Finite Element in 1D for Poisson | | | |
+|15/04/26| 13:15 | Finite Element in 1D for Poisson | [Notes](/notes/2026-04-15-Note-14-44.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/x21w0eKENDks0t511lyllfmdhkds_wHmRhh3OoWpuUCiL4Eo9lusf1vaU4JtpOdM._W6akSYgNyZFMjR7) |  $1c?U1X^ |
 |16/04/26| 10:15 | Coding Finite Element 1D for Poisson |  [Notebook](/codes/poisson_FEM.ipynb) |  | |
 |21/04/26| 08:30 | Finite element for multi-D |  | | |
 |22/04/26| 13:15 | Coding finite element 2D for Poisson with FEniCS |   [Notebook](/codes/FEM_with_FEniCS.ipynb) |  |
