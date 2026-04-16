@@ -1,15 +1,13 @@
 # Calcolo Scientifico
 Repository for the course Calcolo Scientifico for Scienze Matematiche per l'Intelligenza Artificiale A.A. 2025/2026
 
-# Check MOODLE for updates on class schedule on April!!
+# OPIS
+Codice OPIS: J5K9SA1T
 
 ### Rooms
 * On Tuesdays 8:30-10:00 in Laboratorio 1, Castelnuovo
 * On Wednesdays 13:15-15:00 in Aula Picone, Castelnuovo
 #### Exceptions (extra classes on Thursday!)
-* 7-8/04/26: no lesson
-* 15/04/26: 13:15-15:00 in Laboratorio 1, Castelnuovo
-* 16/04/26: 10:15-12:00 in Laboratorio 1, Castelnuovo
 * 23/04/26: 10:15-12:00 in Laboratorio 1, Castelnuovo
 * 5-6/05/26: no lesson
 
