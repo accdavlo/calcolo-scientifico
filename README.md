@@ -60,7 +60,7 @@ Codice OPIS: J5K9SA1T
 |14/04/26| 08:30 | Finite Element in 1D for Poisson | [Notes](/notes/2026-04-14-Note-10-03.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/GdjBsvoJeTlrpOWowMY6o8iRbAWxF-VX-F7C0bDY5IQS8goTVnpET9lpsiCQPqfC.NWcGAg_pn7V5PilE)| L1i*8^Yx |
 |15/04/26| 13:15 | Finite Element in 1D for Poisson | [Notes](/notes/2026-04-15-Note-14-44.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/x21w0eKENDks0t511lyllfmdhkds_wHmRhh3OoWpuUCiL4Eo9lusf1vaU4JtpOdM._W6akSYgNyZFMjR7) |  $1c?U1X^ |
 |16/04/26| 10:15 | Coding Finite Element 1D for Poisson |  [Notebook](/codes/poisson_FEM.ipynb) |  | |
-|21/04/26| 08:30 | Finite element for multi-D |  | | |
+|21/04/26| 08:30 | Finite element for multi-D | [Notes](/notes/2026-04-21-Note-10-04.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/UDOScCVpkdJTHciDtWSaEIYD_HjYrooExOC_tPwTztZnMr3I4YQMNaTA3f7NYTr2.UTTyCqHlfI2IKV1f?startTime=1776752640000) | PuDLe2L! |
 |22/04/26| 13:15 | Coding finite element 2D for Poisson with FEniCS |   [Notebook](/codes/FEM_with_FEniCS.ipynb) |  |
 |23/04/26| 10:15 | Model order reduction |  [Notebook](/codes/ROM_with_FEniCS.ipynb) |  |
 |28/04/26| 08:30 | Parabolic equations  |  |  | |
@@ -77,11 +77,11 @@ Codice OPIS: J5K9SA1T
 ## Notebooks
 | Date | Topic | Notebook |Solutions   |  Last save | 
 |:-----|:------|:---------|:-----------|:-----------|
-|????| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
-|????| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| |
-|????| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
-|????| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
-|????| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
+|31/03/26| Finite difference for Poisson | [Notebook](/codes/poisson_FD.ipynb) | [Solutions](/codes/solutions/poisson_FD.ipynb)|
+|16/04/26| Finite element 1D for Poisson | [Notebook](/codes/poisson_FEM.ipynb) | [Solutions](/codes/solutions/poisson_FEM.ipynb)| |
+|22/04/26| Finite element 2D for Poisson with FEniCS| [Notebook](/codes/FEM_with_FEniCS.ipynb) |[Solutions](/codes/solutions/FEM_with_FEniCS.ipynb)|
+|23/04/26| Reduced order models for parametric problems with FEniCS| [Notebook](/codes/ROM_with_FEniCS.ipynb) |-|
+|29/04/26| Finite difference for Heat equation | [Notebook](/codes/heat_FD.ipynb) | [Solutions](/codes/solutions/heat_FD.ipynb)|
 |????| Finite difference for transport equation | [Notebook](/codes/transport_FD.ipynb) | [Solutions](/codes/solutions/transport_FD.ipynb)|
 |????| Finite volume for conservation laws | [Notebook](/codes/hyperbolic_FD.ipynb) | [Solutions](/codes/solutions/hyperbolic_FD.ipynb)|
 |????| PINN | [Notebook](/codes/PINN.ipynb) | [Solutions](/codes/solutions/PINN.ipynb)|
