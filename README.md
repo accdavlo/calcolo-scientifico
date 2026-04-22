@@ -35,7 +35,7 @@ Codice OPIS: J5K9SA1T
 | 2.1.1 | (Extra) Poisson with dirac source | [PDF](lectures/02/0201_dirac_H1.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/0201_dirac_H1.html) | [md](lectures/02/0201_dirac_H1.md) |
 | 2.2 | Finite differences for elliptic problems| [PDF](lectures/02/021_finite_difference_elliptic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/021_finite_difference_elliptic.html) | [md](lectures/02/021_finite_difference_elliptic.md) |
 | 2.3 | Finite elements for elliptic problems| [PDF](lectures/02/022_finite_element_elliptic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/022_finite_element_elliptic.html) | [md](lectures/02/022_finite_element_elliptic.md) |
-| 2.4 | Reduced order methods for elliptic problems |[Notebook](/codes/ROM_with_FEniCS.ipynb) | | | |
+| 2.4 | Reduced order methods for elliptic problems | [PDF](lectures/02/023_MOR.pdf?raw=true) [Notebook](/codes/ROM_with_FEniCS.ipynb) |[html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/02/023_MOR.html) | [md](lectures/02/023_MOR.md) |
 | 3 | Parabolic problems ||||
 | 3.1 | Parabolic problems and their discretization| [PDF](lectures/03/030_parabolic.pdf?raw=true)| [html](https://html-preview.github.io/?url=https://github.com/accdavlo/calcolo-scientifico/blob/main/lectures/03/030_parabolic.html) | [md](lectures/03/030_parabolic.md) |
 | 4 | Hyperbolic equations||||
