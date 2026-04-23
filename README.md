@@ -62,7 +62,7 @@ Codice OPIS: J5K9SA1T
 |16/04/26| 10:15 | Coding Finite Element 1D for Poisson |  [Notebook](/codes/poisson_FEM.ipynb) |  | |
 |21/04/26| 08:30 | Finite element for multi-D | [Notes](/notes/2026-04-21-Note-10-04.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/rrcZeXhZk1VhLatoca9YwM7ZCMZuRWvHvcLjRzKXMHI_biNmO5pESxz_cp2RUlZz.y468XEpOxKa6erYt) | zi*0q.e9 |
 |22/04/26| 13:15 | Coding finite element 2D for Poisson with FEniCS |   [Notebook](/codes/FEM_with_FEniCS.ipynb) |  |
-|23/04/26| 10:15 | Model order reduction | [Notes](/notes/2026-04-23-Note-11-17.pdf) [Notebook](/codes/ROM_with_FEniCS.ipynb) | https://uniroma1.zoom.us/rec/share/BIQ0xcjwlXE4GZEsTK-yylFnSGrlGAYBHxudshCDCKq4ue0BORpLQWhwHGkOiGg.hYAuwqTUhEIlxjRQ | 8JT%*t#1 |
+|23/04/26| 10:15 | Model order reduction | [Notes](/notes/2026-04-23-Note-11-17.pdf) [Notebook](/codes/ROM_with_FEniCS.ipynb) | [Zoom link](https://uniroma1.zoom.us/rec/share/BIQ0xcjwlXE4GZEsTK-yylFnSGrlGAYBHxudshCDCKq4ue0BORpLQWhwHGkOiGg.hYAuwqTUhEIlxjRQ) | 8JT%*t#1 |
 |28/04/26| 08:30 | Parabolic equations  |  |  | |
 |29/04/26| 13:15 | FD and FEM for parabolic equations |  | | |
 |12/05/26| 08:30 | Advection equation |  |  | |
