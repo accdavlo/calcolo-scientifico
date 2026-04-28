@@ -613,12 +613,11 @@ $$M_{ij} = \int_{\Omega} \varphi_i \varphi_j \mathrm{d}x, \qquad A_{ij} = \int_{
 $$
 \begin{align*}
 &(u_h^{n+1}-u_h^n,u_h^{n+1} ) + \Delta t \nu (\nabla u_h^{n+1},\nabla u_h^{n+1}) =0\\
-&\lVert u_h^{n+1}\rVert^2_2  + \Delta t  \nu  \lvert  u_h^{n+1}\rvert_1^2 =(u^{n}_h,u^{n+1}_h) \leq \frac{\lVert u_h^n\rVert^2_2}{2}+\frac{\lVert u_h^{n+1}\rVert^2_2}{2}\\
+&\lVert u_h^{n+1}\rVert^2_2  + \Delta t  \nu  \lvert  u_h^{n+1}\rvert_1^2 =(u^{n}_h,u^{n+1}_h) \leq \lVert u_h^n\rVert_2 \lVert u_h^{n+1}\rVert_2 \leq\frac{\lVert u_h^n\rVert^2_2}{2}+\frac{\lVert u_h^{n+1}\rVert^2_2}{2}\\
 \frac{\lVert u_h^{n+1}\rVert^2_2 }{2}\leq &  \frac{\lVert u_h^{n+1}\rVert^2_2 }{2} + \Delta t  \nu  \lvert  u_h^{n+1}\rvert_1^2 \leq \frac{\lVert u_h^n\rVert^2_2}{2}
 \end{align*}
 $$
-
-* Explicit Euler: $\lVert u_h^{n+1} \rVert_{L^2}\leq \lVert u_h^{n} \rVert_{L^2}$ if  $\Delta t < \frac{2}{\max_i \lambda^i_h}$ with $\lambda^i_h$ are the eigenvalues of $AM^{-1}$.
+* Explicit Euler: $\lVert u_h^{n+1} \rVert_{L^2}\leq \lVert u_h^{n} \rVert_{L^2}$ if  $\Delta t < \frac{2}{\max_i \lambda^i_h}$ with $\lambda^i_h$ are the eigenvalues of $M^{-1}A$.
 * Crank-Nicolson: $\lVert u_h^{n+1} \rVert_{L^2}\leq \lVert u_h^{n} \rVert_{L^2}$ independent of $\Delta t$.
 
 
