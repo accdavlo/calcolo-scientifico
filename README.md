@@ -63,7 +63,7 @@ Codice OPIS: J5K9SA1T
 |21/04/26| 08:30 | Finite element for multi-D | [Notes](/notes/2026-04-21-Note-10-04.pdf) | [Zoom link](https://uniroma1.zoom.us/rec/share/rrcZeXhZk1VhLatoca9YwM7ZCMZuRWvHvcLjRzKXMHI_biNmO5pESxz_cp2RUlZz.y468XEpOxKa6erYt) | zi*0q.e9 |
 |22/04/26| 13:15 | Coding finite element 2D for Poisson with FEniCS |   [Notebook](/codes/FEM_with_FEniCS.ipynb) |  |
 |23/04/26| 10:15 | Model order reduction | [Notes](/notes/2026-04-23-Note-11-17.pdf) [Notebook](/codes/ROM_with_FEniCS.ipynb) | [Zoom link](https://uniroma1.zoom.us/rec/share/BIQ0xcjwlXE4GZEsTK-yylFnSGrlGAYBHxudshCDCKq4ue0BORpLQWhwHGkOiGg.hYAuwqTUhEIlxjRQ) | 8JT%*t#1 |
-|28/04/26| 08:30 | Parabolic equations  |  |  | |
+|28/04/26| 08:30 | Parabolic equations  | [Notes](/notes/2026-04-28-Note-10-00.pdf) | [Zoom link no audio](https://uniroma1.zoom.us/rec/share/sic56YFCMcepij0vnrtbz0rlUC0W3E98BCv0WwsBEtT7RIi_ytMWjQpmluWpNar0.rqW3jt9EOV343tqD) [Audio](https://drive.google.com/file/d/1qO88VzNI5cST5_57qbm9Dn7yMyqj2QUN/view?usp=sharing) | @L6F=wCb |
 |29/04/26| 13:15 | FD and FEM for parabolic equations |  | | |
 |12/05/26| 08:30 | Advection equation |  |  | |
 |13/05/26| 13:15 | FD for advection equation  |  | | |
@@ -71,7 +71,7 @@ Codice OPIS: J5K9SA1T
 |20/05/26| 13:15 | Scalar hyperbolic conservation laws (nonlinear) |  | | |
 |26/05/26| 08:30 | Coding hyperbolic conservation laws |   |  | |
 |27/05/26| 13:15 | Physics Informed Neural Networks |  |  | |
-|10/06/26| 13:15 | Projects presentation |  |  | |
+|10/06/26| 13:15 | Projects presentation? |  |  | |
 
 
 ## Notebooks

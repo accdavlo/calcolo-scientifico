@@ -465,7 +465,8 @@ If $|g(k)|\leq 1 +\alpha \Delta t$ for all $k$, then the method is Lax-Richtmyer
 $$
 \begin{align*}
 c_k^{n+1} e^{ij\Delta x k} &= c_k^n e^{ij\Delta x k} + \frac{\Delta t}{\Delta x ^2} (c_k^n e^{i(j+1)\Delta x k}-2c_k^n e^{ij\Delta x k}+c_k^n e^{i(j-1)\Delta x k})\\
-g(k) &= 1+\frac{\Delta t}{\Delta x ^2} ( e^{i\Delta x k}-2+ e^{-i\Delta x k}) = 1-2\frac{\Delta t}{\Delta x ^2}(1-\cos(\Delta x k) )
+&= c_k^n e^{ij\Delta x k} \left( 1 + \frac{\Delta t}{\Delta x ^2} ( e^{i\Delta x k}-2 + e^{-i\Delta x k}) \right)\\
+g(k) &= 1+\frac{\Delta t}{\Delta x ^2} ( e^{i\Delta x k}-2+ e^{-i\Delta x k}) = 1+2\frac{\Delta t}{\Delta x ^2}(\cos(\Delta x k) -1)
 \end{align*}
 $$
 since $-1\leq\cos(\Delta x k)\leq 1$ we have that $1-4\frac{\Delta t}{\Delta x^2} \leq g(k) \leq 1$. It is Lax-Richtmyer stable if $|g(k)|\leq 1$, so we choose,
@@ -480,9 +481,9 @@ $$1-4\frac{\Delta t}{\Delta x^2}\geq -1 \Longleftrightarrow \frac{\Delta t}{\Del
 $$
 \begin{align*}
 &c_k^{n+1} e^{ij\Delta x k} = c_k^n e^{ij\Delta x k} + \frac{\Delta t}{\Delta x ^2} (c_k^{n+1} e^{i(j+1)\Delta x k}-2c_k^{n+1} e^{ij\Delta x k}+c_k^{n+1} e^{i(j-1)\Delta x k})\\
-&(1-\frac{\Delta t}{\Delta x ^2}(2\cos(\Delta x k) -2) ) c_k^{n+1} = c_k^n\\
-&g(k) = \frac{1}{1-\frac{\Delta t}{\Delta x ^2}(2\cos(\Delta x k) -2) }\\
-&|g(k)| = \left\lvert 1-\frac{\Delta t}{\Delta x ^2}(2\cos(\Delta x k) -2) \right\rvert^{-1}=\left\lvert 1+2\frac{\Delta t}{\Delta x ^2}\underbrace{(1-\cos(\Delta x k))}_{\geq 0} \right\rvert^{-1} \leq 1
+&\left(1+2\frac{\Delta t}{\Delta x ^2}(1-\cos(\Delta x k)) \right) c_k^{n+1} = c_k^n\\
+&g(k) = \frac{1}{1+2\frac{\Delta t}{\Delta x ^2}(1-\cos(\Delta x k)) }\\
+&|g(k)| = \left\lvert 1+2\frac{\Delta t}{\Delta x ^2}\underbrace{(1-\cos(\Delta x k))}_{\geq 0} \right\rvert^{-1} \leq 1
 \end{align*}
 $$
 for all $k\in \mathbb Z$ and for $\Delta t, \Delta x$. 
@@ -537,7 +538,8 @@ For every $t\in\mathbb R^+$, we look for $u(t)\in H^1(\Omega)$ such that for all
 $$
 \begin{cases}
 \int_\Omega \partial_t u(t,x) v(x) \mathrm{d}x  +  a( u(t), v)  = F(v) \\
-u(t,x) = g_D(t,x)\qquad  \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+,
+u(t,x) = g_D(t,x)\qquad  \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+,\\
+u(t=0,x) = u_0(x)\qquad  \text{ for  } x \in \Omega.
 \end{cases}
 $$
 where 
@@ -594,7 +596,7 @@ u_h(t,x) = g_h(t,x)\qquad  \text{ for  } x \in \Gamma_D, \, t \in \mathbb R^+,
 $$
 which leads to the matrix formulation (using e.g. implicit Euler)
 $$
-(\frac{1}{\Delta t} M + A) \mathbf{u}^{n+1} = \frac{1}{\Delta t} M  \mathbf{u}^{n} + \mathbf{f}. 
+\left(\frac{1}{\Delta t} M + A\right) \mathbf{u}^{n+1} = \frac{1}{\Delta t} M  \mathbf{u}^{n} + \mathbf{f}. 
 $$
 where 
 $$M_{ij} = \int_{\Omega} \varphi_i \varphi_j \mathrm{d}x, \qquad A_{ij} = \int_{\Omega} \nabla \varphi_i \cdot  \nabla \varphi_j \mathrm{d}x ,\qquad \mathbf{f}_i = \int_{\Omega}\varphi_i f \mathrm{d}x + \int_{\Gamma_{N}} g_N \varphi_i \mathrm{d}s. $$

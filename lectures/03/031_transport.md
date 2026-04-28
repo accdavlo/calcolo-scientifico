@@ -151,8 +151,8 @@ This is not properly a conservation law, as the velocity is not constant, so if 
 $$
 \int_{x_1}^{x_2} \partial_t u(t,x) \mathrm{d}x =- \int_{x_1}^{x_2} a(x) \partial_x u(t,x) \mathrm{d}x,
 $$
-we can no longer apply the integration on the right side.
-On the other side, 
+we can no longer apply the fundamental theorem of calculus on the right side.
+On the other hand, 
 $$
 u_t + (a(x)u)_x =0
 $$
