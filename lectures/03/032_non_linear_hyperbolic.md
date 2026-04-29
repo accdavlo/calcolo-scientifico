@@ -191,15 +191,15 @@ If we change Burgers' equation changing $y=u^{1/3}$ and $u=y^3$ (which is a smoo
 $$
 \begin{align*}
 &\partial_t y^3 + \frac12 \partial_x y^6 = 3 y^2 \partial_t y + 3 y^5 \partial_x y=0\\
-&\partial_t y + 3 y^3 \partial_x y= \partial_t y + \frac{3}{4} \partial_x y^4 = 0
+&\partial_t y +  y^3 \partial_x y= \partial_t y + \frac{1}{4} \partial_x y^4 = 0
 \end{align*}
 $$
 
 If we compute the Rankine-Hugoniot condition we find
 $$
-s = \frac34\frac{ y_L^4-y_R^4}{y_L-y_R} = \frac34 (y_L+y_R)(y_L^2+y_R^2) = \frac34 (u_L^{1/3}+u_R^{1/3})(u_L^{2/3}+u_R^{2/3}) \neq \frac{u_L+u_R}{2}.
+s = \frac14\frac{ y_L^4-y_R^4}{y_L-y_R} = \frac14 (y_L+y_R)(y_L^2+y_R^2) = \frac14 (u_L^{1/3}+u_R^{1/3})(u_L^{2/3}+u_R^{2/3}) \neq \frac{u_L+u_R}{2}.
 $$
-For example for $u_L=1$ and $u_R=0$ we have that $s=\frac34$ for the changed-variable equation, while $s=\frac12$ for the original equation. 
+For example for $u_L=1$ and $u_R=0$ we have that $s=\frac14$ for the changed-variable equation, while $s=\frac12$ for the original equation. 
 This shows that changing the conserved variable changes the structure of the solution, hence it is important to use the conserved variables to evolve the system. For example, in Euler equations one might be tempeted to evolve density, velocity and pressure instead of momentum and total energy. This would lead to wrong solutions and not to conserve the conserved quantities.
 
 

@@ -349,7 +349,7 @@ Very dissipative (and expensive w.r.t. an explicit method)!
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
-## Can we do better with the spatial discretization? Lax-Friedrichs
+## Can we do better with the spatial discretization and EXPLICIT? Lax-Friedrichs
 A simple change in the method can adjust it:
 The **Lax-Friedrichs** method considers this
 $$
@@ -360,7 +360,7 @@ $$
 u^{n+1}_i= u^n_i +\frac{u^n_{i+1}-2u^n_i +u^n_{i-1}}{2} - a\frac{\Delta t}{2\Delta x} (u_{i+1}^n-u_{i-1}^n)
 $$
 
-### Von Neumann
+### Stability? Von Neumann
 $$
 g(k) = 1+ \frac{e^{ik\Delta x}-2+e^{-ik\Delta x}}{2} - a\frac{\Delta t}{2\Delta x} (e^{ik\Delta x}-e^{-ik\Delta x}) = 1+(\cos(k\Delta x) -1) - a\frac{\Delta t}{\Delta x}i \sin(k\Delta x). 
 $$
@@ -368,10 +368,33 @@ Let us denote $\theta = k \Delta x \in [0,2\pi]$, we have
 $$
 |g(k)| = \sqrt{\cos(\theta)^2 + \left(a\frac{\Delta t}{\Delta x}\right)^2\sin(\theta)^2} \leq 1 \Longleftarrow \left\lvert a\frac{\Delta t}{\Delta x}\right\rvert \leq 1.
 $$ 
-This is much better! We can choose $\Delta t \approx \Delta x$!
+This is much better! We can choose $\Delta t \sim \Delta x$!
 
 
+<!-- 
+---
+<style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
+## Lax-Friedrichs
+
+$$
+u^{n+1}_i= u^n_i +\frac{u^n_{i+1}-2u^n_i +u^n_{i-1}}{2} - a\frac{\Delta t}{2\Delta x} (u_{i+1}^n-u_{i-1}^n)
+$$
+
+### Consistency?
+Put exact solution in method.
+$$
+\begin{align}
+    &\frac{u(t^{n+1},x_i)-u(t^n,x_i)}{\Delta t} + \frac{u(t^n,x_{i+1})-2u(t^n,x_i) +u(t^n,x_{i-1})}{2\Delta t} -  a\frac{u(t^n,x_{i+1})-u(t^n,x_{i-1})}{2\Delta x}=\\
+    &\partial_t u(t^n,x_i) + O(\Delta t) + \frac{\Delta x^2}{2\Delta t} \partial_{xx} u (t^n,x_i)+O\left(\frac{\Delta x^4}{\Delta t}\right) +  a\partial_x u(t^n,x_i) + O(\Delta x ^2) =\\
+    & O(\Delta t) + O\left( \frac{\Delta x^2}{\Delta t} \right)+ O(\Delta x ^2)
+\end{align}
+$$
+Choosing $\Delta t \sim \Delta x$
+$$
+=O(\Delta t) +  O(\Delta x )
+$$
+First order of accuracy. -->
 
 ---
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
@@ -398,6 +421,7 @@ $$\Delta t \leq \frac{\Delta x}{|a|} \Longleftrightarrow \text{CFL} =\frac{\Delt
 
 
 ### Von Neumann for Lax-Friedrichs and explicit Euler
+Blue dots: amplification coefficients varying $k \Delta x \in [0,2\pi]$. Red area: stability region of Explicit Euler
 ![width:390](img_advection/von_neumann_stab_advection_Lax_Friedrichs_CFL_1.1.png)![width:390](img_advection/von_neumann_stab_advection_Lax_Friedrichs_CFL_1.0.png)![width:390](img_advection/von_neumann_stab_advection_Lax_Friedrichs_CFL_0.8.png)
 
 
@@ -471,7 +495,7 @@ Stability for $\text{CFL}\leq 1$.
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Another interpretation of CFL condition
-![](img_advection/CFL_interpretation.png)
+![](img_advection/CFL_interpretation_chat.png)
 
 
 
@@ -484,7 +508,7 @@ Stability for $\text{CFL}\leq 1$.
 $$
 \frac{u^{n+1}_i-u^n_i}{\Delta t} + a \frac{u^n_{i+1}-u^n_{i-1}}{2\Delta x} - \varepsilon \frac{u^{n}_{i+1}-2u^n_i+u^n_{i-1}}{2\Delta x^2}=0
 $$
-Where $\varepsilon = \frac{\Delta x^2}{\Delta t}$ and  $\varepsilon = a \Delta x$ for upwind. So supposing $\Delta t \sim \Delta x$, we have that $\varepsilon = C \Delta x$ in both cases.
+Where $\varepsilon = \frac{\Delta x^2}{\Delta t}$ for Lax-Friedrichs and  $\varepsilon = a \Delta x$ for upwind. So supposing $\Delta t \sim \Delta x$, we have that $\varepsilon = C \Delta x$ in both cases.
 
 Substituing the exact solution, we have
 $$
@@ -570,6 +594,7 @@ Stable up to CFL 2
 <style scoped>section{font-size:23px;padding:50px;padding-top:0px}</style>
 
 ## Some simulations with convergence tests
+Initial condition = final condition (periodic BC)
 
 ![width:590](img_advection/advection_final_time.png)![width:590](img_advection/convergence.png)
 
