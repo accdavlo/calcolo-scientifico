@@ -66,7 +66,7 @@ Codice OPIS: J5K9SA1T
 |28/04/26| 08:30 | Parabolic equations  | [Notes](/notes/2026-04-28-Note-10-00.pdf) | [Zoom link no audio](https://uniroma1.zoom.us/rec/share/sic56YFCMcepij0vnrtbz0rlUC0W3E98BCv0WwsBEtT7RIi_ytMWjQpmluWpNar0.rqW3jt9EOV343tqD) [Audio](https://drive.google.com/file/d/1qO88VzNI5cST5_57qbm9Dn7yMyqj2QUN/view?usp=sharing) | @L6F=wCb |
 |29/04/26| 13:15 | FD and FEM for parabolic equations | [Notes](/notes/2026-04-29-Note-15-01.pdf) | [Zoom link (last year)](https://uniroma1.zoom.us/rec/share/OX9BVPv1jxxaMBqWNoOxd_VYHOIv2oOvLU_6qm2PnrHyLmsi78aFCODR9AzPmlgK.SfeKwCD4vgX2qln0) | 6ZC@D#?+ |
 |12/05/26| 08:30 | Advection equation | [Notes](/notes/2026-05-12-Note-10-00.pdf) | [Zoom Link](https://uniroma1.zoom.us/rec/share/cg3FWho1PMh_J81dd3HTLVxuRxAoEvqXUU2WP6dIF_5k2X5Dt3G7MrQ9qmJ6njPL.qzad8y22nKnNpD-3?startTime=1778567274000) | eGp$c^@7 |
-|13/05/26| 13:15 | FD for advection equation  |  | | |
+|13/05/26| 13:15 | FD for advection equation  | See above | [Zoom link](https://uniroma1.zoom.us/rec/share/JZ78bedqtPJzM-EQhx8M58ABwEI9vcEyhaVwW6TtyzRKnn1AyBvGEpUwoyfgzJms.laSZtZf3NcPLaYYp) | %zF$0hX1  |
 |19/05/26| 08:30 | Coding FD for advection and nonlinear laws | [Notebook](/codes/transport_FD.ipynb)  |  | |
 |20/05/26| 13:15 | Scalar hyperbolic conservation laws (nonlinear) |  | | |
 |26/05/26| 08:30 | Coding hyperbolic conservation laws |   |  | |
